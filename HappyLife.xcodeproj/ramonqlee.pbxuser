@@ -1,0 +1,162 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* AdvancedTableViewCellsAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1004, 602}}";
+			sepNavSelRange = "{399, 0}";
+			sepNavVisRange = "{0, 1335}";
+		};
+	};
+	1D3623250D0F684500981E51 /* AdvancedTableViewCellsAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1776, 5672}}";
+			sepNavSelRange = "{344, 0}";
+			sepNavVisRange = "{0, 1280}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* HappyLife */ = {
+		activeExec = 0;
+		executables = (
+			30B4620D1590BFCC00F1DFC7 /* HappyLife */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 30B4620D1590BFCC00F1DFC7 /* HappyLife */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* HappyLife */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* HappyLife */,
+		);
+		codeSenseManager = 30B462431590BFEE00F1DFC7 /* Code sense */;
+		executables = (
+			30B4620D1590BFCC00F1DFC7 /* HappyLife */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					919,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 361837684;
+			PBXWorkspaceStateSaveDate = 361837684;
+		};
+		perUserProjectItems = {
+			309A7EE5159135AE0064BB97 /* PBXTextBookmark */ = 309A7EE5159135AE0064BB97 /* PBXTextBookmark */;
+			309A7EE6159135AE0064BB97 /* PBXTextBookmark */ = 309A7EE6159135AE0064BB97 /* PBXTextBookmark */;
+			309A7EE7159135AE0064BB97 /* PBXTextBookmark */ = 309A7EE7159135AE0064BB97 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 30B462421590BFEE00F1DFC7 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	30998CBD155E659F008EAEAC /* AdsConfig.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1097, 4490}}";
+			sepNavSelRange = "{400, 0}";
+			sepNavVisRange = "{0, 989}";
+		};
+	};
+	309A7EE5159135AE0064BB97 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 309C723F1445E00300C3FFB8 /* TextViewController.m */;
+		name = "TextViewController.m: 20";
+		rLen = 0;
+		rLoc = 549;
+		rType = 0;
+		vrLen = 911;
+		vrLoc = 6673;
+	};
+	309A7EE6159135AE0064BB97 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 309FEFD015629ABA00CC3B0F /* RewardedWallViewController.m */;
+		name = "RewardedWallViewController.m: 237";
+		rLen = 0;
+		rLoc = 8340;
+		rType = 0;
+		vrLen = 1452;
+		vrLoc = 7183;
+	};
+	309A7EE7159135AE0064BB97 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 309FEFD015629ABA00CC3B0F /* RewardedWallViewController.m */;
+		name = "RewardedWallViewController.m: 237";
+		rLen = 0;
+		rLoc = 8340;
+		rType = 0;
+		vrLen = 1452;
+		vrLoc = 7183;
+	};
+	309C723F1445E00300C3FFB8 /* TextViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1272, 8555}}";
+			sepNavSelRange = "{549, 0}";
+			sepNavVisRange = "{6673, 911}";
+		};
+	};
+	309FEFD015629ABA00CC3B0F /* RewardedWallViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1297, 3782}}";
+			sepNavSelRange = "{8340, 0}";
+			sepNavVisRange = "{7183, 1452}";
+		};
+	};
+	30B4620D1590BFCC00F1DFC7 /* HappyLife */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = HappyLife;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	30B462421590BFEE00F1DFC7 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	30B462431590BFEE00F1DFC7 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

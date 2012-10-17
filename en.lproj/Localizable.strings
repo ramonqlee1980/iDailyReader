@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  AdvancedTableViewCells
+
+  Created by ramonqlee on 8/24/11.
+  Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+"Title"="MakeToast";
+"About"="Version V3.1.14 IDreems.com Presents";
+
+"kToday"="Hot";
+"kRecommendList"="Recommend";
+
+"appFriendlyTip"="内容天天变，明天再来奥！";
+"Back" = "Back";
+"AboutTitle"="About";
+"Done" = "Back";
+"Donate"="More";
+"AdsWallSwitch"="CloseAds";
+"DonateBody"="Find and get more amazing applications here";
+"EmailAlertViewTitle" = "Email";
+"EmailAlertViewMsg" = "Email sent successfully!";
+"EmailAlertViewCanSendMail" = "Please configure your device before sending mail!";
+"Ok" = "OK";
+"Cancel" = "Cancel";
+"ShareTip"="Share this article?";
+"YoumiWallTitle"="Tip";
+"YoumiWallMsg"="Make more points for free to read more article?";
+"NewVersion"="New version available";
+"NewContent"="又有新内容啦，赶紧去看看";
+"RemoveAdsTitle"="Remove ads free";
+"RemoveAdsTemp"="Ads is removed temporarily";
+"RemoveAdsContent"="Remove ads by downloading and entering downloaded application.";

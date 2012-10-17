@@ -1,0 +1,54 @@
+[{
+"landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12267&adid=18346&lpg=http%3A%2F%2Ftrc.adsage.com%2Ftrc%2FA12%2F170-x.gif%3Flpg%3Dhttp%253a%252f%252fitunes.apple.com%252fcn%252fapp%252fid395833404%253fmt%253d8",
+  "ext":{
+	 "app":{
+                 "name":"App123",  "icon":"http://a1.mzstatic.com/us/r1000/072/Purple/v4/f1/e9/30/f1e93027-b460-0203-89eb-1e3bbadc3734/mza_4288552640786293575.175x175-75.jpg",
+                "desc":"每天为您提供最新鲜及时的iPad/iPhone应用程序分类资讯,包含书籍、娱乐、游戏、生活、音乐、新闻、摄影、社交、旅行、工具、天气等20个类别的流行软件列表。",
+           }
+   	}
+ },
+{
+"landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12430&adid=18919&lpg=http%3A%2F%2Ftrc.adsage.com%2Ftrc%2FA12%2F170-x.gif%3Flpg%3Dhttp%253a%252f%252fitunes.apple.com%252fcn%252fapp%252fid434781534%253fmt%253d8",
+  "ext":{
+	 "app":{
+                 "name":"免费游戏大全",  "icon":"http://a4.mzstatic.com/us/r1000/075/Purple/v4/a9/58/79/a9587907-a960-6f0c-4207-0cca6bfcc0c2/mza_3851299593270276985.175x175-75.jpg",
+                "desc":"国内最大的免费游戏、限免游戏搜索软件!!资深编辑每日为您提供千余款最新、限免、免费游戏!产品界面简约、操作简单!让您不越狱同样玩正版游戏,真正的安全、省心、省钱!!",
+           }
+   	}
+},
+{ "landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12183&adid=18916&lpg=http%3a%2f%2fitunes.apple.com%2fcn%2fapp%2fzaker-for-iphone%2fid462149227%3fmt%3d8",
+  "ext":{
+	 "app":{
+				"name":"Zaker",
+                "icon":"http://a4.mzstatic.com/us/r1000/069/Purple/v4/22/d4/16/22d416fc-c83d-02de-6bfb-ef629fc376ca/mzl.rpxecrpx.175x175-75.jpg",	"desc":"ZAKER(扎客),适用于iPad和iPhone的互动分享和个性化定制的阅读软件,即社会化阅读软件。它将微博、博客、报纸、杂志、网络新闻、图片、RSS、团购、google reader等众多内容,按照用户个人意愿聚合到软件上,实现深度个性化定制的特点。",
+           }
+   	}
+ },
+ { "landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12427&adid=18912&lpg=http%3a%2f%2fitunes.apple.com%2fcn%2fapp%2fyi-meng-cao-pan-shou-chao%2fid348614294%3fmt%3d8",
+  "ext":{
+	 "app":{
+				"name":"益盟操盘手（炒股票必备，手机证券）",
+                "icon":"http://a5.mzstatic.com/us/r1000/073/Purple/v4/7e/b1/3d/7eb13d57-af77-94af-9b9f-a847f6f150e7/mzl.zrsmoffk.175x175-75.jpg",
+                "desc":"益盟操盘手,2011年上交所L2用户数最多的炒股软件!独创买卖决策信号、主力资金分析等特色功能,是行业发展的风向标。并迅速得到股民的认可,市场份额第一,超过其他所有竞品总和!",
+           }
+   	}
+ },
+ {
+"landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12445&adid=18953&lpg=http%3a%2f%2fitunes.apple.com%2fcn%2fapp%2fkuai-jie-jiu-dian-guan-jia%2fid495882599%3fmt%3d8",
+  "ext":{
+	 "app":{
+				"name":"快捷酒店管家", 
+                "icon":"http://a1.mzstatic.com/us/r1000/107/Purple/v4/6f/9e/d5/6f9ed5d2-aaec-b09c-0546-2bf387d8224c/mzm.gdqjifnd.175x175-75.jpg",
+                "desc":"陌生的街头,想订房却不知道在哪?只有一小时,找房订房就要花掉59分钟?立刻使用快捷酒店管家,只需20秒,找到身边的如家、汉庭、7天……再用20秒,预订成功!找房准,订房快,真正的开房利器!",
+           }
+   	}
+ },
+ {
+"landingpage":"http://trc.adsage.com/trc/sdk/x.gif?ver=api_01&token=FFFFFFFFFFFFFFFFFFFF&uid=%@&pid=%@&adgid=12446&adid=18954&lpg=http%3a%2f%2fitunes.apple.com%2fcn%2fapp%2fmei-tuan-tuan-gou-you-hui%2fid423084029%3fmt%3d8",
+  "ext":{
+	 "app":{
+                 "name":"美团团购-优惠,美食,美酒,电影票,团购",  "icon":"http://a4.mzstatic.com/us/r1000/097/Purple/v4/82/9f/d0/829fd00b-dab4-4deb-d1ba-5d9a39c6a07e/mzl.xkjndomm.175x175-75.jpg",
+                "desc":"美团团购iPhone版是美团网精心打造的手机客户端,简单顺畅的操作体验让手机用户随时随地享受便捷的团购服务,更有手机用户专享的秒杀活动等着您。",
+           }
+   	}
+ }]

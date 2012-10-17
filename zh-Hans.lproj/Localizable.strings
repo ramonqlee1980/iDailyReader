@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  AdvancedTableViewCells
+
+  Created by ramonqlee on 8/24/11.
+  Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+"Title"="场面话之祝酒词";
+"About"="版本V3.1.14  iDreems.com荣誉出品";
+
+"kToday"="今日美文";
+"kRecommendList"="推荐";
+
+"appFriendlyTip"="内容天天变，明天再来奥！";
+"Back" = "返回";
+"AboutTitle"="关于";
+"Done" = "返回";
+"Donate"="推荐";
+"AdsWallSwitch"="去除广告";
+"DonateBody"="给您推荐更多精彩应用。";
+"EmailAlertViewTitle" = "电子邮件";
+"EmailAlertViewMsg" = "已成功送达收件人!";
+"EmailAlertViewCanSendMail" = "请检查并配置您的邮件设置，确保可以发送电子邮件!";
+"Ok" = "确定";
+"Cancel" = "取消";
+"ShareTip"="分享当前美文？";
+"YoumiWallTitle"="积分不足";
+"YoumiWallMsg"="您的积分不足，将不能阅读第十篇之后的文章，马上进入免费赚取积分?";
+"NewVersion"="检测到新版本，是否升级？";
+"NewContent"="又有新内容啦，赶紧去看看!";
+"RemoveAdsTitle"="免费去除广告";
+"RemoveAdsTemp"="好消息：现在可以体验去除广告，是否去除?\n\n永久去除在体验期限过后,使用去除广告功能。";
+"RemoveAdsContent"="下载软件来永久去除本软件中的广告。\n1.下载后打开下载的软件，等待1分钟左右（连接服务器处理去除广告请求）;\n2.回到本软件，再次点击去除广告。\n声明：除数据流量外不产生任何费用。";
