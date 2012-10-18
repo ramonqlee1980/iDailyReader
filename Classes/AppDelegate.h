@@ -37,7 +37,9 @@
 - (NSString *)getContent:(const NSUInteger)index;
 -(NSString*)getNodeContent:(const NSUInteger)index firstContent:(BOOL) first;
 +(NSString*)getMonthDay;
++(NSString*)getMonthDay4Tomorrow;
 +(NSString*)getTodayFileName;
++(NSString*)getTomorrowFileName;
 -(void)releaseMemory;
 - (void)loadData;
 

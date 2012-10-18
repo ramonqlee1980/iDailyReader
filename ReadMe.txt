@@ -4,8 +4,15 @@ HappyLife
 
 Changes from Previous Versions
 3.1.15
-1.增加mobisage支持另外一个publisher（验证是否有针对单个帐户扣量行为）；
-2.
+1.增加mobisage支持另外一个publisher（验证是否有针对单个帐户扣量行为）；(done)
+2.增加每日内容提醒为前3篇的title;(done)
+3.weibo功能扩展：@好友功能；
+4.加入评分功能；(prompt every 5 times,to be tested on device)
+5.加入天气预报；
+6.增加休闲区：小的游戏，糗事百科，手电筒等
+7.加入自定义广告条，跟踪点击，展示量；
+8.加入youmi工具条，支持与服务器交互数据；
+9.推荐区域支持与服务器同步数据；
 
 
 3.1.14

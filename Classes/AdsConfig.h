@@ -18,8 +18,8 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-//#define Makeup
-#define MakeToast
+#define Makeup
+//#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
@@ -176,6 +176,7 @@
 
 
 //id for ads
+#define kMobiSageIDOther_iPhone @"aef1fcef8e0b48d9978c1d3b1928a76f"
 #define kMobiSageID_iPhone  @"c6edb00a37f4435ca06eef7f016df0bb"
 #define kWiyunID_iPhone  @"cbd2ecdce0638c28"
 #define kWiyunID_iPad    @"7ef7469b8144e036"

@@ -9,4 +9,5 @@
 
 #define kIPhoneFontSize  20//pt
 #define kIPadFontSizeEx  28//pt
+#define kItemPerSection 2
 //#define kHuakangFontName @"DFPShaoNvW5" 

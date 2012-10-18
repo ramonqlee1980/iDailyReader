@@ -19,7 +19,7 @@
 #define kDetailTextLableFontSize 20
 #define kToday @"kToday"
 #define kTitle @"Title"
-#define kItemPerSection 2
+
 
 
 

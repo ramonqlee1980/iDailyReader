@@ -12,6 +12,7 @@
 #import "RootViewController.h"
 #import "SoftRcmListViewController.h"
 #import "FlipViewController.h"
+#import "iRate.h"
 
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 30//seconds
@@ -44,10 +45,42 @@
 #pragma mark Application lifecycle
 #pragma mark -
 #pragma mark Memory management
++ (void)initialize
+{
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    //[iRate sharedInstance].applicationBundleID = @"com.charcoaldesign.rainbowblocks-lite";
+	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    [iRate sharedInstance].appStoreID = [kAppIdOnAppstore integerValue];
+    
+    [AppDelegate logLaunch];
+    //enable preview mode
+    [iRate sharedInstance].previewMode = [AppDelegate shouldPromptRating];
+}
+#define kLaunchTime @"kLaunchTime"
+#define kRatingWhenLaunchTime 5
++(BOOL)shouldPromptRating
+{
+    NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];
+    NSString* switchVal = [defaultSetting stringForKey:kLaunchTime];
+    return (switchVal!=nil && (switchVal.integerValue % kRatingWhenLaunchTime)==0);
+}
++(void)logLaunch
+{
+    NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];
+    NSString* switchVal = [defaultSetting stringForKey:kLaunchTime];
+    NSInteger count = 0;
+    if(switchVal)
+    {
+        count = switchVal.integerValue;
+    }
+    
+    [defaultSetting setValue:[NSString stringWithFormat:@"%d",++count] forKey:kLaunchTime];
+}
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //flurry
     [Flurry startSession:kFlurryID];
-    
     [self loadData];
     
     // Override point for customization after application launch.
@@ -92,6 +125,7 @@
     
     return YES;
 }
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     _EnterBylocalNotification = NO;
@@ -99,10 +133,13 @@
     
 #ifndef kSingleFile
     //set local notification to pop up a tip
-    const NSTimeInterval kDelay = 0;//1;
-    NSString* popContent = NSLocalizedString(@"appFriendlyTip","");
+    //const NSTimeInterval kDelay = 0;//1;
+    //NSString* popContent = NSLocalizedString(@"appFriendlyTip","");
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [self scheduleLocalNotification:popContent delayTimeInterval:kDelay];
+    //[self scheduleLocalNotification:popContent delayTimeInterval:kDelay];
+        
+    //tomorrow's tip
+    [self scheduleDailyNofification];
 #endif
 }
 -(void)applicationWillTerminate:(UIApplication *)application
@@ -244,9 +281,50 @@
     NSLog(@"_EnterBylocalNotification::%d",_EnterBylocalNotification);
     return _EnterBylocalNotification;
 }
-- (void)loadData
+-(void)scheduleDailyNofification
 {
+#ifndef kSingleFile    
+    // Load the data.
+#ifdef kSingleFile
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"lyrics" ofType:@"xml"];
+#elif defined kHistory
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:[AppDelegate getMonthDay4Tomorrow] ofType:@"xml"];
+#else
+    self.mCurrentFileName = [AppDelegate getTomorrowFileName];
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:self.mCurrentFileName ofType:@"txt"];
+#endif
     
+    if ([dataPath isEqualToString:mDataPath]) {
+        return;
+    }    
+        
+    if ([mDataPath length] !=0 ) {
+        [mDataPath release];
+    }
+    mDataPath = [[NSString alloc]initWithString:dataPath];
+    
+    NSData* responseData = [[NSData alloc] initWithContentsOfFile:mDataPath];
+    //NSLog(@"%@",responseData);
+    NSString *xpathQueryString = @"//channel/item/*";
+    self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
+    
+    [responseData release];
+    
+    
+    //set local notification
+    NSInteger count = [self.data count]/kItemPerSection;
+    NSString* body = NSLocalizedString(@"NewContent","");
+    const NSInteger kMinContentCount = 3;
+    if (count>kMinContentCount) {
+        body = [NSString stringWithFormat:@"%@|%@|%@",[self getTitle:0],[self getTitle:1],[self getTitle:2]];
+    };
+    
+    [self scheduleLocalNotification:body];
+    [self setLocalNotifictionFlag:YES];
+#endif
+}
+- (void)loadData
+{    
     // Load the data.
 #ifdef kSingleFile
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"lyrics" ofType:@"xml"];
@@ -255,8 +333,7 @@
 #else
     self.mCurrentFileName = [AppDelegate getTodayFileName];
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:self.mCurrentFileName ofType:@"txt"];
-#endif
-    
+#endif    
     
     if ([dataPath isEqualToString:mDataPath]) {
         return;
@@ -273,35 +350,7 @@
     NSData* responseData = [[NSData alloc] initWithContentsOfFile:mDataPath];
     //NSLog(@"%@",responseData);
     NSString *xpathQueryString = @"//channel/item/*";
-    self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
-    
-#ifndef kSingleFile
-#if 0
-    //push once every day
-    _newContentCount = self.data.count/(kNewContentScale*2);
-    if (_newContentCount< kMinNewContentCount && kMinNewContentCount < self.data.count) {
-        _newContentCount = kMinNewContentCount;
-    }
-    //remove this new content except when enters by localnotification
-    if (!_EnterBylocalNotification) {
-        NSMutableArray* dataWithoutNewData = [NSMutableArray arrayWithArray:self.data];
-        for (NSInteger i =0; i<_newContentCount; ++i) {
-            [dataWithoutNewData removeObjectAtIndex:0];
-            [dataWithoutNewData removeObjectAtIndex:0];
-        }
-        self.data = dataWithoutNewData;
-    }
-#endif
-    
-    {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        //set local notification
-        NSString* alertBody = [NSString stringWithFormat:@"%@ %@",NSLocalizedString(@"Title",""),NSLocalizedString(@"NewContent","")];
-        [self scheduleLocalNotification:alertBody];
-        [self setLocalNotifictionFlag:YES];
-    }
-#endif
-    
+    self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString); 
     
     [responseData release];
 }
@@ -603,12 +652,40 @@
     NSLog(@"%@",fileName);
     return fileName;
 }
++(NSString*)getTomorrowFileName
+{
+    //get today
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    
+    unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
+    NSDateComponents *dd = [cal components:unitFlags fromDate:[AppDelegate getTomorrowDate]];
+    //get date count before today
+    int count = ([dd month]==1)?[dd day]:[AppDelegate getTodayOffset:[dd month] day:[dd day]];
+    //get file name
+    NSString* fileName = [NSString stringWithFormat:@"%.03d_Unicode",count];
+    NSLog(@"%@",fileName);
+    return fileName;
+}
 +(NSString*)getMonthDay
 {
     NSCalendar *cal = [NSCalendar currentCalendar];
     
     unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
     NSDateComponents *dd = [cal components:unitFlags fromDate:[NSDate date]];
+    
+    return [NSString stringWithFormat:@"%d%d",[dd month],[dd day]];
+}
++(NSDate*)getTomorrowDate
+{
+    const NSTimeInterval kOneDayTimeInterval = 24*60*60;
+    return [NSDate dateWithTimeIntervalSinceNow:kOneDayTimeInterval];
+}
++(NSString*)getMonthDay4Tomorrow
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    
+    unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
+    NSDateComponents *dd = [cal components:unitFlags fromDate:[AppDelegate getTomorrowDate]];
     
     return [NSString stringWithFormat:@"%d%d",[dd month],[dd day]];
 }
