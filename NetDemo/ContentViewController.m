@@ -60,7 +60,7 @@ UITableViewDelegate
     [self.view setBackgroundColor:[UIColor clearColor]];
     _list = [[NSMutableArray alloc] init ];
     
-    CGRect bounds = self.view.bounds;
+    CGRect bounds = [[UIScreen mainScreen]bounds];//self.view.bounds;
     bounds.size.height -= 44.f;//44.f*2;
     self.tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

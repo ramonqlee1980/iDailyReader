@@ -42,16 +42,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     imageView = [[EGOImageView alloc]initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic.png"] delegate:self];
-    [imageView setFrame:CGRectMake(20,50,300,300)];
+    //[imageView setFrame:CGRectMake(20,50,300,300)];
+    [imageView setFrame:CGRectMake(kDeviceWidth/2-150,KDeviceHeight/2-150,300,300)];
     [self.view addSubview:imageView];
   
     NSArray *array = [NSArray arrayWithObjects:@"rotate_left",@"rotate_right",@"zoom_in",@"zoom_out",nil];
+    CGFloat center = (kDeviceWidth-array.count*50)/2;//60;
     for (int i=0; i<[array count]; i++) 
     {
         UIImage *normal = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[array objectAtIndex:i]]];
         UIImage *active = [[UIImage imageNamed:@"imageviewer_toolbar_background.png"]stretchableImageWithLeftCapWidth:5 topCapHeight:5];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(60+50*i,420,52,40)];
+        [btn setFrame:CGRectMake(center+50*i,KDeviceHeight-60,52,40)];
         [btn setImage:normal forState:UIControlStateNormal];
         [btn setBackgroundImage:active forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -73,7 +75,7 @@
     [self.view addSubview:backbtn];
     
     UIButton *savebtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [savebtn setFrame:CGRectMake(220,10,100,40)];
+    [savebtn setFrame:CGRectMake(kDeviceWidth-100,10,100,40)];
     [savebtn setImageEdgeInsets:UIEdgeInsetsMake(0,2,0,0)];
     [savebtn setTitleEdgeInsets:UIEdgeInsetsMake(2,-2,0,0)];
     [savebtn setImage:[UIImage imageNamed:@"imageviewer_save.png"] forState:UIControlStateNormal];
@@ -257,21 +259,22 @@
 
 
 -(void) fadeIn
-{   
+{
     CGRect rect = [[UIScreen mainScreen] bounds];
-      self.view.center = CGPointMake(rect.size.width/2, 720);
+    self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight*1.5);
     [UIView animateWithDuration:0.5f animations:^{
-         self.view.center = CGPointMake(rect.size.width/2, 240+10);  
+         self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight/2+10);
     } completion:^(BOOL finished) {
         [imageView setImageURL:[NSURL URLWithString:imgUrl]];
     }];
+     
 }
 
 -(void) fadeOut
 {
     CGRect rect = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.5f animations:^{
-        self.view.center = CGPointMake(rect.size.width/2, 720);
+        self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight*1.5);
     } completion:^(BOOL finished) {
         [imageView cancelImageLoad];
         [imageView release];

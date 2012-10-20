@@ -19,10 +19,10 @@
 //#define RaisingKids
 //#define TodayinHistory
 //#define Makeup
-//#define MakeToast
+#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
-#define Humer
+//#define Humer
 //#define EnglishPrefix
 //#define EnglishSuffix
 

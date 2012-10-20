@@ -202,7 +202,7 @@
     //添加内容的TableView
     self.m_contentView = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
     //[m_contentView.view setFrame:CGRectMake(0, 44, kDeviceWidth, KDeviceHeight-44*2)];
-    [m_contentView.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight-44)];
+//    [m_contentView.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight-44)];
     [self.view addSubview:m_contentView.view];
 #if 0
  

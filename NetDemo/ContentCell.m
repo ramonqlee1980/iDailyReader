@@ -32,13 +32,15 @@
         
         UIImage *centerimage = [UIImage imageNamed:@"block_center_background.png"];
         centerimageView = [[UIImageView alloc]initWithImage:centerimage];
-        [centerimageView setFrame:CGRectMake(0, 0, 320, 220)];
+        NSInteger deviceWidth = [[UIScreen mainScreen]applicationFrame].size.width;
+//        [centerimageView setFrame:CGRectMake(0, 0, 320, 220)];
+        [centerimageView setFrame:CGRectMake(0, 0, deviceWidth, 220)];
         [self addSubview:centerimageView];
  
         
         txtContent = [[UILabel alloc]init];
         [txtContent setBackgroundColor:[UIColor clearColor]];
-        [txtContent setFrame:CGRectMake(20, 28, 280, 220)];
+        [txtContent setFrame:CGRectMake(20, 28, deviceWidth-40, 220)];
         [txtContent setFont:[UIFont fontWithName:@"Arial" size:14]];
         [txtContent setLineBreakMode:UILineBreakModeTailTruncation];
         [self addSubview:txtContent];
@@ -53,14 +55,14 @@
         [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
         [self addSubview:headPhoto];
     
-        txtAnchor = [[UILabel alloc]initWithFrame:CGRectMake(45,5, 200, 30)];
+        txtAnchor = [[UILabel alloc]initWithFrame:CGRectMake(45,5, deviceWidth-120/*200*/, 30)];
         [txtAnchor setText:@"匿名"];
         [txtAnchor setFont:[UIFont fontWithName:@"Arial" size:14]];
         [txtAnchor setBackgroundColor:[UIColor clearColor]];
         [txtAnchor setTextColor:[UIColor brownColor]];
         [self addSubview:txtAnchor];
         
-        txtTag = [[UILabel alloc]initWithFrame:CGRectMake(45,200, 200, 30)];
+        txtTag = [[UILabel alloc]initWithFrame:CGRectMake(45,200, deviceWidth-120/*200*/, 30)];
         [txtTag setText:@""];
         [txtTag setFont:[UIFont fontWithName:@"Arial" size:14]];
         [txtTag setBackgroundColor:[UIColor clearColor]];
@@ -75,7 +77,7 @@
         
         UIImage *footimage = [UIImage imageNamed:@"block_foot_background.png"];
         footView = [[UIImageView alloc]initWithImage:footimage];
-        [footView setFrame:CGRectMake(0, txtContent.frame.size.height, 320, 15)];
+        [footView setFrame:CGRectMake(0, txtContent.frame.size.height, deviceWidth, 15)];
         [self addSubview:footView];
                
         //添加Button，顶，踩，评论  
@@ -131,17 +133,17 @@
 
 -(void) resizeTheHeight
 {   
-    CGFloat contentWidth = 280;  
+    CGFloat contentWidth = kDeviceWidth-40;//280;
  
     UIFont *font = [UIFont fontWithName:@"Arial" size:14];  
     
     CGSize size = [txtContent.text sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];  
     
-    [txtContent setFrame:CGRectMake(20, 28, 280, size.height+60)];
+    [txtContent setFrame:CGRectMake(20, 28, kDeviceWidth-40, size.height+60)];
     
     if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
        [imgPhoto setFrame:CGRectMake(30, size.height+70, 72, 72)];
-       [centerimageView setFrame:CGRectMake(0, 0, 320, size.height+200)];
+       [centerimageView setFrame:CGRectMake(0, 0, kDeviceWidth, size.height+200)];
        [imgPhoto setImageURL:[NSURL URLWithString:imgUrl]];
        [self imageButtonLoadedImage:imgPhoto];
     }
@@ -149,10 +151,10 @@
     {
         [imgPhoto cancelImageLoad];
        [imgPhoto setFrame:CGRectMake(120, size.height, 0, 0)];
-        [centerimageView setFrame:CGRectMake(0, 0, 320, size.height+120)];
+        [centerimageView setFrame:CGRectMake(0, 0, kDeviceWidth, size.height+120)];
     }
     
-    [footView setFrame:CGRectMake(0, centerimageView.frame.size.height, 320, 15)];
+    [footView setFrame:CGRectMake(0, centerimageView.frame.size.height, kDeviceWidth, 15)];
     [goodbtn setFrame:CGRectMake(10,centerimageView.frame.size.height-28,70,32)];
     [badbtn setFrame:CGRectMake(100,centerimageView.frame.size.height-28,70,32)];
     [commentsbtn setFrame:CGRectMake(230,centerimageView.frame.size.height-28,70,32)];
