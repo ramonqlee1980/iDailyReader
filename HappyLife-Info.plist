@@ -12,8 +12,8 @@
 	<array>
 		<string>icon-57.png</string>
 		<string>icon-72.png</string>
-		<string>icon-512.png</string>
 		<string>icon-114.png</string>
+		<string>icon-144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -23,15 +23,15 @@
 			<array>
 				<string>icon-57.png</string>
 				<string>icon-72.png</string>
-				<string>icon-512.png</string>
 				<string>icon-114.png</string>
+				<string>icon-144.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>Makeup</string>
+	<string>Humer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

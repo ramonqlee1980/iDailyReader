@@ -1,6 +1,6 @@
 
 #define SharedDelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
-
+#define kAdd2Favorite @"kAdd2Favorite"
 @interface AppDelegate : NSObject <UIApplicationDelegate>
 {
     UIWindow *window;

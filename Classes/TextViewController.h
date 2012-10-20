@@ -2,9 +2,6 @@
 #import <iAd/iAd.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "DoMobDelegateProtocol.h"
-#import "OAuthController.h"
-#import "WeiboClient.h"
-#import "ComposeViewController.h"
 #import "CaseeAdDelegate.h"
 #import "AdSageRecommendDelegate.h"
 #import "WQAdProtocol.h"
@@ -23,7 +20,7 @@ enum ShareOption
 @class AppDelegate;
 
 
-@interface TextViewController : UIViewController <MFMailComposeViewControllerDelegate,UIActionSheetDelegate,DoMobDelegate,OAuthControllerDelegate,CaseeAdDelegate,AdSageRecommendDelegate,WQAdProtocol,immobViewDelegate>
+@interface TextViewController : UIViewController <MFMailComposeViewControllerDelegate,UIActionSheetDelegate,DoMobDelegate,CaseeAdDelegate,AdSageRecommendDelegate,WQAdProtocol,immobViewDelegate>
 {
     UIView *contentView;
     NSIndexPath* index;
@@ -33,8 +30,6 @@ enum ShareOption
     UITabBarItem *mAdsSwitchBarItem;
     
     OAuthEngine				*_engine;
-	WeiboClient *weiboClient;
-	ComposeViewController *composeViewController;
     BOOL mWeibo;    
     BOOL mLoginWeiboCanceled;
     BOOL mAdsWallShouldShow;
@@ -46,7 +41,6 @@ enum ShareOption
 }
 @property(nonatomic, retain) AdSageRecommendView *recmdView;
 @property (nonatomic, retain) IBOutlet UITabBarItem *mAdsSwitchBarItem;
-@property (nonatomic, retain) IBOutlet ComposeViewController *composeViewController;
 @property(nonatomic, retain) UIView *mAdView;
 //@property(nonatomic,assign) NSInteger mAdIndex;
 @property (nonatomic, retain) IBOutlet UITextView *textView;

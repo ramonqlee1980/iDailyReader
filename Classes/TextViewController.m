@@ -28,7 +28,7 @@
 
 @implementation TextViewController
 
-@synthesize contentView,textView,index,mAdView,composeViewController,mAdsSwitchBarItem;
+@synthesize contentView,textView,index,mAdView,mAdsSwitchBarItem;
 @synthesize recmdView = _recmdView;
 #pragma mark immob delegate
 /**
@@ -589,30 +589,16 @@
     textView.textColor = [UIColor blueColor];        
 }
 - (IBAction)compose:(id)sender {
-    mWeibo = TRUE;    
-    mLoginWeiboCanceled = FALSE;
-    if (mWeibo) {
-        if (!_engine){
-            _engine = [[OAuthEngine alloc] initOAuthWithDelegate: self];
-            _engine.consumerKey = kOAuthConsumerKey;
-            _engine.consumerSecret = kOAuthConsumerSecret;
-        }
-        [self performSelector:@selector(loadTimeline) withObject:nil afterDelay:0.5];
-    }
     [Flurry logEvent:kShareByWeibo];
 }
 -(IBAction)add2Favorate
-{
-    NSMutableArray *dataMutableArray = [[NSUserDefaults standardUserDefaults]mutableArrayValueForKey:kAppIdOnAppstore];
+{     
+    NSString* title = self.title;
+    NSString* content = textView.text;
     
-    [dataMutableArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"text",self.title,@"date", nil]];
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:content,@"text",title,@"date", nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kAdd2Favorite object:nil userInfo:dict];
     
-    UIAlertView *alert = [[[UIAlertView alloc]initWithTitle:nil message:@"成功添加到收藏" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]autorelease];
-    [alert show];
-    [[NSNotificationCenter defaultCenter]postNotificationName:kRefreshFlipView object:nil];
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:[[NSDate date]description] forKey:self.title];
-    [Flurry logEvent:kFlurryDidSelectAppFromMainList withParameters:dict];
 }
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -714,44 +700,11 @@
         mWeibo = FALSE;
         mLoginWeiboCanceled = FALSE;
     }
-    
-    if (mWeibo) {        
-        if (!_engine){
-            _engine = [[OAuthEngine alloc] initOAuthWithDelegate: self];
-            _engine.consumerKey = kOAuthConsumerKey;
-            _engine.consumerSecret = kOAuthConsumerSecret;
-        }
-        [self performSelector:@selector(loadTimeline) withObject:nil afterDelay:0.5];
-    }
+
     
 }
 - (void)loadTimeline {
-	UIViewController *controller = [OAuthController controllerToEnterCredentialsWithEngine: _engine delegate: self];
 	
-	if (controller) 
-		[self presentModalViewController: controller animated: YES];
-	else {
-		NSLog(@"Authenicated for %@..", _engine.username);
-		[OAuthEngine setCurrentOAuthEngine:_engine];
-		//[self loadData];
-		if (!composeViewController) {
-            composeViewController = [[ComposeViewController alloc]init];
-        }
-        
-        NSString*  c = [delegate getContent:index.row];      
-        NSString* format = [NSString stringWithString:@"%@\n%@..."];
-        NSString* title = [delegate getTitle:index.row];
-        int maxAllowedLength = kWeiboMaxLength-delegate.mTrackViewUrl.length-title.length-format.length;
-        
-        NSString* content = [NSString stringWithFormat:format,title,[c substringToIndex:c.length>maxAllowedLength?maxAllowedLength:c.length ]];
-        
-        NSLog(@"weibo content length:%d",content.length);
-        //content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        [composeViewController setText:content tailText:delegate.mTrackViewUrl];
-        [self presentModalViewController:composeViewController animated:YES];
-        [composeViewController newTweet];
-        mWeibo = FALSE;
-	}
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -783,8 +736,6 @@
     contentView = nil;  
     
     [_engine release];
-	[weiboClient release];
-    [composeViewController release];
     [super dealloc];
 }
 
@@ -811,54 +762,6 @@
 	//[UIView commitAnimations];
 } 
 
-- (IBAction)signOut:(id)sender {
-    [_engine signOut];
-    [self loadTimeline];
-}
-
-//=============================================================================================================================
-#pragma mark OAuthEngineDelegate
-- (void) storeCachedOAuthData: (NSString *) data forUsername: (NSString *) username {
-	NSUserDefaults			*defaults = [NSUserDefaults standardUserDefaults];
-	
-	[defaults setObject: data forKey: @"authData"];
-	[defaults synchronize];
-}
-
-- (NSString *) cachedOAuthDataForUsername: (NSString *) username {
-	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
-}
-
-- (void)removeCachedOAuthDataForUsername:(NSString *) username{
-	NSUserDefaults			*defaults = [NSUserDefaults standardUserDefaults];
-	
-	[defaults removeObjectForKey: @"authData"];
-	[defaults synchronize];
-}
-//=============================================================================================================================
-#pragma mark OAuthSinaWeiboControllerDelegate
-- (void) OAuthController: (OAuthController *) controller authenticatedWithUsername: (NSString *) username {
-	NSLog(@"Authenicated for %@", username);
-}
-
-- (void) OAuthControllerFailed: (OAuthController *) controller {
-	NSLog(@"Authentication Failed!");
-	//UIViewController *controller = [OAuthController controllerToEnterCredentialsWithEngine: _engine delegate: self];
-	
-	if (controller) 
-		[self presentModalViewController: controller animated: YES];
-	
-}
-
-- (void) OAuthControllerCanceled: (OAuthController *) controller {
-	NSLog(@"Authentication Canceled.");
-    mLoginWeiboCanceled = TRUE;
-	//UIViewController *controller = [OAuthController controllerToEnterCredentialsWithEngine: _engine delegate: self];
-	
-	//if (controller) 
-    //[self presentModalViewController: controller animated: YES];
-	
-}
 
 #pragma mark adsageRecommend delegate
 - (UIViewController *)viewControllerForPresentingModalView

@@ -18,11 +18,11 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
-//#define Humer
+#define Humer
 //#define EnglishPrefix
 //#define EnglishSuffix
 
@@ -299,6 +299,7 @@
 
 
 //id for ads
+#define kMobiSageIDOther_iPhone @"aef1fcef8e0b48d9978c1d3b1928a76f"
 #define kMobiSageID_iPhone  @"009a0187005c4e3989a5e8009fed8a47"
 #define kWiyunID_iPhone  @"f4c8b82394761b8a"
 #define kWiyunID_iPad    @"07b740b29274e601"
@@ -309,6 +310,7 @@
 #define kAdmobID @"a14f1b56e4ba533"
 #define kYoumiId kDefaultAppID_iOS
 #define kYoumiSecret kDefaultAppSecret_iOS
+#define kWapsId @"6742d5de04cf0a6a5bf45fd3cdc9001a"
 
 #elif defined EnglishSuffix
 

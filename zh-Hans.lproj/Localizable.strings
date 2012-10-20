@@ -5,12 +5,14 @@
   Created by ramonqlee on 8/24/11.
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
-"Title"="美容秘笈";
+"Title"="搞笑集锦";
 "About"="版本V3.1.15  iDreems.com荣誉出品";
 
 "kToday"="今日美文";
 "kRecommendList"="推荐";
+"kFun"="娱乐";
 
+"add2FavTip"="收藏";
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "返回";
 "AboutTitle"="关于";

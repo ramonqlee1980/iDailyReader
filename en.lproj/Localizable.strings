@@ -5,12 +5,14 @@
   Created by ramonqlee on 8/24/11.
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
-"Title"="Makeup";
+"Title"="Humer";
 "About"="Version V3.1.15 IDreems.com Presents";
 
 "kToday"="Hot";
 "kRecommendList"="Recommend";
+"kFun"="Fun";
 
+"add2FavTip"="Fav";
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "Back";
 "AboutTitle"="About";
