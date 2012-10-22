@@ -91,6 +91,383 @@
 		049842781632011E005694D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049841DF1632011D005694D2 /* MainViewController.xib */; };
 		0498427A1632011E005694D2 /* QiuShi.m in Sources */ = {isa = PBXBuildFile; fileRef = 049841E31632011D005694D2 /* QiuShi.m */; };
 		0498427F16320E30005694D2 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498427E16320E2F005694D2 /* icon-144.png */; };
+		04C50A72163434FA00A6C067 /* 000_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C508FF163434FA00A6C067 /* 000_Unicode.txt */; };
+		04C50A73163434FA00A6C067 /* 001_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50900163434FA00A6C067 /* 001_Unicode.txt */; };
+		04C50A74163434FA00A6C067 /* 002_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50901163434FA00A6C067 /* 002_Unicode.txt */; };
+		04C50A75163434FA00A6C067 /* 003_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50902163434FA00A6C067 /* 003_Unicode.txt */; };
+		04C50A76163434FA00A6C067 /* 004_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50903163434FA00A6C067 /* 004_Unicode.txt */; };
+		04C50A77163434FA00A6C067 /* 005_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50904163434FA00A6C067 /* 005_Unicode.txt */; };
+		04C50A78163434FA00A6C067 /* 006_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50905163434FA00A6C067 /* 006_Unicode.txt */; };
+		04C50A79163434FA00A6C067 /* 007_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50906163434FA00A6C067 /* 007_Unicode.txt */; };
+		04C50A7A163434FA00A6C067 /* 008_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50907163434FA00A6C067 /* 008_Unicode.txt */; };
+		04C50A7B163434FA00A6C067 /* 009_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50908163434FA00A6C067 /* 009_Unicode.txt */; };
+		04C50A7C163434FA00A6C067 /* 010_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50909163434FA00A6C067 /* 010_Unicode.txt */; };
+		04C50A7D163434FA00A6C067 /* 011_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090A163434FA00A6C067 /* 011_Unicode.txt */; };
+		04C50A7E163434FA00A6C067 /* 012_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090B163434FA00A6C067 /* 012_Unicode.txt */; };
+		04C50A7F163434FA00A6C067 /* 013_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090C163434FA00A6C067 /* 013_Unicode.txt */; };
+		04C50A80163434FA00A6C067 /* 014_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090D163434FA00A6C067 /* 014_Unicode.txt */; };
+		04C50A81163434FA00A6C067 /* 015_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090E163434FA00A6C067 /* 015_Unicode.txt */; };
+		04C50A82163434FA00A6C067 /* 016_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5090F163434FA00A6C067 /* 016_Unicode.txt */; };
+		04C50A83163434FA00A6C067 /* 017_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50910163434FA00A6C067 /* 017_Unicode.txt */; };
+		04C50A84163434FA00A6C067 /* 018_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50911163434FA00A6C067 /* 018_Unicode.txt */; };
+		04C50A85163434FA00A6C067 /* 019_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50912163434FA00A6C067 /* 019_Unicode.txt */; };
+		04C50A86163434FA00A6C067 /* 020_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50913163434FA00A6C067 /* 020_Unicode.txt */; };
+		04C50A87163434FA00A6C067 /* 021_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50914163434FA00A6C067 /* 021_Unicode.txt */; };
+		04C50A88163434FA00A6C067 /* 022_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50915163434FA00A6C067 /* 022_Unicode.txt */; };
+		04C50A89163434FA00A6C067 /* 023_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50916163434FA00A6C067 /* 023_Unicode.txt */; };
+		04C50A8A163434FA00A6C067 /* 024_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50917163434FA00A6C067 /* 024_Unicode.txt */; };
+		04C50A8B163434FA00A6C067 /* 025_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50918163434FA00A6C067 /* 025_Unicode.txt */; };
+		04C50A8C163434FA00A6C067 /* 026_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50919163434FA00A6C067 /* 026_Unicode.txt */; };
+		04C50A8D163434FA00A6C067 /* 027_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091A163434FA00A6C067 /* 027_Unicode.txt */; };
+		04C50A8E163434FA00A6C067 /* 028_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091B163434FA00A6C067 /* 028_Unicode.txt */; };
+		04C50A8F163434FA00A6C067 /* 029_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091C163434FA00A6C067 /* 029_Unicode.txt */; };
+		04C50A90163434FA00A6C067 /* 030_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091D163434FA00A6C067 /* 030_Unicode.txt */; };
+		04C50A91163434FA00A6C067 /* 031_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091E163434FA00A6C067 /* 031_Unicode.txt */; };
+		04C50A92163434FA00A6C067 /* 032_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5091F163434FA00A6C067 /* 032_Unicode.txt */; };
+		04C50A93163434FA00A6C067 /* 033_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50920163434FA00A6C067 /* 033_Unicode.txt */; };
+		04C50A94163434FA00A6C067 /* 034_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50921163434FA00A6C067 /* 034_Unicode.txt */; };
+		04C50A95163434FA00A6C067 /* 035_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50922163434FA00A6C067 /* 035_Unicode.txt */; };
+		04C50A96163434FA00A6C067 /* 036_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50923163434FA00A6C067 /* 036_Unicode.txt */; };
+		04C50A97163434FA00A6C067 /* 037_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50924163434FA00A6C067 /* 037_Unicode.txt */; };
+		04C50A98163434FA00A6C067 /* 038_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50925163434FA00A6C067 /* 038_Unicode.txt */; };
+		04C50A99163434FA00A6C067 /* 039_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50926163434FA00A6C067 /* 039_Unicode.txt */; };
+		04C50A9A163434FA00A6C067 /* 040_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50927163434FA00A6C067 /* 040_Unicode.txt */; };
+		04C50A9B163434FA00A6C067 /* 041_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50928163434FA00A6C067 /* 041_Unicode.txt */; };
+		04C50A9C163434FA00A6C067 /* 042_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50929163434FA00A6C067 /* 042_Unicode.txt */; };
+		04C50A9D163434FA00A6C067 /* 043_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092A163434FA00A6C067 /* 043_Unicode.txt */; };
+		04C50A9E163434FA00A6C067 /* 044_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092B163434FA00A6C067 /* 044_Unicode.txt */; };
+		04C50A9F163434FA00A6C067 /* 045_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092C163434FA00A6C067 /* 045_Unicode.txt */; };
+		04C50AA0163434FA00A6C067 /* 046_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092D163434FA00A6C067 /* 046_Unicode.txt */; };
+		04C50AA1163434FA00A6C067 /* 047_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092E163434FA00A6C067 /* 047_Unicode.txt */; };
+		04C50AA2163434FA00A6C067 /* 048_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5092F163434FA00A6C067 /* 048_Unicode.txt */; };
+		04C50AA3163434FA00A6C067 /* 049_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50930163434FA00A6C067 /* 049_Unicode.txt */; };
+		04C50AA4163434FA00A6C067 /* 050_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50931163434FA00A6C067 /* 050_Unicode.txt */; };
+		04C50AA5163434FA00A6C067 /* 051_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50932163434FA00A6C067 /* 051_Unicode.txt */; };
+		04C50AA6163434FA00A6C067 /* 052_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50933163434FA00A6C067 /* 052_Unicode.txt */; };
+		04C50AA7163434FA00A6C067 /* 053_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50934163434FA00A6C067 /* 053_Unicode.txt */; };
+		04C50AA8163434FA00A6C067 /* 054_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50935163434FA00A6C067 /* 054_Unicode.txt */; };
+		04C50AA9163434FA00A6C067 /* 055_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50936163434FA00A6C067 /* 055_Unicode.txt */; };
+		04C50AAA163434FA00A6C067 /* 056_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50937163434FA00A6C067 /* 056_Unicode.txt */; };
+		04C50AAB163434FA00A6C067 /* 057_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50938163434FA00A6C067 /* 057_Unicode.txt */; };
+		04C50AAC163434FA00A6C067 /* 058_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50939163434FA00A6C067 /* 058_Unicode.txt */; };
+		04C50AAD163434FA00A6C067 /* 059_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093A163434FA00A6C067 /* 059_Unicode.txt */; };
+		04C50AAE163434FA00A6C067 /* 060_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093B163434FA00A6C067 /* 060_Unicode.txt */; };
+		04C50AAF163434FA00A6C067 /* 061_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093C163434FA00A6C067 /* 061_Unicode.txt */; };
+		04C50AB0163434FA00A6C067 /* 062_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093D163434FA00A6C067 /* 062_Unicode.txt */; };
+		04C50AB1163434FA00A6C067 /* 063_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093E163434FA00A6C067 /* 063_Unicode.txt */; };
+		04C50AB2163434FA00A6C067 /* 064_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5093F163434FA00A6C067 /* 064_Unicode.txt */; };
+		04C50AB3163434FA00A6C067 /* 065_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50940163434FA00A6C067 /* 065_Unicode.txt */; };
+		04C50AB4163434FA00A6C067 /* 066_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50941163434FA00A6C067 /* 066_Unicode.txt */; };
+		04C50AB5163434FA00A6C067 /* 067_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50942163434FA00A6C067 /* 067_Unicode.txt */; };
+		04C50AB6163434FA00A6C067 /* 068_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50943163434FA00A6C067 /* 068_Unicode.txt */; };
+		04C50AB7163434FA00A6C067 /* 069_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50944163434FA00A6C067 /* 069_Unicode.txt */; };
+		04C50AB8163434FA00A6C067 /* 070_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50945163434FA00A6C067 /* 070_Unicode.txt */; };
+		04C50AB9163434FA00A6C067 /* 071_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50946163434FA00A6C067 /* 071_Unicode.txt */; };
+		04C50ABA163434FA00A6C067 /* 072_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50947163434FA00A6C067 /* 072_Unicode.txt */; };
+		04C50ABB163434FA00A6C067 /* 073_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50948163434FA00A6C067 /* 073_Unicode.txt */; };
+		04C50ABC163434FA00A6C067 /* 074_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50949163434FA00A6C067 /* 074_Unicode.txt */; };
+		04C50ABD163434FA00A6C067 /* 075_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094A163434FA00A6C067 /* 075_Unicode.txt */; };
+		04C50ABE163434FA00A6C067 /* 076_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094B163434FA00A6C067 /* 076_Unicode.txt */; };
+		04C50ABF163434FA00A6C067 /* 077_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094C163434FA00A6C067 /* 077_Unicode.txt */; };
+		04C50AC0163434FA00A6C067 /* 078_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094D163434FA00A6C067 /* 078_Unicode.txt */; };
+		04C50AC1163434FA00A6C067 /* 079_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094E163434FA00A6C067 /* 079_Unicode.txt */; };
+		04C50AC2163434FA00A6C067 /* 080_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5094F163434FA00A6C067 /* 080_Unicode.txt */; };
+		04C50AC3163434FA00A6C067 /* 081_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50950163434FA00A6C067 /* 081_Unicode.txt */; };
+		04C50AC4163434FA00A6C067 /* 082_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50951163434FA00A6C067 /* 082_Unicode.txt */; };
+		04C50AC5163434FA00A6C067 /* 083_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50952163434FA00A6C067 /* 083_Unicode.txt */; };
+		04C50AC6163434FA00A6C067 /* 084_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50953163434FA00A6C067 /* 084_Unicode.txt */; };
+		04C50AC7163434FA00A6C067 /* 085_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50954163434FA00A6C067 /* 085_Unicode.txt */; };
+		04C50AC8163434FA00A6C067 /* 086_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50955163434FA00A6C067 /* 086_Unicode.txt */; };
+		04C50AC9163434FA00A6C067 /* 087_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50956163434FA00A6C067 /* 087_Unicode.txt */; };
+		04C50ACA163434FA00A6C067 /* 088_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50957163434FA00A6C067 /* 088_Unicode.txt */; };
+		04C50ACB163434FA00A6C067 /* 089_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50958163434FA00A6C067 /* 089_Unicode.txt */; };
+		04C50ACC163434FA00A6C067 /* 090_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50959163434FA00A6C067 /* 090_Unicode.txt */; };
+		04C50ACD163434FA00A6C067 /* 091_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095A163434FA00A6C067 /* 091_Unicode.txt */; };
+		04C50ACE163434FA00A6C067 /* 092_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095B163434FA00A6C067 /* 092_Unicode.txt */; };
+		04C50ACF163434FA00A6C067 /* 093_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095C163434FA00A6C067 /* 093_Unicode.txt */; };
+		04C50AD0163434FA00A6C067 /* 094_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095D163434FA00A6C067 /* 094_Unicode.txt */; };
+		04C50AD1163434FA00A6C067 /* 095_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095E163434FA00A6C067 /* 095_Unicode.txt */; };
+		04C50AD2163434FA00A6C067 /* 096_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5095F163434FA00A6C067 /* 096_Unicode.txt */; };
+		04C50AD3163434FA00A6C067 /* 097_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50960163434FA00A6C067 /* 097_Unicode.txt */; };
+		04C50AD4163434FA00A6C067 /* 098_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50961163434FA00A6C067 /* 098_Unicode.txt */; };
+		04C50AD5163434FA00A6C067 /* 099_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50962163434FA00A6C067 /* 099_Unicode.txt */; };
+		04C50AD6163434FA00A6C067 /* 100_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50963163434FA00A6C067 /* 100_Unicode.txt */; };
+		04C50AD7163434FA00A6C067 /* 101_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50964163434FA00A6C067 /* 101_Unicode.txt */; };
+		04C50AD8163434FA00A6C067 /* 102_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50965163434FA00A6C067 /* 102_Unicode.txt */; };
+		04C50AD9163434FA00A6C067 /* 103_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50966163434FA00A6C067 /* 103_Unicode.txt */; };
+		04C50ADA163434FA00A6C067 /* 104_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50967163434FA00A6C067 /* 104_Unicode.txt */; };
+		04C50ADB163434FA00A6C067 /* 105_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50968163434FA00A6C067 /* 105_Unicode.txt */; };
+		04C50ADC163434FB00A6C067 /* 106_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50969163434FA00A6C067 /* 106_Unicode.txt */; };
+		04C50ADD163434FB00A6C067 /* 107_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096A163434FA00A6C067 /* 107_Unicode.txt */; };
+		04C50ADE163434FB00A6C067 /* 108_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096B163434FA00A6C067 /* 108_Unicode.txt */; };
+		04C50ADF163434FB00A6C067 /* 109_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096C163434FA00A6C067 /* 109_Unicode.txt */; };
+		04C50AE0163434FB00A6C067 /* 110_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096D163434FA00A6C067 /* 110_Unicode.txt */; };
+		04C50AE1163434FB00A6C067 /* 111_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096E163434FA00A6C067 /* 111_Unicode.txt */; };
+		04C50AE2163434FB00A6C067 /* 112_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5096F163434FA00A6C067 /* 112_Unicode.txt */; };
+		04C50AE3163434FB00A6C067 /* 113_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50970163434FA00A6C067 /* 113_Unicode.txt */; };
+		04C50AE4163434FB00A6C067 /* 114_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50971163434FA00A6C067 /* 114_Unicode.txt */; };
+		04C50AE5163434FB00A6C067 /* 115_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50972163434FA00A6C067 /* 115_Unicode.txt */; };
+		04C50AE6163434FB00A6C067 /* 116_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50973163434FA00A6C067 /* 116_Unicode.txt */; };
+		04C50AE7163434FB00A6C067 /* 117_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50974163434FA00A6C067 /* 117_Unicode.txt */; };
+		04C50AE8163434FB00A6C067 /* 118_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50975163434FA00A6C067 /* 118_Unicode.txt */; };
+		04C50AE9163434FB00A6C067 /* 119_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50976163434FA00A6C067 /* 119_Unicode.txt */; };
+		04C50AEA163434FB00A6C067 /* 120_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50977163434FA00A6C067 /* 120_Unicode.txt */; };
+		04C50AEB163434FB00A6C067 /* 121_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50978163434FA00A6C067 /* 121_Unicode.txt */; };
+		04C50AEC163434FB00A6C067 /* 122_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50979163434FA00A6C067 /* 122_Unicode.txt */; };
+		04C50AED163434FB00A6C067 /* 123_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097A163434FA00A6C067 /* 123_Unicode.txt */; };
+		04C50AEE163434FB00A6C067 /* 124_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097B163434FA00A6C067 /* 124_Unicode.txt */; };
+		04C50AEF163434FB00A6C067 /* 125_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097C163434FA00A6C067 /* 125_Unicode.txt */; };
+		04C50AF0163434FB00A6C067 /* 126_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097D163434FA00A6C067 /* 126_Unicode.txt */; };
+		04C50AF1163434FB00A6C067 /* 127_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097E163434FA00A6C067 /* 127_Unicode.txt */; };
+		04C50AF2163434FB00A6C067 /* 128_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5097F163434FA00A6C067 /* 128_Unicode.txt */; };
+		04C50AF3163434FB00A6C067 /* 129_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50980163434FA00A6C067 /* 129_Unicode.txt */; };
+		04C50AF4163434FB00A6C067 /* 130_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50981163434FA00A6C067 /* 130_Unicode.txt */; };
+		04C50AF5163434FB00A6C067 /* 131_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50982163434FA00A6C067 /* 131_Unicode.txt */; };
+		04C50AF6163434FB00A6C067 /* 132_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50983163434FA00A6C067 /* 132_Unicode.txt */; };
+		04C50AF7163434FB00A6C067 /* 133_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50984163434FA00A6C067 /* 133_Unicode.txt */; };
+		04C50AF8163434FB00A6C067 /* 134_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50985163434FA00A6C067 /* 134_Unicode.txt */; };
+		04C50AF9163434FB00A6C067 /* 135_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50986163434FA00A6C067 /* 135_Unicode.txt */; };
+		04C50AFA163434FB00A6C067 /* 136_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50987163434FA00A6C067 /* 136_Unicode.txt */; };
+		04C50AFB163434FB00A6C067 /* 137_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50988163434FA00A6C067 /* 137_Unicode.txt */; };
+		04C50AFC163434FB00A6C067 /* 138_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50989163434FA00A6C067 /* 138_Unicode.txt */; };
+		04C50AFD163434FB00A6C067 /* 139_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098A163434FA00A6C067 /* 139_Unicode.txt */; };
+		04C50AFE163434FB00A6C067 /* 140_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098B163434FA00A6C067 /* 140_Unicode.txt */; };
+		04C50AFF163434FB00A6C067 /* 141_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098C163434FA00A6C067 /* 141_Unicode.txt */; };
+		04C50B00163434FB00A6C067 /* 142_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098D163434FA00A6C067 /* 142_Unicode.txt */; };
+		04C50B01163434FB00A6C067 /* 143_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098E163434FA00A6C067 /* 143_Unicode.txt */; };
+		04C50B02163434FB00A6C067 /* 144_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5098F163434FA00A6C067 /* 144_Unicode.txt */; };
+		04C50B03163434FB00A6C067 /* 145_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50990163434FA00A6C067 /* 145_Unicode.txt */; };
+		04C50B04163434FB00A6C067 /* 146_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50991163434FA00A6C067 /* 146_Unicode.txt */; };
+		04C50B05163434FB00A6C067 /* 147_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50992163434FA00A6C067 /* 147_Unicode.txt */; };
+		04C50B06163434FB00A6C067 /* 148_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50993163434FA00A6C067 /* 148_Unicode.txt */; };
+		04C50B07163434FB00A6C067 /* 149_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50994163434FA00A6C067 /* 149_Unicode.txt */; };
+		04C50B08163434FB00A6C067 /* 150_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50995163434FA00A6C067 /* 150_Unicode.txt */; };
+		04C50B09163434FB00A6C067 /* 151_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50996163434FA00A6C067 /* 151_Unicode.txt */; };
+		04C50B0A163434FB00A6C067 /* 152_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50997163434FA00A6C067 /* 152_Unicode.txt */; };
+		04C50B0B163434FB00A6C067 /* 153_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50998163434FA00A6C067 /* 153_Unicode.txt */; };
+		04C50B0C163434FB00A6C067 /* 154_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50999163434FA00A6C067 /* 154_Unicode.txt */; };
+		04C50B0D163434FB00A6C067 /* 155_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099A163434FA00A6C067 /* 155_Unicode.txt */; };
+		04C50B0E163434FB00A6C067 /* 156_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099B163434FA00A6C067 /* 156_Unicode.txt */; };
+		04C50B0F163434FB00A6C067 /* 157_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099C163434FA00A6C067 /* 157_Unicode.txt */; };
+		04C50B10163434FB00A6C067 /* 158_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099D163434FA00A6C067 /* 158_Unicode.txt */; };
+		04C50B11163434FB00A6C067 /* 159_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099E163434FA00A6C067 /* 159_Unicode.txt */; };
+		04C50B12163434FB00A6C067 /* 160_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C5099F163434FA00A6C067 /* 160_Unicode.txt */; };
+		04C50B13163434FB00A6C067 /* 161_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A0163434FA00A6C067 /* 161_Unicode.txt */; };
+		04C50B14163434FB00A6C067 /* 162_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A1163434FA00A6C067 /* 162_Unicode.txt */; };
+		04C50B15163434FB00A6C067 /* 163_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A2163434FA00A6C067 /* 163_Unicode.txt */; };
+		04C50B16163434FB00A6C067 /* 164_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A3163434FA00A6C067 /* 164_Unicode.txt */; };
+		04C50B17163434FB00A6C067 /* 165_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A4163434FA00A6C067 /* 165_Unicode.txt */; };
+		04C50B18163434FB00A6C067 /* 166_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A5163434FA00A6C067 /* 166_Unicode.txt */; };
+		04C50B19163434FB00A6C067 /* 167_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A6163434FA00A6C067 /* 167_Unicode.txt */; };
+		04C50B1A163434FB00A6C067 /* 168_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A7163434FA00A6C067 /* 168_Unicode.txt */; };
+		04C50B1B163434FB00A6C067 /* 169_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A8163434FA00A6C067 /* 169_Unicode.txt */; };
+		04C50B1C163434FB00A6C067 /* 170_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509A9163434FA00A6C067 /* 170_Unicode.txt */; };
+		04C50B1D163434FB00A6C067 /* 171_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AA163434FA00A6C067 /* 171_Unicode.txt */; };
+		04C50B1E163434FB00A6C067 /* 172_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AB163434FA00A6C067 /* 172_Unicode.txt */; };
+		04C50B1F163434FB00A6C067 /* 173_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AC163434FA00A6C067 /* 173_Unicode.txt */; };
+		04C50B20163434FB00A6C067 /* 174_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AD163434FA00A6C067 /* 174_Unicode.txt */; };
+		04C50B21163434FB00A6C067 /* 175_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AE163434FA00A6C067 /* 175_Unicode.txt */; };
+		04C50B22163434FB00A6C067 /* 176_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509AF163434FA00A6C067 /* 176_Unicode.txt */; };
+		04C50B23163434FB00A6C067 /* 177_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B0163434FA00A6C067 /* 177_Unicode.txt */; };
+		04C50B24163434FB00A6C067 /* 178_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B1163434FA00A6C067 /* 178_Unicode.txt */; };
+		04C50B25163434FB00A6C067 /* 179_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B2163434FA00A6C067 /* 179_Unicode.txt */; };
+		04C50B26163434FB00A6C067 /* 180_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B3163434FA00A6C067 /* 180_Unicode.txt */; };
+		04C50B27163434FB00A6C067 /* 181_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B4163434FA00A6C067 /* 181_Unicode.txt */; };
+		04C50B28163434FB00A6C067 /* 182_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B5163434FA00A6C067 /* 182_Unicode.txt */; };
+		04C50B29163434FB00A6C067 /* 183_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B6163434FA00A6C067 /* 183_Unicode.txt */; };
+		04C50B2A163434FB00A6C067 /* 184_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B7163434FA00A6C067 /* 184_Unicode.txt */; };
+		04C50B2B163434FB00A6C067 /* 185_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B8163434FA00A6C067 /* 185_Unicode.txt */; };
+		04C50B2C163434FB00A6C067 /* 186_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509B9163434FA00A6C067 /* 186_Unicode.txt */; };
+		04C50B2D163434FB00A6C067 /* 187_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BA163434FA00A6C067 /* 187_Unicode.txt */; };
+		04C50B2E163434FB00A6C067 /* 188_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BB163434FA00A6C067 /* 188_Unicode.txt */; };
+		04C50B2F163434FB00A6C067 /* 189_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BC163434FA00A6C067 /* 189_Unicode.txt */; };
+		04C50B30163434FB00A6C067 /* 190_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BD163434FA00A6C067 /* 190_Unicode.txt */; };
+		04C50B31163434FB00A6C067 /* 191_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BE163434FA00A6C067 /* 191_Unicode.txt */; };
+		04C50B32163434FB00A6C067 /* 192_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509BF163434FA00A6C067 /* 192_Unicode.txt */; };
+		04C50B33163434FB00A6C067 /* 193_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C0163434FA00A6C067 /* 193_Unicode.txt */; };
+		04C50B34163434FB00A6C067 /* 194_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C1163434FA00A6C067 /* 194_Unicode.txt */; };
+		04C50B35163434FB00A6C067 /* 195_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C2163434FA00A6C067 /* 195_Unicode.txt */; };
+		04C50B36163434FB00A6C067 /* 196_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C3163434FA00A6C067 /* 196_Unicode.txt */; };
+		04C50B37163434FB00A6C067 /* 197_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C4163434FA00A6C067 /* 197_Unicode.txt */; };
+		04C50B38163434FB00A6C067 /* 198_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C5163434FA00A6C067 /* 198_Unicode.txt */; };
+		04C50B39163434FB00A6C067 /* 199_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C6163434FA00A6C067 /* 199_Unicode.txt */; };
+		04C50B3A163434FB00A6C067 /* 200_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C7163434FA00A6C067 /* 200_Unicode.txt */; };
+		04C50B3B163434FB00A6C067 /* 201_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C8163434FA00A6C067 /* 201_Unicode.txt */; };
+		04C50B3C163434FB00A6C067 /* 202_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509C9163434FA00A6C067 /* 202_Unicode.txt */; };
+		04C50B3D163434FB00A6C067 /* 203_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CA163434FA00A6C067 /* 203_Unicode.txt */; };
+		04C50B3E163434FB00A6C067 /* 204_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CB163434FA00A6C067 /* 204_Unicode.txt */; };
+		04C50B3F163434FB00A6C067 /* 205_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CC163434FA00A6C067 /* 205_Unicode.txt */; };
+		04C50B40163434FB00A6C067 /* 206_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CD163434FA00A6C067 /* 206_Unicode.txt */; };
+		04C50B41163434FB00A6C067 /* 207_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CE163434FA00A6C067 /* 207_Unicode.txt */; };
+		04C50B42163434FB00A6C067 /* 208_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509CF163434FA00A6C067 /* 208_Unicode.txt */; };
+		04C50B43163434FB00A6C067 /* 209_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D0163434FA00A6C067 /* 209_Unicode.txt */; };
+		04C50B44163434FB00A6C067 /* 210_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D1163434FA00A6C067 /* 210_Unicode.txt */; };
+		04C50B45163434FB00A6C067 /* 211_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D2163434FA00A6C067 /* 211_Unicode.txt */; };
+		04C50B46163434FB00A6C067 /* 212_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D3163434FA00A6C067 /* 212_Unicode.txt */; };
+		04C50B47163434FB00A6C067 /* 213_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D4163434FA00A6C067 /* 213_Unicode.txt */; };
+		04C50B48163434FB00A6C067 /* 214_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D5163434FA00A6C067 /* 214_Unicode.txt */; };
+		04C50B49163434FB00A6C067 /* 215_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D6163434FA00A6C067 /* 215_Unicode.txt */; };
+		04C50B4A163434FB00A6C067 /* 216_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D7163434FA00A6C067 /* 216_Unicode.txt */; };
+		04C50B4B163434FB00A6C067 /* 217_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D8163434FA00A6C067 /* 217_Unicode.txt */; };
+		04C50B4C163434FB00A6C067 /* 218_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509D9163434FA00A6C067 /* 218_Unicode.txt */; };
+		04C50B4D163434FB00A6C067 /* 219_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DA163434FA00A6C067 /* 219_Unicode.txt */; };
+		04C50B4E163434FB00A6C067 /* 220_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DB163434FA00A6C067 /* 220_Unicode.txt */; };
+		04C50B4F163434FB00A6C067 /* 221_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DC163434FA00A6C067 /* 221_Unicode.txt */; };
+		04C50B50163434FB00A6C067 /* 222_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DD163434FA00A6C067 /* 222_Unicode.txt */; };
+		04C50B51163434FB00A6C067 /* 223_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DE163434FA00A6C067 /* 223_Unicode.txt */; };
+		04C50B52163434FB00A6C067 /* 224_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509DF163434FA00A6C067 /* 224_Unicode.txt */; };
+		04C50B53163434FB00A6C067 /* 225_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E0163434FA00A6C067 /* 225_Unicode.txt */; };
+		04C50B54163434FB00A6C067 /* 226_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E1163434FA00A6C067 /* 226_Unicode.txt */; };
+		04C50B55163434FB00A6C067 /* 227_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E2163434FA00A6C067 /* 227_Unicode.txt */; };
+		04C50B56163434FB00A6C067 /* 228_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E3163434FA00A6C067 /* 228_Unicode.txt */; };
+		04C50B57163434FB00A6C067 /* 229_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E4163434FA00A6C067 /* 229_Unicode.txt */; };
+		04C50B58163434FB00A6C067 /* 230_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E5163434FA00A6C067 /* 230_Unicode.txt */; };
+		04C50B59163434FB00A6C067 /* 231_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E6163434FA00A6C067 /* 231_Unicode.txt */; };
+		04C50B5A163434FB00A6C067 /* 232_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E7163434FA00A6C067 /* 232_Unicode.txt */; };
+		04C50B5B163434FB00A6C067 /* 233_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E8163434FA00A6C067 /* 233_Unicode.txt */; };
+		04C50B5C163434FB00A6C067 /* 234_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509E9163434FA00A6C067 /* 234_Unicode.txt */; };
+		04C50B5D163434FB00A6C067 /* 235_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509EA163434FA00A6C067 /* 235_Unicode.txt */; };
+		04C50B5E163434FB00A6C067 /* 236_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509EB163434FA00A6C067 /* 236_Unicode.txt */; };
+		04C50B5F163434FB00A6C067 /* 237_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509EC163434FA00A6C067 /* 237_Unicode.txt */; };
+		04C50B60163434FB00A6C067 /* 238_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509ED163434FA00A6C067 /* 238_Unicode.txt */; };
+		04C50B61163434FB00A6C067 /* 239_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509EE163434FA00A6C067 /* 239_Unicode.txt */; };
+		04C50B62163434FB00A6C067 /* 240_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509EF163434FA00A6C067 /* 240_Unicode.txt */; };
+		04C50B63163434FB00A6C067 /* 241_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F0163434FA00A6C067 /* 241_Unicode.txt */; };
+		04C50B64163434FB00A6C067 /* 242_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F1163434FA00A6C067 /* 242_Unicode.txt */; };
+		04C50B65163434FB00A6C067 /* 243_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F2163434FA00A6C067 /* 243_Unicode.txt */; };
+		04C50B66163434FB00A6C067 /* 244_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F3163434FA00A6C067 /* 244_Unicode.txt */; };
+		04C50B67163434FB00A6C067 /* 245_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F4163434FA00A6C067 /* 245_Unicode.txt */; };
+		04C50B68163434FB00A6C067 /* 246_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F5163434FA00A6C067 /* 246_Unicode.txt */; };
+		04C50B69163434FB00A6C067 /* 247_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F6163434FA00A6C067 /* 247_Unicode.txt */; };
+		04C50B6A163434FB00A6C067 /* 248_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F7163434FA00A6C067 /* 248_Unicode.txt */; };
+		04C50B6B163434FB00A6C067 /* 249_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F8163434FA00A6C067 /* 249_Unicode.txt */; };
+		04C50B6C163434FB00A6C067 /* 250_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509F9163434FA00A6C067 /* 250_Unicode.txt */; };
+		04C50B6D163434FB00A6C067 /* 251_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FA163434FA00A6C067 /* 251_Unicode.txt */; };
+		04C50B6E163434FB00A6C067 /* 252_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FB163434FA00A6C067 /* 252_Unicode.txt */; };
+		04C50B6F163434FB00A6C067 /* 253_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FC163434FA00A6C067 /* 253_Unicode.txt */; };
+		04C50B70163434FB00A6C067 /* 254_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FD163434FA00A6C067 /* 254_Unicode.txt */; };
+		04C50B71163434FB00A6C067 /* 255_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FE163434FA00A6C067 /* 255_Unicode.txt */; };
+		04C50B72163434FB00A6C067 /* 256_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C509FF163434FA00A6C067 /* 256_Unicode.txt */; };
+		04C50B73163434FB00A6C067 /* 257_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A00163434FA00A6C067 /* 257_Unicode.txt */; };
+		04C50B74163434FB00A6C067 /* 258_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A01163434FA00A6C067 /* 258_Unicode.txt */; };
+		04C50B75163434FB00A6C067 /* 259_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A02163434FA00A6C067 /* 259_Unicode.txt */; };
+		04C50B76163434FB00A6C067 /* 260_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A03163434FA00A6C067 /* 260_Unicode.txt */; };
+		04C50B77163434FB00A6C067 /* 261_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A04163434FA00A6C067 /* 261_Unicode.txt */; };
+		04C50B78163434FB00A6C067 /* 262_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A05163434FA00A6C067 /* 262_Unicode.txt */; };
+		04C50B79163434FB00A6C067 /* 263_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A06163434FA00A6C067 /* 263_Unicode.txt */; };
+		04C50B7A163434FB00A6C067 /* 264_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A07163434FA00A6C067 /* 264_Unicode.txt */; };
+		04C50B7B163434FB00A6C067 /* 265_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A08163434FA00A6C067 /* 265_Unicode.txt */; };
+		04C50B7C163434FB00A6C067 /* 266_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A09163434FA00A6C067 /* 266_Unicode.txt */; };
+		04C50B7D163434FB00A6C067 /* 267_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0A163434FA00A6C067 /* 267_Unicode.txt */; };
+		04C50B7E163434FB00A6C067 /* 268_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0B163434FA00A6C067 /* 268_Unicode.txt */; };
+		04C50B7F163434FB00A6C067 /* 269_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0C163434FA00A6C067 /* 269_Unicode.txt */; };
+		04C50B80163434FB00A6C067 /* 270_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0D163434FA00A6C067 /* 270_Unicode.txt */; };
+		04C50B81163434FB00A6C067 /* 271_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0E163434FA00A6C067 /* 271_Unicode.txt */; };
+		04C50B82163434FB00A6C067 /* 272_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A0F163434FA00A6C067 /* 272_Unicode.txt */; };
+		04C50B83163434FB00A6C067 /* 273_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A10163434FA00A6C067 /* 273_Unicode.txt */; };
+		04C50B84163434FB00A6C067 /* 274_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A11163434FA00A6C067 /* 274_Unicode.txt */; };
+		04C50B85163434FB00A6C067 /* 275_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A12163434FA00A6C067 /* 275_Unicode.txt */; };
+		04C50B86163434FB00A6C067 /* 276_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A13163434FA00A6C067 /* 276_Unicode.txt */; };
+		04C50B87163434FB00A6C067 /* 277_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A14163434FA00A6C067 /* 277_Unicode.txt */; };
+		04C50B88163434FB00A6C067 /* 278_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A15163434FA00A6C067 /* 278_Unicode.txt */; };
+		04C50B89163434FB00A6C067 /* 279_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A16163434FA00A6C067 /* 279_Unicode.txt */; };
+		04C50B8A163434FB00A6C067 /* 280_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A17163434FA00A6C067 /* 280_Unicode.txt */; };
+		04C50B8B163434FB00A6C067 /* 281_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A18163434FA00A6C067 /* 281_Unicode.txt */; };
+		04C50B8C163434FB00A6C067 /* 282_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A19163434FA00A6C067 /* 282_Unicode.txt */; };
+		04C50B8D163434FB00A6C067 /* 283_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1A163434FA00A6C067 /* 283_Unicode.txt */; };
+		04C50B8E163434FB00A6C067 /* 284_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1B163434FA00A6C067 /* 284_Unicode.txt */; };
+		04C50B8F163434FB00A6C067 /* 285_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1C163434FA00A6C067 /* 285_Unicode.txt */; };
+		04C50B90163434FB00A6C067 /* 286_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1D163434FA00A6C067 /* 286_Unicode.txt */; };
+		04C50B91163434FB00A6C067 /* 287_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1E163434FA00A6C067 /* 287_Unicode.txt */; };
+		04C50B92163434FB00A6C067 /* 288_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A1F163434FA00A6C067 /* 288_Unicode.txt */; };
+		04C50B93163434FB00A6C067 /* 289_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A20163434FA00A6C067 /* 289_Unicode.txt */; };
+		04C50B94163434FB00A6C067 /* 290_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A21163434FA00A6C067 /* 290_Unicode.txt */; };
+		04C50B95163434FB00A6C067 /* 291_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A22163434FA00A6C067 /* 291_Unicode.txt */; };
+		04C50B96163434FB00A6C067 /* 292_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A23163434FA00A6C067 /* 292_Unicode.txt */; };
+		04C50B97163434FB00A6C067 /* 293_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A24163434FA00A6C067 /* 293_Unicode.txt */; };
+		04C50B98163434FB00A6C067 /* 294_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A25163434FA00A6C067 /* 294_Unicode.txt */; };
+		04C50B99163434FB00A6C067 /* 295_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A26163434FA00A6C067 /* 295_Unicode.txt */; };
+		04C50B9A163434FB00A6C067 /* 296_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A27163434FA00A6C067 /* 296_Unicode.txt */; };
+		04C50B9B163434FB00A6C067 /* 297_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A28163434FA00A6C067 /* 297_Unicode.txt */; };
+		04C50B9C163434FB00A6C067 /* 298_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A29163434FA00A6C067 /* 298_Unicode.txt */; };
+		04C50B9D163434FB00A6C067 /* 299_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2A163434FA00A6C067 /* 299_Unicode.txt */; };
+		04C50B9E163434FB00A6C067 /* 300_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2B163434FA00A6C067 /* 300_Unicode.txt */; };
+		04C50B9F163434FB00A6C067 /* 301_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2C163434FA00A6C067 /* 301_Unicode.txt */; };
+		04C50BA0163434FB00A6C067 /* 302_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2D163434FA00A6C067 /* 302_Unicode.txt */; };
+		04C50BA1163434FB00A6C067 /* 303_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2E163434FA00A6C067 /* 303_Unicode.txt */; };
+		04C50BA2163434FB00A6C067 /* 304_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A2F163434FA00A6C067 /* 304_Unicode.txt */; };
+		04C50BA3163434FB00A6C067 /* 305_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A30163434FA00A6C067 /* 305_Unicode.txt */; };
+		04C50BA4163434FB00A6C067 /* 306_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A31163434FA00A6C067 /* 306_Unicode.txt */; };
+		04C50BA5163434FB00A6C067 /* 307_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A32163434FA00A6C067 /* 307_Unicode.txt */; };
+		04C50BA6163434FB00A6C067 /* 308_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A33163434FA00A6C067 /* 308_Unicode.txt */; };
+		04C50BA7163434FB00A6C067 /* 309_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A34163434FA00A6C067 /* 309_Unicode.txt */; };
+		04C50BA8163434FB00A6C067 /* 310_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A35163434FA00A6C067 /* 310_Unicode.txt */; };
+		04C50BA9163434FB00A6C067 /* 311_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A36163434FA00A6C067 /* 311_Unicode.txt */; };
+		04C50BAA163434FB00A6C067 /* 312_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A37163434FA00A6C067 /* 312_Unicode.txt */; };
+		04C50BAB163434FB00A6C067 /* 313_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A38163434FA00A6C067 /* 313_Unicode.txt */; };
+		04C50BAC163434FB00A6C067 /* 314_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A39163434FA00A6C067 /* 314_Unicode.txt */; };
+		04C50BAD163434FB00A6C067 /* 315_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3A163434FA00A6C067 /* 315_Unicode.txt */; };
+		04C50BAE163434FB00A6C067 /* 316_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3B163434FA00A6C067 /* 316_Unicode.txt */; };
+		04C50BAF163434FB00A6C067 /* 317_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3C163434FA00A6C067 /* 317_Unicode.txt */; };
+		04C50BB0163434FB00A6C067 /* 318_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3D163434FA00A6C067 /* 318_Unicode.txt */; };
+		04C50BB1163434FB00A6C067 /* 319_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3E163434FA00A6C067 /* 319_Unicode.txt */; };
+		04C50BB2163434FB00A6C067 /* 320_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A3F163434FA00A6C067 /* 320_Unicode.txt */; };
+		04C50BB3163434FB00A6C067 /* 321_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A40163434FA00A6C067 /* 321_Unicode.txt */; };
+		04C50BB4163434FB00A6C067 /* 322_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A41163434FA00A6C067 /* 322_Unicode.txt */; };
+		04C50BB5163434FB00A6C067 /* 323_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A42163434FA00A6C067 /* 323_Unicode.txt */; };
+		04C50BB6163434FB00A6C067 /* 324_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A43163434FA00A6C067 /* 324_Unicode.txt */; };
+		04C50BB7163434FB00A6C067 /* 325_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A44163434FA00A6C067 /* 325_Unicode.txt */; };
+		04C50BB8163434FB00A6C067 /* 326_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A45163434FA00A6C067 /* 326_Unicode.txt */; };
+		04C50BB9163434FB00A6C067 /* 327_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A46163434FA00A6C067 /* 327_Unicode.txt */; };
+		04C50BBA163434FB00A6C067 /* 328_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A47163434FA00A6C067 /* 328_Unicode.txt */; };
+		04C50BBB163434FB00A6C067 /* 329_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A48163434FA00A6C067 /* 329_Unicode.txt */; };
+		04C50BBC163434FB00A6C067 /* 330_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A49163434FA00A6C067 /* 330_Unicode.txt */; };
+		04C50BBD163434FB00A6C067 /* 331_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4A163434FA00A6C067 /* 331_Unicode.txt */; };
+		04C50BBE163434FB00A6C067 /* 332_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4B163434FA00A6C067 /* 332_Unicode.txt */; };
+		04C50BBF163434FB00A6C067 /* 333_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4C163434FA00A6C067 /* 333_Unicode.txt */; };
+		04C50BC0163434FB00A6C067 /* 334_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4D163434FA00A6C067 /* 334_Unicode.txt */; };
+		04C50BC1163434FB00A6C067 /* 335_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4E163434FA00A6C067 /* 335_Unicode.txt */; };
+		04C50BC2163434FB00A6C067 /* 336_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A4F163434FA00A6C067 /* 336_Unicode.txt */; };
+		04C50BC3163434FB00A6C067 /* 337_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A50163434FA00A6C067 /* 337_Unicode.txt */; };
+		04C50BC4163434FB00A6C067 /* 338_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A51163434FA00A6C067 /* 338_Unicode.txt */; };
+		04C50BC5163434FB00A6C067 /* 339_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A52163434FA00A6C067 /* 339_Unicode.txt */; };
+		04C50BC6163434FB00A6C067 /* 340_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A53163434FA00A6C067 /* 340_Unicode.txt */; };
+		04C50BC7163434FB00A6C067 /* 341_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A54163434FA00A6C067 /* 341_Unicode.txt */; };
+		04C50BC8163434FB00A6C067 /* 342_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A55163434FA00A6C067 /* 342_Unicode.txt */; };
+		04C50BC9163434FB00A6C067 /* 343_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A56163434FA00A6C067 /* 343_Unicode.txt */; };
+		04C50BCA163434FB00A6C067 /* 344_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A57163434FA00A6C067 /* 344_Unicode.txt */; };
+		04C50BCB163434FB00A6C067 /* 345_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A58163434FA00A6C067 /* 345_Unicode.txt */; };
+		04C50BCC163434FB00A6C067 /* 346_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A59163434FA00A6C067 /* 346_Unicode.txt */; };
+		04C50BCD163434FB00A6C067 /* 347_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5A163434FA00A6C067 /* 347_Unicode.txt */; };
+		04C50BCE163434FB00A6C067 /* 348_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5B163434FA00A6C067 /* 348_Unicode.txt */; };
+		04C50BCF163434FB00A6C067 /* 349_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5C163434FA00A6C067 /* 349_Unicode.txt */; };
+		04C50BD0163434FB00A6C067 /* 350_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5D163434FA00A6C067 /* 350_Unicode.txt */; };
+		04C50BD1163434FB00A6C067 /* 351_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5E163434FA00A6C067 /* 351_Unicode.txt */; };
+		04C50BD2163434FB00A6C067 /* 352_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A5F163434FA00A6C067 /* 352_Unicode.txt */; };
+		04C50BD3163434FB00A6C067 /* 353_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A60163434FA00A6C067 /* 353_Unicode.txt */; };
+		04C50BD4163434FB00A6C067 /* 354_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A61163434FA00A6C067 /* 354_Unicode.txt */; };
+		04C50BD5163434FB00A6C067 /* 355_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A62163434FA00A6C067 /* 355_Unicode.txt */; };
+		04C50BD6163434FB00A6C067 /* 356_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A63163434FA00A6C067 /* 356_Unicode.txt */; };
+		04C50BD7163434FB00A6C067 /* 357_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A64163434FA00A6C067 /* 357_Unicode.txt */; };
+		04C50BD8163434FB00A6C067 /* 358_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A65163434FA00A6C067 /* 358_Unicode.txt */; };
+		04C50BD9163434FB00A6C067 /* 359_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A66163434FA00A6C067 /* 359_Unicode.txt */; };
+		04C50BDA163434FB00A6C067 /* 360_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A67163434FA00A6C067 /* 360_Unicode.txt */; };
+		04C50BDB163434FB00A6C067 /* 361_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A68163434FA00A6C067 /* 361_Unicode.txt */; };
+		04C50BDC163434FB00A6C067 /* 362_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A69163434FA00A6C067 /* 362_Unicode.txt */; };
+		04C50BDD163434FB00A6C067 /* 363_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6A163434FA00A6C067 /* 363_Unicode.txt */; };
+		04C50BDE163434FB00A6C067 /* 364_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6B163434FA00A6C067 /* 364_Unicode.txt */; };
+		04C50BDF163434FB00A6C067 /* 365_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6C163434FA00A6C067 /* 365_Unicode.txt */; };
+		04C50BE0163434FB00A6C067 /* 366_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6D163434FA00A6C067 /* 366_Unicode.txt */; };
+		04C50BE1163434FB00A6C067 /* 367_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6E163434FA00A6C067 /* 367_Unicode.txt */; };
+		04C50BE2163434FB00A6C067 /* 368_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A6F163434FA00A6C067 /* 368_Unicode.txt */; };
+		04C50BE3163434FB00A6C067 /* 369_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A70163434FA00A6C067 /* 369_Unicode.txt */; };
+		04C50BE4163434FB00A6C067 /* 370_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04C50A71163434FA00A6C067 /* 370_Unicode.txt */; };
+		04C50C001635FBA800A6C067 /* YouMiViewController_200x200.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BE81635FBA800A6C067 /* YouMiViewController_200x200.m */; };
+		04C50C011635FBA800A6C067 /* YouMiViewController_300x250.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEA1635FBA800A6C067 /* YouMiViewController_300x250.m */; };
+		04C50C021635FBA800A6C067 /* YouMiViewController_320x50.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEC1635FBA800A6C067 /* YouMiViewController_320x50.m */; };
+		04C50C031635FBA800A6C067 /* YouMiViewController_468x60.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEE1635FBA800A6C067 /* YouMiViewController_468x60.m */; };
+		04C50C041635FBA800A6C067 /* YouMiViewController_728x90.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BF01635FBA800A6C067 /* YouMiViewController_728x90.m */; };
+		04C50C051635FBA800A6C067 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C50BFF1635FBA800A6C067 /* libYouMi.a */; };
 		1811EE1111D015E20068DA4C /* LightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811EE0011D015E20068DA4C /* LightBackground.png */; };
 		1811EE1211D015E20068DA4C /* MathGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811EE0111D015E20068DA4C /* MathGraph.png */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -154,7 +531,6 @@
 		309EE15814069C85000578C7 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 309EE15714069C85000578C7 /* icon-72.png */; };
 		309FE66714031807007CC103 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FE66614031807007CC103 /* ModalViewController.m */; };
 		309FE66A1403187B007CC103 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 309FE6691403187B007CC103 /* ModalViewController.xib */; };
-		309FEFCE15629A8A00CC3B0F /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 309FEFCD15629A8A00CC3B0F /* libYouMi.a */; };
 		309FEFD115629ABA00CC3B0F /* RewardedWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FEFD015629ABA00CC3B0F /* RewardedWallViewController.m */; };
 		30A13F75156AFE7900021AB5 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A13EEB156AFE7900021AB5 /* NSDataAdditions.m */; };
 		30A13F76156AFE7900021AB5 /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A13EED156AFE7900021AB5 /* NSDictionaryAdditions.m */; };
@@ -367,6 +743,398 @@
 		049841E21632011D005694D2 /* QiuShi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuShi.h; sourceTree = "<group>"; };
 		049841E31632011D005694D2 /* QiuShi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuShi.m; sourceTree = "<group>"; };
 		0498427E16320E2F005694D2 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
+		04C508FF163434FA00A6C067 /* 000_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 000_Unicode.txt; sourceTree = "<group>"; };
+		04C50900163434FA00A6C067 /* 001_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 001_Unicode.txt; sourceTree = "<group>"; };
+		04C50901163434FA00A6C067 /* 002_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 002_Unicode.txt; sourceTree = "<group>"; };
+		04C50902163434FA00A6C067 /* 003_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 003_Unicode.txt; sourceTree = "<group>"; };
+		04C50903163434FA00A6C067 /* 004_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 004_Unicode.txt; sourceTree = "<group>"; };
+		04C50904163434FA00A6C067 /* 005_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 005_Unicode.txt; sourceTree = "<group>"; };
+		04C50905163434FA00A6C067 /* 006_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 006_Unicode.txt; sourceTree = "<group>"; };
+		04C50906163434FA00A6C067 /* 007_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 007_Unicode.txt; sourceTree = "<group>"; };
+		04C50907163434FA00A6C067 /* 008_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 008_Unicode.txt; sourceTree = "<group>"; };
+		04C50908163434FA00A6C067 /* 009_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 009_Unicode.txt; sourceTree = "<group>"; };
+		04C50909163434FA00A6C067 /* 010_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 010_Unicode.txt; sourceTree = "<group>"; };
+		04C5090A163434FA00A6C067 /* 011_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 011_Unicode.txt; sourceTree = "<group>"; };
+		04C5090B163434FA00A6C067 /* 012_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 012_Unicode.txt; sourceTree = "<group>"; };
+		04C5090C163434FA00A6C067 /* 013_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 013_Unicode.txt; sourceTree = "<group>"; };
+		04C5090D163434FA00A6C067 /* 014_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 014_Unicode.txt; sourceTree = "<group>"; };
+		04C5090E163434FA00A6C067 /* 015_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 015_Unicode.txt; sourceTree = "<group>"; };
+		04C5090F163434FA00A6C067 /* 016_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 016_Unicode.txt; sourceTree = "<group>"; };
+		04C50910163434FA00A6C067 /* 017_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 017_Unicode.txt; sourceTree = "<group>"; };
+		04C50911163434FA00A6C067 /* 018_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 018_Unicode.txt; sourceTree = "<group>"; };
+		04C50912163434FA00A6C067 /* 019_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 019_Unicode.txt; sourceTree = "<group>"; };
+		04C50913163434FA00A6C067 /* 020_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 020_Unicode.txt; sourceTree = "<group>"; };
+		04C50914163434FA00A6C067 /* 021_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 021_Unicode.txt; sourceTree = "<group>"; };
+		04C50915163434FA00A6C067 /* 022_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 022_Unicode.txt; sourceTree = "<group>"; };
+		04C50916163434FA00A6C067 /* 023_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 023_Unicode.txt; sourceTree = "<group>"; };
+		04C50917163434FA00A6C067 /* 024_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 024_Unicode.txt; sourceTree = "<group>"; };
+		04C50918163434FA00A6C067 /* 025_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 025_Unicode.txt; sourceTree = "<group>"; };
+		04C50919163434FA00A6C067 /* 026_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 026_Unicode.txt; sourceTree = "<group>"; };
+		04C5091A163434FA00A6C067 /* 027_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 027_Unicode.txt; sourceTree = "<group>"; };
+		04C5091B163434FA00A6C067 /* 028_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 028_Unicode.txt; sourceTree = "<group>"; };
+		04C5091C163434FA00A6C067 /* 029_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 029_Unicode.txt; sourceTree = "<group>"; };
+		04C5091D163434FA00A6C067 /* 030_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 030_Unicode.txt; sourceTree = "<group>"; };
+		04C5091E163434FA00A6C067 /* 031_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 031_Unicode.txt; sourceTree = "<group>"; };
+		04C5091F163434FA00A6C067 /* 032_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 032_Unicode.txt; sourceTree = "<group>"; };
+		04C50920163434FA00A6C067 /* 033_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 033_Unicode.txt; sourceTree = "<group>"; };
+		04C50921163434FA00A6C067 /* 034_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 034_Unicode.txt; sourceTree = "<group>"; };
+		04C50922163434FA00A6C067 /* 035_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 035_Unicode.txt; sourceTree = "<group>"; };
+		04C50923163434FA00A6C067 /* 036_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 036_Unicode.txt; sourceTree = "<group>"; };
+		04C50924163434FA00A6C067 /* 037_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 037_Unicode.txt; sourceTree = "<group>"; };
+		04C50925163434FA00A6C067 /* 038_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 038_Unicode.txt; sourceTree = "<group>"; };
+		04C50926163434FA00A6C067 /* 039_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 039_Unicode.txt; sourceTree = "<group>"; };
+		04C50927163434FA00A6C067 /* 040_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 040_Unicode.txt; sourceTree = "<group>"; };
+		04C50928163434FA00A6C067 /* 041_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 041_Unicode.txt; sourceTree = "<group>"; };
+		04C50929163434FA00A6C067 /* 042_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 042_Unicode.txt; sourceTree = "<group>"; };
+		04C5092A163434FA00A6C067 /* 043_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 043_Unicode.txt; sourceTree = "<group>"; };
+		04C5092B163434FA00A6C067 /* 044_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 044_Unicode.txt; sourceTree = "<group>"; };
+		04C5092C163434FA00A6C067 /* 045_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 045_Unicode.txt; sourceTree = "<group>"; };
+		04C5092D163434FA00A6C067 /* 046_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 046_Unicode.txt; sourceTree = "<group>"; };
+		04C5092E163434FA00A6C067 /* 047_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 047_Unicode.txt; sourceTree = "<group>"; };
+		04C5092F163434FA00A6C067 /* 048_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 048_Unicode.txt; sourceTree = "<group>"; };
+		04C50930163434FA00A6C067 /* 049_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 049_Unicode.txt; sourceTree = "<group>"; };
+		04C50931163434FA00A6C067 /* 050_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 050_Unicode.txt; sourceTree = "<group>"; };
+		04C50932163434FA00A6C067 /* 051_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 051_Unicode.txt; sourceTree = "<group>"; };
+		04C50933163434FA00A6C067 /* 052_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 052_Unicode.txt; sourceTree = "<group>"; };
+		04C50934163434FA00A6C067 /* 053_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 053_Unicode.txt; sourceTree = "<group>"; };
+		04C50935163434FA00A6C067 /* 054_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 054_Unicode.txt; sourceTree = "<group>"; };
+		04C50936163434FA00A6C067 /* 055_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 055_Unicode.txt; sourceTree = "<group>"; };
+		04C50937163434FA00A6C067 /* 056_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 056_Unicode.txt; sourceTree = "<group>"; };
+		04C50938163434FA00A6C067 /* 057_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 057_Unicode.txt; sourceTree = "<group>"; };
+		04C50939163434FA00A6C067 /* 058_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 058_Unicode.txt; sourceTree = "<group>"; };
+		04C5093A163434FA00A6C067 /* 059_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 059_Unicode.txt; sourceTree = "<group>"; };
+		04C5093B163434FA00A6C067 /* 060_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 060_Unicode.txt; sourceTree = "<group>"; };
+		04C5093C163434FA00A6C067 /* 061_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 061_Unicode.txt; sourceTree = "<group>"; };
+		04C5093D163434FA00A6C067 /* 062_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 062_Unicode.txt; sourceTree = "<group>"; };
+		04C5093E163434FA00A6C067 /* 063_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 063_Unicode.txt; sourceTree = "<group>"; };
+		04C5093F163434FA00A6C067 /* 064_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 064_Unicode.txt; sourceTree = "<group>"; };
+		04C50940163434FA00A6C067 /* 065_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 065_Unicode.txt; sourceTree = "<group>"; };
+		04C50941163434FA00A6C067 /* 066_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 066_Unicode.txt; sourceTree = "<group>"; };
+		04C50942163434FA00A6C067 /* 067_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 067_Unicode.txt; sourceTree = "<group>"; };
+		04C50943163434FA00A6C067 /* 068_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 068_Unicode.txt; sourceTree = "<group>"; };
+		04C50944163434FA00A6C067 /* 069_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 069_Unicode.txt; sourceTree = "<group>"; };
+		04C50945163434FA00A6C067 /* 070_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 070_Unicode.txt; sourceTree = "<group>"; };
+		04C50946163434FA00A6C067 /* 071_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 071_Unicode.txt; sourceTree = "<group>"; };
+		04C50947163434FA00A6C067 /* 072_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 072_Unicode.txt; sourceTree = "<group>"; };
+		04C50948163434FA00A6C067 /* 073_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 073_Unicode.txt; sourceTree = "<group>"; };
+		04C50949163434FA00A6C067 /* 074_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 074_Unicode.txt; sourceTree = "<group>"; };
+		04C5094A163434FA00A6C067 /* 075_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 075_Unicode.txt; sourceTree = "<group>"; };
+		04C5094B163434FA00A6C067 /* 076_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 076_Unicode.txt; sourceTree = "<group>"; };
+		04C5094C163434FA00A6C067 /* 077_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 077_Unicode.txt; sourceTree = "<group>"; };
+		04C5094D163434FA00A6C067 /* 078_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 078_Unicode.txt; sourceTree = "<group>"; };
+		04C5094E163434FA00A6C067 /* 079_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 079_Unicode.txt; sourceTree = "<group>"; };
+		04C5094F163434FA00A6C067 /* 080_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 080_Unicode.txt; sourceTree = "<group>"; };
+		04C50950163434FA00A6C067 /* 081_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 081_Unicode.txt; sourceTree = "<group>"; };
+		04C50951163434FA00A6C067 /* 082_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 082_Unicode.txt; sourceTree = "<group>"; };
+		04C50952163434FA00A6C067 /* 083_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 083_Unicode.txt; sourceTree = "<group>"; };
+		04C50953163434FA00A6C067 /* 084_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 084_Unicode.txt; sourceTree = "<group>"; };
+		04C50954163434FA00A6C067 /* 085_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 085_Unicode.txt; sourceTree = "<group>"; };
+		04C50955163434FA00A6C067 /* 086_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 086_Unicode.txt; sourceTree = "<group>"; };
+		04C50956163434FA00A6C067 /* 087_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 087_Unicode.txt; sourceTree = "<group>"; };
+		04C50957163434FA00A6C067 /* 088_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 088_Unicode.txt; sourceTree = "<group>"; };
+		04C50958163434FA00A6C067 /* 089_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 089_Unicode.txt; sourceTree = "<group>"; };
+		04C50959163434FA00A6C067 /* 090_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 090_Unicode.txt; sourceTree = "<group>"; };
+		04C5095A163434FA00A6C067 /* 091_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 091_Unicode.txt; sourceTree = "<group>"; };
+		04C5095B163434FA00A6C067 /* 092_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 092_Unicode.txt; sourceTree = "<group>"; };
+		04C5095C163434FA00A6C067 /* 093_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 093_Unicode.txt; sourceTree = "<group>"; };
+		04C5095D163434FA00A6C067 /* 094_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 094_Unicode.txt; sourceTree = "<group>"; };
+		04C5095E163434FA00A6C067 /* 095_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 095_Unicode.txt; sourceTree = "<group>"; };
+		04C5095F163434FA00A6C067 /* 096_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 096_Unicode.txt; sourceTree = "<group>"; };
+		04C50960163434FA00A6C067 /* 097_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 097_Unicode.txt; sourceTree = "<group>"; };
+		04C50961163434FA00A6C067 /* 098_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 098_Unicode.txt; sourceTree = "<group>"; };
+		04C50962163434FA00A6C067 /* 099_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 099_Unicode.txt; sourceTree = "<group>"; };
+		04C50963163434FA00A6C067 /* 100_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 100_Unicode.txt; sourceTree = "<group>"; };
+		04C50964163434FA00A6C067 /* 101_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 101_Unicode.txt; sourceTree = "<group>"; };
+		04C50965163434FA00A6C067 /* 102_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 102_Unicode.txt; sourceTree = "<group>"; };
+		04C50966163434FA00A6C067 /* 103_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 103_Unicode.txt; sourceTree = "<group>"; };
+		04C50967163434FA00A6C067 /* 104_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 104_Unicode.txt; sourceTree = "<group>"; };
+		04C50968163434FA00A6C067 /* 105_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 105_Unicode.txt; sourceTree = "<group>"; };
+		04C50969163434FA00A6C067 /* 106_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 106_Unicode.txt; sourceTree = "<group>"; };
+		04C5096A163434FA00A6C067 /* 107_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 107_Unicode.txt; sourceTree = "<group>"; };
+		04C5096B163434FA00A6C067 /* 108_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 108_Unicode.txt; sourceTree = "<group>"; };
+		04C5096C163434FA00A6C067 /* 109_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 109_Unicode.txt; sourceTree = "<group>"; };
+		04C5096D163434FA00A6C067 /* 110_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 110_Unicode.txt; sourceTree = "<group>"; };
+		04C5096E163434FA00A6C067 /* 111_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 111_Unicode.txt; sourceTree = "<group>"; };
+		04C5096F163434FA00A6C067 /* 112_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 112_Unicode.txt; sourceTree = "<group>"; };
+		04C50970163434FA00A6C067 /* 113_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 113_Unicode.txt; sourceTree = "<group>"; };
+		04C50971163434FA00A6C067 /* 114_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 114_Unicode.txt; sourceTree = "<group>"; };
+		04C50972163434FA00A6C067 /* 115_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 115_Unicode.txt; sourceTree = "<group>"; };
+		04C50973163434FA00A6C067 /* 116_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 116_Unicode.txt; sourceTree = "<group>"; };
+		04C50974163434FA00A6C067 /* 117_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 117_Unicode.txt; sourceTree = "<group>"; };
+		04C50975163434FA00A6C067 /* 118_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 118_Unicode.txt; sourceTree = "<group>"; };
+		04C50976163434FA00A6C067 /* 119_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 119_Unicode.txt; sourceTree = "<group>"; };
+		04C50977163434FA00A6C067 /* 120_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 120_Unicode.txt; sourceTree = "<group>"; };
+		04C50978163434FA00A6C067 /* 121_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 121_Unicode.txt; sourceTree = "<group>"; };
+		04C50979163434FA00A6C067 /* 122_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 122_Unicode.txt; sourceTree = "<group>"; };
+		04C5097A163434FA00A6C067 /* 123_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 123_Unicode.txt; sourceTree = "<group>"; };
+		04C5097B163434FA00A6C067 /* 124_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 124_Unicode.txt; sourceTree = "<group>"; };
+		04C5097C163434FA00A6C067 /* 125_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 125_Unicode.txt; sourceTree = "<group>"; };
+		04C5097D163434FA00A6C067 /* 126_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 126_Unicode.txt; sourceTree = "<group>"; };
+		04C5097E163434FA00A6C067 /* 127_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 127_Unicode.txt; sourceTree = "<group>"; };
+		04C5097F163434FA00A6C067 /* 128_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 128_Unicode.txt; sourceTree = "<group>"; };
+		04C50980163434FA00A6C067 /* 129_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 129_Unicode.txt; sourceTree = "<group>"; };
+		04C50981163434FA00A6C067 /* 130_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 130_Unicode.txt; sourceTree = "<group>"; };
+		04C50982163434FA00A6C067 /* 131_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 131_Unicode.txt; sourceTree = "<group>"; };
+		04C50983163434FA00A6C067 /* 132_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 132_Unicode.txt; sourceTree = "<group>"; };
+		04C50984163434FA00A6C067 /* 133_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 133_Unicode.txt; sourceTree = "<group>"; };
+		04C50985163434FA00A6C067 /* 134_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 134_Unicode.txt; sourceTree = "<group>"; };
+		04C50986163434FA00A6C067 /* 135_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 135_Unicode.txt; sourceTree = "<group>"; };
+		04C50987163434FA00A6C067 /* 136_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 136_Unicode.txt; sourceTree = "<group>"; };
+		04C50988163434FA00A6C067 /* 137_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 137_Unicode.txt; sourceTree = "<group>"; };
+		04C50989163434FA00A6C067 /* 138_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 138_Unicode.txt; sourceTree = "<group>"; };
+		04C5098A163434FA00A6C067 /* 139_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 139_Unicode.txt; sourceTree = "<group>"; };
+		04C5098B163434FA00A6C067 /* 140_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 140_Unicode.txt; sourceTree = "<group>"; };
+		04C5098C163434FA00A6C067 /* 141_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 141_Unicode.txt; sourceTree = "<group>"; };
+		04C5098D163434FA00A6C067 /* 142_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 142_Unicode.txt; sourceTree = "<group>"; };
+		04C5098E163434FA00A6C067 /* 143_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 143_Unicode.txt; sourceTree = "<group>"; };
+		04C5098F163434FA00A6C067 /* 144_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 144_Unicode.txt; sourceTree = "<group>"; };
+		04C50990163434FA00A6C067 /* 145_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 145_Unicode.txt; sourceTree = "<group>"; };
+		04C50991163434FA00A6C067 /* 146_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 146_Unicode.txt; sourceTree = "<group>"; };
+		04C50992163434FA00A6C067 /* 147_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 147_Unicode.txt; sourceTree = "<group>"; };
+		04C50993163434FA00A6C067 /* 148_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 148_Unicode.txt; sourceTree = "<group>"; };
+		04C50994163434FA00A6C067 /* 149_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 149_Unicode.txt; sourceTree = "<group>"; };
+		04C50995163434FA00A6C067 /* 150_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 150_Unicode.txt; sourceTree = "<group>"; };
+		04C50996163434FA00A6C067 /* 151_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 151_Unicode.txt; sourceTree = "<group>"; };
+		04C50997163434FA00A6C067 /* 152_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 152_Unicode.txt; sourceTree = "<group>"; };
+		04C50998163434FA00A6C067 /* 153_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 153_Unicode.txt; sourceTree = "<group>"; };
+		04C50999163434FA00A6C067 /* 154_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 154_Unicode.txt; sourceTree = "<group>"; };
+		04C5099A163434FA00A6C067 /* 155_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 155_Unicode.txt; sourceTree = "<group>"; };
+		04C5099B163434FA00A6C067 /* 156_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 156_Unicode.txt; sourceTree = "<group>"; };
+		04C5099C163434FA00A6C067 /* 157_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 157_Unicode.txt; sourceTree = "<group>"; };
+		04C5099D163434FA00A6C067 /* 158_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 158_Unicode.txt; sourceTree = "<group>"; };
+		04C5099E163434FA00A6C067 /* 159_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 159_Unicode.txt; sourceTree = "<group>"; };
+		04C5099F163434FA00A6C067 /* 160_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 160_Unicode.txt; sourceTree = "<group>"; };
+		04C509A0163434FA00A6C067 /* 161_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 161_Unicode.txt; sourceTree = "<group>"; };
+		04C509A1163434FA00A6C067 /* 162_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 162_Unicode.txt; sourceTree = "<group>"; };
+		04C509A2163434FA00A6C067 /* 163_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 163_Unicode.txt; sourceTree = "<group>"; };
+		04C509A3163434FA00A6C067 /* 164_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 164_Unicode.txt; sourceTree = "<group>"; };
+		04C509A4163434FA00A6C067 /* 165_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 165_Unicode.txt; sourceTree = "<group>"; };
+		04C509A5163434FA00A6C067 /* 166_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 166_Unicode.txt; sourceTree = "<group>"; };
+		04C509A6163434FA00A6C067 /* 167_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 167_Unicode.txt; sourceTree = "<group>"; };
+		04C509A7163434FA00A6C067 /* 168_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 168_Unicode.txt; sourceTree = "<group>"; };
+		04C509A8163434FA00A6C067 /* 169_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 169_Unicode.txt; sourceTree = "<group>"; };
+		04C509A9163434FA00A6C067 /* 170_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 170_Unicode.txt; sourceTree = "<group>"; };
+		04C509AA163434FA00A6C067 /* 171_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 171_Unicode.txt; sourceTree = "<group>"; };
+		04C509AB163434FA00A6C067 /* 172_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 172_Unicode.txt; sourceTree = "<group>"; };
+		04C509AC163434FA00A6C067 /* 173_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 173_Unicode.txt; sourceTree = "<group>"; };
+		04C509AD163434FA00A6C067 /* 174_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 174_Unicode.txt; sourceTree = "<group>"; };
+		04C509AE163434FA00A6C067 /* 175_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 175_Unicode.txt; sourceTree = "<group>"; };
+		04C509AF163434FA00A6C067 /* 176_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 176_Unicode.txt; sourceTree = "<group>"; };
+		04C509B0163434FA00A6C067 /* 177_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 177_Unicode.txt; sourceTree = "<group>"; };
+		04C509B1163434FA00A6C067 /* 178_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 178_Unicode.txt; sourceTree = "<group>"; };
+		04C509B2163434FA00A6C067 /* 179_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 179_Unicode.txt; sourceTree = "<group>"; };
+		04C509B3163434FA00A6C067 /* 180_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 180_Unicode.txt; sourceTree = "<group>"; };
+		04C509B4163434FA00A6C067 /* 181_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 181_Unicode.txt; sourceTree = "<group>"; };
+		04C509B5163434FA00A6C067 /* 182_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 182_Unicode.txt; sourceTree = "<group>"; };
+		04C509B6163434FA00A6C067 /* 183_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 183_Unicode.txt; sourceTree = "<group>"; };
+		04C509B7163434FA00A6C067 /* 184_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 184_Unicode.txt; sourceTree = "<group>"; };
+		04C509B8163434FA00A6C067 /* 185_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 185_Unicode.txt; sourceTree = "<group>"; };
+		04C509B9163434FA00A6C067 /* 186_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 186_Unicode.txt; sourceTree = "<group>"; };
+		04C509BA163434FA00A6C067 /* 187_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 187_Unicode.txt; sourceTree = "<group>"; };
+		04C509BB163434FA00A6C067 /* 188_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 188_Unicode.txt; sourceTree = "<group>"; };
+		04C509BC163434FA00A6C067 /* 189_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 189_Unicode.txt; sourceTree = "<group>"; };
+		04C509BD163434FA00A6C067 /* 190_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 190_Unicode.txt; sourceTree = "<group>"; };
+		04C509BE163434FA00A6C067 /* 191_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 191_Unicode.txt; sourceTree = "<group>"; };
+		04C509BF163434FA00A6C067 /* 192_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 192_Unicode.txt; sourceTree = "<group>"; };
+		04C509C0163434FA00A6C067 /* 193_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 193_Unicode.txt; sourceTree = "<group>"; };
+		04C509C1163434FA00A6C067 /* 194_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 194_Unicode.txt; sourceTree = "<group>"; };
+		04C509C2163434FA00A6C067 /* 195_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 195_Unicode.txt; sourceTree = "<group>"; };
+		04C509C3163434FA00A6C067 /* 196_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 196_Unicode.txt; sourceTree = "<group>"; };
+		04C509C4163434FA00A6C067 /* 197_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 197_Unicode.txt; sourceTree = "<group>"; };
+		04C509C5163434FA00A6C067 /* 198_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 198_Unicode.txt; sourceTree = "<group>"; };
+		04C509C6163434FA00A6C067 /* 199_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 199_Unicode.txt; sourceTree = "<group>"; };
+		04C509C7163434FA00A6C067 /* 200_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 200_Unicode.txt; sourceTree = "<group>"; };
+		04C509C8163434FA00A6C067 /* 201_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 201_Unicode.txt; sourceTree = "<group>"; };
+		04C509C9163434FA00A6C067 /* 202_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 202_Unicode.txt; sourceTree = "<group>"; };
+		04C509CA163434FA00A6C067 /* 203_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 203_Unicode.txt; sourceTree = "<group>"; };
+		04C509CB163434FA00A6C067 /* 204_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 204_Unicode.txt; sourceTree = "<group>"; };
+		04C509CC163434FA00A6C067 /* 205_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 205_Unicode.txt; sourceTree = "<group>"; };
+		04C509CD163434FA00A6C067 /* 206_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 206_Unicode.txt; sourceTree = "<group>"; };
+		04C509CE163434FA00A6C067 /* 207_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 207_Unicode.txt; sourceTree = "<group>"; };
+		04C509CF163434FA00A6C067 /* 208_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 208_Unicode.txt; sourceTree = "<group>"; };
+		04C509D0163434FA00A6C067 /* 209_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 209_Unicode.txt; sourceTree = "<group>"; };
+		04C509D1163434FA00A6C067 /* 210_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 210_Unicode.txt; sourceTree = "<group>"; };
+		04C509D2163434FA00A6C067 /* 211_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 211_Unicode.txt; sourceTree = "<group>"; };
+		04C509D3163434FA00A6C067 /* 212_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 212_Unicode.txt; sourceTree = "<group>"; };
+		04C509D4163434FA00A6C067 /* 213_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 213_Unicode.txt; sourceTree = "<group>"; };
+		04C509D5163434FA00A6C067 /* 214_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 214_Unicode.txt; sourceTree = "<group>"; };
+		04C509D6163434FA00A6C067 /* 215_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 215_Unicode.txt; sourceTree = "<group>"; };
+		04C509D7163434FA00A6C067 /* 216_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 216_Unicode.txt; sourceTree = "<group>"; };
+		04C509D8163434FA00A6C067 /* 217_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 217_Unicode.txt; sourceTree = "<group>"; };
+		04C509D9163434FA00A6C067 /* 218_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 218_Unicode.txt; sourceTree = "<group>"; };
+		04C509DA163434FA00A6C067 /* 219_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 219_Unicode.txt; sourceTree = "<group>"; };
+		04C509DB163434FA00A6C067 /* 220_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 220_Unicode.txt; sourceTree = "<group>"; };
+		04C509DC163434FA00A6C067 /* 221_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 221_Unicode.txt; sourceTree = "<group>"; };
+		04C509DD163434FA00A6C067 /* 222_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 222_Unicode.txt; sourceTree = "<group>"; };
+		04C509DE163434FA00A6C067 /* 223_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 223_Unicode.txt; sourceTree = "<group>"; };
+		04C509DF163434FA00A6C067 /* 224_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 224_Unicode.txt; sourceTree = "<group>"; };
+		04C509E0163434FA00A6C067 /* 225_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 225_Unicode.txt; sourceTree = "<group>"; };
+		04C509E1163434FA00A6C067 /* 226_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 226_Unicode.txt; sourceTree = "<group>"; };
+		04C509E2163434FA00A6C067 /* 227_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 227_Unicode.txt; sourceTree = "<group>"; };
+		04C509E3163434FA00A6C067 /* 228_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 228_Unicode.txt; sourceTree = "<group>"; };
+		04C509E4163434FA00A6C067 /* 229_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 229_Unicode.txt; sourceTree = "<group>"; };
+		04C509E5163434FA00A6C067 /* 230_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 230_Unicode.txt; sourceTree = "<group>"; };
+		04C509E6163434FA00A6C067 /* 231_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 231_Unicode.txt; sourceTree = "<group>"; };
+		04C509E7163434FA00A6C067 /* 232_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 232_Unicode.txt; sourceTree = "<group>"; };
+		04C509E8163434FA00A6C067 /* 233_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 233_Unicode.txt; sourceTree = "<group>"; };
+		04C509E9163434FA00A6C067 /* 234_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 234_Unicode.txt; sourceTree = "<group>"; };
+		04C509EA163434FA00A6C067 /* 235_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 235_Unicode.txt; sourceTree = "<group>"; };
+		04C509EB163434FA00A6C067 /* 236_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 236_Unicode.txt; sourceTree = "<group>"; };
+		04C509EC163434FA00A6C067 /* 237_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 237_Unicode.txt; sourceTree = "<group>"; };
+		04C509ED163434FA00A6C067 /* 238_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 238_Unicode.txt; sourceTree = "<group>"; };
+		04C509EE163434FA00A6C067 /* 239_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 239_Unicode.txt; sourceTree = "<group>"; };
+		04C509EF163434FA00A6C067 /* 240_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 240_Unicode.txt; sourceTree = "<group>"; };
+		04C509F0163434FA00A6C067 /* 241_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 241_Unicode.txt; sourceTree = "<group>"; };
+		04C509F1163434FA00A6C067 /* 242_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 242_Unicode.txt; sourceTree = "<group>"; };
+		04C509F2163434FA00A6C067 /* 243_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 243_Unicode.txt; sourceTree = "<group>"; };
+		04C509F3163434FA00A6C067 /* 244_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 244_Unicode.txt; sourceTree = "<group>"; };
+		04C509F4163434FA00A6C067 /* 245_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 245_Unicode.txt; sourceTree = "<group>"; };
+		04C509F5163434FA00A6C067 /* 246_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 246_Unicode.txt; sourceTree = "<group>"; };
+		04C509F6163434FA00A6C067 /* 247_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 247_Unicode.txt; sourceTree = "<group>"; };
+		04C509F7163434FA00A6C067 /* 248_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 248_Unicode.txt; sourceTree = "<group>"; };
+		04C509F8163434FA00A6C067 /* 249_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 249_Unicode.txt; sourceTree = "<group>"; };
+		04C509F9163434FA00A6C067 /* 250_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 250_Unicode.txt; sourceTree = "<group>"; };
+		04C509FA163434FA00A6C067 /* 251_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 251_Unicode.txt; sourceTree = "<group>"; };
+		04C509FB163434FA00A6C067 /* 252_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 252_Unicode.txt; sourceTree = "<group>"; };
+		04C509FC163434FA00A6C067 /* 253_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 253_Unicode.txt; sourceTree = "<group>"; };
+		04C509FD163434FA00A6C067 /* 254_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 254_Unicode.txt; sourceTree = "<group>"; };
+		04C509FE163434FA00A6C067 /* 255_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 255_Unicode.txt; sourceTree = "<group>"; };
+		04C509FF163434FA00A6C067 /* 256_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 256_Unicode.txt; sourceTree = "<group>"; };
+		04C50A00163434FA00A6C067 /* 257_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 257_Unicode.txt; sourceTree = "<group>"; };
+		04C50A01163434FA00A6C067 /* 258_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 258_Unicode.txt; sourceTree = "<group>"; };
+		04C50A02163434FA00A6C067 /* 259_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 259_Unicode.txt; sourceTree = "<group>"; };
+		04C50A03163434FA00A6C067 /* 260_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 260_Unicode.txt; sourceTree = "<group>"; };
+		04C50A04163434FA00A6C067 /* 261_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 261_Unicode.txt; sourceTree = "<group>"; };
+		04C50A05163434FA00A6C067 /* 262_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 262_Unicode.txt; sourceTree = "<group>"; };
+		04C50A06163434FA00A6C067 /* 263_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 263_Unicode.txt; sourceTree = "<group>"; };
+		04C50A07163434FA00A6C067 /* 264_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 264_Unicode.txt; sourceTree = "<group>"; };
+		04C50A08163434FA00A6C067 /* 265_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 265_Unicode.txt; sourceTree = "<group>"; };
+		04C50A09163434FA00A6C067 /* 266_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 266_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0A163434FA00A6C067 /* 267_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 267_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0B163434FA00A6C067 /* 268_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 268_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0C163434FA00A6C067 /* 269_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 269_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0D163434FA00A6C067 /* 270_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 270_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0E163434FA00A6C067 /* 271_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 271_Unicode.txt; sourceTree = "<group>"; };
+		04C50A0F163434FA00A6C067 /* 272_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 272_Unicode.txt; sourceTree = "<group>"; };
+		04C50A10163434FA00A6C067 /* 273_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 273_Unicode.txt; sourceTree = "<group>"; };
+		04C50A11163434FA00A6C067 /* 274_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 274_Unicode.txt; sourceTree = "<group>"; };
+		04C50A12163434FA00A6C067 /* 275_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 275_Unicode.txt; sourceTree = "<group>"; };
+		04C50A13163434FA00A6C067 /* 276_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 276_Unicode.txt; sourceTree = "<group>"; };
+		04C50A14163434FA00A6C067 /* 277_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 277_Unicode.txt; sourceTree = "<group>"; };
+		04C50A15163434FA00A6C067 /* 278_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 278_Unicode.txt; sourceTree = "<group>"; };
+		04C50A16163434FA00A6C067 /* 279_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 279_Unicode.txt; sourceTree = "<group>"; };
+		04C50A17163434FA00A6C067 /* 280_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 280_Unicode.txt; sourceTree = "<group>"; };
+		04C50A18163434FA00A6C067 /* 281_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 281_Unicode.txt; sourceTree = "<group>"; };
+		04C50A19163434FA00A6C067 /* 282_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 282_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1A163434FA00A6C067 /* 283_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 283_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1B163434FA00A6C067 /* 284_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 284_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1C163434FA00A6C067 /* 285_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 285_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1D163434FA00A6C067 /* 286_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 286_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1E163434FA00A6C067 /* 287_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 287_Unicode.txt; sourceTree = "<group>"; };
+		04C50A1F163434FA00A6C067 /* 288_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 288_Unicode.txt; sourceTree = "<group>"; };
+		04C50A20163434FA00A6C067 /* 289_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 289_Unicode.txt; sourceTree = "<group>"; };
+		04C50A21163434FA00A6C067 /* 290_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 290_Unicode.txt; sourceTree = "<group>"; };
+		04C50A22163434FA00A6C067 /* 291_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 291_Unicode.txt; sourceTree = "<group>"; };
+		04C50A23163434FA00A6C067 /* 292_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 292_Unicode.txt; sourceTree = "<group>"; };
+		04C50A24163434FA00A6C067 /* 293_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 293_Unicode.txt; sourceTree = "<group>"; };
+		04C50A25163434FA00A6C067 /* 294_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 294_Unicode.txt; sourceTree = "<group>"; };
+		04C50A26163434FA00A6C067 /* 295_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 295_Unicode.txt; sourceTree = "<group>"; };
+		04C50A27163434FA00A6C067 /* 296_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 296_Unicode.txt; sourceTree = "<group>"; };
+		04C50A28163434FA00A6C067 /* 297_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 297_Unicode.txt; sourceTree = "<group>"; };
+		04C50A29163434FA00A6C067 /* 298_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 298_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2A163434FA00A6C067 /* 299_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 299_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2B163434FA00A6C067 /* 300_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 300_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2C163434FA00A6C067 /* 301_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 301_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2D163434FA00A6C067 /* 302_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 302_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2E163434FA00A6C067 /* 303_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 303_Unicode.txt; sourceTree = "<group>"; };
+		04C50A2F163434FA00A6C067 /* 304_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 304_Unicode.txt; sourceTree = "<group>"; };
+		04C50A30163434FA00A6C067 /* 305_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 305_Unicode.txt; sourceTree = "<group>"; };
+		04C50A31163434FA00A6C067 /* 306_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 306_Unicode.txt; sourceTree = "<group>"; };
+		04C50A32163434FA00A6C067 /* 307_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 307_Unicode.txt; sourceTree = "<group>"; };
+		04C50A33163434FA00A6C067 /* 308_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 308_Unicode.txt; sourceTree = "<group>"; };
+		04C50A34163434FA00A6C067 /* 309_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 309_Unicode.txt; sourceTree = "<group>"; };
+		04C50A35163434FA00A6C067 /* 310_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 310_Unicode.txt; sourceTree = "<group>"; };
+		04C50A36163434FA00A6C067 /* 311_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 311_Unicode.txt; sourceTree = "<group>"; };
+		04C50A37163434FA00A6C067 /* 312_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 312_Unicode.txt; sourceTree = "<group>"; };
+		04C50A38163434FA00A6C067 /* 313_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 313_Unicode.txt; sourceTree = "<group>"; };
+		04C50A39163434FA00A6C067 /* 314_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 314_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3A163434FA00A6C067 /* 315_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 315_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3B163434FA00A6C067 /* 316_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 316_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3C163434FA00A6C067 /* 317_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 317_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3D163434FA00A6C067 /* 318_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 318_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3E163434FA00A6C067 /* 319_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 319_Unicode.txt; sourceTree = "<group>"; };
+		04C50A3F163434FA00A6C067 /* 320_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 320_Unicode.txt; sourceTree = "<group>"; };
+		04C50A40163434FA00A6C067 /* 321_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 321_Unicode.txt; sourceTree = "<group>"; };
+		04C50A41163434FA00A6C067 /* 322_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 322_Unicode.txt; sourceTree = "<group>"; };
+		04C50A42163434FA00A6C067 /* 323_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 323_Unicode.txt; sourceTree = "<group>"; };
+		04C50A43163434FA00A6C067 /* 324_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 324_Unicode.txt; sourceTree = "<group>"; };
+		04C50A44163434FA00A6C067 /* 325_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 325_Unicode.txt; sourceTree = "<group>"; };
+		04C50A45163434FA00A6C067 /* 326_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 326_Unicode.txt; sourceTree = "<group>"; };
+		04C50A46163434FA00A6C067 /* 327_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 327_Unicode.txt; sourceTree = "<group>"; };
+		04C50A47163434FA00A6C067 /* 328_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 328_Unicode.txt; sourceTree = "<group>"; };
+		04C50A48163434FA00A6C067 /* 329_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 329_Unicode.txt; sourceTree = "<group>"; };
+		04C50A49163434FA00A6C067 /* 330_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 330_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4A163434FA00A6C067 /* 331_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 331_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4B163434FA00A6C067 /* 332_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 332_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4C163434FA00A6C067 /* 333_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 333_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4D163434FA00A6C067 /* 334_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 334_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4E163434FA00A6C067 /* 335_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 335_Unicode.txt; sourceTree = "<group>"; };
+		04C50A4F163434FA00A6C067 /* 336_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 336_Unicode.txt; sourceTree = "<group>"; };
+		04C50A50163434FA00A6C067 /* 337_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 337_Unicode.txt; sourceTree = "<group>"; };
+		04C50A51163434FA00A6C067 /* 338_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 338_Unicode.txt; sourceTree = "<group>"; };
+		04C50A52163434FA00A6C067 /* 339_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 339_Unicode.txt; sourceTree = "<group>"; };
+		04C50A53163434FA00A6C067 /* 340_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 340_Unicode.txt; sourceTree = "<group>"; };
+		04C50A54163434FA00A6C067 /* 341_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 341_Unicode.txt; sourceTree = "<group>"; };
+		04C50A55163434FA00A6C067 /* 342_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 342_Unicode.txt; sourceTree = "<group>"; };
+		04C50A56163434FA00A6C067 /* 343_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 343_Unicode.txt; sourceTree = "<group>"; };
+		04C50A57163434FA00A6C067 /* 344_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 344_Unicode.txt; sourceTree = "<group>"; };
+		04C50A58163434FA00A6C067 /* 345_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 345_Unicode.txt; sourceTree = "<group>"; };
+		04C50A59163434FA00A6C067 /* 346_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 346_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5A163434FA00A6C067 /* 347_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 347_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5B163434FA00A6C067 /* 348_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 348_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5C163434FA00A6C067 /* 349_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 349_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5D163434FA00A6C067 /* 350_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 350_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5E163434FA00A6C067 /* 351_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 351_Unicode.txt; sourceTree = "<group>"; };
+		04C50A5F163434FA00A6C067 /* 352_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 352_Unicode.txt; sourceTree = "<group>"; };
+		04C50A60163434FA00A6C067 /* 353_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 353_Unicode.txt; sourceTree = "<group>"; };
+		04C50A61163434FA00A6C067 /* 354_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 354_Unicode.txt; sourceTree = "<group>"; };
+		04C50A62163434FA00A6C067 /* 355_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 355_Unicode.txt; sourceTree = "<group>"; };
+		04C50A63163434FA00A6C067 /* 356_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 356_Unicode.txt; sourceTree = "<group>"; };
+		04C50A64163434FA00A6C067 /* 357_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 357_Unicode.txt; sourceTree = "<group>"; };
+		04C50A65163434FA00A6C067 /* 358_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 358_Unicode.txt; sourceTree = "<group>"; };
+		04C50A66163434FA00A6C067 /* 359_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 359_Unicode.txt; sourceTree = "<group>"; };
+		04C50A67163434FA00A6C067 /* 360_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 360_Unicode.txt; sourceTree = "<group>"; };
+		04C50A68163434FA00A6C067 /* 361_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 361_Unicode.txt; sourceTree = "<group>"; };
+		04C50A69163434FA00A6C067 /* 362_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 362_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6A163434FA00A6C067 /* 363_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 363_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6B163434FA00A6C067 /* 364_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 364_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6C163434FA00A6C067 /* 365_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 365_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6D163434FA00A6C067 /* 366_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 366_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6E163434FA00A6C067 /* 367_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 367_Unicode.txt; sourceTree = "<group>"; };
+		04C50A6F163434FA00A6C067 /* 368_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 368_Unicode.txt; sourceTree = "<group>"; };
+		04C50A70163434FA00A6C067 /* 369_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 369_Unicode.txt; sourceTree = "<group>"; };
+		04C50A71163434FA00A6C067 /* 370_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 370_Unicode.txt; sourceTree = "<group>"; };
+		04C50BE71635FBA800A6C067 /* YouMiViewController_200x200.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_200x200.h; sourceTree = "<group>"; };
+		04C50BE81635FBA800A6C067 /* YouMiViewController_200x200.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_200x200.m; sourceTree = "<group>"; };
+		04C50BE91635FBA800A6C067 /* YouMiViewController_300x250.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_300x250.h; sourceTree = "<group>"; };
+		04C50BEA1635FBA800A6C067 /* YouMiViewController_300x250.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_300x250.m; sourceTree = "<group>"; };
+		04C50BEB1635FBA800A6C067 /* YouMiViewController_320x50.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_320x50.h; sourceTree = "<group>"; };
+		04C50BEC1635FBA800A6C067 /* YouMiViewController_320x50.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_320x50.m; sourceTree = "<group>"; };
+		04C50BED1635FBA800A6C067 /* YouMiViewController_468x60.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_468x60.h; sourceTree = "<group>"; };
+		04C50BEE1635FBA800A6C067 /* YouMiViewController_468x60.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_468x60.m; sourceTree = "<group>"; };
+		04C50BEF1635FBA800A6C067 /* YouMiViewController_728x90.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_728x90.h; sourceTree = "<group>"; };
+		04C50BF01635FBA800A6C067 /* YouMiViewController_728x90.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_728x90.m; sourceTree = "<group>"; };
+		04C50BF41635FBA800A6C067 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
+		04C50BF51635FBA800A6C067 /* YouMiSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpot.h; sourceTree = "<group>"; };
+		04C50BF61635FBA800A6C067 /* YouMiSpotDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpotDelegateProtocol.h; sourceTree = "<group>"; };
+		04C50BF71635FBA800A6C067 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
+		04C50BF81635FBA800A6C067 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
+		04C50BF91635FBA800A6C067 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
+		04C50BFA1635FBA800A6C067 /* YouMiWallDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallDelegateProtocol.h; sourceTree = "<group>"; };
+		04C50BFC1635FBA800A6C067 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
+		04C50BFD1635FBA800A6C067 /* YouMiDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDataCenter.h; sourceTree = "<group>"; };
+		04C50BFE1635FBA800A6C067 /* YouMiPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPush.h; sourceTree = "<group>"; };
+		04C50BFF1635FBA800A6C067 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
 		1811EE0011D015E20068DA4C /* LightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LightBackground.png; path = images/LightBackground.png; sourceTree = "<group>"; };
 		1811EE0111D015E20068DA4C /* MathGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MathGraph.png; path = images/MathGraph.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -537,14 +1305,6 @@
 		309FE66514031807007CC103 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
 		309FE66614031807007CC103 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		309FE6691403187B007CC103 /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
-		309FEFC615629A8A00CC3B0F /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
-		309FEFC715629A8A00CC3B0F /* YouMiSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpot.h; sourceTree = "<group>"; };
-		309FEFC815629A8A00CC3B0F /* YouMiSpotDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpotDelegateProtocol.h; sourceTree = "<group>"; };
-		309FEFC915629A8A00CC3B0F /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
-		309FEFCA15629A8A00CC3B0F /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
-		309FEFCB15629A8A00CC3B0F /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
-		309FEFCC15629A8A00CC3B0F /* YouMiWallDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallDelegateProtocol.h; sourceTree = "<group>"; };
-		309FEFCD15629A8A00CC3B0F /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
 		309FEFCF15629ABA00CC3B0F /* RewardedWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardedWallViewController.h; sourceTree = "<group>"; };
 		309FEFD015629ABA00CC3B0F /* RewardedWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardedWallViewController.m; sourceTree = "<group>"; };
 		30A13EEA156AFE7900021AB5 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -763,7 +1523,6 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				309D0AF9154A046E006B2041 /* libMobiSageSDK.a in Frameworks */,
-				309FEFCE15629A8A00CC3B0F /* libYouMi.a in Frameworks */,
 				30A6B8D21563152200D39722 /* libDomob.a in Frameworks */,
 				30B38C1F158FE87D00304AE2 /* libCaseeAd.a in Frameworks */,
 				30A44A971599180800AE3B04 /* libGoogleAdMobAds.a in Frameworks */,
@@ -774,6 +1533,7 @@
 				30B92E7115FFEE1D00A9E196 /* libWQMobile.a in Frameworks */,
 				309BF00F160141D60015C2C5 /* immobSDK.framework in Frameworks */,
 				042932701627898500FCBA96 /* WapsOffer.framework in Frameworks */,
+				04C50C051635FBA800A6C067 /* libYouMi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1103,6 +1863,452 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		04C508FE163434E700A6C067 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				04C508FF163434FA00A6C067 /* 000_Unicode.txt */,
+				04C50900163434FA00A6C067 /* 001_Unicode.txt */,
+				04C50901163434FA00A6C067 /* 002_Unicode.txt */,
+				04C50902163434FA00A6C067 /* 003_Unicode.txt */,
+				04C50903163434FA00A6C067 /* 004_Unicode.txt */,
+				04C50904163434FA00A6C067 /* 005_Unicode.txt */,
+				04C50905163434FA00A6C067 /* 006_Unicode.txt */,
+				04C50906163434FA00A6C067 /* 007_Unicode.txt */,
+				04C50907163434FA00A6C067 /* 008_Unicode.txt */,
+				04C50908163434FA00A6C067 /* 009_Unicode.txt */,
+				04C50909163434FA00A6C067 /* 010_Unicode.txt */,
+				04C5090A163434FA00A6C067 /* 011_Unicode.txt */,
+				04C5090B163434FA00A6C067 /* 012_Unicode.txt */,
+				04C5090C163434FA00A6C067 /* 013_Unicode.txt */,
+				04C5090D163434FA00A6C067 /* 014_Unicode.txt */,
+				04C5090E163434FA00A6C067 /* 015_Unicode.txt */,
+				04C5090F163434FA00A6C067 /* 016_Unicode.txt */,
+				04C50910163434FA00A6C067 /* 017_Unicode.txt */,
+				04C50911163434FA00A6C067 /* 018_Unicode.txt */,
+				04C50912163434FA00A6C067 /* 019_Unicode.txt */,
+				04C50913163434FA00A6C067 /* 020_Unicode.txt */,
+				04C50914163434FA00A6C067 /* 021_Unicode.txt */,
+				04C50915163434FA00A6C067 /* 022_Unicode.txt */,
+				04C50916163434FA00A6C067 /* 023_Unicode.txt */,
+				04C50917163434FA00A6C067 /* 024_Unicode.txt */,
+				04C50918163434FA00A6C067 /* 025_Unicode.txt */,
+				04C50919163434FA00A6C067 /* 026_Unicode.txt */,
+				04C5091A163434FA00A6C067 /* 027_Unicode.txt */,
+				04C5091B163434FA00A6C067 /* 028_Unicode.txt */,
+				04C5091C163434FA00A6C067 /* 029_Unicode.txt */,
+				04C5091D163434FA00A6C067 /* 030_Unicode.txt */,
+				04C5091E163434FA00A6C067 /* 031_Unicode.txt */,
+				04C5091F163434FA00A6C067 /* 032_Unicode.txt */,
+				04C50920163434FA00A6C067 /* 033_Unicode.txt */,
+				04C50921163434FA00A6C067 /* 034_Unicode.txt */,
+				04C50922163434FA00A6C067 /* 035_Unicode.txt */,
+				04C50923163434FA00A6C067 /* 036_Unicode.txt */,
+				04C50924163434FA00A6C067 /* 037_Unicode.txt */,
+				04C50925163434FA00A6C067 /* 038_Unicode.txt */,
+				04C50926163434FA00A6C067 /* 039_Unicode.txt */,
+				04C50927163434FA00A6C067 /* 040_Unicode.txt */,
+				04C50928163434FA00A6C067 /* 041_Unicode.txt */,
+				04C50929163434FA00A6C067 /* 042_Unicode.txt */,
+				04C5092A163434FA00A6C067 /* 043_Unicode.txt */,
+				04C5092B163434FA00A6C067 /* 044_Unicode.txt */,
+				04C5092C163434FA00A6C067 /* 045_Unicode.txt */,
+				04C5092D163434FA00A6C067 /* 046_Unicode.txt */,
+				04C5092E163434FA00A6C067 /* 047_Unicode.txt */,
+				04C5092F163434FA00A6C067 /* 048_Unicode.txt */,
+				04C50930163434FA00A6C067 /* 049_Unicode.txt */,
+				04C50931163434FA00A6C067 /* 050_Unicode.txt */,
+				04C50932163434FA00A6C067 /* 051_Unicode.txt */,
+				04C50933163434FA00A6C067 /* 052_Unicode.txt */,
+				04C50934163434FA00A6C067 /* 053_Unicode.txt */,
+				04C50935163434FA00A6C067 /* 054_Unicode.txt */,
+				04C50936163434FA00A6C067 /* 055_Unicode.txt */,
+				04C50937163434FA00A6C067 /* 056_Unicode.txt */,
+				04C50938163434FA00A6C067 /* 057_Unicode.txt */,
+				04C50939163434FA00A6C067 /* 058_Unicode.txt */,
+				04C5093A163434FA00A6C067 /* 059_Unicode.txt */,
+				04C5093B163434FA00A6C067 /* 060_Unicode.txt */,
+				04C5093C163434FA00A6C067 /* 061_Unicode.txt */,
+				04C5093D163434FA00A6C067 /* 062_Unicode.txt */,
+				04C5093E163434FA00A6C067 /* 063_Unicode.txt */,
+				04C5093F163434FA00A6C067 /* 064_Unicode.txt */,
+				04C50940163434FA00A6C067 /* 065_Unicode.txt */,
+				04C50941163434FA00A6C067 /* 066_Unicode.txt */,
+				04C50942163434FA00A6C067 /* 067_Unicode.txt */,
+				04C50943163434FA00A6C067 /* 068_Unicode.txt */,
+				04C50944163434FA00A6C067 /* 069_Unicode.txt */,
+				04C50945163434FA00A6C067 /* 070_Unicode.txt */,
+				04C50946163434FA00A6C067 /* 071_Unicode.txt */,
+				04C50947163434FA00A6C067 /* 072_Unicode.txt */,
+				04C50948163434FA00A6C067 /* 073_Unicode.txt */,
+				04C50949163434FA00A6C067 /* 074_Unicode.txt */,
+				04C5094A163434FA00A6C067 /* 075_Unicode.txt */,
+				04C5094B163434FA00A6C067 /* 076_Unicode.txt */,
+				04C5094C163434FA00A6C067 /* 077_Unicode.txt */,
+				04C5094D163434FA00A6C067 /* 078_Unicode.txt */,
+				04C5094E163434FA00A6C067 /* 079_Unicode.txt */,
+				04C5094F163434FA00A6C067 /* 080_Unicode.txt */,
+				04C50950163434FA00A6C067 /* 081_Unicode.txt */,
+				04C50951163434FA00A6C067 /* 082_Unicode.txt */,
+				04C50952163434FA00A6C067 /* 083_Unicode.txt */,
+				04C50953163434FA00A6C067 /* 084_Unicode.txt */,
+				04C50954163434FA00A6C067 /* 085_Unicode.txt */,
+				04C50955163434FA00A6C067 /* 086_Unicode.txt */,
+				04C50956163434FA00A6C067 /* 087_Unicode.txt */,
+				04C50957163434FA00A6C067 /* 088_Unicode.txt */,
+				04C50958163434FA00A6C067 /* 089_Unicode.txt */,
+				04C50959163434FA00A6C067 /* 090_Unicode.txt */,
+				04C5095A163434FA00A6C067 /* 091_Unicode.txt */,
+				04C5095B163434FA00A6C067 /* 092_Unicode.txt */,
+				04C5095C163434FA00A6C067 /* 093_Unicode.txt */,
+				04C5095D163434FA00A6C067 /* 094_Unicode.txt */,
+				04C5095E163434FA00A6C067 /* 095_Unicode.txt */,
+				04C5095F163434FA00A6C067 /* 096_Unicode.txt */,
+				04C50960163434FA00A6C067 /* 097_Unicode.txt */,
+				04C50961163434FA00A6C067 /* 098_Unicode.txt */,
+				04C50962163434FA00A6C067 /* 099_Unicode.txt */,
+				04C50963163434FA00A6C067 /* 100_Unicode.txt */,
+				04C50964163434FA00A6C067 /* 101_Unicode.txt */,
+				04C50965163434FA00A6C067 /* 102_Unicode.txt */,
+				04C50966163434FA00A6C067 /* 103_Unicode.txt */,
+				04C50967163434FA00A6C067 /* 104_Unicode.txt */,
+				04C50968163434FA00A6C067 /* 105_Unicode.txt */,
+				04C50969163434FA00A6C067 /* 106_Unicode.txt */,
+				04C5096A163434FA00A6C067 /* 107_Unicode.txt */,
+				04C5096B163434FA00A6C067 /* 108_Unicode.txt */,
+				04C5096C163434FA00A6C067 /* 109_Unicode.txt */,
+				04C5096D163434FA00A6C067 /* 110_Unicode.txt */,
+				04C5096E163434FA00A6C067 /* 111_Unicode.txt */,
+				04C5096F163434FA00A6C067 /* 112_Unicode.txt */,
+				04C50970163434FA00A6C067 /* 113_Unicode.txt */,
+				04C50971163434FA00A6C067 /* 114_Unicode.txt */,
+				04C50972163434FA00A6C067 /* 115_Unicode.txt */,
+				04C50973163434FA00A6C067 /* 116_Unicode.txt */,
+				04C50974163434FA00A6C067 /* 117_Unicode.txt */,
+				04C50975163434FA00A6C067 /* 118_Unicode.txt */,
+				04C50976163434FA00A6C067 /* 119_Unicode.txt */,
+				04C50977163434FA00A6C067 /* 120_Unicode.txt */,
+				04C50978163434FA00A6C067 /* 121_Unicode.txt */,
+				04C50979163434FA00A6C067 /* 122_Unicode.txt */,
+				04C5097A163434FA00A6C067 /* 123_Unicode.txt */,
+				04C5097B163434FA00A6C067 /* 124_Unicode.txt */,
+				04C5097C163434FA00A6C067 /* 125_Unicode.txt */,
+				04C5097D163434FA00A6C067 /* 126_Unicode.txt */,
+				04C5097E163434FA00A6C067 /* 127_Unicode.txt */,
+				04C5097F163434FA00A6C067 /* 128_Unicode.txt */,
+				04C50980163434FA00A6C067 /* 129_Unicode.txt */,
+				04C50981163434FA00A6C067 /* 130_Unicode.txt */,
+				04C50982163434FA00A6C067 /* 131_Unicode.txt */,
+				04C50983163434FA00A6C067 /* 132_Unicode.txt */,
+				04C50984163434FA00A6C067 /* 133_Unicode.txt */,
+				04C50985163434FA00A6C067 /* 134_Unicode.txt */,
+				04C50986163434FA00A6C067 /* 135_Unicode.txt */,
+				04C50987163434FA00A6C067 /* 136_Unicode.txt */,
+				04C50988163434FA00A6C067 /* 137_Unicode.txt */,
+				04C50989163434FA00A6C067 /* 138_Unicode.txt */,
+				04C5098A163434FA00A6C067 /* 139_Unicode.txt */,
+				04C5098B163434FA00A6C067 /* 140_Unicode.txt */,
+				04C5098C163434FA00A6C067 /* 141_Unicode.txt */,
+				04C5098D163434FA00A6C067 /* 142_Unicode.txt */,
+				04C5098E163434FA00A6C067 /* 143_Unicode.txt */,
+				04C5098F163434FA00A6C067 /* 144_Unicode.txt */,
+				04C50990163434FA00A6C067 /* 145_Unicode.txt */,
+				04C50991163434FA00A6C067 /* 146_Unicode.txt */,
+				04C50992163434FA00A6C067 /* 147_Unicode.txt */,
+				04C50993163434FA00A6C067 /* 148_Unicode.txt */,
+				04C50994163434FA00A6C067 /* 149_Unicode.txt */,
+				04C50995163434FA00A6C067 /* 150_Unicode.txt */,
+				04C50996163434FA00A6C067 /* 151_Unicode.txt */,
+				04C50997163434FA00A6C067 /* 152_Unicode.txt */,
+				04C50998163434FA00A6C067 /* 153_Unicode.txt */,
+				04C50999163434FA00A6C067 /* 154_Unicode.txt */,
+				04C5099A163434FA00A6C067 /* 155_Unicode.txt */,
+				04C5099B163434FA00A6C067 /* 156_Unicode.txt */,
+				04C5099C163434FA00A6C067 /* 157_Unicode.txt */,
+				04C5099D163434FA00A6C067 /* 158_Unicode.txt */,
+				04C5099E163434FA00A6C067 /* 159_Unicode.txt */,
+				04C5099F163434FA00A6C067 /* 160_Unicode.txt */,
+				04C509A0163434FA00A6C067 /* 161_Unicode.txt */,
+				04C509A1163434FA00A6C067 /* 162_Unicode.txt */,
+				04C509A2163434FA00A6C067 /* 163_Unicode.txt */,
+				04C509A3163434FA00A6C067 /* 164_Unicode.txt */,
+				04C509A4163434FA00A6C067 /* 165_Unicode.txt */,
+				04C509A5163434FA00A6C067 /* 166_Unicode.txt */,
+				04C509A6163434FA00A6C067 /* 167_Unicode.txt */,
+				04C509A7163434FA00A6C067 /* 168_Unicode.txt */,
+				04C509A8163434FA00A6C067 /* 169_Unicode.txt */,
+				04C509A9163434FA00A6C067 /* 170_Unicode.txt */,
+				04C509AA163434FA00A6C067 /* 171_Unicode.txt */,
+				04C509AB163434FA00A6C067 /* 172_Unicode.txt */,
+				04C509AC163434FA00A6C067 /* 173_Unicode.txt */,
+				04C509AD163434FA00A6C067 /* 174_Unicode.txt */,
+				04C509AE163434FA00A6C067 /* 175_Unicode.txt */,
+				04C509AF163434FA00A6C067 /* 176_Unicode.txt */,
+				04C509B0163434FA00A6C067 /* 177_Unicode.txt */,
+				04C509B1163434FA00A6C067 /* 178_Unicode.txt */,
+				04C509B2163434FA00A6C067 /* 179_Unicode.txt */,
+				04C509B3163434FA00A6C067 /* 180_Unicode.txt */,
+				04C509B4163434FA00A6C067 /* 181_Unicode.txt */,
+				04C509B5163434FA00A6C067 /* 182_Unicode.txt */,
+				04C509B6163434FA00A6C067 /* 183_Unicode.txt */,
+				04C509B7163434FA00A6C067 /* 184_Unicode.txt */,
+				04C509B8163434FA00A6C067 /* 185_Unicode.txt */,
+				04C509B9163434FA00A6C067 /* 186_Unicode.txt */,
+				04C509BA163434FA00A6C067 /* 187_Unicode.txt */,
+				04C509BB163434FA00A6C067 /* 188_Unicode.txt */,
+				04C509BC163434FA00A6C067 /* 189_Unicode.txt */,
+				04C509BD163434FA00A6C067 /* 190_Unicode.txt */,
+				04C509BE163434FA00A6C067 /* 191_Unicode.txt */,
+				04C509BF163434FA00A6C067 /* 192_Unicode.txt */,
+				04C509C0163434FA00A6C067 /* 193_Unicode.txt */,
+				04C509C1163434FA00A6C067 /* 194_Unicode.txt */,
+				04C509C2163434FA00A6C067 /* 195_Unicode.txt */,
+				04C509C3163434FA00A6C067 /* 196_Unicode.txt */,
+				04C509C4163434FA00A6C067 /* 197_Unicode.txt */,
+				04C509C5163434FA00A6C067 /* 198_Unicode.txt */,
+				04C509C6163434FA00A6C067 /* 199_Unicode.txt */,
+				04C509C7163434FA00A6C067 /* 200_Unicode.txt */,
+				04C509C8163434FA00A6C067 /* 201_Unicode.txt */,
+				04C509C9163434FA00A6C067 /* 202_Unicode.txt */,
+				04C509CA163434FA00A6C067 /* 203_Unicode.txt */,
+				04C509CB163434FA00A6C067 /* 204_Unicode.txt */,
+				04C509CC163434FA00A6C067 /* 205_Unicode.txt */,
+				04C509CD163434FA00A6C067 /* 206_Unicode.txt */,
+				04C509CE163434FA00A6C067 /* 207_Unicode.txt */,
+				04C509CF163434FA00A6C067 /* 208_Unicode.txt */,
+				04C509D0163434FA00A6C067 /* 209_Unicode.txt */,
+				04C509D1163434FA00A6C067 /* 210_Unicode.txt */,
+				04C509D2163434FA00A6C067 /* 211_Unicode.txt */,
+				04C509D3163434FA00A6C067 /* 212_Unicode.txt */,
+				04C509D4163434FA00A6C067 /* 213_Unicode.txt */,
+				04C509D5163434FA00A6C067 /* 214_Unicode.txt */,
+				04C509D6163434FA00A6C067 /* 215_Unicode.txt */,
+				04C509D7163434FA00A6C067 /* 216_Unicode.txt */,
+				04C509D8163434FA00A6C067 /* 217_Unicode.txt */,
+				04C509D9163434FA00A6C067 /* 218_Unicode.txt */,
+				04C509DA163434FA00A6C067 /* 219_Unicode.txt */,
+				04C509DB163434FA00A6C067 /* 220_Unicode.txt */,
+				04C509DC163434FA00A6C067 /* 221_Unicode.txt */,
+				04C509DD163434FA00A6C067 /* 222_Unicode.txt */,
+				04C509DE163434FA00A6C067 /* 223_Unicode.txt */,
+				04C509DF163434FA00A6C067 /* 224_Unicode.txt */,
+				04C509E0163434FA00A6C067 /* 225_Unicode.txt */,
+				04C509E1163434FA00A6C067 /* 226_Unicode.txt */,
+				04C509E2163434FA00A6C067 /* 227_Unicode.txt */,
+				04C509E3163434FA00A6C067 /* 228_Unicode.txt */,
+				04C509E4163434FA00A6C067 /* 229_Unicode.txt */,
+				04C509E5163434FA00A6C067 /* 230_Unicode.txt */,
+				04C509E6163434FA00A6C067 /* 231_Unicode.txt */,
+				04C509E7163434FA00A6C067 /* 232_Unicode.txt */,
+				04C509E8163434FA00A6C067 /* 233_Unicode.txt */,
+				04C509E9163434FA00A6C067 /* 234_Unicode.txt */,
+				04C509EA163434FA00A6C067 /* 235_Unicode.txt */,
+				04C509EB163434FA00A6C067 /* 236_Unicode.txt */,
+				04C509EC163434FA00A6C067 /* 237_Unicode.txt */,
+				04C509ED163434FA00A6C067 /* 238_Unicode.txt */,
+				04C509EE163434FA00A6C067 /* 239_Unicode.txt */,
+				04C509EF163434FA00A6C067 /* 240_Unicode.txt */,
+				04C509F0163434FA00A6C067 /* 241_Unicode.txt */,
+				04C509F1163434FA00A6C067 /* 242_Unicode.txt */,
+				04C509F2163434FA00A6C067 /* 243_Unicode.txt */,
+				04C509F3163434FA00A6C067 /* 244_Unicode.txt */,
+				04C509F4163434FA00A6C067 /* 245_Unicode.txt */,
+				04C509F5163434FA00A6C067 /* 246_Unicode.txt */,
+				04C509F6163434FA00A6C067 /* 247_Unicode.txt */,
+				04C509F7163434FA00A6C067 /* 248_Unicode.txt */,
+				04C509F8163434FA00A6C067 /* 249_Unicode.txt */,
+				04C509F9163434FA00A6C067 /* 250_Unicode.txt */,
+				04C509FA163434FA00A6C067 /* 251_Unicode.txt */,
+				04C509FB163434FA00A6C067 /* 252_Unicode.txt */,
+				04C509FC163434FA00A6C067 /* 253_Unicode.txt */,
+				04C509FD163434FA00A6C067 /* 254_Unicode.txt */,
+				04C509FE163434FA00A6C067 /* 255_Unicode.txt */,
+				04C509FF163434FA00A6C067 /* 256_Unicode.txt */,
+				04C50A00163434FA00A6C067 /* 257_Unicode.txt */,
+				04C50A01163434FA00A6C067 /* 258_Unicode.txt */,
+				04C50A02163434FA00A6C067 /* 259_Unicode.txt */,
+				04C50A03163434FA00A6C067 /* 260_Unicode.txt */,
+				04C50A04163434FA00A6C067 /* 261_Unicode.txt */,
+				04C50A05163434FA00A6C067 /* 262_Unicode.txt */,
+				04C50A06163434FA00A6C067 /* 263_Unicode.txt */,
+				04C50A07163434FA00A6C067 /* 264_Unicode.txt */,
+				04C50A08163434FA00A6C067 /* 265_Unicode.txt */,
+				04C50A09163434FA00A6C067 /* 266_Unicode.txt */,
+				04C50A0A163434FA00A6C067 /* 267_Unicode.txt */,
+				04C50A0B163434FA00A6C067 /* 268_Unicode.txt */,
+				04C50A0C163434FA00A6C067 /* 269_Unicode.txt */,
+				04C50A0D163434FA00A6C067 /* 270_Unicode.txt */,
+				04C50A0E163434FA00A6C067 /* 271_Unicode.txt */,
+				04C50A0F163434FA00A6C067 /* 272_Unicode.txt */,
+				04C50A10163434FA00A6C067 /* 273_Unicode.txt */,
+				04C50A11163434FA00A6C067 /* 274_Unicode.txt */,
+				04C50A12163434FA00A6C067 /* 275_Unicode.txt */,
+				04C50A13163434FA00A6C067 /* 276_Unicode.txt */,
+				04C50A14163434FA00A6C067 /* 277_Unicode.txt */,
+				04C50A15163434FA00A6C067 /* 278_Unicode.txt */,
+				04C50A16163434FA00A6C067 /* 279_Unicode.txt */,
+				04C50A17163434FA00A6C067 /* 280_Unicode.txt */,
+				04C50A18163434FA00A6C067 /* 281_Unicode.txt */,
+				04C50A19163434FA00A6C067 /* 282_Unicode.txt */,
+				04C50A1A163434FA00A6C067 /* 283_Unicode.txt */,
+				04C50A1B163434FA00A6C067 /* 284_Unicode.txt */,
+				04C50A1C163434FA00A6C067 /* 285_Unicode.txt */,
+				04C50A1D163434FA00A6C067 /* 286_Unicode.txt */,
+				04C50A1E163434FA00A6C067 /* 287_Unicode.txt */,
+				04C50A1F163434FA00A6C067 /* 288_Unicode.txt */,
+				04C50A20163434FA00A6C067 /* 289_Unicode.txt */,
+				04C50A21163434FA00A6C067 /* 290_Unicode.txt */,
+				04C50A22163434FA00A6C067 /* 291_Unicode.txt */,
+				04C50A23163434FA00A6C067 /* 292_Unicode.txt */,
+				04C50A24163434FA00A6C067 /* 293_Unicode.txt */,
+				04C50A25163434FA00A6C067 /* 294_Unicode.txt */,
+				04C50A26163434FA00A6C067 /* 295_Unicode.txt */,
+				04C50A27163434FA00A6C067 /* 296_Unicode.txt */,
+				04C50A28163434FA00A6C067 /* 297_Unicode.txt */,
+				04C50A29163434FA00A6C067 /* 298_Unicode.txt */,
+				04C50A2A163434FA00A6C067 /* 299_Unicode.txt */,
+				04C50A2B163434FA00A6C067 /* 300_Unicode.txt */,
+				04C50A2C163434FA00A6C067 /* 301_Unicode.txt */,
+				04C50A2D163434FA00A6C067 /* 302_Unicode.txt */,
+				04C50A2E163434FA00A6C067 /* 303_Unicode.txt */,
+				04C50A2F163434FA00A6C067 /* 304_Unicode.txt */,
+				04C50A30163434FA00A6C067 /* 305_Unicode.txt */,
+				04C50A31163434FA00A6C067 /* 306_Unicode.txt */,
+				04C50A32163434FA00A6C067 /* 307_Unicode.txt */,
+				04C50A33163434FA00A6C067 /* 308_Unicode.txt */,
+				04C50A34163434FA00A6C067 /* 309_Unicode.txt */,
+				04C50A35163434FA00A6C067 /* 310_Unicode.txt */,
+				04C50A36163434FA00A6C067 /* 311_Unicode.txt */,
+				04C50A37163434FA00A6C067 /* 312_Unicode.txt */,
+				04C50A38163434FA00A6C067 /* 313_Unicode.txt */,
+				04C50A39163434FA00A6C067 /* 314_Unicode.txt */,
+				04C50A3A163434FA00A6C067 /* 315_Unicode.txt */,
+				04C50A3B163434FA00A6C067 /* 316_Unicode.txt */,
+				04C50A3C163434FA00A6C067 /* 317_Unicode.txt */,
+				04C50A3D163434FA00A6C067 /* 318_Unicode.txt */,
+				04C50A3E163434FA00A6C067 /* 319_Unicode.txt */,
+				04C50A3F163434FA00A6C067 /* 320_Unicode.txt */,
+				04C50A40163434FA00A6C067 /* 321_Unicode.txt */,
+				04C50A41163434FA00A6C067 /* 322_Unicode.txt */,
+				04C50A42163434FA00A6C067 /* 323_Unicode.txt */,
+				04C50A43163434FA00A6C067 /* 324_Unicode.txt */,
+				04C50A44163434FA00A6C067 /* 325_Unicode.txt */,
+				04C50A45163434FA00A6C067 /* 326_Unicode.txt */,
+				04C50A46163434FA00A6C067 /* 327_Unicode.txt */,
+				04C50A47163434FA00A6C067 /* 328_Unicode.txt */,
+				04C50A48163434FA00A6C067 /* 329_Unicode.txt */,
+				04C50A49163434FA00A6C067 /* 330_Unicode.txt */,
+				04C50A4A163434FA00A6C067 /* 331_Unicode.txt */,
+				04C50A4B163434FA00A6C067 /* 332_Unicode.txt */,
+				04C50A4C163434FA00A6C067 /* 333_Unicode.txt */,
+				04C50A4D163434FA00A6C067 /* 334_Unicode.txt */,
+				04C50A4E163434FA00A6C067 /* 335_Unicode.txt */,
+				04C50A4F163434FA00A6C067 /* 336_Unicode.txt */,
+				04C50A50163434FA00A6C067 /* 337_Unicode.txt */,
+				04C50A51163434FA00A6C067 /* 338_Unicode.txt */,
+				04C50A52163434FA00A6C067 /* 339_Unicode.txt */,
+				04C50A53163434FA00A6C067 /* 340_Unicode.txt */,
+				04C50A54163434FA00A6C067 /* 341_Unicode.txt */,
+				04C50A55163434FA00A6C067 /* 342_Unicode.txt */,
+				04C50A56163434FA00A6C067 /* 343_Unicode.txt */,
+				04C50A57163434FA00A6C067 /* 344_Unicode.txt */,
+				04C50A58163434FA00A6C067 /* 345_Unicode.txt */,
+				04C50A59163434FA00A6C067 /* 346_Unicode.txt */,
+				04C50A5A163434FA00A6C067 /* 347_Unicode.txt */,
+				04C50A5B163434FA00A6C067 /* 348_Unicode.txt */,
+				04C50A5C163434FA00A6C067 /* 349_Unicode.txt */,
+				04C50A5D163434FA00A6C067 /* 350_Unicode.txt */,
+				04C50A5E163434FA00A6C067 /* 351_Unicode.txt */,
+				04C50A5F163434FA00A6C067 /* 352_Unicode.txt */,
+				04C50A60163434FA00A6C067 /* 353_Unicode.txt */,
+				04C50A61163434FA00A6C067 /* 354_Unicode.txt */,
+				04C50A62163434FA00A6C067 /* 355_Unicode.txt */,
+				04C50A63163434FA00A6C067 /* 356_Unicode.txt */,
+				04C50A64163434FA00A6C067 /* 357_Unicode.txt */,
+				04C50A65163434FA00A6C067 /* 358_Unicode.txt */,
+				04C50A66163434FA00A6C067 /* 359_Unicode.txt */,
+				04C50A67163434FA00A6C067 /* 360_Unicode.txt */,
+				04C50A68163434FA00A6C067 /* 361_Unicode.txt */,
+				04C50A69163434FA00A6C067 /* 362_Unicode.txt */,
+				04C50A6A163434FA00A6C067 /* 363_Unicode.txt */,
+				04C50A6B163434FA00A6C067 /* 364_Unicode.txt */,
+				04C50A6C163434FA00A6C067 /* 365_Unicode.txt */,
+				04C50A6D163434FA00A6C067 /* 366_Unicode.txt */,
+				04C50A6E163434FA00A6C067 /* 367_Unicode.txt */,
+				04C50A6F163434FA00A6C067 /* 368_Unicode.txt */,
+				04C50A70163434FA00A6C067 /* 369_Unicode.txt */,
+				04C50A71163434FA00A6C067 /* 370_Unicode.txt */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		04C50BE51635FBA800A6C067 /* youmi */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BE61635FBA800A6C067 /* IBSupport */,
+				04C50BF11635FBA800A6C067 /* lib */,
+			);
+			path = youmi;
+			sourceTree = "<group>";
+		};
+		04C50BE61635FBA800A6C067 /* IBSupport */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BE71635FBA800A6C067 /* YouMiViewController_200x200.h */,
+				04C50BE81635FBA800A6C067 /* YouMiViewController_200x200.m */,
+				04C50BE91635FBA800A6C067 /* YouMiViewController_300x250.h */,
+				04C50BEA1635FBA800A6C067 /* YouMiViewController_300x250.m */,
+				04C50BEB1635FBA800A6C067 /* YouMiViewController_320x50.h */,
+				04C50BEC1635FBA800A6C067 /* YouMiViewController_320x50.m */,
+				04C50BED1635FBA800A6C067 /* YouMiViewController_468x60.h */,
+				04C50BEE1635FBA800A6C067 /* YouMiViewController_468x60.m */,
+				04C50BEF1635FBA800A6C067 /* YouMiViewController_728x90.h */,
+				04C50BF01635FBA800A6C067 /* YouMiViewController_728x90.m */,
+			);
+			path = IBSupport;
+			sourceTree = "<group>";
+		};
+		04C50BF11635FBA800A6C067 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BF21635FBA800A6C067 /* include */,
+				04C50BFF1635FBA800A6C067 /* libYouMi.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		04C50BF21635FBA800A6C067 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BF31635FBA800A6C067 /* AD */,
+				04C50BFB1635FBA800A6C067 /* TK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		04C50BF31635FBA800A6C067 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BF41635FBA800A6C067 /* YouMiDelegateProtocol.h */,
+				04C50BF51635FBA800A6C067 /* YouMiSpot.h */,
+				04C50BF61635FBA800A6C067 /* YouMiSpotDelegateProtocol.h */,
+				04C50BF71635FBA800A6C067 /* YouMiView.h */,
+				04C50BF81635FBA800A6C067 /* YouMiWall.h */,
+				04C50BF91635FBA800A6C067 /* YouMiWallAppModel.h */,
+				04C50BFA1635FBA800A6C067 /* YouMiWallDelegateProtocol.h */,
+			);
+			path = AD;
+			sourceTree = "<group>";
+		};
+		04C50BFB1635FBA800A6C067 /* TK */ = {
+			isa = PBXGroup;
+			children = (
+				04C50BFC1635FBA800A6C067 /* YouMiConfig.h */,
+				04C50BFD1635FBA800A6C067 /* YouMiDataCenter.h */,
+				04C50BFE1635FBA800A6C067 /* YouMiPush.h */,
+			);
+			path = TK;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1169,6 +2375,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04C508FE163434E700A6C067 /* New Group */,
 				0498427E16320E2F005694D2 /* icon-144.png */,
 				049740B41624DB6F002E5251 /* 512X512.png */,
 				C1B7483415D47AEC0067F260 /* badge-favorite.png */,
@@ -1796,32 +3003,9 @@
 		309FEFC215629A5600CC3B0F /* wall */ = {
 			isa = PBXGroup;
 			children = (
-				309FEFC415629A6400CC3B0F /* youmi */,
+				04C50BE51635FBA800A6C067 /* youmi */,
 			);
 			name = wall;
-			sourceTree = "<group>";
-		};
-		309FEFC415629A6400CC3B0F /* youmi */ = {
-			isa = PBXGroup;
-			children = (
-				309FEFC515629A8A00CC3B0F /* include */,
-				309FEFCD15629A8A00CC3B0F /* libYouMi.a */,
-			);
-			name = youmi;
-			sourceTree = "<group>";
-		};
-		309FEFC515629A8A00CC3B0F /* include */ = {
-			isa = PBXGroup;
-			children = (
-				309FEFC615629A8A00CC3B0F /* YouMiDelegateProtocol.h */,
-				309FEFC715629A8A00CC3B0F /* YouMiSpot.h */,
-				309FEFC815629A8A00CC3B0F /* YouMiSpotDelegateProtocol.h */,
-				309FEFC915629A8A00CC3B0F /* YouMiView.h */,
-				309FEFCA15629A8A00CC3B0F /* YouMiWall.h */,
-				309FEFCB15629A8A00CC3B0F /* YouMiWallAppModel.h */,
-				309FEFCC15629A8A00CC3B0F /* YouMiWallDelegateProtocol.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		30A0897615703F19006A315D /* SinaWeibo */ = {
@@ -2330,6 +3514,377 @@
 				049842341632011E005694D2 /* blueArrowDown@2x.png in Resources */,
 				049842781632011E005694D2 /* MainViewController.xib in Resources */,
 				0498427F16320E30005694D2 /* icon-144.png in Resources */,
+				04C50A72163434FA00A6C067 /* 000_Unicode.txt in Resources */,
+				04C50A73163434FA00A6C067 /* 001_Unicode.txt in Resources */,
+				04C50A74163434FA00A6C067 /* 002_Unicode.txt in Resources */,
+				04C50A75163434FA00A6C067 /* 003_Unicode.txt in Resources */,
+				04C50A76163434FA00A6C067 /* 004_Unicode.txt in Resources */,
+				04C50A77163434FA00A6C067 /* 005_Unicode.txt in Resources */,
+				04C50A78163434FA00A6C067 /* 006_Unicode.txt in Resources */,
+				04C50A79163434FA00A6C067 /* 007_Unicode.txt in Resources */,
+				04C50A7A163434FA00A6C067 /* 008_Unicode.txt in Resources */,
+				04C50A7B163434FA00A6C067 /* 009_Unicode.txt in Resources */,
+				04C50A7C163434FA00A6C067 /* 010_Unicode.txt in Resources */,
+				04C50A7D163434FA00A6C067 /* 011_Unicode.txt in Resources */,
+				04C50A7E163434FA00A6C067 /* 012_Unicode.txt in Resources */,
+				04C50A7F163434FA00A6C067 /* 013_Unicode.txt in Resources */,
+				04C50A80163434FA00A6C067 /* 014_Unicode.txt in Resources */,
+				04C50A81163434FA00A6C067 /* 015_Unicode.txt in Resources */,
+				04C50A82163434FA00A6C067 /* 016_Unicode.txt in Resources */,
+				04C50A83163434FA00A6C067 /* 017_Unicode.txt in Resources */,
+				04C50A84163434FA00A6C067 /* 018_Unicode.txt in Resources */,
+				04C50A85163434FA00A6C067 /* 019_Unicode.txt in Resources */,
+				04C50A86163434FA00A6C067 /* 020_Unicode.txt in Resources */,
+				04C50A87163434FA00A6C067 /* 021_Unicode.txt in Resources */,
+				04C50A88163434FA00A6C067 /* 022_Unicode.txt in Resources */,
+				04C50A89163434FA00A6C067 /* 023_Unicode.txt in Resources */,
+				04C50A8A163434FA00A6C067 /* 024_Unicode.txt in Resources */,
+				04C50A8B163434FA00A6C067 /* 025_Unicode.txt in Resources */,
+				04C50A8C163434FA00A6C067 /* 026_Unicode.txt in Resources */,
+				04C50A8D163434FA00A6C067 /* 027_Unicode.txt in Resources */,
+				04C50A8E163434FA00A6C067 /* 028_Unicode.txt in Resources */,
+				04C50A8F163434FA00A6C067 /* 029_Unicode.txt in Resources */,
+				04C50A90163434FA00A6C067 /* 030_Unicode.txt in Resources */,
+				04C50A91163434FA00A6C067 /* 031_Unicode.txt in Resources */,
+				04C50A92163434FA00A6C067 /* 032_Unicode.txt in Resources */,
+				04C50A93163434FA00A6C067 /* 033_Unicode.txt in Resources */,
+				04C50A94163434FA00A6C067 /* 034_Unicode.txt in Resources */,
+				04C50A95163434FA00A6C067 /* 035_Unicode.txt in Resources */,
+				04C50A96163434FA00A6C067 /* 036_Unicode.txt in Resources */,
+				04C50A97163434FA00A6C067 /* 037_Unicode.txt in Resources */,
+				04C50A98163434FA00A6C067 /* 038_Unicode.txt in Resources */,
+				04C50A99163434FA00A6C067 /* 039_Unicode.txt in Resources */,
+				04C50A9A163434FA00A6C067 /* 040_Unicode.txt in Resources */,
+				04C50A9B163434FA00A6C067 /* 041_Unicode.txt in Resources */,
+				04C50A9C163434FA00A6C067 /* 042_Unicode.txt in Resources */,
+				04C50A9D163434FA00A6C067 /* 043_Unicode.txt in Resources */,
+				04C50A9E163434FA00A6C067 /* 044_Unicode.txt in Resources */,
+				04C50A9F163434FA00A6C067 /* 045_Unicode.txt in Resources */,
+				04C50AA0163434FA00A6C067 /* 046_Unicode.txt in Resources */,
+				04C50AA1163434FA00A6C067 /* 047_Unicode.txt in Resources */,
+				04C50AA2163434FA00A6C067 /* 048_Unicode.txt in Resources */,
+				04C50AA3163434FA00A6C067 /* 049_Unicode.txt in Resources */,
+				04C50AA4163434FA00A6C067 /* 050_Unicode.txt in Resources */,
+				04C50AA5163434FA00A6C067 /* 051_Unicode.txt in Resources */,
+				04C50AA6163434FA00A6C067 /* 052_Unicode.txt in Resources */,
+				04C50AA7163434FA00A6C067 /* 053_Unicode.txt in Resources */,
+				04C50AA8163434FA00A6C067 /* 054_Unicode.txt in Resources */,
+				04C50AA9163434FA00A6C067 /* 055_Unicode.txt in Resources */,
+				04C50AAA163434FA00A6C067 /* 056_Unicode.txt in Resources */,
+				04C50AAB163434FA00A6C067 /* 057_Unicode.txt in Resources */,
+				04C50AAC163434FA00A6C067 /* 058_Unicode.txt in Resources */,
+				04C50AAD163434FA00A6C067 /* 059_Unicode.txt in Resources */,
+				04C50AAE163434FA00A6C067 /* 060_Unicode.txt in Resources */,
+				04C50AAF163434FA00A6C067 /* 061_Unicode.txt in Resources */,
+				04C50AB0163434FA00A6C067 /* 062_Unicode.txt in Resources */,
+				04C50AB1163434FA00A6C067 /* 063_Unicode.txt in Resources */,
+				04C50AB2163434FA00A6C067 /* 064_Unicode.txt in Resources */,
+				04C50AB3163434FA00A6C067 /* 065_Unicode.txt in Resources */,
+				04C50AB4163434FA00A6C067 /* 066_Unicode.txt in Resources */,
+				04C50AB5163434FA00A6C067 /* 067_Unicode.txt in Resources */,
+				04C50AB6163434FA00A6C067 /* 068_Unicode.txt in Resources */,
+				04C50AB7163434FA00A6C067 /* 069_Unicode.txt in Resources */,
+				04C50AB8163434FA00A6C067 /* 070_Unicode.txt in Resources */,
+				04C50AB9163434FA00A6C067 /* 071_Unicode.txt in Resources */,
+				04C50ABA163434FA00A6C067 /* 072_Unicode.txt in Resources */,
+				04C50ABB163434FA00A6C067 /* 073_Unicode.txt in Resources */,
+				04C50ABC163434FA00A6C067 /* 074_Unicode.txt in Resources */,
+				04C50ABD163434FA00A6C067 /* 075_Unicode.txt in Resources */,
+				04C50ABE163434FA00A6C067 /* 076_Unicode.txt in Resources */,
+				04C50ABF163434FA00A6C067 /* 077_Unicode.txt in Resources */,
+				04C50AC0163434FA00A6C067 /* 078_Unicode.txt in Resources */,
+				04C50AC1163434FA00A6C067 /* 079_Unicode.txt in Resources */,
+				04C50AC2163434FA00A6C067 /* 080_Unicode.txt in Resources */,
+				04C50AC3163434FA00A6C067 /* 081_Unicode.txt in Resources */,
+				04C50AC4163434FA00A6C067 /* 082_Unicode.txt in Resources */,
+				04C50AC5163434FA00A6C067 /* 083_Unicode.txt in Resources */,
+				04C50AC6163434FA00A6C067 /* 084_Unicode.txt in Resources */,
+				04C50AC7163434FA00A6C067 /* 085_Unicode.txt in Resources */,
+				04C50AC8163434FA00A6C067 /* 086_Unicode.txt in Resources */,
+				04C50AC9163434FA00A6C067 /* 087_Unicode.txt in Resources */,
+				04C50ACA163434FA00A6C067 /* 088_Unicode.txt in Resources */,
+				04C50ACB163434FA00A6C067 /* 089_Unicode.txt in Resources */,
+				04C50ACC163434FA00A6C067 /* 090_Unicode.txt in Resources */,
+				04C50ACD163434FA00A6C067 /* 091_Unicode.txt in Resources */,
+				04C50ACE163434FA00A6C067 /* 092_Unicode.txt in Resources */,
+				04C50ACF163434FA00A6C067 /* 093_Unicode.txt in Resources */,
+				04C50AD0163434FA00A6C067 /* 094_Unicode.txt in Resources */,
+				04C50AD1163434FA00A6C067 /* 095_Unicode.txt in Resources */,
+				04C50AD2163434FA00A6C067 /* 096_Unicode.txt in Resources */,
+				04C50AD3163434FA00A6C067 /* 097_Unicode.txt in Resources */,
+				04C50AD4163434FA00A6C067 /* 098_Unicode.txt in Resources */,
+				04C50AD5163434FA00A6C067 /* 099_Unicode.txt in Resources */,
+				04C50AD6163434FA00A6C067 /* 100_Unicode.txt in Resources */,
+				04C50AD7163434FA00A6C067 /* 101_Unicode.txt in Resources */,
+				04C50AD8163434FA00A6C067 /* 102_Unicode.txt in Resources */,
+				04C50AD9163434FA00A6C067 /* 103_Unicode.txt in Resources */,
+				04C50ADA163434FA00A6C067 /* 104_Unicode.txt in Resources */,
+				04C50ADB163434FA00A6C067 /* 105_Unicode.txt in Resources */,
+				04C50ADC163434FB00A6C067 /* 106_Unicode.txt in Resources */,
+				04C50ADD163434FB00A6C067 /* 107_Unicode.txt in Resources */,
+				04C50ADE163434FB00A6C067 /* 108_Unicode.txt in Resources */,
+				04C50ADF163434FB00A6C067 /* 109_Unicode.txt in Resources */,
+				04C50AE0163434FB00A6C067 /* 110_Unicode.txt in Resources */,
+				04C50AE1163434FB00A6C067 /* 111_Unicode.txt in Resources */,
+				04C50AE2163434FB00A6C067 /* 112_Unicode.txt in Resources */,
+				04C50AE3163434FB00A6C067 /* 113_Unicode.txt in Resources */,
+				04C50AE4163434FB00A6C067 /* 114_Unicode.txt in Resources */,
+				04C50AE5163434FB00A6C067 /* 115_Unicode.txt in Resources */,
+				04C50AE6163434FB00A6C067 /* 116_Unicode.txt in Resources */,
+				04C50AE7163434FB00A6C067 /* 117_Unicode.txt in Resources */,
+				04C50AE8163434FB00A6C067 /* 118_Unicode.txt in Resources */,
+				04C50AE9163434FB00A6C067 /* 119_Unicode.txt in Resources */,
+				04C50AEA163434FB00A6C067 /* 120_Unicode.txt in Resources */,
+				04C50AEB163434FB00A6C067 /* 121_Unicode.txt in Resources */,
+				04C50AEC163434FB00A6C067 /* 122_Unicode.txt in Resources */,
+				04C50AED163434FB00A6C067 /* 123_Unicode.txt in Resources */,
+				04C50AEE163434FB00A6C067 /* 124_Unicode.txt in Resources */,
+				04C50AEF163434FB00A6C067 /* 125_Unicode.txt in Resources */,
+				04C50AF0163434FB00A6C067 /* 126_Unicode.txt in Resources */,
+				04C50AF1163434FB00A6C067 /* 127_Unicode.txt in Resources */,
+				04C50AF2163434FB00A6C067 /* 128_Unicode.txt in Resources */,
+				04C50AF3163434FB00A6C067 /* 129_Unicode.txt in Resources */,
+				04C50AF4163434FB00A6C067 /* 130_Unicode.txt in Resources */,
+				04C50AF5163434FB00A6C067 /* 131_Unicode.txt in Resources */,
+				04C50AF6163434FB00A6C067 /* 132_Unicode.txt in Resources */,
+				04C50AF7163434FB00A6C067 /* 133_Unicode.txt in Resources */,
+				04C50AF8163434FB00A6C067 /* 134_Unicode.txt in Resources */,
+				04C50AF9163434FB00A6C067 /* 135_Unicode.txt in Resources */,
+				04C50AFA163434FB00A6C067 /* 136_Unicode.txt in Resources */,
+				04C50AFB163434FB00A6C067 /* 137_Unicode.txt in Resources */,
+				04C50AFC163434FB00A6C067 /* 138_Unicode.txt in Resources */,
+				04C50AFD163434FB00A6C067 /* 139_Unicode.txt in Resources */,
+				04C50AFE163434FB00A6C067 /* 140_Unicode.txt in Resources */,
+				04C50AFF163434FB00A6C067 /* 141_Unicode.txt in Resources */,
+				04C50B00163434FB00A6C067 /* 142_Unicode.txt in Resources */,
+				04C50B01163434FB00A6C067 /* 143_Unicode.txt in Resources */,
+				04C50B02163434FB00A6C067 /* 144_Unicode.txt in Resources */,
+				04C50B03163434FB00A6C067 /* 145_Unicode.txt in Resources */,
+				04C50B04163434FB00A6C067 /* 146_Unicode.txt in Resources */,
+				04C50B05163434FB00A6C067 /* 147_Unicode.txt in Resources */,
+				04C50B06163434FB00A6C067 /* 148_Unicode.txt in Resources */,
+				04C50B07163434FB00A6C067 /* 149_Unicode.txt in Resources */,
+				04C50B08163434FB00A6C067 /* 150_Unicode.txt in Resources */,
+				04C50B09163434FB00A6C067 /* 151_Unicode.txt in Resources */,
+				04C50B0A163434FB00A6C067 /* 152_Unicode.txt in Resources */,
+				04C50B0B163434FB00A6C067 /* 153_Unicode.txt in Resources */,
+				04C50B0C163434FB00A6C067 /* 154_Unicode.txt in Resources */,
+				04C50B0D163434FB00A6C067 /* 155_Unicode.txt in Resources */,
+				04C50B0E163434FB00A6C067 /* 156_Unicode.txt in Resources */,
+				04C50B0F163434FB00A6C067 /* 157_Unicode.txt in Resources */,
+				04C50B10163434FB00A6C067 /* 158_Unicode.txt in Resources */,
+				04C50B11163434FB00A6C067 /* 159_Unicode.txt in Resources */,
+				04C50B12163434FB00A6C067 /* 160_Unicode.txt in Resources */,
+				04C50B13163434FB00A6C067 /* 161_Unicode.txt in Resources */,
+				04C50B14163434FB00A6C067 /* 162_Unicode.txt in Resources */,
+				04C50B15163434FB00A6C067 /* 163_Unicode.txt in Resources */,
+				04C50B16163434FB00A6C067 /* 164_Unicode.txt in Resources */,
+				04C50B17163434FB00A6C067 /* 165_Unicode.txt in Resources */,
+				04C50B18163434FB00A6C067 /* 166_Unicode.txt in Resources */,
+				04C50B19163434FB00A6C067 /* 167_Unicode.txt in Resources */,
+				04C50B1A163434FB00A6C067 /* 168_Unicode.txt in Resources */,
+				04C50B1B163434FB00A6C067 /* 169_Unicode.txt in Resources */,
+				04C50B1C163434FB00A6C067 /* 170_Unicode.txt in Resources */,
+				04C50B1D163434FB00A6C067 /* 171_Unicode.txt in Resources */,
+				04C50B1E163434FB00A6C067 /* 172_Unicode.txt in Resources */,
+				04C50B1F163434FB00A6C067 /* 173_Unicode.txt in Resources */,
+				04C50B20163434FB00A6C067 /* 174_Unicode.txt in Resources */,
+				04C50B21163434FB00A6C067 /* 175_Unicode.txt in Resources */,
+				04C50B22163434FB00A6C067 /* 176_Unicode.txt in Resources */,
+				04C50B23163434FB00A6C067 /* 177_Unicode.txt in Resources */,
+				04C50B24163434FB00A6C067 /* 178_Unicode.txt in Resources */,
+				04C50B25163434FB00A6C067 /* 179_Unicode.txt in Resources */,
+				04C50B26163434FB00A6C067 /* 180_Unicode.txt in Resources */,
+				04C50B27163434FB00A6C067 /* 181_Unicode.txt in Resources */,
+				04C50B28163434FB00A6C067 /* 182_Unicode.txt in Resources */,
+				04C50B29163434FB00A6C067 /* 183_Unicode.txt in Resources */,
+				04C50B2A163434FB00A6C067 /* 184_Unicode.txt in Resources */,
+				04C50B2B163434FB00A6C067 /* 185_Unicode.txt in Resources */,
+				04C50B2C163434FB00A6C067 /* 186_Unicode.txt in Resources */,
+				04C50B2D163434FB00A6C067 /* 187_Unicode.txt in Resources */,
+				04C50B2E163434FB00A6C067 /* 188_Unicode.txt in Resources */,
+				04C50B2F163434FB00A6C067 /* 189_Unicode.txt in Resources */,
+				04C50B30163434FB00A6C067 /* 190_Unicode.txt in Resources */,
+				04C50B31163434FB00A6C067 /* 191_Unicode.txt in Resources */,
+				04C50B32163434FB00A6C067 /* 192_Unicode.txt in Resources */,
+				04C50B33163434FB00A6C067 /* 193_Unicode.txt in Resources */,
+				04C50B34163434FB00A6C067 /* 194_Unicode.txt in Resources */,
+				04C50B35163434FB00A6C067 /* 195_Unicode.txt in Resources */,
+				04C50B36163434FB00A6C067 /* 196_Unicode.txt in Resources */,
+				04C50B37163434FB00A6C067 /* 197_Unicode.txt in Resources */,
+				04C50B38163434FB00A6C067 /* 198_Unicode.txt in Resources */,
+				04C50B39163434FB00A6C067 /* 199_Unicode.txt in Resources */,
+				04C50B3A163434FB00A6C067 /* 200_Unicode.txt in Resources */,
+				04C50B3B163434FB00A6C067 /* 201_Unicode.txt in Resources */,
+				04C50B3C163434FB00A6C067 /* 202_Unicode.txt in Resources */,
+				04C50B3D163434FB00A6C067 /* 203_Unicode.txt in Resources */,
+				04C50B3E163434FB00A6C067 /* 204_Unicode.txt in Resources */,
+				04C50B3F163434FB00A6C067 /* 205_Unicode.txt in Resources */,
+				04C50B40163434FB00A6C067 /* 206_Unicode.txt in Resources */,
+				04C50B41163434FB00A6C067 /* 207_Unicode.txt in Resources */,
+				04C50B42163434FB00A6C067 /* 208_Unicode.txt in Resources */,
+				04C50B43163434FB00A6C067 /* 209_Unicode.txt in Resources */,
+				04C50B44163434FB00A6C067 /* 210_Unicode.txt in Resources */,
+				04C50B45163434FB00A6C067 /* 211_Unicode.txt in Resources */,
+				04C50B46163434FB00A6C067 /* 212_Unicode.txt in Resources */,
+				04C50B47163434FB00A6C067 /* 213_Unicode.txt in Resources */,
+				04C50B48163434FB00A6C067 /* 214_Unicode.txt in Resources */,
+				04C50B49163434FB00A6C067 /* 215_Unicode.txt in Resources */,
+				04C50B4A163434FB00A6C067 /* 216_Unicode.txt in Resources */,
+				04C50B4B163434FB00A6C067 /* 217_Unicode.txt in Resources */,
+				04C50B4C163434FB00A6C067 /* 218_Unicode.txt in Resources */,
+				04C50B4D163434FB00A6C067 /* 219_Unicode.txt in Resources */,
+				04C50B4E163434FB00A6C067 /* 220_Unicode.txt in Resources */,
+				04C50B4F163434FB00A6C067 /* 221_Unicode.txt in Resources */,
+				04C50B50163434FB00A6C067 /* 222_Unicode.txt in Resources */,
+				04C50B51163434FB00A6C067 /* 223_Unicode.txt in Resources */,
+				04C50B52163434FB00A6C067 /* 224_Unicode.txt in Resources */,
+				04C50B53163434FB00A6C067 /* 225_Unicode.txt in Resources */,
+				04C50B54163434FB00A6C067 /* 226_Unicode.txt in Resources */,
+				04C50B55163434FB00A6C067 /* 227_Unicode.txt in Resources */,
+				04C50B56163434FB00A6C067 /* 228_Unicode.txt in Resources */,
+				04C50B57163434FB00A6C067 /* 229_Unicode.txt in Resources */,
+				04C50B58163434FB00A6C067 /* 230_Unicode.txt in Resources */,
+				04C50B59163434FB00A6C067 /* 231_Unicode.txt in Resources */,
+				04C50B5A163434FB00A6C067 /* 232_Unicode.txt in Resources */,
+				04C50B5B163434FB00A6C067 /* 233_Unicode.txt in Resources */,
+				04C50B5C163434FB00A6C067 /* 234_Unicode.txt in Resources */,
+				04C50B5D163434FB00A6C067 /* 235_Unicode.txt in Resources */,
+				04C50B5E163434FB00A6C067 /* 236_Unicode.txt in Resources */,
+				04C50B5F163434FB00A6C067 /* 237_Unicode.txt in Resources */,
+				04C50B60163434FB00A6C067 /* 238_Unicode.txt in Resources */,
+				04C50B61163434FB00A6C067 /* 239_Unicode.txt in Resources */,
+				04C50B62163434FB00A6C067 /* 240_Unicode.txt in Resources */,
+				04C50B63163434FB00A6C067 /* 241_Unicode.txt in Resources */,
+				04C50B64163434FB00A6C067 /* 242_Unicode.txt in Resources */,
+				04C50B65163434FB00A6C067 /* 243_Unicode.txt in Resources */,
+				04C50B66163434FB00A6C067 /* 244_Unicode.txt in Resources */,
+				04C50B67163434FB00A6C067 /* 245_Unicode.txt in Resources */,
+				04C50B68163434FB00A6C067 /* 246_Unicode.txt in Resources */,
+				04C50B69163434FB00A6C067 /* 247_Unicode.txt in Resources */,
+				04C50B6A163434FB00A6C067 /* 248_Unicode.txt in Resources */,
+				04C50B6B163434FB00A6C067 /* 249_Unicode.txt in Resources */,
+				04C50B6C163434FB00A6C067 /* 250_Unicode.txt in Resources */,
+				04C50B6D163434FB00A6C067 /* 251_Unicode.txt in Resources */,
+				04C50B6E163434FB00A6C067 /* 252_Unicode.txt in Resources */,
+				04C50B6F163434FB00A6C067 /* 253_Unicode.txt in Resources */,
+				04C50B70163434FB00A6C067 /* 254_Unicode.txt in Resources */,
+				04C50B71163434FB00A6C067 /* 255_Unicode.txt in Resources */,
+				04C50B72163434FB00A6C067 /* 256_Unicode.txt in Resources */,
+				04C50B73163434FB00A6C067 /* 257_Unicode.txt in Resources */,
+				04C50B74163434FB00A6C067 /* 258_Unicode.txt in Resources */,
+				04C50B75163434FB00A6C067 /* 259_Unicode.txt in Resources */,
+				04C50B76163434FB00A6C067 /* 260_Unicode.txt in Resources */,
+				04C50B77163434FB00A6C067 /* 261_Unicode.txt in Resources */,
+				04C50B78163434FB00A6C067 /* 262_Unicode.txt in Resources */,
+				04C50B79163434FB00A6C067 /* 263_Unicode.txt in Resources */,
+				04C50B7A163434FB00A6C067 /* 264_Unicode.txt in Resources */,
+				04C50B7B163434FB00A6C067 /* 265_Unicode.txt in Resources */,
+				04C50B7C163434FB00A6C067 /* 266_Unicode.txt in Resources */,
+				04C50B7D163434FB00A6C067 /* 267_Unicode.txt in Resources */,
+				04C50B7E163434FB00A6C067 /* 268_Unicode.txt in Resources */,
+				04C50B7F163434FB00A6C067 /* 269_Unicode.txt in Resources */,
+				04C50B80163434FB00A6C067 /* 270_Unicode.txt in Resources */,
+				04C50B81163434FB00A6C067 /* 271_Unicode.txt in Resources */,
+				04C50B82163434FB00A6C067 /* 272_Unicode.txt in Resources */,
+				04C50B83163434FB00A6C067 /* 273_Unicode.txt in Resources */,
+				04C50B84163434FB00A6C067 /* 274_Unicode.txt in Resources */,
+				04C50B85163434FB00A6C067 /* 275_Unicode.txt in Resources */,
+				04C50B86163434FB00A6C067 /* 276_Unicode.txt in Resources */,
+				04C50B87163434FB00A6C067 /* 277_Unicode.txt in Resources */,
+				04C50B88163434FB00A6C067 /* 278_Unicode.txt in Resources */,
+				04C50B89163434FB00A6C067 /* 279_Unicode.txt in Resources */,
+				04C50B8A163434FB00A6C067 /* 280_Unicode.txt in Resources */,
+				04C50B8B163434FB00A6C067 /* 281_Unicode.txt in Resources */,
+				04C50B8C163434FB00A6C067 /* 282_Unicode.txt in Resources */,
+				04C50B8D163434FB00A6C067 /* 283_Unicode.txt in Resources */,
+				04C50B8E163434FB00A6C067 /* 284_Unicode.txt in Resources */,
+				04C50B8F163434FB00A6C067 /* 285_Unicode.txt in Resources */,
+				04C50B90163434FB00A6C067 /* 286_Unicode.txt in Resources */,
+				04C50B91163434FB00A6C067 /* 287_Unicode.txt in Resources */,
+				04C50B92163434FB00A6C067 /* 288_Unicode.txt in Resources */,
+				04C50B93163434FB00A6C067 /* 289_Unicode.txt in Resources */,
+				04C50B94163434FB00A6C067 /* 290_Unicode.txt in Resources */,
+				04C50B95163434FB00A6C067 /* 291_Unicode.txt in Resources */,
+				04C50B96163434FB00A6C067 /* 292_Unicode.txt in Resources */,
+				04C50B97163434FB00A6C067 /* 293_Unicode.txt in Resources */,
+				04C50B98163434FB00A6C067 /* 294_Unicode.txt in Resources */,
+				04C50B99163434FB00A6C067 /* 295_Unicode.txt in Resources */,
+				04C50B9A163434FB00A6C067 /* 296_Unicode.txt in Resources */,
+				04C50B9B163434FB00A6C067 /* 297_Unicode.txt in Resources */,
+				04C50B9C163434FB00A6C067 /* 298_Unicode.txt in Resources */,
+				04C50B9D163434FB00A6C067 /* 299_Unicode.txt in Resources */,
+				04C50B9E163434FB00A6C067 /* 300_Unicode.txt in Resources */,
+				04C50B9F163434FB00A6C067 /* 301_Unicode.txt in Resources */,
+				04C50BA0163434FB00A6C067 /* 302_Unicode.txt in Resources */,
+				04C50BA1163434FB00A6C067 /* 303_Unicode.txt in Resources */,
+				04C50BA2163434FB00A6C067 /* 304_Unicode.txt in Resources */,
+				04C50BA3163434FB00A6C067 /* 305_Unicode.txt in Resources */,
+				04C50BA4163434FB00A6C067 /* 306_Unicode.txt in Resources */,
+				04C50BA5163434FB00A6C067 /* 307_Unicode.txt in Resources */,
+				04C50BA6163434FB00A6C067 /* 308_Unicode.txt in Resources */,
+				04C50BA7163434FB00A6C067 /* 309_Unicode.txt in Resources */,
+				04C50BA8163434FB00A6C067 /* 310_Unicode.txt in Resources */,
+				04C50BA9163434FB00A6C067 /* 311_Unicode.txt in Resources */,
+				04C50BAA163434FB00A6C067 /* 312_Unicode.txt in Resources */,
+				04C50BAB163434FB00A6C067 /* 313_Unicode.txt in Resources */,
+				04C50BAC163434FB00A6C067 /* 314_Unicode.txt in Resources */,
+				04C50BAD163434FB00A6C067 /* 315_Unicode.txt in Resources */,
+				04C50BAE163434FB00A6C067 /* 316_Unicode.txt in Resources */,
+				04C50BAF163434FB00A6C067 /* 317_Unicode.txt in Resources */,
+				04C50BB0163434FB00A6C067 /* 318_Unicode.txt in Resources */,
+				04C50BB1163434FB00A6C067 /* 319_Unicode.txt in Resources */,
+				04C50BB2163434FB00A6C067 /* 320_Unicode.txt in Resources */,
+				04C50BB3163434FB00A6C067 /* 321_Unicode.txt in Resources */,
+				04C50BB4163434FB00A6C067 /* 322_Unicode.txt in Resources */,
+				04C50BB5163434FB00A6C067 /* 323_Unicode.txt in Resources */,
+				04C50BB6163434FB00A6C067 /* 324_Unicode.txt in Resources */,
+				04C50BB7163434FB00A6C067 /* 325_Unicode.txt in Resources */,
+				04C50BB8163434FB00A6C067 /* 326_Unicode.txt in Resources */,
+				04C50BB9163434FB00A6C067 /* 327_Unicode.txt in Resources */,
+				04C50BBA163434FB00A6C067 /* 328_Unicode.txt in Resources */,
+				04C50BBB163434FB00A6C067 /* 329_Unicode.txt in Resources */,
+				04C50BBC163434FB00A6C067 /* 330_Unicode.txt in Resources */,
+				04C50BBD163434FB00A6C067 /* 331_Unicode.txt in Resources */,
+				04C50BBE163434FB00A6C067 /* 332_Unicode.txt in Resources */,
+				04C50BBF163434FB00A6C067 /* 333_Unicode.txt in Resources */,
+				04C50BC0163434FB00A6C067 /* 334_Unicode.txt in Resources */,
+				04C50BC1163434FB00A6C067 /* 335_Unicode.txt in Resources */,
+				04C50BC2163434FB00A6C067 /* 336_Unicode.txt in Resources */,
+				04C50BC3163434FB00A6C067 /* 337_Unicode.txt in Resources */,
+				04C50BC4163434FB00A6C067 /* 338_Unicode.txt in Resources */,
+				04C50BC5163434FB00A6C067 /* 339_Unicode.txt in Resources */,
+				04C50BC6163434FB00A6C067 /* 340_Unicode.txt in Resources */,
+				04C50BC7163434FB00A6C067 /* 341_Unicode.txt in Resources */,
+				04C50BC8163434FB00A6C067 /* 342_Unicode.txt in Resources */,
+				04C50BC9163434FB00A6C067 /* 343_Unicode.txt in Resources */,
+				04C50BCA163434FB00A6C067 /* 344_Unicode.txt in Resources */,
+				04C50BCB163434FB00A6C067 /* 345_Unicode.txt in Resources */,
+				04C50BCC163434FB00A6C067 /* 346_Unicode.txt in Resources */,
+				04C50BCD163434FB00A6C067 /* 347_Unicode.txt in Resources */,
+				04C50BCE163434FB00A6C067 /* 348_Unicode.txt in Resources */,
+				04C50BCF163434FB00A6C067 /* 349_Unicode.txt in Resources */,
+				04C50BD0163434FB00A6C067 /* 350_Unicode.txt in Resources */,
+				04C50BD1163434FB00A6C067 /* 351_Unicode.txt in Resources */,
+				04C50BD2163434FB00A6C067 /* 352_Unicode.txt in Resources */,
+				04C50BD3163434FB00A6C067 /* 353_Unicode.txt in Resources */,
+				04C50BD4163434FB00A6C067 /* 354_Unicode.txt in Resources */,
+				04C50BD5163434FB00A6C067 /* 355_Unicode.txt in Resources */,
+				04C50BD6163434FB00A6C067 /* 356_Unicode.txt in Resources */,
+				04C50BD7163434FB00A6C067 /* 357_Unicode.txt in Resources */,
+				04C50BD8163434FB00A6C067 /* 358_Unicode.txt in Resources */,
+				04C50BD9163434FB00A6C067 /* 359_Unicode.txt in Resources */,
+				04C50BDA163434FB00A6C067 /* 360_Unicode.txt in Resources */,
+				04C50BDB163434FB00A6C067 /* 361_Unicode.txt in Resources */,
+				04C50BDC163434FB00A6C067 /* 362_Unicode.txt in Resources */,
+				04C50BDD163434FB00A6C067 /* 363_Unicode.txt in Resources */,
+				04C50BDE163434FB00A6C067 /* 364_Unicode.txt in Resources */,
+				04C50BDF163434FB00A6C067 /* 365_Unicode.txt in Resources */,
+				04C50BE0163434FB00A6C067 /* 366_Unicode.txt in Resources */,
+				04C50BE1163434FB00A6C067 /* 367_Unicode.txt in Resources */,
+				04C50BE2163434FB00A6C067 /* 368_Unicode.txt in Resources */,
+				04C50BE3163434FB00A6C067 /* 369_Unicode.txt in Resources */,
+				04C50BE4163434FB00A6C067 /* 370_Unicode.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2434,6 +3989,11 @@
 				049842741632011E005694D2 /* CJSONSerializer.m in Sources */,
 				049842771632011E005694D2 /* MainViewController.m in Sources */,
 				0498427A1632011E005694D2 /* QiuShi.m in Sources */,
+				04C50C001635FBA800A6C067 /* YouMiViewController_200x200.m in Sources */,
+				04C50C011635FBA800A6C067 /* YouMiViewController_300x250.m in Sources */,
+				04C50C021635FBA800A6C067 /* YouMiViewController_320x50.m in Sources */,
+				04C50C031635FBA800A6C067 /* YouMiViewController_468x60.m in Sources */,
+				04C50C041635FBA800A6C067 /* YouMiViewController_728x90.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2594,6 +4154,7 @@
 					"\"$(SRCROOT)/lib/AdSageSDK\"",
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
+					"\"$(SRCROOT)/lib/youmi/lib\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2685,6 +4246,7 @@
 					"\"$(SRCROOT)/lib/AdSageSDK\"",
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
+					"\"$(SRCROOT)/lib/youmi/lib\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -2801,6 +4363,7 @@
 					"\"$(SRCROOT)/lib/AdSageSDK\"",
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
+					"\"$(SRCROOT)/lib/youmi/lib\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

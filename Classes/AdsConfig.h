@@ -19,13 +19,14 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-//#define Makeup
-#define MakeToast
+#define Makeup
+//#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
 //#define EnglishSuffix
+//#define LearnEnglishBySinging MakeToast
 
 
 //ads url

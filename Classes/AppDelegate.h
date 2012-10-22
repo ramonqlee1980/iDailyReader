@@ -1,4 +1,6 @@
 
+#import "ASIHTTPRequest.h"
+
 #define SharedDelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
 #define kAdd2Favorite @"kAdd2Favorite"
 @interface AppDelegate : NSObject <UIApplicationDelegate>
@@ -17,6 +19,7 @@
     NSUInteger mAdsWallIndex;
     NSArray* mAdsWalls;
     BOOL mShouldShowAdsWall;
+    ASIHTTPRequest* asiRequest;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,6 +29,7 @@
 @property (nonatomic, assign) NSString* mDataPath;
 @property (nonatomic, retain) NSString* mTrackViewUrl;
 @property (nonatomic, retain) NSString* mTrackName;
+@property(nonatomic,retain) ASIHTTPRequest *asiRequest;
 
 //current ads wall 
 -(NSString*)currentAdsWall;

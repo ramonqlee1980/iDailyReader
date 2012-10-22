@@ -281,7 +281,9 @@
 
 - (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
 {
-    return [data count]/kItemPerSection+[openApps count];//one for title,one for content
+    NSInteger count = [data count]/kItemPerSection+[openApps count];
+    NSLog(@"contentCount:%d",count);
+    return count;//one for title,one for content
 }
 - (UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

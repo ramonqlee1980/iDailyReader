@@ -41,7 +41,7 @@
 @synthesize navigationController;
 @synthesize data;
 @synthesize mCurrentFileName,mDataPath,mTrackViewUrl,mTrackName;
-
+@synthesize asiRequest;
 #pragma mark -
 #pragma mark Application lifecycle
 #pragma mark -
@@ -427,10 +427,29 @@
 {
     return (self.connection != nil);
 }
+-(void) GetErr:(ASIHTTPRequest *)request
+{
+    NSLog(@"连接网络失败，请检查是否开启移动数据");
+}
 
+-(void) GetResult:(ASIHTTPRequest *)request
+{
+    NSLog(@"开启移动数据");
+}
 - (void)startAdsConfigReceive
 // Starts a connection to download the current URL.
 {
+#if 0
+    NSURL *url = [[NetworkManager sharedInstance] smartURLForString:AdsUrl];
+    if(asiRequest==nil)
+    {
+    asiRequest = [ASIHTTPRequest requestWithURL:url];
+    [asiRequest setDelegate:self];
+    [asiRequest setDidFinishSelector:@selector(GetResult:)];
+    [asiRequest setDidFailSelector:@selector(GetErr:)];
+    }
+    [asiRequest startAsynchronous];
+#else
     BOOL                success;
     NSURL *             url;
     NSURLRequest *      request;
@@ -478,6 +497,7 @@
         assert(self.connection != nil);
         [[NetworkManager sharedInstance] didStartNetworkOperation];
     }
+#endif
 }
 - (void)receiveDidStopWithStatus:(NSString *)statusString
 {
