@@ -10,8 +10,6 @@
 #import "Constants.h"
 #import "AdsConfig.h"
 #import "Flurry.h"
-#import "AdSageRecommendView.h"
-#import "AdSageManager.h"
 #import "WapsOffer/AppConnect.h"
 //#import "MiidiAdWall.h"
 
@@ -35,7 +33,7 @@
 -(void)closeAds:(BOOL)popClosingTip;
 -(void)loadNeededView;
 -(void)loadYoumiWall:(BOOL)credit;
--(void)loadAdsageRecommendView;
+-(void)loadAdsageRecommendView:(BOOL)visible;
 -(void)loadRecommendAdsWall:(NSString*)wallName;
 @end
 
@@ -117,32 +115,23 @@
         [wall requestFeaturedApp:credit];
     }
 }
--(void)loadAdsageRecommendView
+-(void)loadAdsageRecommendView:(BOOL)visible
 {
-    [[AdSageManager getInstance]setAdSageKey:kMobiSageID_iPhone];
+    [[MobiSageManager getInstance]setPublisherID:kMobiSageID_iPhone];
     if (self.recmdView == nil) 
-    {        
-        self.recmdView = [AdSageRecommendView requestWithDelegate:self color:AdSageRecommendColorTypeOrange];
-        CGFloat height = self.navigationController.navigationBar.frame.size.height;//self.recmdView.frame.size.height
-        self.recmdView.frame = CGRectMake(0, 0, self.recmdView.frame.size.width, height);
-       /* 
-        if ([self.recmdView respondsToSelector:@selector(setTitle:)]) {
-            [self.recmdView setTitle:@"免费应用推荐"];
-        }
-        if([self.recmdView respondsToSelector:@selector(setSubtitle:)])
-        {
-            [self.recmdView setSubtitle:@"一网打尽国内的免费应用"];
-        }  
-        if([self.recmdView respondsToSelector:@selector(setBanner:)])
-        {
-            [self.recmdView setBanner:YES];
-        }*/
+    {
+        const NSUInteger size = 24;//mobisage recommend default view size
+        _recmdView = [[MobiSageRecommendView alloc]initWithDelegate:self andImg:nil];
+        //CGFloat height = self.navigationController.navigationBar.frame.size.height;
+        self.recmdView.frame = CGRectMake(0, size/2, size, size);
     }    
-    
-    //add to navigation 
-    UIBarButtonItem *naviLeftItem = [[UIBarButtonItem alloc] initWithCustomView:self.recmdView];    
-	self.navigationItem.leftBarButtonItem = naviLeftItem;
-    [naviLeftItem release];
+    if(visible)
+    {
+        //add to navigation
+        UIBarButtonItem *naviLeftItem = [[UIBarButtonItem alloc] initWithCustomView:self.recmdView];    
+        self.navigationItem.leftBarButtonItem = naviLeftItem;
+        [naviLeftItem release];
+    }
 }
 -(void)loadFeaturedYoumiWall
 {    
@@ -176,7 +165,8 @@
 - (void)viewDidLoad
 {
     [self loadNeededView];    
-    [super viewDidLoad];   
+    [super viewDidLoad];
+    [self loadAdsageRecommendView:NO];
     
     mYoumiFeatureWallShowCount = 0;
     mYoumiFeaturedWallShown = NO;  
@@ -378,10 +368,8 @@
     [tableView release];
     [data release];
     [openApps release];
-	//[tmpCell release];
-	//[cellNib release];
-	
-    //    [super dealloc];/
+    self.recmdView = nil;
+    [super dealloc];
 }
 
 -(IBAction)donateViewAction:(id)sender
@@ -484,15 +472,16 @@
     [alert show];
     [alert release];
 }
+
 -(void)loadRecommendAdsWall:(NSString*)wallName
 {
     //self.navigationController.navigationBarHidden = YES;
-    //if(YES)
-//    if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
-    //{
-     //   [MiidiAdWall showAppOffers:self withDelegate:nil];
-    //}
-    if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
+    if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
+    {
+        [self loadAdsageRecommendView:YES];
+        [self.recmdView OpenAdSageRecmdModalView];
+    }
+    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
     {
         [AppConnect showOffers];
     }
@@ -556,7 +545,7 @@
 //        [self loadFeaturedYoumiWall];
         AppDelegate* delegate = SharedDelegate;
         [self  loadRecommendAdsWall:[delegate currentAdsWall]];
-        [self loadAdsageRecommendView];
+        [self loadAdsageRecommendView:YES];
     }
     if (![AdsConfig neverCloseAds]) {
         return;

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdSageRecommendView.h"
+#import "MobiSageRecommendSDK.h"
 
-@interface AdSageRecommendView(HypnosisView)
+@interface MobiSageRecommendView(HypnosisView)
 
 -(void)setTitle:(NSString*)title;
 -(void)setSubtitle:(NSString*)subtitle;

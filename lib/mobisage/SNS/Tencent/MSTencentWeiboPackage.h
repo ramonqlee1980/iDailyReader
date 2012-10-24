@@ -6,28 +6,25 @@
 //  Copyright (c) 2011 mobiSage. All rights reserved.
 //
 
+#import "MobiSageSNSPackage.h"
 
-@class MSOAToken;
-@class MSOAConsumer;
-
-#import "../../MobiSagePackage.h"
-
-@interface MSTencentWeiboPackage : MobiSagePackage
+@interface MSTencentWeiboPackage : MobiSageSNSPackage
 {
 @protected
-    MSOAToken*              m_OAuthToken;
-    MSOAConsumer*           m_OAuthConsumer;
+    NSString*               m_AppKey;
+    NSString*               m_AccessToken;
     
     NSString*               m_UrlPath;
     NSString*               m_HttpMethod;
     
     NSMutableDictionary*    m_ParamDic;
 }
--(id)initWithToken:(MSOAToken*)token Consumer:(MSOAConsumer*)consumer;
+-(id)initWithAppKey:(NSString*)appKey;
+-(id)initWithAppKey:(NSString *)appKey AccessToken:(NSString*)accessToken;
 
--(void)addParameter:(NSString*)name Value:(NSString*)value;
+-(void)generateHTTPBody:(NSMutableURLRequest*)request;
 
 -(NSString*)generateOAuthParameter;
 
--(void)generateHTTPBody:(NSMutableURLRequest*)request;
+-(void)addParameter:(NSString*)name Value:(NSString*)value;
 @end

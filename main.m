@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; 
     
     [[MobiSageManager getInstance] setPublisherID:kMobiSageID_iPhone];
-    NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
+    //NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
     //disable youmi wall gps
     [YouMiWall setShouldGetLocation:NO];
     [YouMiWall setShouldCacheImage:YES];

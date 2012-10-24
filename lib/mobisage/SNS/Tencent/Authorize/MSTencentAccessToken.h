@@ -12,4 +12,5 @@
 {
     
 }
+-(id)initWithAppKey:(NSString*)appKey Secret:(NSString*)appSecret;
 @end

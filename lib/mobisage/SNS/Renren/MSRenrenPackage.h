@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 mobiSage. All rights reserved.
 //
 
-#import "../../MobiSagePackage.h"
+#import "../Common/MobiSageSNSPackage.h"
 
-@interface MSRenrenPackage : MobiSagePackage
+@interface MSRenrenPackage : MobiSageSNSPackage
 {
 @protected
     NSString*               m_ClientID;
@@ -22,7 +22,7 @@
     NSMutableDictionary*    m_ParamDic;
 }
 -(id)initWithClientID:(NSString*)clientID;
--(id)initWithAccessToken:(NSString*)accessToken SecretKey:(NSString*)secretKey;
+-(id)initWithAccessToken:(NSString*)accessToken SecretKey:(NSString*)secretKey clientID:(NSString*)clientID;
 
 -(void)addParameter:(NSString*)name Value:(NSString*)value;
 

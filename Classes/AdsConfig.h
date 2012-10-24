@@ -436,6 +436,7 @@
 #define AdsPlatformImmobWall @"ImmobWall"
 #define AdsPlatformYoumiWall @"YoumiWall"
 #define AdsPlatformWapsWall @"WapsWall"
+#define AdsPlatformMobisageWall @"MobisageWall"
 #define AdsPlatformDefaultWall AdsPlatformYoumiWall
 
 

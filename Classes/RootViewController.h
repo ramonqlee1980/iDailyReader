@@ -3,12 +3,11 @@
 #import "ModalViewController.h"
 #import "Constants.h"
 #import "YouMiWall.h"
-#import "AdSageRecommendDelegate.h"
+#import "MobiSageRecommendSDK.h"
 #import <immobSDK/immobView.h>
 
-@class AdSageRecommendView;
 
-@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,AdSageRecommendDelegate,immobViewDelegate>
+@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate>
 {
 	//ApplicationCell *tmpCell;
     NSMutableArray *data;
@@ -16,9 +15,9 @@
 	YouMiWall *wall;
     UIView* mImmobWall;//
 	NSMutableArray *openApps;
-    AdSageRecommendView *_recmdView;
+    MobiSageRecommendView *_recmdView;
 }
-@property(nonatomic, retain) AdSageRecommendView *recmdView;
+@property(nonatomic, retain) MobiSageRecommendView *recmdView;
 
 @property (nonatomic, retain) UITableView* tableView;
 @property (nonatomic, retain) NSMutableArray *data;

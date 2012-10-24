@@ -1,0 +1,176 @@
+\hypertarget{interface_mobi_sage_manager}{\section{\-Mobi\-Sage\-Manager \-Class \-Reference}
+\label{interface_mobi_sage_manager}\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}}
+}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_af3e927d3c87219cd3a0b52c3c1ff4d47}{set\-Publisher\-I\-D\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_a12c9afbad34d0129d8117578ef183c24}{set\-Deploy\-Channel\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_ac9b224f48d44d5096932909c18f49ca1}{track\-System\-Event\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_a1d87b794d6a8c4cb4324265fe5299d20}{track\-System\-Event\-:\-With\-Object\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_a40846c70d91a9e49b76634ad3e416fd4}{track\-Customer\-Event\-:\-With\-Object\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_a4f721203eb0198a9fc01ac636a45344f}{push\-Mobi\-Sage\-Package\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_aaf59a45dc1100cfc18701f4c33aaaa40}{push\-Mobi\-Sage\-Package\-Array\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_af5fdc494b6025a56d15cced4d6dd438d}{cancel\-Mobi\-Sage\-Package\-:}
+\item 
+(void) -\/ \hyperlink{interface_mobi_sage_manager_ab66e53e767c760669e7f0ca5b7ed9614}{cancel\-Mobi\-Sage\-Package\-Array\-:}
+\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_mobi_sage_manager}{\-Mobi\-Sage\-Manager} $\ast$) + \hyperlink{interface_mobi_sage_manager_af279bbc365d374ce79d1a08798fe981e}{get\-Instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{interface_mobi_sage_manager_af5fdc494b6025a56d15cced4d6dd438d}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!cancel\-Mobi\-Sage\-Package\-:@{cancel\-Mobi\-Sage\-Package\-:}}
+\index{cancel\-Mobi\-Sage\-Package\-:@{cancel\-Mobi\-Sage\-Package\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{cancel\-Mobi\-Sage\-Package\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf cancel\-Mobi\-Sage\-Package\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy({\bf \-Mobi\-Sage\-Resource\-Package} $\ast$)}]{package}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_af5fdc494b6025a56d15cced4d6dd438d}
+取消或停止从网络获取数据包 
+\begin{DoxyParams}{\-Parameters}
+{\em package} & 请求信息包 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+从网络获取数据包：例如图片、音乐等 
+\end{DoxyNote}
+\hypertarget{interface_mobi_sage_manager_ab66e53e767c760669e7f0ca5b7ed9614}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!cancel\-Mobi\-Sage\-Package\-Array\-:@{cancel\-Mobi\-Sage\-Package\-Array\-:}}
+\index{cancel\-Mobi\-Sage\-Package\-Array\-:@{cancel\-Mobi\-Sage\-Package\-Array\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{cancel\-Mobi\-Sage\-Package\-Array\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf cancel\-Mobi\-Sage\-Package\-Array\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-N\-S\-Array $\ast$)}]{package\-Array}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_ab66e53e767c760669e7f0ca5b7ed9614}
+取消或停止多个从网络获取数据包 
+\begin{DoxyParams}{\-Parameters}
+{\em package\-Array} & 请求信息包数组,元素为\-Mobi\-Sage\-Resource\-Package类的实例 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+从网络获取数据包：例如图片、音乐等 
+\end{DoxyNote}
+\hypertarget{interface_mobi_sage_manager_af279bbc365d374ce79d1a08798fe981e}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf \-Mobi\-Sage\-Manager}$\ast$) {\bf get\-Instance} 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_af279bbc365d374ce79d1a08798fe981e}
+获得\-Mobi\-Sage平台管理单例 \hypertarget{interface_mobi_sage_manager_a4f721203eb0198a9fc01ac636a45344f}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!push\-Mobi\-Sage\-Package\-:@{push\-Mobi\-Sage\-Package\-:}}
+\index{push\-Mobi\-Sage\-Package\-:@{push\-Mobi\-Sage\-Package\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{push\-Mobi\-Sage\-Package\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf push\-Mobi\-Sage\-Package\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy({\bf \-Mobi\-Sage\-Resource\-Package} $\ast$)}]{package}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_a4f721203eb0198a9fc01ac636a45344f}
+从网络获取数据包 
+\begin{DoxyParams}{\-Parameters}
+{\em package} & 请求信息包 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+从网络获取数据包：例如图片、音乐等 
+\end{DoxyNote}
+\hypertarget{interface_mobi_sage_manager_aaf59a45dc1100cfc18701f4c33aaaa40}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!push\-Mobi\-Sage\-Package\-Array\-:@{push\-Mobi\-Sage\-Package\-Array\-:}}
+\index{push\-Mobi\-Sage\-Package\-Array\-:@{push\-Mobi\-Sage\-Package\-Array\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{push\-Mobi\-Sage\-Package\-Array\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf push\-Mobi\-Sage\-Package\-Array\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-N\-S\-Array $\ast$)}]{package\-Array}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_aaf59a45dc1100cfc18701f4c33aaaa40}
+从网络获取多个数据包，比如图片、音乐等 
+\begin{DoxyParams}{\-Parameters}
+{\em package\-Array} & 请求信息包数组,元素为\-Mobi\-Sage\-Resource\-Package类的实例 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+从网络获取数据包：例如图片、音乐等 
+\end{DoxyNote}
+\hypertarget{interface_mobi_sage_manager_a12c9afbad34d0129d8117578ef183c24}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!set\-Deploy\-Channel\-:@{set\-Deploy\-Channel\-:}}
+\index{set\-Deploy\-Channel\-:@{set\-Deploy\-Channel\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{set\-Deploy\-Channel\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf set\-Deploy\-Channel\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-N\-S\-String $\ast$)}]{deploy\-Channel}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_a12c9afbad34d0129d8117578ef183c24}
+设置应用分发渠道 
+\begin{DoxyParams}{\-Parameters}
+{\em deploy\-Channel} & 分发渠道名称 \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_mobi_sage_manager_af3e927d3c87219cd3a0b52c3c1ff4d47}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!set\-Publisher\-I\-D\-:@{set\-Publisher\-I\-D\-:}}
+\index{set\-Publisher\-I\-D\-:@{set\-Publisher\-I\-D\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{set\-Publisher\-I\-D\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf set\-Publisher\-I\-D\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-N\-S\-String $\ast$)}]{publisher\-I\-D}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_af3e927d3c87219cd3a0b52c3c1ff4d47}
+设置publisher\-I\-D 
+\begin{DoxyParams}{\-Parameters}
+{\em publisher\-I\-D} & \-A\-C平台分配给应用的id \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_mobi_sage_manager_a40846c70d91a9e49b76634ad3e416fd4}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!track\-Customer\-Event\-:\-With\-Object\-:@{track\-Customer\-Event\-:\-With\-Object\-:}}
+\index{track\-Customer\-Event\-:\-With\-Object\-:@{track\-Customer\-Event\-:\-With\-Object\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{track\-Customer\-Event\-:\-With\-Object\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) track\-Customer\-Event\-: 
+\begin{DoxyParamCaption}
+\item[{dummy(\-N\-S\-String $\ast$)}]{event}
+\item[{WithObject:(\-N\-S\-String $\ast$)}]{object}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_a40846c70d91a9e49b76634ad3e416fd4}
+返回开发者自定义事件 
+\begin{DoxyParams}{\-Parameters}
+{\em event} & 事件类型 \\
+\hline
+{\em object} & 开发者自定义的附加反馈信息 \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_mobi_sage_manager_ac9b224f48d44d5096932909c18f49ca1}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!track\-System\-Event\-:@{track\-System\-Event\-:}}
+\index{track\-System\-Event\-:@{track\-System\-Event\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{track\-System\-Event\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf track\-System\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-System\-Event\-Enum)}]{event}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_ac9b224f48d44d5096932909c18f49ca1}
+反馈应用系统事件， 
+\begin{DoxyParams}{\-Parameters}
+{\em event} & 事件类型 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+例如应用进入后台或退出或重新回到前台等事件 
+\end{DoxyNote}
+\hypertarget{interface_mobi_sage_manager_a1d87b794d6a8c4cb4324265fe5299d20}{\index{\-Mobi\-Sage\-Manager@{\-Mobi\-Sage\-Manager}!track\-System\-Event\-:\-With\-Object\-:@{track\-System\-Event\-:\-With\-Object\-:}}
+\index{track\-System\-Event\-:\-With\-Object\-:@{track\-System\-Event\-:\-With\-Object\-:}!MobiSageManager@{\-Mobi\-Sage\-Manager}}
+\subsubsection[{track\-System\-Event\-:\-With\-Object\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) {\bf track\-System\-Event\-:} 
+\begin{DoxyParamCaption}
+\item[{dummy(\-System\-Event\-Enum)}]{event}
+\item[{WithObject:(\-N\-S\-String $\ast$)}]{object}
+\end{DoxyParamCaption}
+}}\label{interface_mobi_sage_manager_a1d87b794d6a8c4cb4324265fe5299d20}
+反馈应用系统事件， 
+\begin{DoxyParams}{\-Parameters}
+{\em event} & 事件类型 \\
+\hline
+{\em object} & 开发者自定义的附加反馈信息 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+例如应用进入后台或退出或重新回到前台等事件 
+\end{DoxyNote}
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/\-Franky/\-Desktop/sdk-\/code/i\-O\-S\-\_\-\-S\-D\-K/\-Mobi\-Sage\-S\-D\-K.\-h\end{DoxyCompactItemize}

@@ -13,12 +13,12 @@ NSString* mSubtitle;
 BOOL mBanner;
 
 #define kRecommendViewHeight 50
-@interface AdSageRecommendView() 
+@interface MobiSageRecommendView()
 
 -(void)loadBannerView;
 @end
 
-@implementation  AdSageRecommendView(HypnosisView)
+@implementation  MobiSageRecommendView(HypnosisView)
 -(void)setTitle:(NSString*)title
 {
     mTitle = [[NSString alloc]initWithString:title];    

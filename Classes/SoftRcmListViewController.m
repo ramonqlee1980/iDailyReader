@@ -28,6 +28,21 @@
 @end
 
 @implementation SoftRcmListViewController
+@synthesize recmdView = _recmdView;
+-(void)loadAdsageRecommendView
+{
+    [[MobiSageManager getInstance]setPublisherID:kMobiSageID_iPhone];
+    if (self.recmdView == nil)
+    {
+        _recmdView = [[MobiSageRecommendView alloc]initWithDelegate:self];
+        self.recmdView.frame = CGRectZero;
+    }
+}
+#pragma mark AdSageRecommendDelegate
+- (UIViewController *)viewControllerForPresentingModalView
+{
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,6 +55,8 @@
         NSString *xmlPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"SoftList.xml"];
         [_softRcmList loadData:xmlPath];
         
+        [self loadAdsageRecommendView];
+#ifndef k91Appstore
         //AdsConfig* config = [AdsConfig sharedAdsConfig];
         //show close ads 
         //if([config wallShouldShow])
@@ -53,6 +70,7 @@
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestOffersOpenDataSuccess:) name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
             [wall requestOffersAppData:YES pageCount:15];
         }
+#endif
     }
     return self;
 }
@@ -60,18 +78,11 @@
 {
     [super viewWillAppear:animated];
     
-    /*AdsConfig* config = [AdsConfig sharedAdsConfig];    
-    if([config wallShouldShow] && wall==nil)
+    AdsConfig* config = [AdsConfig sharedAdsConfig];    
+    if([config wallShouldShow])
     {
-        //load youmi wall
-        wall = [[YouMiWall alloc] init];
-        wall.appID = kDefaultAppID_iOS;
-        wall.appSecret = kDefaultAppSecret_iOS;
-        
-        // 添加应用列表开放源观察者
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestOffersOpenDataSuccess:) name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
-        [wall requestOffersAppData:YES pageCount:15];
-    }*/
+        [self.recmdView OpenAdSageRecmdModalView];
+    }
 }
 -(void) dealloc
 {
@@ -79,6 +90,7 @@
     [openApps release];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
     [wall release];
+    self.recmdView = nil;
     [super dealloc];
 }
 

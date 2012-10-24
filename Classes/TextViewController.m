@@ -2,7 +2,6 @@
 #import "AppDelegate.h" // for SharedAdBannerView macro
 #import "Constants.h"
 #import "MobiSageSDK.h"
-//#import "CommonADView.h"
 #import "AdsConfig.h"
 #import "DoMobView.h"
 #import "RewardedWallViewController.h"
@@ -12,8 +11,7 @@
 #import "GADBannerView.h"
 #import "Flurry.h"
 #import "AddNewNoteViewController.h"
-#import "AdSageRecommendView.h"
-#import "AdSageManager.h"
+#import "MobiSageSDK.h"
 #import "WQAdView.h"
 #import "WapsOffer/AppConnect.h"
 
@@ -262,9 +260,9 @@
         if (self.recmdView == nil) {
             BOOL otherMobisage = (NSOrderedSame==[AdsPlatformMobisageRecommendOther caseInsensitiveCompare:currentAds]);
             [[MobiSageManager getInstance] setPublisherID:otherMobisage?kMobiSageIDOther_iPhone:kMobiSageID_iPhone];
-            NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
+            //NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
             
-            self.recmdView = [AdSageRecommendView requestWithDelegate:self color:AdSageRecommendColorTypeRed];
+            self.recmdView = [[MobiSageRecommendView alloc]initWithDelegate:self andImg:nil];
             CGFloat height = self.navigationController.navigationBar.frame.size.height;//self.recmdView.frame.size.height
             self.recmdView.frame = CGRectMake(0, 0, self.recmdView.frame.size.width, height);
             if ([self.recmdView respondsToSelector:@selector(setTitle:)]) {
@@ -289,20 +287,16 @@
         //other mobisage?
         BOOL otherMobisage = (NSOrderedSame==[AdsPlatformMobisageOther caseInsensitiveCompare:currentAds]);
         [[MobiSageManager getInstance] setPublisherID:otherMobisage?kMobiSageIDOther_iPhone:kMobiSageID_iPhone];
-        NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
+        //NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
         int width = 320;
         int height = 40;
         int marginTop = 0;
-        NSUInteger adSize = Ad_320X40;
-        //NSString* publisherID = kMobiSageID_iPhone;
         if (isPad) {
             width = 748;
             height = 110;
-            adSize = Ad_748X110;
-            //publisherID = kMobiSageID_iPad;
         }
         
-        MobiSageAdBanner * adBanner = [[MobiSageAdBanner alloc] initWithAdSize:adSize];
+        MobiSageAdBanner * adBanner = [[MobiSageAdBanner alloc] initWithAdSize:isPad?Ad_728X90:Ad_320X50];
         self.mAdView = adBanner;
         //设置广告轮显方式
         [adBanner setSwitchAnimeType:Random];

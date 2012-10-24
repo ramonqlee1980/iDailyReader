@@ -3,11 +3,10 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "DoMobDelegateProtocol.h"
 #import "CaseeAdDelegate.h"
-#import "AdSageRecommendDelegate.h"
 #import "WQAdProtocol.h"
 #import <immobSDK/immobView.h>
+#import "MobiSageRecommendSDK.h"
 
-@class AdSageRecommendView;
 @class OAuthEngine;
 
 
@@ -20,7 +19,7 @@ enum ShareOption
 @class AppDelegate;
 
 
-@interface TextViewController : UIViewController <MFMailComposeViewControllerDelegate,UIActionSheetDelegate,DoMobDelegate,CaseeAdDelegate,AdSageRecommendDelegate,WQAdProtocol,immobViewDelegate>
+@interface TextViewController : UIViewController <MFMailComposeViewControllerDelegate,UIActionSheetDelegate,DoMobDelegate,CaseeAdDelegate,MobiSageRecommendDelegate,WQAdProtocol,immobViewDelegate>
 {
     UIView *contentView;
     NSIndexPath* index;
@@ -34,12 +33,12 @@ enum ShareOption
     BOOL mLoginWeiboCanceled;
     BOOL mAdsWallShouldShow;
     BOOL _tempCloseRequest;
-    AdSageRecommendView *_recmdView;
+    MobiSageRecommendView *_recmdView;
     BOOL mWallOpened;//open ad wall
     NSString* mWallName;
     UIView* mWall;
 }
-@property(nonatomic, retain) AdSageRecommendView *recmdView;
+@property(nonatomic, retain) MobiSageRecommendView *recmdView;
 @property (nonatomic, retain) IBOutlet UITabBarItem *mAdsSwitchBarItem;
 @property(nonatomic, retain) UIView *mAdView;
 //@property(nonatomic,assign) NSInteger mAdIndex;

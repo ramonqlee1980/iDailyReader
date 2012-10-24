@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 mobiSage. All rights reserved.
 //
 
-#import "../../MobiSagePackage.h"
+#import "MobiSageSNSPackage.h"
 
-@interface MSSinaWeiboPackage : MobiSagePackage
+@interface MSSinaWeiboPackage : MobiSageSNSPackage
 {
 @protected
     NSString*               m_AppKey;

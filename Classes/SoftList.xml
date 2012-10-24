@@ -1,16 +1,17 @@
 <softlist>
-    <soft>
-        <name>夫妻密语</name>
-        <detail>每日都有不同的性福体验，为性福保驾护航。</detail>
-        <url>http://itunes.apple.com/us/app/fu-qi-mi-yu/id472818080?ls=1</url>
-        <icon>SpouseTalks.png</icon>
-    </soft>
-    
+   
     <soft>
         <name>中医小窍门</name>
         <detail>每天支招中医窍门，尽情体验中医的魅力。</detail>
         <url>http://itunes.apple.com/us/app/zhong-yi-xiao-qiao-men/id495815697?ls=1</url>
         <icon>TraditionalChineseMedicine.png</icon>
+    </soft>
+    
+    <soft>
+        <name>场面话之祝酒词</name>
+        <detail>参加老人的大寿，同学的婚礼，该说些什么话。</detail>
+        <url>http://itunes.apple.com/us/app/chang-mian-hua-zhi-zhu-jiu-ci/id471656942?ls=1</url>
+        <icon>maketoast.png</icon>
     </soft>
     
     <soft>
@@ -38,13 +39,7 @@
         <icon>TodayinHistory.png</icon>
     </soft>    
     
-    <soft>
-        <name>场面话之祝酒词</name>
-        <detail>参加老人的大寿，同学的婚礼，该说些什么话。</detail>
-        <url>http://itunes.apple.com/us/app/chang-mian-hua-zhi-zhu-jiu-ci/id471656942?ls=1</url>
-        <icon>maketoast.png</icon>
-    </soft>
-    
+   
     <soft>
         <name>英语前缀</name>
         <detail>通过前缀学习英语单词，快速，简单，有效，实用</detail>
@@ -65,5 +60,12 @@
         <icon>careerGuide.png</icon>
     </soft>
 
+    <soft>
+        <name>夫妻密语</name>
+        <detail>每日都有不同的性福体验，为性福保驾护航。</detail>
+        <url>http://itunes.apple.com/us/app/fu-qi-mi-yu/id472818080?ls=1</url>
+        <icon>SpouseTalks.png</icon>
+    </soft>
+    
 </softlist>
     
