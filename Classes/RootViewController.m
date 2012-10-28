@@ -17,7 +17,7 @@
 #define kDetailTextLableFontSize 20
 #define kToday @"kToday"
 #define kTitle @"Title"
-
+#define kLoadMobisageRecommendViewDelayTime 10//10s
 
 
 
@@ -473,13 +473,18 @@
     [alert release];
 }
 
+-(void)popupAdsageRecommendView
+{
+    [self.recmdView OpenAdSageRecmdModalView];
+}
 -(void)loadRecommendAdsWall:(NSString*)wallName
 {
     //self.navigationController.navigationBarHidden = YES;
     if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {
         [self loadAdsageRecommendView:YES];
-        [self.recmdView OpenAdSageRecmdModalView];
+        [self performSelector:@selector(popupAdsageRecommendView) withObject:nil afterDelay:kLoadMobisageRecommendViewDelayTime];
+//        [self.recmdView OpenAdSageRecmdModalView];
     }
     else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
     {
@@ -528,12 +533,8 @@
         [imView immobViewDisplay];
     }
     else {
-//        UIAlertView *uA=[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"当前广告不可用" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
-//        [uA show];
-//        [uA release];
         [self loadFeaturedYoumiWall];
-    }
-    
+    }    
 }
 
 #pragma closeAds temporarily
@@ -542,37 +543,14 @@
     if(popClosingTip)
     {
         [self loadYoumiWall:YES];
-//        [self loadFeaturedYoumiWall];
         AppDelegate* delegate = SharedDelegate;
-        [self  loadRecommendAdsWall:[delegate currentAdsWall]];
+        [self loadRecommendAdsWall:[delegate currentAdsWall]];
         [self loadAdsageRecommendView:YES];
     }
     if (![AdsConfig neverCloseAds]) {
         return;
     }
-    //    if (!visible) {
-    //        return;
-    //    }
-    
-    //if(popClosingTip)
-    if(NO)
-    {        
-        UIAlertView *alert = nil ;
-        BOOL b = [AdsConfig isAdsOn];
-        
-        if(b)
-        {
-            NSString* title = NSLocalizedString(@"RemoveAdsTitle", "");
-            NSString* msg = NSLocalizedString(@"RemoveAdsTemp", "");
-            NSString* okMsg =  NSLocalizedString(@"Ok", "");
-            NSString* cancelMsg =  NSLocalizedString(@"Cancel", "");
-            alert = [[[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:okMsg otherButtonTitles:cancelMsg, nil]autorelease];        
-        }        
-        if(nil!=alert)
-        {
-            [alert show];
-        }
-    }
+
 }
 
 #pragma mark AdSageRecommendDelegate

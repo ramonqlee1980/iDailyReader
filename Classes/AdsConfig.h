@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-#define k91Appstore
+//#define k91Appstore
 
 
 //switch for ads config
@@ -19,12 +19,12 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
-//#define EnglishPrefix
+#define EnglishPrefix
 //#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
@@ -368,6 +368,7 @@
 
 //id for ads
 #define kMobiSageID_iPhone  @"c441c7a278a24c66b33cb6ae149e3929"
+#define kMobiSageIDOther_iPhone  @"6bf36b0b0d6d427cb596eadff372e968"
 #define kWiyunID_iPhone  @"6093441723009b0f"
 #define kWiyunID_iPad    @"2701171f41658221"
 #define kWoobooPublisherID  @"211021fd50d14a2c83ba906420b29719"
