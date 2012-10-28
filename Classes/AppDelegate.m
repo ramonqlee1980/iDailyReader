@@ -51,7 +51,7 @@
     //set the bundle ID. normally you wouldn't need to do this
     //as it is picked up automatically from your Info.plist file
     //but we want to test with an app that's actually on the store
-#if 0
+#if 1
 	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
     [iRate sharedInstance].appStoreID = [kAppIdOnAppstore integerValue];
     
