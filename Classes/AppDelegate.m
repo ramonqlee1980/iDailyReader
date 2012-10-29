@@ -229,30 +229,23 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mTrackViewUrl]];
     }
 }
--(void)checkUpdate
+-(void) GetVersionResult:(ASIHTTPRequest *)request
 {
-    //not published on appstore
-    if(kAppIdOnAppstore.length==0)
-    {
+    if (!request ) {
         return;
     }
-    NSString *version = @"";
-    NSString* updateLookupUrl = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",kAppIdOnAppstore];
-    NSURL *url = [NSURL URLWithString:updateLookupUrl];
-    ASIFormDataRequest* versionRequest = [ASIFormDataRequest requestWithURL:url];
-    [versionRequest setRequestMethod:@"GET"];
-    [versionRequest setDelegate:self];
-    [versionRequest setTimeOutSeconds:150];
-    [versionRequest addRequestHeader:@"Content-Type" value:@"application/json"];
-    [versionRequest startSynchronous];
     
     //Response string of our REST call
-    NSString* jsonResponseString = [versionRequest responseString];
+    NSString* jsonResponseString = [request responseString];
+    if (!jsonResponseString || [jsonResponseString length]==0) {
+        return;
+    }
     
     NSDictionary *loginAuthenticationResponse = [jsonResponseString objectFromJSONString];
     
     NSArray *configData = [loginAuthenticationResponse valueForKey:@"results"];
     NSString* releaseNotes;
+    NSString *version = @"";
     for (id config in configData)
     {
         version = [config valueForKey:@"version"];
@@ -271,6 +264,26 @@
     }
     
     [Flurry logEvent:[NSString stringWithFormat:@"localVersion:%@-newVersion:%@",localVersion,version]];
+}
+-(void)checkUpdate
+{
+    //not published on appstore
+    if(kAppIdOnAppstore.length==0)
+    {
+        return;
+    }
+   
+    NSString* updateLookupUrl = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",kAppIdOnAppstore];
+    NSURL *url = [NSURL URLWithString:updateLookupUrl];
+    ASIFormDataRequest* versionRequest = [ASIFormDataRequest requestWithURL:url];
+    [versionRequest setRequestMethod:@"GET"];
+    [versionRequest setDelegate:self];
+    [versionRequest setTimeOutSeconds:150];
+    [versionRequest addRequestHeader:@"Content-Type" value:@"application/json"];
+    [versionRequest setDidFinishSelector:@selector(GetVersionResult:)];
+    [versionRequest startAsynchronous];
+    
+    
     
 }
 // 比较oldVersion和newVersion，如果oldVersion比newVersion旧，则返回YES，否则NO
