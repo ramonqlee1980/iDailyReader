@@ -16,7 +16,9 @@
 #import "MainViewController.h"
 
 #define kLocalNotificationSet @"LocalNotificationSet"
-#define kAdsWallShowDelayTime 30//seconds
+#define kAdsWallShowDelayTime 60
+#define kLaunchTime @"kLaunchTime"
+#define kRatingWhenLaunchTime 10
 
 @interface AppDelegate()
 // Properties that don't need to be seen by the outside world.
@@ -60,8 +62,7 @@
     [iRate sharedInstance].previewMode = [AppDelegate shouldPromptRating];
 #endif
 }
-#define kLaunchTime @"kLaunchTime"
-#define kRatingWhenLaunchTime 5
+
 +(BOOL)shouldPromptRating
 {
     NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];
@@ -100,6 +101,8 @@
 }
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add2Favorite:) name:kAdd2Favorite object:nil];
+    [self checkUpdate];
+    [self startAdsConfigReceive];
     //flurry
     [Flurry startSession:kFlurryID];
     [self loadData];
@@ -371,12 +374,10 @@
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:self.mCurrentFileName ofType:@"txt"];
 #endif    
     
-    if ([dataPath isEqualToString:mDataPath]) {
-        return;
-    }
+//    if ([dataPath isEqualToString:mDataPath]) {
+//        return;
+//    }
     
-    [self checkUpdate];
-    [self startAdsConfigReceive];
     
     if ([mDataPath length] !=0 ) {
         [mDataPath release];

@@ -473,25 +473,19 @@
     [alert release];
 }
 
--(void)popupAdsageRecommendView
-{
-    [self.recmdView OpenAdSageRecmdModalView];
-}
--(void)loadRecommendAdsWall:(NSString*)wallName
-{
-    //self.navigationController.navigationBarHidden = YES;
+-(void)popupAdsageRecommendView:(NSString*)wallName
+{    
     if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
-    {
+    {        
         [self loadAdsageRecommendView:YES];
-        [self performSelector:@selector(popupAdsageRecommendView) withObject:nil afterDelay:kLoadMobisageRecommendViewDelayTime];
-//        [self.recmdView OpenAdSageRecmdModalView];
+        [self.recmdView OpenAdSageRecmdModalView];
     }
     else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
     {
         [AppConnect showOffers];
     }
     else if(NSOrderedSame==[AdsPlatformImmobWall caseInsensitiveCompare:wallName])
-    {        
+    {
         if(mImmobWall)
         {
             [mImmobWall release];
@@ -510,6 +504,11 @@
     
     AppDelegate* delegate = SharedDelegate;
     [delegate setShouldShowAdsWall:NO enableForNext:YES];
+}
+-(void)loadRecommendAdsWall:(NSString*)wallName
+{
+    [self loadAdsageRecommendView:YES];
+    [self performSelector:@selector(popupAdsageRecommendView:) withObject:wallName afterDelay:kLoadMobisageRecommendViewDelayTime];
 }
 #pragma mark immob delegate
 /**
