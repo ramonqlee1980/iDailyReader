@@ -14,9 +14,10 @@ Changes from Previous Versions
 
 
 3.1.16
-1.mobisage recommend view popup;
-4.加入评分功能；(prompt every 5 times,to be tested on device)
-5.推荐区域：做成推荐墙
+1.优化启动速度；
+2.加入评分功能；(prompt every 10 times,to be tested on device)
+3.mobisage recommend view popup;
+4.推荐区域：每次进入，弹出mobisage推荐
 
 3.1.15
 1.增加每日内容提醒为前3篇的title;

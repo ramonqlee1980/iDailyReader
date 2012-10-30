@@ -330,9 +330,10 @@
 
 //wall
 //修改为你自己的AppID和AppSecret
-#define kDefaultAppID_iOS           @"be4ff0dc2f9e7eb5" // youmi default app id
-#define kDefaultAppSecret_iOS       @"2262cc0dbff4ebca" // youmi default app secret
-
+//#define kDefaultAppID_iOS           @"be4ff0dc2f9e7eb5" // youmi default app id
+//#define kDefaultAppSecret_iOS       @"2262cc0dbff4ebca" // youmi default app secret
+#define kDefaultAppID_iOS           @"9982ffa850423b4f" // youmi default app id
+#define kDefaultAppSecret_iOS       @"a0b04cc29a97d380" // youmi default app secret
 
 //id for ads
 #define kMobiSageID_iPhone  @"146761bebeb844e3aadfff30cb52d26e"
@@ -362,9 +363,11 @@
 
 //wall
 //修改为你自己的AppID和AppSecret
-#define kDefaultAppID_iOS           @"be4ff0dc2f9e7eb5" // youmi default app id
-#define kDefaultAppSecret_iOS       @"2262cc0dbff4ebca" // youmi default app secret
+//#define kDefaultAppID_iOS           @"be4ff0dc2f9e7eb5" // youmi default app id
+//#define kDefaultAppSecret_iOS       @"2262cc0dbff4ebca" // youmi default app secret
 
+#define kDefaultAppID_iOS           @"9982ffa850423b4f" // youmi default app id
+#define kDefaultAppSecret_iOS       @"a0b04cc29a97d380" // youmi default app secret
 
 //id for ads
 #define kMobiSageID_iPhone  @"c441c7a278a24c66b33cb6ae149e3929"
