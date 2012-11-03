@@ -10,6 +10,8 @@
 #import "PullingRefreshTableView.h"
 #import "CJSONDeserializer.h"
 #import "QiuShi.h"
+#import "Flurry.h"
+#import "AdsConfig.h"
 
 
 
@@ -74,6 +76,7 @@ UITableViewDelegate
     if (self.page == 0) {
         [self.tableView launchRefreshing];
     }
+    [Flurry logEvent:kQiushiReviewed];
 }
 
 - (void)viewDidUnload
@@ -142,6 +145,7 @@ UITableViewDelegate
 
 -(void) GetResult:(ASIHTTPRequest *)request
 {
+    
     if (self.refreshing) {
         self.page = 1;
         self.refreshing = NO;
@@ -166,7 +170,7 @@ UITableViewDelegate
         self.tableView.reachedTheEnd  = NO;
         [self.tableView reloadData];
     }
-    
+    [Flurry logEvent:kQiushiRefreshed];
 }
 #pragma mark - TableView*
 

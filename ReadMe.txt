@@ -11,11 +11,15 @@ Changes from Previous Versions
 8.加入youmi工具条，支持与服务器交互数据；
 9.推荐区域支持与服务器同步数据；
 3.weibo功能扩展：@好友功能；(with mobisage sns)
+5.add appcircle to prepare for new app promotion
+6.banner for wall recommendation and apple app recommendation
+7.add qiushi Flurry event(kQiushiRefreshed,kQiushiReviewed--done)
+8.remove youmi app loading when ads closed(done)
 
 
 3.1.16
 1.优化启动速度；
-2.加入评分功能；(prompt every 10 times,to be tested on device)
+2.加入评分功能；(prompt every 10 times,tested on device)
 3.mobisage recommend view popup;
 4.推荐区域：每次进入，弹出mobisage推荐
 

@@ -483,6 +483,8 @@
 //favorite
 #define kEnterNewFavorite @"kEnterNewFavorite"
 #define kOpenExistFavorite @"kOpenExistFavorite"
+#define kQiushiReviewed @"kQiushiReviewed"
+#define kQiushiRefreshed @"kQiushiRefreshed"
 
 #define kCountPerSection 3
 @interface AdsConfig : NSObject

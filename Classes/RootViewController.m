@@ -541,7 +541,7 @@
 {    
     if(popClosingTip)
     {
-        [self loadYoumiWall:YES];
+        //[self loadYoumiWall:YES];
         AppDelegate* delegate = SharedDelegate;
         [self loadRecommendAdsWall:[delegate currentAdsWall]];
         [self loadAdsageRecommendView:YES];

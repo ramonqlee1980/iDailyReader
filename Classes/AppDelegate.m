@@ -18,7 +18,7 @@
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 60
 #define kLaunchTime @"kLaunchTime"
-#define kRatingWhenLaunchTime 10
+#define kRatingWhenLaunchTime 5
 
 @interface AppDelegate()
 // Properties that don't need to be seen by the outside world.
