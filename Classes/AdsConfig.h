@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-//#define k91Appstore
+#define k91Appstore
 
 
 //switch for ads config
@@ -24,8 +24,8 @@
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
-#define EnglishPrefix
-//#define EnglishSuffix
+//#define EnglishPrefix
+#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
 
