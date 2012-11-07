@@ -3,19 +3,31 @@ HappyLife
 
 
 Changes from Previous Versions
-3.1.17
+3.1.19
+1.增加阅读频道
+2.集成更多生活类服务：比如娱乐等
+
+3.1.18
+－1：列表循环滚动的bug；列表底部显示不全的bug
+0.增加应用内购买功能，增值服务：去除广告，功能解锁等
 1.appcircle ads exchange:prepare for promotion
-5.加入天气预报；
+2.增加setting区：关于，用户反馈，评级等；
+3.add appcircle to prepare for new app promotion
+4.banner for wall recommendation and apple app recommendation
+5.tap for tap国内流量，换其他国外应用推广；
 6.增加休闲区：小的游戏，手电筒等
+7.推荐区域支持与服务器同步数据
+8.SNS推荐功能：@好友功能；(with mobisage sns)
+
+
+5.加入天气预报；
 7.加入自定义广告条，跟踪点击，展示量；
 8.加入youmi工具条，支持与服务器交互数据；
-9.推荐区域支持与服务器同步数据；
-3.weibo功能扩展：@好友功能；(with mobisage sns)
-5.add appcircle to prepare for new app promotion
-6.banner for wall recommendation and apple app recommendation
-7.add qiushi Flurry event(kQiushiRefreshed,kQiushiReviewed--done)
-8.remove youmi app loading when ads closed(done)
 
+3.1.17
+1.add qiushi Flurry event(kQiushiRefreshed,kQiushiReviewed--done)
+2.remove youmi app loading when ads closed(done)
+3.广告弹出方式：首次10s，后续间隔1min弹出
 
 3.1.16
 1.优化启动速度；
