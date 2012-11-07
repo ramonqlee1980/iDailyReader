@@ -18,6 +18,7 @@
 #define kToday @"kToday"
 #define kTitle @"Title"
 #define kLoadMobisageRecommendViewDelayTime 10//10s
+#define kNextDelayTime 60
 
 
 
@@ -154,12 +155,12 @@
     //{
      //   return;
     //}
-    AppDelegate* delegate = SharedDelegate;
-    if([delegate shouldShowAdsWall])
-    {
-        [Flurry logEvent:kLoadRecommendAdsWall];
-        [self  loadRecommendAdsWall:[delegate currentAdsWall]];
-    }
+//    AppDelegate* delegate = SharedDelegate;
+//    if([delegate shouldShowAdsWall])
+//    {
+//        [Flurry logEvent:kLoadRecommendAdsWall];
+//        [self  loadRecommendAdsWall:[delegate currentAdsWall]];
+//    }
 }
 
 - (void)viewDidLoad
@@ -502,8 +503,7 @@
         [self loadFeaturedYoumiWall];
     }
     
-    AppDelegate* delegate = SharedDelegate;
-    [delegate setShouldShowAdsWall:NO enableForNext:YES];
+    [self performSelector:@selector(popupAdsageRecommendView:) withObject:[SharedDelegate currentAdsWall] afterDelay:kNextDelayTime];
 }
 -(void)loadRecommendAdsWall:(NSString*)wallName
 {
