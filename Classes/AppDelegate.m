@@ -14,6 +14,7 @@
 #import "FlipViewController.h"
 #import "iRate.h"
 #import "MainViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 60
@@ -99,16 +100,13 @@
         [Flurry logEvent:kFlurryDidSelectAppFromMainList withParameters:[NSDictionary dictionaryWithObject:[[NSDate date]description] forKey:title]];
     }
 }
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add2Favorite:) name:kAdd2Favorite object:nil];
-    [self checkUpdate];
-    [self startAdsConfigReceive];
-    //flurry
-    [Flurry startSession:kFlurryID];
-    [self loadData];
-    
+
+
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {       
+
+    [self loadData];    
     // Override point for customization after application launch.
-    window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];    
     UIViewController* v = [[RootViewController alloc]initWithNibName:@"RootViewController" bundle:nil];
     UINavigationController* navi = [[UINavigationController alloc]initWithRootViewController:v];
     SoftRcmListViewController* recommendCtrl = [[SoftRcmListViewController alloc]initWithStyle:UITableViewStyleGrouped];
@@ -138,6 +136,8 @@
     [controllers release];
     [tabCtrl release];
     
+    [self splashScreenStart];
+    
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     _EnterBylocalNotification = (localNotification!=nil);
     if(_EnterBylocalNotification)
@@ -148,7 +148,11 @@
     }
     application.applicationIconBadgeNumber = 0;
     
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(add2Favorite:) name:kAdd2Favorite object:nil];
+    [self checkUpdate];
+    [self startAdsConfigReceive];
+    //flurry
+    [Flurry startSession:kFlurryID];
     return YES;
 }
 
@@ -819,6 +823,65 @@
 -(BOOL)shouldShowAdsWall
 {
     return mShouldShowAdsWall;
+}
+
+
+#pragma mark splashScreen
+-(void)splashScreenStart
+{
+    fView =[[UIImageView alloc]initWithFrame:self.window.frame];//初始化fView
+    fView.image=[UIImage imageNamed:@"f.png"];//图片f.png 到fView
+    
+    zView=[[UIImageView alloc]initWithFrame:self.window.frame];//初始化zView
+    zView.image=[UIImage imageNamed:@"z.png"];//图片z.png 到zView
+    
+    rView=[[UIView alloc]initWithFrame:self.window.frame];//初始化rView
+    
+    [rView addSubview:fView];//add 到rView
+    [rView addSubview:zView];//add 到rView
+    
+    [self.window addSubview:rView];//add 到window
+    
+    [self performSelector:@selector(TheAnimation) withObject:nil afterDelay:5];//5秒后执行TheAnimation
+    
+}
+
+- (void)TheAnimation{
+    
+    CATransition *animation = [CATransition animation];
+    animation.delegate = self;
+    animation.duration = 0.7 ;  // 动画持续时间(秒)
+    animation.timingFunction = UIViewAnimationCurveEaseInOut;
+    animation.type = kCATransitionFade;//淡入淡出效果
+    
+    NSUInteger f = [[rView subviews] indexOfObject:fView];
+    NSUInteger z = [[rView subviews] indexOfObject:zView];
+    [rView exchangeSubviewAtIndex:z withSubviewAtIndex:f];
+    
+    [[rView layer] addAnimation:animation forKey:@"animation"];
+    
+    [self performSelector:@selector(ToUpSide) withObject:nil afterDelay:2];//2秒后执行TheAnimation
+}
+
+
+- (void)ToUpSide {
+    
+    [self moveToUpSide];//向上拉界面
+    
+}
+
+- (void)moveToUpSide {
+    [UIView animateWithDuration:0.7 //速度0.7秒
+                     animations:^{//修改rView坐标
+                         rView.frame = CGRectMake(self.window.frame.origin.x,
+                                                  -self.window.frame.size.height,
+                                                  self.window.frame.size.width,
+                                                  self.window.frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         [rView removeFromSuperview];
+                     }];
+    
 }
 @end
 

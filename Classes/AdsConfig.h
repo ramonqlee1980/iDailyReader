@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+//close log
+#define __RELEASE__
+#ifdef __RELEASE__
+#define NSLog(...) {}
+#endif
+
 //appstore switch
 #define k91Appstore
-
 
 //switch for ads config
 //#define MHealth
