@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04114102164DC0DB003A1382 /* f.png in Resources */ = {isa = PBXBuildFile; fileRef = 041140F5164DC0DB003A1382 /* f.png */; };
-		04114105164DC0DB003A1382 /* z.png in Resources */ = {isa = PBXBuildFile; fileRef = 041140F9164DC0DB003A1382 /* z.png */; };
+		0411410E164DC913003A1382 /* 640_960_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410C164DC913003A1382 /* 640_960_splash.png */; };
+		0411410F164DC913003A1382 /* 640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410D164DC913003A1382 /* 640_960.png */; };
 		042932701627898500FCBA96 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429326F1627898500FCBA96 /* WapsOffer.framework */; };
 		0496468F16374F4B00D7E7CE /* _mobi_sage_header_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */; };
 		0496469016374F4B00D7E7CE /* _mobi_sage_manager_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */; };
@@ -403,8 +403,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		041140F5164DC0DB003A1382 /* f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f.png; sourceTree = "<group>"; };
-		041140F9164DC0DB003A1382 /* z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = z.png; sourceTree = "<group>"; };
+		0411410C164DC913003A1382 /* 640_960_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960_splash.png; sourceTree = "<group>"; };
+		0411410D164DC913003A1382 /* 640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960.png; sourceTree = "<group>"; };
 		0429326F1627898500FCBA96 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 		049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_header_8h_source.html; sourceTree = "<group>"; };
 		049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_manager_8h_source.html; sourceTree = "<group>"; };
@@ -1037,12 +1037,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		041140EB164DC0DB003A1382 /* zake */ = {
+		041140EB164DC0DB003A1382 /* splash */ = {
 			isa = PBXGroup;
 			children = (
-				041140F5164DC0DB003A1382 /* f.png */,
-				041140F9164DC0DB003A1382 /* z.png */,
+				0411410C164DC913003A1382 /* 640_960_splash.png */,
+				0411410D164DC913003A1382 /* 640_960.png */,
 			);
+			name = splash;
 			path = zake;
 			sourceTree = "<group>";
 		};
@@ -1888,7 +1889,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				041140EB164DC0DB003A1382 /* zake */,
+				041140EB164DC0DB003A1382 /* splash */,
 				30A13F26156AFE7900021AB5 /* ThirdPart */,
 				049840D41632011D005694D2 /* Qiushibaike */,
 				049840C61630B5E7005694D2 /* iRate */,
@@ -2663,8 +2664,8 @@
 				049646FF16374F4B00D7E7CE /* protocol_mobi_sage_recommend_delegate-p.tex in Resources */,
 				0496470016374F4B00D7E7CE /* refman.tex in Resources */,
 				0496470416374F4B00D7E7CE /* MobiSageRecommendBundle.bundle in Resources */,
-				04114102164DC0DB003A1382 /* f.png in Resources */,
-				04114105164DC0DB003A1382 /* z.png in Resources */,
+				0411410E164DC913003A1382 /* 640_960_splash.png in Resources */,
+				0411410F164DC913003A1382 /* 640_960.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

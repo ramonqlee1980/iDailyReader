@@ -7,7 +7,9 @@ Changes from Previous Versions
 1.增加阅读频道
 2.集成更多生活类服务：比如娱乐等
 
+
 3.1.18
+-2:splashscreen:sync with server
 －1：列表循环滚动的bug；列表底部显示不全的bug
 0.增加应用内购买功能，增值服务：去除广告，功能解锁等
 1.appcircle ads exchange:prepare for promotion
