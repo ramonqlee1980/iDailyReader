@@ -240,6 +240,9 @@
 		049842781632011E005694D2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049841DF1632011D005694D2 /* MainViewController.xib */; };
 		0498427A1632011E005694D2 /* QiuShi.m in Sources */ = {isa = PBXBuildFile; fileRef = 049841E31632011D005694D2 /* QiuShi.m */; };
 		0498427F16320E30005694D2 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 0498427E16320E2F005694D2 /* icon-144.png */; };
+		049B7805164DE35700602BE1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095913814408F54000FBE98 /* Default@2x.png */; };
+		049B7806164DE3C200602BE1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095913414408F35000FBE98 /* Default.png */; };
+		049B7808164DE3F800602BE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B7807164DE3F800602BE1 /* Default-568h@2x.png */; };
 		04C50C001635FBA800A6C067 /* YouMiViewController_200x200.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BE81635FBA800A6C067 /* YouMiViewController_200x200.m */; };
 		04C50C011635FBA800A6C067 /* YouMiViewController_300x250.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEA1635FBA800A6C067 /* YouMiViewController_300x250.m */; };
 		04C50C021635FBA800A6C067 /* YouMiViewController_320x50.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEC1635FBA800A6C067 /* YouMiViewController_320x50.m */; };
@@ -698,6 +701,7 @@
 		049841E21632011D005694D2 /* QiuShi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiuShi.h; sourceTree = "<group>"; };
 		049841E31632011D005694D2 /* QiuShi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiuShi.m; sourceTree = "<group>"; };
 		0498427E16320E2F005694D2 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
+		049B7807164DE3F800602BE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		04C50BE71635FBA800A6C067 /* YouMiViewController_200x200.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_200x200.h; sourceTree = "<group>"; };
 		04C50BE81635FBA800A6C067 /* YouMiViewController_200x200.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouMiViewController_200x200.m; sourceTree = "<group>"; };
 		04C50BE91635FBA800A6C067 /* YouMiViewController_300x250.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiViewController_300x250.h; sourceTree = "<group>"; };
@@ -1889,6 +1893,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				049B7807164DE3F800602BE1 /* Default-568h@2x.png */,
 				041140EB164DC0DB003A1382 /* splash */,
 				30A13F26156AFE7900021AB5 /* ThirdPart */,
 				049840D41632011D005694D2 /* Qiushibaike */,
@@ -2666,6 +2671,9 @@
 				0496470416374F4B00D7E7CE /* MobiSageRecommendBundle.bundle in Resources */,
 				0411410E164DC913003A1382 /* 640_960_splash.png in Resources */,
 				0411410F164DC913003A1382 /* 640_960.png in Resources */,
+				049B7805164DE35700602BE1 /* Default@2x.png in Resources */,
+				049B7806164DE3C200602BE1 /* Default.png in Resources */,
+				049B7808164DE3F800602BE1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

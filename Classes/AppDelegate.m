@@ -842,7 +842,7 @@
     
     [self.window addSubview:rView];//add 到window
     
-    [self performSelector:@selector(TheAnimation) withObject:nil afterDelay:5];//5秒后执行TheAnimation
+    [self performSelector:@selector(TheAnimation) withObject:nil afterDelay:3];//5秒后执行TheAnimation
     
 }
 
