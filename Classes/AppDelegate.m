@@ -15,6 +15,7 @@
 #import "iRate.h"
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MoreViewController.h"
 
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 60
@@ -113,8 +114,11 @@
     FlipViewController *flip = [[FlipViewController alloc]initWithNibName:@"FlipViewController" bundle:nil];
     UINavigationController* navi2 = [[UINavigationController alloc]initWithRootViewController:flip];
     MainViewController* funZone=[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    UIViewController* moreCtrl = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
+    UINavigationController* moreNavi = [[UINavigationController alloc]initWithRootViewController:moreCtrl];
+    
 #if 1
-    NSArray* controllers = [NSArray arrayWithObjects:navi,funZone,navi2,recommendCtrl,nil];
+    NSArray* controllers = [NSArray arrayWithObjects:navi,funZone,navi2,recommendCtrl,moreNavi,nil];
 #else
     NSArray* controllers = [NSArray arrayWithObjects:navi,funZone,navi2, nil];
 #endif
@@ -127,6 +131,8 @@
     //[self.window addSubview:navi.view];
     [self.window makeKeyAndVisible];
     
+    [moreCtrl release];
+    [moreNavi release];
     [v release];
     [flip release];
     [recommendCtrl release];

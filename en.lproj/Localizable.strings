@@ -16,6 +16,9 @@
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "Back";
 "AboutTitle"="About";
+"kMoreAboutKey"="About";
+"kMoreFeedBackKey"="FeedBack";
+"kMoreRateKey"="Rate";
 "Done" = "Back";
 "Donate"="More";
 "AdsWallSwitch"="CloseAds";

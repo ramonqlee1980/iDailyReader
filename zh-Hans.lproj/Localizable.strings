@@ -16,6 +16,9 @@
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "返回";
 "AboutTitle"="关于";
+"kMoreAboutKey"="关于";
+"kMoreFeedBackKey"="提个建议吧";
+"kMoreRateKey"="评个5分";
 "Done" = "返回";
 "Donate"="推荐";
 "AdsWallSwitch"="去除广告";

@@ -203,12 +203,11 @@
     
     
     // Create a final modal view controller
-	UIButton* modalViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-	[modalViewButton addTarget:self action:@selector(modalViewAction:) forControlEvents:UIControlEventTouchUpInside];
-    //UIBarButtonItem *donateButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Donate",@"") style: UIBarButtonItemStyleBordered target: self action:@selector(donateViewAction:)];  
-    UIBarButtonItem* inforItem = [[UIBarButtonItem alloc ]initWithCustomView:modalViewButton];
-	self.navigationItem.rightBarButtonItem = inforItem;
-	[inforItem release];  
+//	UIButton* modalViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+//	[modalViewButton addTarget:self action:@selector(modalViewAction:) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem* inforItem = [[UIBarButtonItem alloc ]initWithCustomView:modalViewButton];
+//	self.navigationItem.rightBarButtonItem = inforItem;
+//	[inforItem release];  
     
     if(openApps==nil)
     {

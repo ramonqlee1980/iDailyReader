@@ -10,6 +10,8 @@
 		0411410E164DC913003A1382 /* 640_960_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410C164DC913003A1382 /* 640_960_splash.png */; };
 		0411410F164DC913003A1382 /* 640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410D164DC913003A1382 /* 640_960.png */; };
 		042932701627898500FCBA96 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429326F1627898500FCBA96 /* WapsOffer.framework */; };
+		0491DC82164F661500D1D99B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491DC80164F661500D1D99B /* MoreViewController.m */; };
+		0491DC83164F661500D1D99B /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0491DC81164F661500D1D99B /* MoreViewController.xib */; };
 		0496468F16374F4B00D7E7CE /* _mobi_sage_header_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */; };
 		0496469016374F4B00D7E7CE /* _mobi_sage_manager_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */; };
 		0496469116374F4B00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BD16374F4A00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html */; };
@@ -409,6 +411,9 @@
 		0411410C164DC913003A1382 /* 640_960_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960_splash.png; sourceTree = "<group>"; };
 		0411410D164DC913003A1382 /* 640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960.png; sourceTree = "<group>"; };
 		0429326F1627898500FCBA96 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
+		0491DC7F164F661500D1D99B /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		0491DC80164F661500D1D99B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		0491DC81164F661500D1D99B /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_header_8h_source.html; sourceTree = "<group>"; };
 		049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_manager_8h_source.html; sourceTree = "<group>"; };
 		049645BD16374F4A00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_recommend_s_d_k_8h_source.html; sourceTree = "<group>"; };
@@ -1858,6 +1863,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0491DC7F164F661500D1D99B /* MoreViewController.h */,
+				0491DC80164F661500D1D99B /* MoreViewController.m */,
+				0491DC81164F661500D1D99B /* MoreViewController.xib */,
 				3088F7AC15FB79E800749EC9 /* adsageRecommendViewEx.h */,
 				3088F7AD15FB79E800749EC9 /* adsageRecommendViewEx.m */,
 				C1B7481815D474910067F260 /* Note */,
@@ -2671,9 +2679,13 @@
 				0496470416374F4B00D7E7CE /* MobiSageRecommendBundle.bundle in Resources */,
 				0411410E164DC913003A1382 /* 640_960_splash.png in Resources */,
 				0411410F164DC913003A1382 /* 640_960.png in Resources */,
+<<<<<<< HEAD
 				049B7805164DE35700602BE1 /* Default@2x.png in Resources */,
 				049B7806164DE3C200602BE1 /* Default.png in Resources */,
 				049B7808164DE3F800602BE1 /* Default-568h@2x.png in Resources */,
+=======
+				0491DC83164F661500D1D99B /* MoreViewController.xib in Resources */,
+>>>>>>> Setting added
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2839,6 +2851,7 @@
 				0496472116374F4B00D7E7CE /* MSTencentWeiboPackage.m in Sources */,
 				0496472216374F4B00D7E7CE /* MSTencentPicWeibo.m in Sources */,
 				0496472316374F4B00D7E7CE /* MSTencentWeiboAdd.m in Sources */,
+				0491DC82164F661500D1D99B /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
