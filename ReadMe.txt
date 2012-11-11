@@ -11,7 +11,6 @@ Changes from Previous Versions
 3.1.18
 -2:splashscreen:sync with server(done)
 2.增加setting区：关于，用户反馈，评级等；(done)
-－1：列表循环滚动的bug；列表底部显示不全的bug
 0.增加应用内购买功能，增值服务：去除广告，功能解锁等
 1.appcircle ads exchange:prepare for promotion
 3.add appcircle to prepare for new app promotion

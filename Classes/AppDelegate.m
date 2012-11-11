@@ -69,7 +69,7 @@
 {
     NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];
     NSString* switchVal = [defaultSetting stringForKey:kLaunchTime];
-    return (switchVal!=nil && (switchVal.integerValue % kRatingWhenLaunchTime)==0);
+    return (switchVal!=nil && (switchVal.integerValue == kRatingWhenLaunchTime));
 }
 +(void)logLaunch
 {
@@ -80,8 +80,10 @@
     {
         count = switchVal.integerValue;
     }
-    
-    [defaultSetting setValue:[NSString stringWithFormat:@"%d",++count] forKey:kLaunchTime];
+    if(count<kRatingWhenLaunchTime)
+    {        
+        [defaultSetting setValue:[NSString stringWithFormat:@"%d",++count] forKey:kLaunchTime];
+    }
 }
 -(void)add2Favorite:(NSNotification*)notification
 {
@@ -103,12 +105,12 @@
 }
 
 
--(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {       
-
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     NSLog(@"didFinishLaunchingWithOptions begin");
-    [self loadData];    
+    [self loadData];
     // Override point for customization after application launch.
-    window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];    
+    window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     UIViewController* v = [[RootViewController alloc]initWithNibName:@"RootViewController" bundle:nil];
     UINavigationController* navi = [[UINavigationController alloc]initWithRootViewController:v];
     SoftRcmListViewController* recommendCtrl = [[SoftRcmListViewController alloc]initWithStyle:UITableViewStyleGrouped];
@@ -175,7 +177,7 @@
     NSString* popContent = NSLocalizedString(@"appFriendlyTip","");
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [self scheduleLocalNotification:popContent delayTimeInterval:kDelay];
-        
+    
     //tomorrow's tip
     [self scheduleDailyNofification];
 #endif
@@ -287,7 +289,7 @@
     {
         return;
     }
-   
+    
     NSString* updateLookupUrl = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",kAppIdOnAppstore];
     NSURL *url = [NSURL URLWithString:updateLookupUrl];
     ASIFormDataRequest* versionRequest = [ASIFormDataRequest requestWithURL:url];
@@ -334,7 +336,7 @@
 }
 -(void)scheduleDailyNofification
 {
-#ifndef kSingleFile    
+#ifndef kSingleFile
     // Load the data.
 #ifdef kSingleFile
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"lyrics" ofType:@"xml"];
@@ -347,8 +349,8 @@
     
     if ([dataPath isEqualToString:mDataPath]) {
         return;
-    }    
-        
+    }
+    
     if ([mDataPath length] !=0 ) {
         [mDataPath release];
     }
@@ -375,7 +377,7 @@
 #endif
 }
 - (void)loadData
-{    
+{
     // Load the data.
 #ifdef kSingleFile
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"lyrics" ofType:@"xml"];
@@ -384,11 +386,11 @@
 #else
     self.mCurrentFileName = [AppDelegate getTodayFileName];
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:self.mCurrentFileName ofType:@"txt"];
-#endif    
+#endif
     
-//    if ([dataPath isEqualToString:mDataPath]) {
-//        return;
-//    }
+    //    if ([dataPath isEqualToString:mDataPath]) {
+    //        return;
+    //    }
     
     
     if ([mDataPath length] !=0 ) {
@@ -399,7 +401,7 @@
     NSData* responseData = [[NSData alloc] initWithContentsOfFile:mDataPath];
     //NSLog(@"%@",responseData);
     NSString *xpathQueryString = @"//channel/item/*";
-    self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString); 
+    self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
     
     [responseData release];
 }
@@ -469,10 +471,10 @@
     NSURL *url = [[NetworkManager sharedInstance] smartURLForString:AdsUrl];
     if(asiRequest==nil)
     {
-    asiRequest = [ASIHTTPRequest requestWithURL:url];
-    [asiRequest setDelegate:self];
-    [asiRequest setDidFinishSelector:@selector(GetResult:)];
-    [asiRequest setDidFailSelector:@selector(GetErr:)];
+        asiRequest = [ASIHTTPRequest requestWithURL:url];
+        [asiRequest setDelegate:self];
+        [asiRequest setDidFinishSelector:@selector(GetResult:)];
+        [asiRequest setDidFailSelector:@selector(GetErr:)];
     }
     [asiRequest startAsynchronous];
 #else
@@ -537,7 +539,7 @@
         mShouldShowAdsWall = [config wallShouldShow];
         //show close ads
         if(mShouldShowAdsWall)
-        {            
+        {
             mAdsWalls = [config getAdsWalls];
             //notify observers
             [[NSNotificationCenter defaultCenter]postNotificationName:kAdsUpdateDidFinishLoading object:nil];

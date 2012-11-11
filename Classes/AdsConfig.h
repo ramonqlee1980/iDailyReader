@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-#define k91Appstore
+//#define k91Appstore
 
 //switch for ads config
 //#define MHealth
@@ -18,13 +18,13 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-//#define Makeup
+#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
-#define EnglishSuffix
+//#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
 

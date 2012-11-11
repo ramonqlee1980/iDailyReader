@@ -79,15 +79,22 @@
     //add tip view
     CGRect rc = [[UIScreen mainScreen]applicationFrame];
     rc.origin.y = 0;
-    rc.size.height = 100;
     
     if(mAdsClosedSupport)
     {
-        UITextView* tipView = [[UITextView alloc]initWithFrame:rc];
-        AdsConfig* config = [AdsConfig sharedAdsConfig];        
+        UIFont* font = [UIFont boldSystemFontOfSize:12];
+        AdsConfig* config = [AdsConfig sharedAdsConfig];  
+        CGSize labelSize=[[config wallShowString] sizeWithFont:font
+                          constrainedToSize:CGSizeMake(kDeviceWidth,KDeviceHeight)
+                              lineBreakMode:UILineBreakModeWordWrap];
+        //
+        UITextView* tipView = [[UITextView alloc]initWithFrame:rc];        
+        tipView.contentSize = labelSize;
+        rc.size.height = labelSize.height*1.5;
+              
         tipView.text = [config wallShowString];
         tipView.textColor = [UIColor redColor];
-        tipView.font = [UIFont boldSystemFontOfSize:12];
+        tipView.font = font;
         [self.view addSubview:tipView];
         [tipView release];
     }
@@ -101,6 +108,7 @@
         CGRect frame = [[UIScreen mainScreen]applicationFrame];
         frame.origin.y = 0;
         frame.origin.y += rc.size.height;
+        frame.size.height = [[UIScreen mainScreen]applicationFrame].size.height-rc.size.height;
         _tableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;

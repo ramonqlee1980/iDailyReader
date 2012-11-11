@@ -275,11 +275,10 @@
             if([self.recmdView respondsToSelector:@selector(setBanner:)])
             {
                 [self.recmdView setBanner:YES];
-            }
-            
+            }            
         }
         self.mAdView = self.recmdView; 
-        [self.view addSubview:self.recmdView];
+        [self.view insertSubview:self.recmdView aboveSubview:textView];
     }
     else //if(NSOrderedSame==[AdsPlatformMobisage caseInsensitiveCompare:currentAds])
     {            
@@ -309,10 +308,11 @@
     int screenWidth = [[UIScreen mainScreen]bounds].size.width;
     if (UIDeviceOrientationIsLandscape(deviceOrientation))
         screenWidth = [[UIScreen mainScreen]bounds].size.height;
-    CGRect frame = mAdView.frame;
-	frame.origin.x = (screenWidth - adSize.width)/2;
-    //mAdView.frame = frame;
+    CGRect frame = textView.frame;
+    frame.size.height -= adSize.height;
+    textView.frame = frame;
     
+        
     //index adjusted
     [config toNextAd];
     while (![config isCurrentAdsValid]) {
