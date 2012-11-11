@@ -105,6 +105,7 @@
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {       
 
+    NSLog(@"didFinishLaunchingWithOptions begin");
     [self loadData];    
     // Override point for customization after application launch.
     window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];    
@@ -159,6 +160,7 @@
     [self startAdsConfigReceive];
     //flurry
     [Flurry startSession:kFlurryID];
+    NSLog(@"didFinishLaunchingWithOptions begin");
     return YES;
 }
 
@@ -848,7 +850,7 @@
     
     [self.window addSubview:rView];//add 到window
     
-    [self performSelector:@selector(TheAnimation) withObject:nil afterDelay:3];//5秒后执行TheAnimation
+    [self performSelector:@selector(TheAnimation) withObject:nil afterDelay:2];//秒后执行TheAnimation
     
 }
 

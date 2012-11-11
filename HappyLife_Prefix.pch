@@ -7,6 +7,11 @@
     #import <QuartzCore/QuartzCore.h>
 #endif
 
+//close log
+#define __RELEASE__
+#ifdef __RELEASE__
+#define NSLog(...) {}
+#endif
 
 #define kDeviceWidth [UIScreen mainScreen].bounds.size.width
 #define KDeviceHeight [UIScreen mainScreen].bounds.size.height

@@ -252,9 +252,9 @@
         [Flurry logEvent:kFlurryRemoveTempCancel];
     }
 }
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return NO;
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 
