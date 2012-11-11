@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "iRate.h"
 #import "AdsConfig.h"
+#import "Constants.h"
 
 @interface MoreViewController ()
 - (IBAction)modalViewAction:(id)sender;
@@ -133,7 +134,7 @@ break;
     if (self) {
         // Custom initialization        
         self.title = NSLocalizedString(@"AboutTitle", "");
-        self.tabBarItem.image = [UIImage imageNamed:@"ICN_more_ON"];
+        self.tabBarItem.image = [UIImage imageNamed:kIconSetting];
     }
     return self;
 }

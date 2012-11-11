@@ -51,7 +51,7 @@
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = NSLocalizedString(kToday, "");
-        self.tabBarItem.image = [UIImage imageNamed:@"ICN_account_ON"];
+        self.tabBarItem.image = [UIImage imageNamed:kIconHomePage];
         self.navigationItem.title = NSLocalizedString(kTitle, "");
     }
     return self;

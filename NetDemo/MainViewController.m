@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "Constants.h"
 #define FRegsiter 10
 #define FLogin    102
 #define FHelp     103
@@ -34,7 +35,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(kFun, "");
-        self.tabBarItem.image = [UIImage imageNamed:@"badge-favorite"];
+        self.tabBarItem.image = [UIImage imageNamed:kIconFun];
         self.navigationItem.title = NSLocalizedString(kTitle, "");
         self.navigationController.navigationBarHidden = YES;
     }

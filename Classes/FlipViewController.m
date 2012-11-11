@@ -8,7 +8,7 @@
 
 #import "FlipViewController.h"
 #import "UIView+Screenshot.h"
-
+#include "Constants.h"
 #define kNote @"收藏"
 
 @implementation FlipViewController
@@ -34,7 +34,7 @@
         [newBackButton release]; 
         
         self.title = NSLocalizedString(kNote, "");
-        self.tabBarItem.image = [UIImage imageNamed:@"badge-favorite"];
+        self.tabBarItem.image = [UIImage imageNamed:kIconFavorite];
     }
     return self;
 }
