@@ -6,6 +6,7 @@ Changes from Previous Versions
 3.1.19
 1.增加阅读频道
 2.集成更多生活类服务：比如娱乐等
+3.加入更多sns元素：加入微信支持（done）
 
 
 3.1.18

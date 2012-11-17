@@ -22,6 +22,10 @@
 #define kLaunchTime @"kLaunchTime"
 #define kRatingWhenLaunchTime 5
 
+
+#define kUpdateApp 0
+#define kOpenWeixin 1
+
 @interface AppDelegate()
 // Properties that don't need to be seen by the outside world.
 
@@ -80,8 +84,8 @@
     {
         count = switchVal.integerValue;
     }
-    if(count<kRatingWhenLaunchTime)
-    {        
+    if(count<=kRatingWhenLaunchTime)
+    {
         [defaultSetting setValue:[NSString stringWithFormat:@"%d",++count] forKey:kLaunchTime];
     }
 }
@@ -163,6 +167,10 @@
     //flurry
     [Flurry startSession:kFlurryID];
     NSLog(@"didFinishLaunchingWithOptions begin");
+    
+    //向微信注册
+    [WXApi registerApp:kWixinChatID];
+    
     return YES;
 }
 
@@ -240,10 +248,25 @@
 #pragma mark alertView delegate
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    // the user clicked one of the OK/Cancel buttons
-    if (buttonIndex == 1)
+    if (mDialogType==kUpdateApp) {
+        // the user clicked one of the OK/Cancel buttons
+        if (buttonIndex == 1)
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mTrackViewUrl]];
+        }
+    }
+    else if(mDialogType == kOpenWeixin)
     {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mTrackViewUrl]];
+#define kOkIndex 0
+        if(buttonIndex == kOkIndex)
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[WXApi getWXAppInstallUrl]]];
+            [Flurry logEvent:kFlurryConfirmOpenWeixinInAppstore];
+        }
+        else
+        {
+            [Flurry logEvent:kFlurryCancelOpenWeixinInAppstore];
+        }
     }
 }
 -(void) GetVersionResult:(ASIHTTPRequest *)request
@@ -278,6 +301,7 @@
         UIAlertView *createUserResponseAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NewVersion", @"") message: @"" delegate:self cancelButtonTitle:NSLocalizedString(@"Back", @"") otherButtonTitles: NSLocalizedString(@"Ok", @""), nil];
         [createUserResponseAlert show];
         [createUserResponseAlert release];
+        mDialogType = kUpdateApp;
     }
     
     [Flurry logEvent:[NSString stringWithFormat:@"localVersion:%@-newVersion:%@",localVersion,version]];
@@ -299,8 +323,6 @@
     [versionRequest addRequestHeader:@"Content-Type" value:@"application/json"];
     [versionRequest setDidFinishSelector:@selector(GetVersionResult:)];
     [versionRequest startAsynchronous];
-    
-    
     
 }
 // 比较oldVersion和newVersion，如果oldVersion比newVersion旧，则返回YES，否则NO
@@ -892,6 +914,109 @@
                          [rView removeFromSuperview];
                      }];
     
+}
+
+#pragma mark openURL
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+#pragma mark WXApiDelegate
+/*! @brief 收到一个来自微信的请求，处理完后调用sendResp
+ *
+ * 收到一个来自微信的请求，异步处理完成后必须调用sendResp发送处理结果给微信。
+ * 可能收到的请求有GetMessageFromWXReq、ShowMessageFromWXReq等。
+ * @param req 具体请求内容，是自动释放的
+ */
+-(void) onReq:(BaseReq*)req
+{
+    if([req isKindOfClass:[GetMessageFromWXReq class]])
+    {
+        //[self onRequestAppMessage];
+    }
+    else if([req isKindOfClass:[ShowMessageFromWXReq class]])
+    {
+        //ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
+        //[self onShowMediaMessage:temp.message];
+    }
+    
+}
+
+/*! @brief 发送一个sendReq后，收到微信的回应
+ *
+ * 收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
+ * 可能收到的处理结果有SendMessageToWXResp、SendAuthResp等。
+ * @param resp具体的回应内容，是自动释放的
+ */
+-(void) onResp:(BaseResp*)resp
+{
+    if([resp isKindOfClass:[SendMessageToWXResp class]])
+    {
+        NSString *strTitle = [NSString stringWithFormat:@"发送结果"];
+        NSString *strMsg = [NSString stringWithFormat:@"发送媒体消息结果:%d", resp.errCode];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
+    else if([resp isKindOfClass:[SendAuthResp class]])
+    {
+        NSString *strTitle = [NSString stringWithFormat:@"Auth结果"];
+        NSString *strMsg = [NSString stringWithFormat:@"Auth结果:%d", resp.errCode];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
+}
+
+#pragma mark Weixin SendAppContent
+//scene:WXSceneSession;//WXSceneTimeline
+- (void) sendAppContent:(NSString*)title description:(NSString*)description image:(NSString*)name scene:(int)scene
+{
+    if (![WXApi isWXAppInstalled]) {
+        [self openWeixinInAppstore];
+        return;
+    }
+    // 发送内容给微信
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = title;
+    message.description = description;
+    if(name && [name length]>0)
+    {
+        [message setThumbImage:[UIImage imageNamed:name]];
+    }
+    
+    WXAppExtendObject *ext = [WXAppExtendObject object];
+    //ext.extInfo = @"<xml>test</xml>";
+    ext.url = self.mTrackViewUrl;
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[[SendMessageToWXReq alloc] init]autorelease];
+    req.bText = NO;
+    req.message = message;
+    req.scene = scene;
+    
+    [WXApi sendReq:req];
+}
+
+-(void)openWeixinInAppstore
+{
+    NSString* title = @"提示";
+    NSString* msg = @"您需要安装微信后，才能分享，现在去下载？";
+    NSString* okMsg =  NSLocalizedString(@"Ok", "");
+    NSString* cancelMsg =  NSLocalizedString(@"Cancel", "");
+    UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:okMsg otherButtonTitles:cancelMsg, nil]autorelease];
+    [alert show];
+    mDialogType = kOpenWeixin;
 }
 @end
 

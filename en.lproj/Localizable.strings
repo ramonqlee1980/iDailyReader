@@ -10,9 +10,11 @@
 
 "kToday"="Hot";
 "kRecommendList"="Recommend";
-"kFun"="Fun";
+"kFun"="糗事";
 
-"add2FavTip"="Fav";
+"add2FavTip"="收藏";
+"share2WixinChat"="分享微信好友";
+"share2WixinFriends"="分享微信朋友圈";
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "Back";
 "AboutTitle"="About";

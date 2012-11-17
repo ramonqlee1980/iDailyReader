@@ -223,8 +223,10 @@ UITableViewDelegate
     //设置up ，down and commits
 //    [cell.goodbtn setTitle:[NSString stringWithFormat:@"%d",qs.upCount] forState:UIControlStateNormal];
     [cell.goodbtn setTitle:NSLocalizedString(@"add2FavTip", "") forState:UIControlStateNormal];
-    [cell.badbtn setTitle:[NSString stringWithFormat:@"%d",qs.downCount] forState:UIControlStateNormal];
-    [cell.commentsbtn setTitle:[NSString stringWithFormat:@"%d",qs.commentsCount] forState:UIControlStateNormal];
+    [cell.badbtn setTitle:NSLocalizedString(@"share2WixinChat", "")  forState:UIControlStateNormal];
+    [cell.commentsbtn setTitle:NSLocalizedString(@"share2WixinFriends", "") forState:UIControlStateNormal];
+    //[cell.badbtn setTitle:[NSString stringWithFormat:@"%d",qs.downCount] forState:UIControlStateNormal];
+    //[cell.commentsbtn setTitle:[NSString stringWithFormat:@"%d",qs.commentsCount] forState:UIControlStateNormal];
     //自适应函数
     [cell resizeTheHeight];
     return cell;

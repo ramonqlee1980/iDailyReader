@@ -10,6 +10,8 @@
 		0411410E164DC913003A1382 /* 640_960_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410C164DC913003A1382 /* 640_960_splash.png */; };
 		0411410F164DC913003A1382 /* 640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410D164DC913003A1382 /* 640_960.png */; };
 		042932701627898500FCBA96 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429326F1627898500FCBA96 /* WapsOffer.framework */; };
+		046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */; };
+		046606741657D04A000D7FD2 /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 046606731657D04A000D7FD2 /* micro_messenger.png */; };
 		0496468F16374F4B00D7E7CE /* _mobi_sage_header_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */; };
 		0496469016374F4B00D7E7CE /* _mobi_sage_manager_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */; };
 		0496469116374F4B00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html in Resources */ = {isa = PBXBuildFile; fileRef = 049645BD16374F4A00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html */; };
@@ -787,6 +789,10 @@
 		0411410C164DC913003A1382 /* 640_960_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960_splash.png; sourceTree = "<group>"; };
 		0411410D164DC913003A1382 /* 640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960.png; sourceTree = "<group>"; };
 		0429326F1627898500FCBA96 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
+		0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		0466066F1657C74A000D7FD2 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		046606701657C74A000D7FD2 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		046606731657D04A000D7FD2 /* micro_messenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro_messenger.png; sourceTree = "<group>"; };
 		049645BB16374F4A00D7E7CE /* _mobi_sage_header_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_header_8h_source.html; sourceTree = "<group>"; };
 		049645BC16374F4A00D7E7CE /* _mobi_sage_manager_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_manager_8h_source.html; sourceTree = "<group>"; };
 		049645BD16374F4A00D7E7CE /* _mobi_sage_recommend_s_d_k_8h_source.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = _mobi_sage_recommend_s_d_k_8h_source.html; sourceTree = "<group>"; };
@@ -1791,6 +1797,7 @@
 				04C50C051635FBA800A6C067 /* libYouMi.a in Frameworks */,
 				0496470216374F4B00D7E7CE /* libMobiSageRecommend.a in Frameworks */,
 				0496470316374F4B00D7E7CE /* libMobiSageSDK.a in Frameworks */,
+				046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1805,6 +1812,25 @@
 			);
 			name = splash;
 			path = zake;
+			sourceTree = "<group>";
+		};
+		0466066A1657C736000D7FD2 /* SNS */ = {
+			isa = PBXGroup;
+			children = (
+				0466066C1657C74A000D7FD2 /* WixinChat */,
+			);
+			name = SNS;
+			sourceTree = "<group>";
+		};
+		0466066C1657C74A000D7FD2 /* WixinChat */ = {
+			isa = PBXGroup;
+			children = (
+				0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */,
+				0466066F1657C74A000D7FD2 /* WXApi.h */,
+				046606701657C74A000D7FD2 /* WXApiObject.h */,
+			);
+			name = WixinChat;
+			path = SDKExport;
 			sourceTree = "<group>";
 		};
 		049645B816374F4A00D7E7CE /* mobisage */ = {
@@ -2255,6 +2281,7 @@
 		049840E71632011D005694D2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				046606731657D04A000D7FD2 /* micro_messenger.png */,
 				049840E81632011D005694D2 /* back.png */,
 				049840E91632011D005694D2 /* back@2x.png */,
 				049840EA1632011D005694D2 /* bar_background.png */,
@@ -3029,6 +3056,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0466066A1657C736000D7FD2 /* SNS */,
 				041140EB164DC0DB003A1382 /* splash */,
 				30A13F26156AFE7900021AB5 /* ThirdPart */,
 				049840D41632011D005694D2 /* Qiushibaike */,
@@ -4193,6 +4221,7 @@
 				049B7B0A164FDC7200602BE1 /* 368_Unicode.txt in Resources */,
 				049B7B0B164FDC7200602BE1 /* 369_Unicode.txt in Resources */,
 				049B7B0C164FDC7200602BE1 /* 370_Unicode.txt in Resources */,
+				046606741657D04A000D7FD2 /* micro_messenger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4521,6 +4550,7 @@
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
 					"\"$(SRCROOT)/lib/youmi/lib\"",
+					"\"$(SRCROOT)/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -4614,6 +4644,7 @@
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
 					"\"$(SRCROOT)/lib/youmi/lib\"",
+					"\"$(SRCROOT)/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -4733,6 +4764,7 @@
 					"\"$(SRCROOT)/lib/WQMobile\"",
 					"\"$(SRCROOT)/lib/Lib\"",
 					"\"$(SRCROOT)/lib/youmi/lib\"",
+					"\"$(SRCROOT)/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-//#define k91Appstore
+#define k91Appstore
 
 //switch for ads config
 //#define MHealth
@@ -484,6 +484,10 @@
 #define kOpenExistFavorite @"kOpenExistFavorite"
 #define kQiushiReviewed @"kQiushiReviewed"
 #define kQiushiRefreshed @"kQiushiRefreshed"
+
+//weixin
+#define kFlurryConfirmOpenWeixinInAppstore @"kConfirmOpenWeixinInAppstore"
+#define kFlurryCancelOpenWeixinInAppstore @"kCancelOpenWeixinInAppstore"
 
 #define kCountPerSection 3
 @interface AdsConfig : NSObject

@@ -1,9 +1,11 @@
 
 #import "ASIHTTPRequest.h"
+#import "WXApi.h"
 
 #define SharedDelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
 #define kAdd2Favorite @"kAdd2Favorite"
-@interface AppDelegate : NSObject <UIApplicationDelegate>
+
+@interface AppDelegate : NSObject <UIApplicationDelegate,WXApiDelegate>
 {
     UIWindow *window;
     UINavigationController *navigationController;
@@ -26,7 +28,7 @@
     
     
     UIView *rView;//图片的UIView
-
+    NSUInteger mDialogType;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -68,5 +70,7 @@
 +(BOOL)CompareVersionFromOldVersion : (NSString *)oldVersion
                          newVersion : (NSString *)newVersion;
 - (NSString *)applicationDocumentsDirectory ;
+
+- (void) sendAppContent:(NSString*)title description:(NSString*)description image:(NSString*)name scene:(int)scene;
 @end
 
