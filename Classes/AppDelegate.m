@@ -112,6 +112,9 @@
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSLog(@"didFinishLaunchingWithOptions begin");
+    //向微信注册
+    [WXApi registerApp:kWixinChatID];
+    
     [self loadData];
     // Override point for customization after application launch.
     window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -168,9 +171,7 @@
     [Flurry startSession:kFlurryID];
     NSLog(@"didFinishLaunchingWithOptions begin");
     
-    //向微信注册
-    [WXApi registerApp:kWixinChatID];
-    
+        
     return YES;
 }
 
@@ -940,11 +941,16 @@
     if([req isKindOfClass:[GetMessageFromWXReq class]])
     {
         //[self onRequestAppMessage];
+        NSString *strTitle = [NSString stringWithFormat:@"消息来自微信"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strTitle delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
     else if([req isKindOfClass:[ShowMessageFromWXReq class]])
     {
-        //ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
-        //[self onShowMediaMessage:temp.message];
+        ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
+        [self onShowMediaMessage:temp.message];
     }
     
 }
@@ -959,8 +965,11 @@
 {
     if([resp isKindOfClass:[SendMessageToWXResp class]])
     {
-        NSString *strTitle = [NSString stringWithFormat:@"发送结果"];
-        NSString *strMsg = [NSString stringWithFormat:@"发送媒体消息结果:%d", resp.errCode];
+        NSString *strTitle = [NSString stringWithFormat:@"发送提示"];
+        NSString *strMsg = [NSString stringWithFormat:@"发送成功"];
+        if (resp.errCode!=WXSuccess) {
+            strMsg = [resp errStr];
+        }
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -969,7 +978,11 @@
     else if([resp isKindOfClass:[SendAuthResp class]])
     {
         NSString *strTitle = [NSString stringWithFormat:@"Auth结果"];
-        NSString *strMsg = [NSString stringWithFormat:@"Auth结果:%d", resp.errCode];
+        //NSString *strMsg = [NSString stringWithFormat:@"Auth结果:%d", resp.errCode];
+        NSString *strMsg = [NSString stringWithFormat:@"Auth成功"];
+        if (resp.errCode!=WXSuccess) {
+            strMsg = [resp errStr];
+        }
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -989,10 +1002,10 @@
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = title;
     message.description = description;
-    if(name && [name length]>0)
-    {
-        [message setThumbImage:[UIImage imageNamed:name]];
-    }
+//    if(name && [name length]>0)
+//    {
+//        [message setThumbImage:[UIImage imageNamed:name]];
+//    }
     
     WXAppExtendObject *ext = [WXAppExtendObject object];
     //ext.extInfo = @"<xml>test</xml>";
@@ -1017,6 +1030,25 @@
     UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:okMsg otherButtonTitles:cancelMsg, nil]autorelease];
     [alert show];
     mDialogType = kOpenWeixin;
+}
+
+#pragma mark Weixin OnReq
+-(void) onShowMediaMessage:(WXMediaMessage *) message
+{
+    // 微信启动， 有消息内容。
+    [self viewContent:message];
+}
+- (void) viewContent:(WXMediaMessage *) msg
+{
+    //显示微信传过来的内容
+    WXAppExtendObject *obj = msg.mediaObject;
+    
+    NSString *strTitle = [NSString stringWithFormat:@"消息来自微信"];
+    NSString *strMsg = [NSString stringWithFormat:@"标题：%@ \n内容：%@ \n附带信息：%@ \n缩略图:%u bytes\n\n", msg.title, msg.description, obj.extInfo, msg.thumbData.length];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
 }
 @end
 

@@ -179,6 +179,7 @@
     UIButton *btn =(UIButton *) sender;
     NSString* title = txtAnchor.text;
     NSString* content = txtContent.text;
+    NSString* kWixinTitle = @"糗事一箩筐";
     switch (btn.tag) {
         case FGOOD:    //顶
         {
@@ -190,13 +191,13 @@
         case FBAD:     //share to wixin chat
         {
             AppDelegate* delegate = SharedDelegate;
-            [delegate sendAppContent:title description:content image:imgUrl scene:WXSceneSession];
+            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
         }
             break;
         case FCOMMITE: //评论
         {
             AppDelegate* delegate = SharedDelegate;
-            [delegate sendAppContent:title description:content image:imgUrl scene:WXSceneTimeline];
+            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneTimeline];
         }
             break;
         default:

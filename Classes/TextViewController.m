@@ -762,4 +762,19 @@
 {
     return self;
 }
+
+#pragma mark weixin share
+-(IBAction)share2WixinChat
+{
+    NSString* title = self.title;
+    NSString* content = textView.text;
+    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+
+}
+-(IBAction)share2WixinFriends
+{
+    NSString* title = self.title;
+    NSString* content = textView.text;
+    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+}
 @end

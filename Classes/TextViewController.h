@@ -54,6 +54,8 @@ enum ShareOption
 - (IBAction)closeAd:(id)sender;
 -(IBAction)emailShare;
 -(IBAction)add2Favorate;
+-(IBAction)share2WixinChat;
+-(IBAction)share2WixinFriends;
 
 -(void)launchMailAppOnDevice:(BOOL)feedback;
 -(void)displayComposerSheet:(BOOL)feedback;
