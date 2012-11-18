@@ -31,7 +31,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>Makeup</string>
+	<string>TraditionalChineseMedicine</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -51,7 +51,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx1732ccc0f4c8954d</string>
+				<string>wx4dd2eafc51284cd5</string>
 			</array>
 		</dict>
 	</array>

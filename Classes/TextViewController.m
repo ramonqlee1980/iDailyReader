@@ -769,7 +769,6 @@
     NSString* title = self.title;
     NSString* content = textView.text;
     [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
-
 }
 -(IBAction)share2WixinFriends
 {

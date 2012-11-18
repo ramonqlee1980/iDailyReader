@@ -11,7 +11,7 @@
 #import "WXApiObject.h"
 
 #pragma mark - 
-#define kWixinChatID @"wx1732ccc0f4c8954d"
+
 /*! @brief 接收并处理来至微信终端程序的事件消息
  *
  * 接收并处理来至微信终端程序的事件消息，期间微信界面会切换到第三方应用程序。

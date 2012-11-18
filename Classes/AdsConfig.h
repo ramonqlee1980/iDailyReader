@@ -18,9 +18,9 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
-//#define TraditionalChineseMedicine
+#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
@@ -160,6 +160,9 @@
 #define kAdmobID @"a14f1b56e4ba533"
 
 #elif defined Makeup
+
+#define kWixinChatID @"wx1732ccc0f4c8954d"
+
 //weibo key and secret
 //sina weibo
 #define kOAuthConsumerKey				@"1833188142"		//REPLACE ME
@@ -223,6 +226,8 @@
 #define kAdmobID @"a14f1b56e4ba533"
 #define kWapsId @"5a3029e17a29d1f8d8fb764318406970"
 #elif defined TraditionalChineseMedicine
+
+#define kWixinChatID @"wx4dd2eafc51284cd5"
 #define kFlurryID @"C82CN6MQ328XV3BHX5TN"
 //weibo key and secret
 //sina weibo
