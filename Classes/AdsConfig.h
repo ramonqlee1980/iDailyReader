@@ -10,6 +10,8 @@
 
 //appstore switch
 //#define k91Appstore
+//#define __IN_APP_SUPPORT__
+
 
 //switch for ads config
 //#define MHealth
@@ -19,8 +21,8 @@
 //#define RaisingKids
 //#define TodayinHistory
 //#define Makeup
-//#define MakeToast
-#define TraditionalChineseMedicine
+#define MakeToast
+//#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
@@ -194,8 +196,11 @@
 #define kWapsId @"6742d5de04cf0a6a5bf45fd3cdc9001a"
 
 #elif defined MakeToast
+
+#define kInAppPurchaseProductName @"com.idreems.maketoast"
 //code macro
 #define kSingleFile
+#define kWixinChatID @"wx906a8a63865c9a7f"
 
 #define kFlurryID @"D5WYXYC4R9C6273W7M9Q"
 //weibo key and secret
@@ -493,6 +498,7 @@
 //weixin
 #define kFlurryConfirmOpenWeixinInAppstore @"kConfirmOpenWeixinInAppstore"
 #define kFlurryCancelOpenWeixinInAppstore @"kCancelOpenWeixinInAppstore"
+#define kShareByWeixin @"kShareByWeixin"
 
 #define kCountPerSection 3
 @interface AdsConfig : NSObject

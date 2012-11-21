@@ -3,6 +3,13 @@ HappyLife
 
 
 Changes from Previous Versions
+
+3.1.20
+1.add rss
+2.add facebook side-bar ui
+3.add in-app purchase for close ads
+
+
 3.1.19
 1.增加阅读频道
 2.集成更多生活类服务：比如娱乐等

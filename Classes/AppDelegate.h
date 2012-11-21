@@ -72,5 +72,7 @@
 - (NSString *)applicationDocumentsDirectory ;
 
 - (void) sendAppContent:(NSString*)title description:(NSString*)description image:(NSString*)name scene:(int)scene;
+
++(BOOL)isPurchased;
 @end
 

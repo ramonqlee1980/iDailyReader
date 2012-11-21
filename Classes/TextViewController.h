@@ -17,7 +17,7 @@ enum ShareOption
 
 
 @class AppDelegate;
-
+@class MBProgressHUD;
 
 @interface TextViewController : UIViewController <MFMailComposeViewControllerDelegate,UIActionSheetDelegate,DoMobDelegate,CaseeAdDelegate,MobiSageRecommendDelegate,WQAdProtocol,immobViewDelegate>
 {
@@ -37,7 +37,11 @@ enum ShareOption
     BOOL mWallOpened;//open ad wall
     NSString* mWallName;
     UIView* mWall;
+    
+    MBProgressHUD *_hud;
 }
+@property (retain) MBProgressHUD *hud;
+
 @property(nonatomic, retain) MobiSageRecommendView *recmdView;
 @property (nonatomic, retain) IBOutlet UITabBarItem *mAdsSwitchBarItem;
 @property(nonatomic, retain) UIView *mAdView;

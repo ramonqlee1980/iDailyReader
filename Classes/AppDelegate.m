@@ -16,6 +16,7 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MoreViewController.h"
+#import "InAppRageIAPHelper.h"
 
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 60
@@ -114,6 +115,8 @@
     NSLog(@"didFinishLaunchingWithOptions begin");
     //向微信注册
     [WXApi registerApp:kWixinChatID];
+    //in-app purchase
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:[InAppRageIAPHelper sharedHelper]];
     
     [self loadData];
     // Override point for customization after application launch.
@@ -180,7 +183,7 @@
     _EnterBylocalNotification = NO;
     NSLog(@"applicationDidEnterBackground");
     
-#ifndef kSingleFile
+//#ifndef kSingleFile
     //set local notification to pop up a tip
     const NSTimeInterval kDelay = 0;//1;
     NSString* popContent = NSLocalizedString(@"appFriendlyTip","");
@@ -189,7 +192,7 @@
     
     //tomorrow's tip
     [self scheduleDailyNofification];
-#endif
+//#endif
 }
 -(void)applicationWillTerminate:(UIApplication *)application
 {
@@ -490,6 +493,10 @@
 - (void)startAdsConfigReceive
 // Starts a connection to download the current URL.
 {
+    if([AppDelegate isPurchased])
+    {
+        return;
+    }
 #if 0
     NSURL *url = [[NetworkManager sharedInstance] smartURLForString:AdsUrl];
     if(asiRequest==nil)
@@ -565,7 +572,8 @@
         {
             mAdsWalls = [config getAdsWalls];
             //notify observers
-            [[NSNotificationCenter defaultCenter]postNotificationName:kAdsUpdateDidFinishLoading object:nil];
+            if(![AppDelegate isPurchased])
+                [[NSNotificationCenter defaultCenter]postNotificationName:kAdsUpdateDidFinishLoading object:nil];
         }
         
     }
@@ -1019,6 +1027,8 @@
     req.scene = scene;
     
     [WXApi sendReq:req];
+    
+    [Flurry logEvent:kShareByWeixin];
 }
 
 -(void)openWeixinInAppstore
@@ -1049,6 +1059,13 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
     [alert release];
+}
+
++(BOOL)isPurchased
+{    
+    BOOL r = [[InAppRageIAPHelper sharedHelper].purchasedProducts containsObject:kInAppPurchaseProductName];
+    NSLog(@"isPurchased:%d",r);
+    return r;
 }
 @end
 

@@ -132,23 +132,6 @@
     mYoumiFeaturedWallShouldShow = YES;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    //AdsConfig* config = [AdsConfig sharedAdsConfig];
-    //self.navigationController.navigationBarHidden = YES;
-    //if(![config wallShouldShow])
-    //{
-    //   return;
-    //}
-    //    AppDelegate* delegate = SharedDelegate;
-    //    if([delegate shouldShowAdsWall])
-    //    {
-    //        [Flurry logEvent:kLoadRecommendAdsWall];
-    //        [self  loadRecommendAdsWall:[delegate currentAdsWall]];
-    //    }
-}
-
 - (void)viewDidLoad
 {
     [self loadNeededView];
@@ -432,6 +415,9 @@
 
 -(void)popupAdsageRecommendView:(NSString*)wallName
 {
+    if ([AppDelegate isPurchased]) {
+        return;
+    }
     if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {
         [self loadAdsageRecommendView:YES];

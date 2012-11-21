@@ -8,6 +8,7 @@
 
 #import "AdsConfig.h"
 #import "XPathQuery.h"
+#import "AppDelegate.h"
 
 #define kAdsValid @"1"
 
@@ -233,7 +234,11 @@ static AdsConfig * sSharedInstance;
 
 +(BOOL) isAdsOff
 {
-    NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];   
+    if([AppDelegate isPurchased])
+    {
+        return YES;
+    }
+    NSUserDefaults* defaultSetting = [NSUserDefaults standardUserDefaults];
     
     //1.temp:valid date;
     //2.permanent:permanent

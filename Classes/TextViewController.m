@@ -14,6 +14,9 @@
 #import "MobiSageSDK.h"
 #import "WQAdView.h"
 #import "WapsOffer/AppConnect.h"
+#import "InAppRageIAPHelper.h"
+#import "MBProgressHUD.h"
+#import "ReachabilityAs.h"
 
 @interface TextViewController()
 
@@ -91,12 +94,24 @@
     if ([AdsConfig isAdsOff] ) {        
         [self setRightAdButton:NO];
         return;
-    }  
-    
+    }      
     
     //show close ads 
     mAdsWallShouldShow = [config wallShouldShow];
+#ifdef __IN_APP_SUPPORT__
+    if(mAdsWallShouldShow)
+    {
+    [self setRightAdButton:(![AppDelegate isPurchased])];
+    }
+#else
     [self setRightAdButton:mAdsWallShouldShow];
+#endif
+    
+#ifdef __IN_APP_SUPPORT__
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoaded:) name:kProductsLoadedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchasedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(productPurchaseFailed:) name:kProductPurchaseFailedNotification object: nil];
+#else
     
 #ifdef k91Appstore//for 91 app,this is a top level switch
     if(!mAdsWallShouldShow)
@@ -318,6 +333,7 @@
     while (![config isCurrentAdsValid]) {
         [config toNextAd];
     }
+#endif
 }
 #pragma mark -
 #pragma mark DoMobDelegate methods
@@ -403,7 +419,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{    
+{
     switch (buttonIndex) {
         case kShareByEmailOption:
             [self emailShare];
@@ -594,6 +610,7 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:kAdd2Favorite object:nil userInfo:dict];
     
 }
+#ifndef __IN_APP_SUPPORT__
 // Called when a button is clicked. The view will be automatically dismissed after this call returns
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {   
@@ -615,6 +632,7 @@
     }
     _tempCloseRequest = YES;
 }
+#endif//__IN_APP_SUPPORT__
 -(void)closeAdsTemp
 {
     if (![AdsConfig neverCloseAds]) {
@@ -646,7 +664,9 @@
     //immoi
     //miidi
     //waps
+#ifdef __IN_APP_SUPPORT__
     
+#else
     mWallName = [delegate currentAdsWall];
     if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:mWallName])
     {
@@ -677,11 +697,16 @@
     [delegate setShouldShowAdsWall:NO enableForNext:YES];
     
     [Flurry logEvent:kFlurryOpenRemoveAdsList];
+#endif//__IN_APP_SUPPORT__
 }
 - (IBAction)closeAd:(id)sender
-{    
+{
+#ifndef __IN_APP_SUPPORT__
     [Flurry logEvent:kDidShowFeaturedAppCredit];
-    [self closeAds:mAdsWallShouldShow];    
+    [self closeAds:mAdsWallShouldShow];
+#else
+    [self rightItemClickInAppPurchase:sender];
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -721,6 +746,10 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [_hud release];
+    _hud = nil;
+    
     self.index = nil;   
     if ([mAdView isKindOfClass:[DoMobView class]]) {
         ((DoMobView*)mAdView).doMobDelegate = nil;
@@ -775,5 +804,136 @@
     NSString* title = self.title;
     NSString* content = textView.text;
     [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+}
+
+
+#pragma mark request purchase
+// Add new method
+-(IBAction)rightItemClickInAppPurchase:(id)sender
+{
+    if ([AppDelegate isPurchased]) {
+        //        NSString* ret = NSLocalizedString(@"try2delete", "");
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"" message:@"purchased already" delegate:self cancelButtonTitle:NSLocalizedString(@"OK","") otherButtonTitles:nil]autorelease];
+        [alert show];
+        return;
+    }
+    ReachabilityAs *reach = [ReachabilityAs reachabilityForInternetConnection];
+    NetworkStatus netStatus = [reach currentReachabilityStatus];
+    if (netStatus == NotReachable) {
+        NSLog(@"No internet connection!");
+    } else {
+        //if ([InAppRageIAPHelper sharedHelper].products == nil)
+        {
+            
+            [[InAppRageIAPHelper sharedHelper] requestProducts];
+            self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+            _hud.labelText = NSLocalizedString(@"Loading","");
+            [self performSelector:@selector(timeout:) withObject:nil afterDelay:30.0];
+        }
+    }
+}
+
+#pragma notification handler
+- (void)productPurchased:(NSNotification *)notification {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+    
+    NSString *productIdentifier = (NSString *) notification.object;
+    NSLog(@"Purchased: %@", productIdentifier);
+    
+    //hide purchase button
+    self.navigationItem.rightBarButtonItem = nil;
+    
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"purchased","") delegate:self cancelButtonTitle:NSLocalizedString(@"OK","") otherButtonTitles:nil]autorelease];
+    [alert show];
+    
+}
+
+- (void)productPurchaseFailed:(NSNotification *)notification {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+    
+    SKPaymentTransaction * transaction = (SKPaymentTransaction *) notification.object;
+    if (transaction.error.code != SKErrorPaymentCancelled) {
+        UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error!"
+                                                         message:transaction.error.localizedDescription
+                                                        delegate:nil
+                                               cancelButtonTitle:nil
+                                               otherButtonTitles:@"OK", nil] autorelease];
+        
+        [alert show];
+    }
+    
+}
+- (void)dismissHUD:(id)arg {
+    
+    [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+    self.hud = nil;
+    
+}
+- (void)updateInterfaceWithReachability: (ReachabilityAs*) curReach {
+    
+}
+#pragma  mark inapp purchase
+
+#ifdef __IN_APP_SUPPORT__
+// Called when a button is clicked. The view will be automatically dismissed after this call returns
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+#define kPurchaseConfirmIndex 1
+    
+    if(buttonIndex == kPurchaseConfirmIndex)
+    {
+        SKProduct *product = [[InAppRageIAPHelper sharedHelper].products objectAtIndex:0];
+        
+        NSLog(@"Buying %@...", product.productIdentifier);
+        
+        [[InAppRageIAPHelper sharedHelper] buyProduct:product];
+        
+        self.hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        _hud.labelText = NSLocalizedString(@"Purchasing","");
+        [self performSelector:@selector(timeout:) withObject:nil afterDelay:60*5];
+    }
+}
+#endif//__IN_APP_SUPPORT__
+- (NSString *)localizedPrice:(NSLocale *)priceLocale price:(NSDecimalNumber *)price
+{
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setLocale:priceLocale];
+    NSString *formattedString = [numberFormatter stringFromNumber:price];
+    [numberFormatter release];
+    return formattedString;
+}
+- (void)productsLoaded:(NSNotification *)notification {
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+    
+    //purchase request
+    SKProduct *product = [[InAppRageIAPHelper sharedHelper].products objectAtIndex:0];
+    NSString* msg = [NSString stringWithFormat:@"%@(%@)",product.localizedDescription,[self localizedPrice:product.priceLocale price:product.price]];
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:product.localizedTitle message:msg delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel","") otherButtonTitles:NSLocalizedString(@"OK","") ,nil]autorelease];
+    [alert show];
+}
+
+- (void)timeout:(id)arg {
+    
+    _hud.labelText = @"Timeout,try again later.";
+    //_hud.detailsLabelText = @"Please try again later.";
+    //_hud.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]] autorelease];
+	//_hud.mode = MBProgressHUDModeCustomView;
+    [self performSelector:@selector(dismissHUD:) withObject:nil afterDelay:3.0];
+    
+}
+-(void)setRightClick:(NSString*)title buttonName:(NSString*)buttonName action:(SEL)action
+{
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:buttonName style:UIBarButtonItemStyleBordered target:self action:action];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    self.navigationItem.title = title;
+    [rightItem release];
 }
 @end
