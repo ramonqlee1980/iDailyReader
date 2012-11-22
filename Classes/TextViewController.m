@@ -99,7 +99,9 @@
     //show close ads 
     mAdsWallShouldShow = [config wallShouldShow];
 #ifdef __IN_APP_SUPPORT__
+#ifdef k91Appstore
     if(mAdsWallShouldShow)
+#endif
     {
     [self setRightAdButton:(![AppDelegate isPurchased])];
     }
@@ -111,7 +113,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsLoaded:) name:kProductsLoadedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kProductPurchasedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(productPurchaseFailed:) name:kProductPurchaseFailedNotification object: nil];
-#else
+//#else
     
 #ifdef k91Appstore//for 91 app,this is a top level switch
     if(!mAdsWallShouldShow)
@@ -132,10 +134,17 @@
             }
             break;
         }
-    }   
+    }
+#ifdef __IN_APP_SUPPORT__
+    if ([currentAds length]==0) {        
+    currentAds = AdsPlatformMobisageRecommend;
+    }
+#else
     if ([currentAds length]==0) {
         return;
     }
+#endif
+
     NSLog(@"getCurrentAd()::%@--(%d,%d)",currentAds,config.mCurrentIndex,[config getAdsCount]);
     
     //iPad or not

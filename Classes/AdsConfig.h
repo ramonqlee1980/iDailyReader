@@ -10,7 +10,7 @@
 
 //appstore switch
 //#define k91Appstore
-//#define __IN_APP_SUPPORT__
+#define __IN_APP_SUPPORT__
 
 
 //switch for ads config
@@ -20,8 +20,8 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-//#define Makeup
-#define MakeToast
+#define Makeup
+//#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
@@ -162,7 +162,7 @@
 #define kAdmobID @"a14f1b56e4ba533"
 
 #elif defined Makeup
-
+#define kInAppPurchaseProductName @"com.idreems.makeup"
 #define kWixinChatID @"wx1732ccc0f4c8954d"
 
 //weibo key and secret
@@ -197,7 +197,7 @@
 
 #elif defined MakeToast
 
-#define kInAppPurchaseProductName @"com.idreems.maketoast"
+#define kInAppPurchaseProductName @"com.idreems.maketoast.inapp"
 //code macro
 #define kSingleFile
 #define kWixinChatID @"wx906a8a63865c9a7f"
