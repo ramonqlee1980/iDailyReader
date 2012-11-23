@@ -1062,10 +1062,14 @@
 }
 
 +(BOOL)isPurchased
-{    
+{
+#ifdef __IN_APP_SUPPORT__
     BOOL r = [[InAppRageIAPHelper sharedHelper].purchasedProducts containsObject:kInAppPurchaseProductName];
     NSLog(@"isPurchased:%d",r);
     return r;
+#else
+    return NO;
+#endif
 }
 @end
 

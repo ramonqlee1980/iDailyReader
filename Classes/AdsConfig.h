@@ -10,17 +10,17 @@
 
 //appstore switch
 //#define k91Appstore
-#define __IN_APP_SUPPORT__
+//#define __IN_APP_SUPPORT__
 
 
 //switch for ads config
 //#define MHealth
 //#define Foods
 //#define LosingWeight
-//#define careerGuide
+#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
@@ -72,6 +72,9 @@
 
 
 #elif defined careerGuide
+#define kInAppPurchaseProductName @"com.idreems.careerGuide.inapp"
+#define kWixinChatID @"wx53e33753b2767146"
+
 #define kFlurryID @"SPP44Z2HJXGR4ZXWNRYF"
 //weibo key and secret
 //sina weibo
@@ -99,6 +102,7 @@
 #define kYoumiId kDefaultAppID_iOS
 #define kYoumiSecret kDefaultAppSecret_iOS
 #define kAdmobID @"a14f1b56e4ba533"
+#define kWapsId @"6742d5de04cf0a6a5bf45fd3cdc9001a"
 
 #elif defined RaisingKids
 #define kFlurryID @"KN8WBCH24R3V3PFVSSY2"
@@ -130,6 +134,8 @@
 #define kAdmobID @"a14f1b56e4ba533"
 
 #elif defined TodayinHistory
+#define kInAppPurchaseProductName @"com.idreems.todayinhistory"
+#define kWixinChatID @"wx80ac89a363662d28"
 //flurry
 #define kFlurryID @"VD57WGD28683BPMSQ9X9"
 
@@ -160,6 +166,7 @@
 #define kYoumiId kDefaultAppID_iOS
 #define kYoumiSecret kDefaultAppSecret_iOS
 #define kAdmobID @"a14f1b56e4ba533"
+#define kWapsId @"6742d5de04cf0a6a5bf45fd3cdc9001a"
 
 #elif defined Makeup
 #define kInAppPurchaseProductName @"com.idreems.makeup"
@@ -292,7 +299,8 @@
 #define kAdmobID @"a14f1b56e4ba533"
 
 #elif defined Humer
-
+#define kInAppPurchaseProductName @"com.idreems.humer"
+#define kWixinChatID @"wxc3ac21dc64f23fd0"
 //flurry
 #define kFlurryID @"TDGR5K49JJPSX4G7HZJ8"
 //sina weibo
@@ -324,7 +332,8 @@
 #define kWapsId @"6742d5de04cf0a6a5bf45fd3cdc9001a"
 
 #elif defined EnglishSuffix
-
+#define kInAppPurchaseProductName @"com.idreems.englishsuffix"
+#define kWixinChatID @"wx4a00bebf47dc58a3"
 //flurry
 #define kFlurryID @"ZYPQPYTD683PDWZH47SS"
 
@@ -358,6 +367,8 @@
 #define kAdmobID @"a14f1b56e4ba533"
 #define kWapsId @"5a3029e17a29d1f8d8fb764318406970"
 #elif defined EnglishPrefix
+#define kInAppPurchaseProductName @"com.idreems.englishprefix"
+#define kWixinChatID @"wx048b6fe2cb8d7753"
 //flurry
 #define kFlurryID @"RSJY3SX8QV95QQM5GJ5Y"
 //code macro
