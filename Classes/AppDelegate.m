@@ -19,7 +19,7 @@
 #import "InAppRageIAPHelper.h"
 
 #define kLocalNotificationSet @"LocalNotificationSet"
-#define kAdsWallShowDelayTime 60
+#define kAdsWallShowDelayTime 10*60 //ads display delay time
 #define kLaunchTime @"kLaunchTime"
 #define kRatingWhenLaunchTime 5
 
@@ -386,7 +386,6 @@
     //NSLog(@"%@",responseData);
     NSString *xpathQueryString = @"//channel/item/*";
     self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
-    
     [responseData release];
     
     
@@ -424,11 +423,17 @@
     }
     mDataPath = [[NSString alloc]initWithString:dataPath];
     
-    NSData* responseData = [[NSData alloc] initWithContentsOfFile:mDataPath];
+    NSData* responseData = [[NSData alloc] initWithContentsOfFile:dataPath];
     //NSLog(@"%@",responseData);
     NSString *xpathQueryString = @"//channel/item/*";
     self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
-    
+    if (!self.data || self.data.count==0)
+    {
+        [mDataPath release];
+        mDataPath = [[NSString alloc]initWithString:@"003_Unicode"];
+        responseData = [[NSData alloc] initWithContentsOfFile:dataPath];
+        self.data = (NSMutableArray*)PerformXMLXPathQuery(responseData, xpathQueryString);
+    }
     [responseData release];
 }
 -(void)scheduleLocalNotification:(NSString*)alertBody

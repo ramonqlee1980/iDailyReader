@@ -705,8 +705,9 @@
     }
     [delegate setShouldShowAdsWall:NO enableForNext:YES];
     
-    [Flurry logEvent:kFlurryOpenRemoveAdsList];
+    [Flurry logEvent:kFlurryOpenRemoveAdsList];    
 #endif//__IN_APP_SUPPORT__
+    [AdsConfig setAdsOn:NO type:kPermanent];
 }
 - (IBAction)closeAd:(id)sender
 {

@@ -4481,6 +4481,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
@@ -4577,6 +4581,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
+				"ARCHS[sdk=iphoneos5.0]" = (
+					armv7,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Ming Li";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos4.3]" = "iPhone Distribution: Ming Li";
@@ -4660,9 +4672,9 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = HappyLife;
-				PROVISIONING_PROFILE = "87262846-EE6C-4C01-A570-DACD1D1C8528";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.3]" = "87262846-EE6C-4C01-A570-DACD1D1C8528";
-				"PROVISIONING_PROFILE[sdk=iphoneos5.0]" = "87262846-EE6C-4C01-A570-DACD1D1C8528";
+				PROVISIONING_PROFILE = "9B1D7F68-4806-47F3-94CB-50FBE0CA3990";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.3]" = "9B1D7F68-4806-47F3-94CB-50FBE0CA3990";
+				"PROVISIONING_PROFILE[sdk=iphoneos5.0]" = "9B1D7F68-4806-47F3-94CB-50FBE0CA3990";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -4698,6 +4710,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution";
