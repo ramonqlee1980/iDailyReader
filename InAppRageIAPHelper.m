@@ -23,7 +23,6 @@ static InAppRageIAPHelper * _sharedHelper;
 }
 
 - (id)init {
-    
     NSSet *productIdentifiers = [NSSet setWithObjects:
         kInAppPurchaseProductName,
         nil];
@@ -31,8 +30,7 @@ static InAppRageIAPHelper * _sharedHelper;
     if ((self = [super initWithProductIdentifiers:productIdentifiers])) {                
         
     }
-    return self;
-    
+    return self;    
 }
 
 @end

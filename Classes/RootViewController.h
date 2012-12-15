@@ -5,9 +5,9 @@
 #import "YouMiWall.h"
 #import "MobiSageRecommendSDK.h"
 #import <immobSDK/immobView.h>
+#import "ETMobAdWall.h"
 
-
-@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate>
+@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate,ETMobAdWallDelegate>
 {
 	//ApplicationCell *tmpCell;
     NSMutableArray *data;

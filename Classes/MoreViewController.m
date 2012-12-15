@@ -201,7 +201,7 @@ break;
     // Set up recipients
     //    NSArray *toRecipients = [NSArray arrayWithObject:@"first@example.com"]; 
     //    NSArray *bccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil]; 
-    NSArray *recipients = [NSArray arrayWithObject:@"ramonqlee1980@gmail.com"]; 
+    NSArray *recipients = [NSArray arrayWithObject:@"feedback4iosapp@gmail.com"]; 
     
     //    
     //    [picker setToRecipients:toRecipients];

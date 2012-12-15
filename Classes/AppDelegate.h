@@ -29,6 +29,7 @@
     
     UIView *rView;//图片的UIView
     NSUInteger mDialogType;
+    BOOL isWhiteColor;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) NSString* mTrackViewUrl;
 @property (nonatomic, retain) NSString* mTrackName;
 @property(nonatomic,retain) ASIHTTPRequest *asiRequest;
+@property(nonatomic,assign) BOOL isWhiteColor;
 
 //current ads wall 
 -(NSString*)currentAdsWall;

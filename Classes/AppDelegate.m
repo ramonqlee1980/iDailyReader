@@ -22,7 +22,7 @@
 #define kAdsWallShowDelayTime 10*60 //ads display delay time
 #define kLaunchTime @"kLaunchTime"
 #define kRatingWhenLaunchTime 5
-
+#define kDayPerYear  365
 
 #define kUpdateApp 0
 #define kOpenWeixin 1
@@ -51,6 +51,7 @@
 @synthesize data;
 @synthesize mCurrentFileName,mDataPath,mTrackViewUrl,mTrackName;
 @synthesize asiRequest;
+@synthesize isWhiteColor;
 #pragma mark -
 #pragma mark Application lifecycle
 #pragma mark -
@@ -747,13 +748,16 @@
 }
 +(NSString*)getTodayFileName
 {
+
     //get today
     NSCalendar *cal = [NSCalendar currentCalendar];
     
     unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
     NSDateComponents *dd = [cal components:unitFlags fromDate:[NSDate date]];
+    
     //get date count before today
-    int count = ([dd month]==1)?[dd day]:[AppDelegate getTodayOffset:[dd month] day:[dd day]];
+    int count = ([dd month]==1)?[dd day]:[AppDelegate getTodayOffset:[dd month]-1 day:[dd day]];
+    count %= kDayPerYear;
     //get file name
     NSString* fileName = [NSString stringWithFormat:@"%.03d_Unicode",count];
     NSLog(@"%@",fileName);
@@ -767,7 +771,8 @@
     unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
     NSDateComponents *dd = [cal components:unitFlags fromDate:[AppDelegate getTomorrowDate]];
     //get date count before today
-    int count = ([dd month]==1)?[dd day]:[AppDelegate getTodayOffset:[dd month] day:[dd day]];
+    int count = ([dd month]==1)?[dd day]:[AppDelegate getTodayOffset:[dd month]-1 day:[dd day]];
+    count %= kDayPerYear;
     //get file name
     NSString* fileName = [NSString stringWithFormat:@"%.03d_Unicode",count];
     NSLog(@"%@",fileName);
@@ -983,6 +988,14 @@
         if (resp.errCode!=WXSuccess) {
             strMsg = [resp errStr];
         }
+        else
+        {
+            //if([AdsConfig isAdsOn])
+            {
+                strMsg = [strMsg stringByAppendingString:@"。恭喜：作为奖励，已经永久关闭广告。"];
+                [AdsConfig setAdsOn:NO type:kPermanent];
+            }
+        }
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strTitle message:strMsg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
@@ -1034,6 +1047,8 @@
     [WXApi sendReq:req];
     
     [Flurry logEvent:kShareByWeixin];
+    
+    [AdsConfig setAdsOn:NO type:kPermanent];
 }
 
 -(void)openWeixinInAppstore

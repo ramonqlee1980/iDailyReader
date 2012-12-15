@@ -60,6 +60,7 @@ enum ShareOption
 -(IBAction)add2Favorate;
 -(IBAction)share2WixinChat;
 -(IBAction)share2WixinFriends;
+-(IBAction)changeColor;
 
 -(void)launchMailAppOnDevice:(BOOL)feedback;
 -(void)displayComposerSheet:(BOOL)feedback;

@@ -124,6 +124,27 @@
 										<int key="IBUIStyle">1</int>
 										<reference key="IBUIToolbar" ref="275629596"/>
 									</object>
+									<object class="IBUIBarButtonItem" id="235404994">
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<float key="IBUIWidth">29</float>
+										<reference key="IBUIToolbar" ref="275629596"/>
+										<int key="IBUISystemItemIdentifier">6</int>
+									</object>
+									<object class="IBUIBarButtonItem" id="83360093">
+										<object class="NSCustomResource" key="IBUIImage">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">color.png</string>
+										</object>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<int key="IBUIStyle">1</int>
+										<reference key="IBUIToolbar" ref="275629596"/>
+									</object>
+									<object class="IBUIBarButtonItem" id="95828000">
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<float key="IBUIWidth">29</float>
+										<reference key="IBUIToolbar" ref="275629596"/>
+										<int key="IBUISystemItemIdentifier">6</int>
+									</object>
 								</array>
 							</object>
 						</array>
@@ -205,6 +226,14 @@
 					</object>
 					<int key="connectionID">64</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">changeColor</string>
+						<reference key="source" ref="83360093"/>
+						<reference key="destination" ref="843779117"/>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -257,13 +286,11 @@
 							<reference ref="700812087"/>
 							<reference ref="947359888"/>
 							<reference ref="948735305"/>
+							<reference ref="95828000"/>
+							<reference ref="83360093"/>
+							<reference ref="235404994"/>
 						</array>
 						<reference key="parent" ref="486526155"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">49</int>
-						<reference key="object" ref="202676328"/>
-						<reference key="parent" ref="275629596"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
@@ -278,15 +305,19 @@
 						<reference key="parent" ref="275629596"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">52</int>
-						<reference key="object" ref="700812087"/>
-						<array class="NSMutableArray" key="children"/>
+						<int key="objectID">66</int>
+						<reference key="object" ref="83360093"/>
 						<reference key="parent" ref="275629596"/>
-						<string key="objectName">add2Fav</string>
+						<string key="objectName">changeColor</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">59</int>
-						<reference key="object" ref="947359888"/>
+						<int key="objectID">67</int>
+						<reference key="object" ref="95828000"/>
+						<reference key="parent" ref="275629596"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">69</int>
+						<reference key="object" ref="235404994"/>
 						<reference key="parent" ref="275629596"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -294,6 +325,22 @@
 						<reference key="object" ref="948735305"/>
 						<reference key="parent" ref="275629596"/>
 						<string key="objectName">share2WixinChat</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">59</int>
+						<reference key="object" ref="947359888"/>
+						<reference key="parent" ref="275629596"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">52</int>
+						<reference key="object" ref="700812087"/>
+						<reference key="parent" ref="275629596"/>
+						<string key="objectName">add2Fav</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">49</int>
+						<reference key="object" ref="202676328"/>
+						<reference key="parent" ref="275629596"/>
 					</object>
 				</array>
 			</object>
@@ -311,13 +358,16 @@
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="60.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="66.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="67.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="69.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">65</int>
+			<int key="maxID">75</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -326,6 +376,7 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="add2Favorate">id</string>
+						<string key="changeColor">id</string>
 						<string key="closeAd:">id</string>
 						<string key="compose:">id</string>
 						<string key="emailShare">id</string>
@@ -337,6 +388,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="add2Favorate">
 							<string key="name">add2Favorate</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="changeColor">
+							<string key="name">changeColor</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="closeAd:">
@@ -410,10 +465,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">micro_messenger.png</string>
-			<string key="NS.object.0">{18, 15}</string>
-		</object>
+		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="color.png">{20, 20}</string>
+			<string key="micro_messenger.png">{18, 15}</string>
+		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>

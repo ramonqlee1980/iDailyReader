@@ -18,7 +18,8 @@
 #define kToday @"kToday"
 #define kTitle @"Title"
 #define kLoadMobisageRecommendViewDelayTime 10//10s
-#define kNextDelayTime 60
+
+//#define kNextDelayTime 60
 
 
 
@@ -413,12 +414,96 @@
     [alert release];
 }
 
+
+- (void)openEtmobAdWall:(id)sender
+{
+    if ([self respondsToSelector:@selector(presentViewController:animated:completion:)])
+    {
+        [self presentViewController:[ETMobAdWall sharedAdWall] animated:YES completion:NULL];
+    }
+    else
+    {
+        [self presentModalViewController:[ETMobAdWall sharedAdWall] animated:YES];
+    }
+}
+
+#pragma mark - ETMobAdWall delegate methods
+
+//
+// 设置服务器 URL。
+//
+- (NSURL *)apiURLForETMobAdWall:(ETMobAdWall *)adWall
+{
+    return [NSURL URLWithString:kETmobUrl];
+}
+
+//
+// 设置 App Token，该字符串是在网站注册后获得的。
+//
+- (NSString *)appTokenForETMobAdWall:(ETMobAdWall *)adWall
+{
+    return kEtmobeAppToken;
+}
+
+//
+// 设置 passcode，该字符串是在网站注册后获得的。
+// 说明：passcode 目前是保留字段，可设置为任何值。
+//
+- (NSString *)passcodeForETMobAdWall:(ETMobAdWall *)adWall
+{
+    return @"";
+}
+
+//
+// 请按与 AdWall 呈现方式相对应的方式解除之。
+//
+- (void)dismissAdWall:(ETMobAdWall *)adWall
+{
+    NSAssert(adWall == [ETMobAdWall sharedAdWall],
+             @"adWall != [ETMobAdWall sharedAdWall]");
+    
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)])
+    {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+    else
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+}
+
+//
+// 当应用墙数据成功加载后调用此方法。
+//
+- (void)ETMobAdWallDidLoad:(ETMobAdWall *)adWall
+{
+#pragma unused(adWall)
+    
+    NSLog(@"%s", __func__);
+}
+
+//
+// 当应用墙数据加载失败时调用此方法。
+//
+- (void)ETMobAdWall:(ETMobAdWall *)adWall didFailToLoadWithError:(NSError *)error
+{
+#pragma unused(adWall)
+    
+    NSLog(@"%s Error: %@", __func__, error);
+}
+ 
+
 -(void)popupAdsageRecommendView:(NSString*)wallName
 {
     if ([AppDelegate isPurchased]) {
         return;
     }
-    if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
+    /*if (NSOrderedSame==[AdsPlatformEtmobWall caseInsensitiveCompare:wallName])
+    {
+        [[ETMobAdWall sharedAdWall] setDelegate:self];
+        [self openEtmobAdWall:nil];
+    }
+    else*/ if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {
         [self loadAdsageRecommendView:YES];
         [self.recmdView OpenAdSageRecmdModalView];
@@ -445,7 +530,9 @@
         [self loadFeaturedYoumiWall];
     }
     
+#ifdef kNextDelayTime
     [self performSelector:@selector(popupAdsageRecommendView:) withObject:[SharedDelegate currentAdsWall] afterDelay:kNextDelayTime];
+#endif
 }
 -(void)loadRecommendAdsWall:(NSString*)wallName
 {

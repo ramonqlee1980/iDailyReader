@@ -18,6 +18,8 @@
 #import "MBProgressHUD.h"
 #import "ReachabilityAs.h"
 
+const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
+
 @interface TextViewController()
 
 -(void)setRightAdButton:(BOOL)closeAdsButton;
@@ -455,7 +457,7 @@
     }
     else
     {
-        email = [NSString stringWithFormat:@"mailto:ramonqlee1980@gmail.com&subject=%@&body=%@", [delegate getTitle:index.row], content];
+        email = [NSString stringWithFormat:@"mailto:feedback4iosapp@gmail.com&subject=%@&body=%@", [delegate getTitle:index.row], content];
     }
     email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -493,7 +495,7 @@
     //    NSArray *bccRecipients = [NSArray arrayWithObjects:@"second@example.com", @"third@example.com", nil]; 
     if(feedback)
     {
-        NSArray *recipients = [NSArray arrayWithObject:@"ramonqlee1980@gmail.com"]; 
+        NSArray *recipients = [NSArray arrayWithObject:@"feedback4iosapp@gmail.com"]; 
         
         //    
         //    [picker setToRecipients:toRecipients];
@@ -605,7 +607,16 @@
     {        
         //textView.font = [UIFont fontWithName:kHuakangFontName size:kIPhoneFontSize];
     }  
-    textView.textColor = [UIColor blueColor];        
+    textView.textColor = [UIColor blueColor];
+    textView.font = [UIFont systemFontOfSize:[self getFontSize]];
+    [self setColor];
+    
+    // Create a pinch gesture recognizer instance.
+    UIGestureRecognizer* pinchGestureRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)] autorelease];
+    
+    // And add it to your text view.
+    [textView addGestureRecognizer:pinchGestureRecognizer];    
+
 }
 - (IBAction)compose:(id)sender {
     [Flurry logEvent:kShareByWeibo];
@@ -945,5 +956,77 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.title = title;
     [rightItem release];
+}
+
+#pragma mark toolbar
+-(IBAction)changeColor
+{
+    if(!delegate)
+    {
+        delegate = (AppDelegate*)SharedDelegate;
+    }
+    if(delegate.isWhiteColor)
+    {
+        delegate.isWhiteColor = NO;
+        textView.textColor = [UIColor blueColor];
+        textView.backgroundColor = [UIColor whiteColor];
+    }
+    else {
+        delegate.isWhiteColor = YES;
+        textView.textColor = [UIColor whiteColor];
+        textView.backgroundColor = [UIColor blackColor];
+    }
+}
+-(void)setColor
+{
+    if(!delegate)
+    {
+        delegate = (AppDelegate*)SharedDelegate;
+    }
+    if(!delegate.isWhiteColor)
+    {
+        delegate.isWhiteColor = NO;
+        textView.textColor = [UIColor blueColor];
+        textView.backgroundColor = [UIColor whiteColor];
+    }
+    else {
+        delegate.isWhiteColor = YES;
+        textView.textColor = [UIColor whiteColor];
+        textView.backgroundColor = [UIColor blackColor];
+    }
+}
+
+#define kFontSize @"kFontSize"
+-(CGFloat)getFontSize
+{    
+    NSUserDefaults* def = [NSUserDefaults standardUserDefaults];
+    CGFloat size = [def floatForKey:kFontSize];
+    if (size<kMinFontSize) {
+        size = kMinFontSize;
+    }
+    return size;
+}
+-(void)setFontSize:(CGFloat)size
+{
+    NSUserDefaults* def = [NSUserDefaults standardUserDefaults];
+    [def setFloat:size forKey:kFontSize];
+}
+- (void)pinchGesture:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+	NSLog(@"*** Pinch: Scale: %f Velocity: %f", gestureRecognizer.scale, gestureRecognizer.velocity);
+    
+	UIFont *font = textView.font;
+	CGFloat pointSize = font.pointSize;
+	NSString *fontName = font.fontName;
+    
+	pointSize = ((gestureRecognizer.velocity > 0) ? 1 : -1) * 1 + pointSize;
+    
+	if (pointSize < 13) pointSize = 13;
+	if (pointSize > 42) pointSize = 42;
+    
+	textView.font = [UIFont fontWithName:fontName size:pointSize];
+    
+	// Save the new font size in the user defaults.
+    [self setFontSize:pointSize];
 }
 @end

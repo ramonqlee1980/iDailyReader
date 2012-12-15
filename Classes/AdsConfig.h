@@ -10,8 +10,7 @@
 
 //appstore switch
 //#define k91Appstore
-//#define __IN_APP_SUPPORT__
-
+#define __IN_APP_SUPPORT__
 
 //switch for ads config
 //#define MHealth
@@ -20,13 +19,13 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
-//#define EnglishSuffix
+#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
 
@@ -182,6 +181,9 @@
 //appid
 #define kAppIdOnAppstore @"469269134"
 
+//etmob
+#define kEtmobeAppToken @"0fade664-5374-42d8-8488-d505b5c11dcc"
+
 //wall
 //修改为你自己的AppID和AppSecret
 #define kDefaultAppID_iOS           @"5aa5eabf0f6bef1d" // youmi default app id
@@ -218,6 +220,8 @@
 //appid
 #define kAppIdOnAppstore @"471656942"
 
+//etmob
+#define kEtmobeAppToken @"486c74d7-efad-460d-9f5f-ffcaef50ed11"
 //wall
 //修改为你自己的AppID和AppSecret
 #define kDefaultAppID_iOS           @"6b875a1db75ff9e5" // youmi default app id
@@ -461,8 +465,14 @@
 #define AdsPlatformYoumiWall @"YoumiWall"
 #define AdsPlatformWapsWall @"WapsWall"
 #define AdsPlatformMobisageWall @"MobisageWall"
+#define AdsPlatformEtmobWall @"Etmob"
 #define AdsPlatformDefaultWall AdsPlatformYoumiWall
 
+#define kETmobUrl @"http://etmob.etonenet.com/"
+//default etmob apptoken
+#ifndef kEtmobeAppToken
+#define kEtmobeAppToken @"0fade664-5374-42d8-8488-d505b5c11dcc"
+#endif
 
 
 #define kNewContentScale 5
@@ -512,6 +522,12 @@
 #define kShareByWeixin @"kShareByWeixin"
 
 #define kCountPerSection 3
+
+#ifndef kInAppPurchaseProductName
+#define kInAppPurchaseProductName @"com.idreems.maketoast.inapp"
+#endif
+
+
 @interface AdsConfig : NSObject
 {
     NSMutableArray *mData;
