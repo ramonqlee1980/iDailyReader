@@ -498,12 +498,12 @@
     if ([AppDelegate isPurchased]) {
         return;
     }
-    /*if (NSOrderedSame==[AdsPlatformEtmobWall caseInsensitiveCompare:wallName])
+    if (NSOrderedSame==[AdsPlatformEtmobWall caseInsensitiveCompare:wallName])
     {
         [[ETMobAdWall sharedAdWall] setDelegate:self];
         [self openEtmobAdWall:nil];
     }
-    else*/ if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
+    else if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {
         [self loadAdsageRecommendView:YES];
         [self.recmdView OpenAdSageRecmdModalView];

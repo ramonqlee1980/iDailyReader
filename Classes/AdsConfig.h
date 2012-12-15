@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-//#define k91Appstore
+#define k91Appstore
 #define __IN_APP_SUPPORT__
 
 //switch for ads config
@@ -465,7 +465,7 @@
 #define AdsPlatformYoumiWall @"YoumiWall"
 #define AdsPlatformWapsWall @"WapsWall"
 #define AdsPlatformMobisageWall @"MobisageWall"
-#define AdsPlatformEtmobWall @"Etmob"
+#define AdsPlatformEtmobWall @"EtmobWall"
 #define AdsPlatformDefaultWall AdsPlatformYoumiWall
 
 #define kETmobUrl @"http://etmob.etonenet.com/"
