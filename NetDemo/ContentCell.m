@@ -179,6 +179,7 @@
 {
     PhotoViewer *photoview = [[PhotoViewer alloc]initWithNibName:@"PhotoViewer" bundle:nil];
     photoview.imgUrl = self.imgMidUrl;
+    photoview.imgPlaceholderUrl = self.imgUrl;
     [photoview.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
     
     [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];    

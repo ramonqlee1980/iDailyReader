@@ -16,7 +16,7 @@
 @end
 
 @implementation PhotoViewer
-@synthesize imgUrl,imageView;
+@synthesize imgUrl,imageView,imgPlaceholderUrl;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,7 +45,7 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     // Do any additional setup after loading the view from its nib.
     imageView = [[UIImageView alloc]init];
-    [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"thumb_pic.png"]];
+    [imageView setImageWithURL:[NSURL URLWithString:imgPlaceholderUrl] placeholderImage:[UIImage imageNamed:@"thumb_pic.png"]];
     
     [imageView setFrame:CGRectMake(kDeviceWidth/2-150,KDeviceHeight/2-150,300,300)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -262,6 +262,7 @@
         [imageView cancelCurrentImageLoad];
         [imageView release];
         [imgUrl release];
+        [imgPlaceholderUrl release];
         [self.view removeFromSuperview];
     }];
 }

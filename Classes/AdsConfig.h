@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //appstore switch
-#define k91Appstore
+//#define k91Appstore
 #define __IN_APP_SUPPORT__
 //#define kETMobOn //switch for etmob ad,no emulator support right now
 

@@ -10,6 +10,7 @@
 
 @interface PhotoViewer : UIViewController<UIGestureRecognizerDelegate>
 {
+    NSString *imgPlaceholderUrl;
     NSString *imgUrl;
     UIImageView *imageView;
     CGFloat roation;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic,retain) UIImageView *imageView;
+@property (nonatomic,retain) NSString *imgPlaceholderUrl;
 @property (nonatomic,retain) NSString *imgUrl;
 -(void) fadeOut;
 -(void) fadeIn;
