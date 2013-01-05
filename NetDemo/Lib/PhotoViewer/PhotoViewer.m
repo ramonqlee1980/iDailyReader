@@ -7,6 +7,8 @@
 //
 
 #import "PhotoViewer.h"
+#import "UIImageView+WebCache.h"
+
 @interface PhotoViewer()
 -(void) BtnClicked:(id)sender;
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer;
@@ -19,8 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-        [self.view setBackgroundColor:[UIColor blackColor]];
+        // Custom initialization        
         roation = 0;
         scale = 1;
     }
@@ -40,10 +41,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    [self.view setBackgroundColor:[UIColor blackColor]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     // Do any additional setup after loading the view from its nib.
-    imageView = [[EGOImageView alloc]initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic.png"] delegate:self];
-    //[imageView setFrame:CGRectMake(20,50,300,300)];
+    imageView = [[UIImageView alloc]init];
+    [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"thumb_pic.png"]];
+    
     [imageView setFrame:CGRectMake(kDeviceWidth/2-150,KDeviceHeight/2-150,300,300)];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:imageView];
   
     NSArray *array = [NSArray arrayWithObjects:@"rotate_left",@"rotate_right",@"zoom_in",@"zoom_out",nil];
@@ -59,8 +64,6 @@
         [btn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTag:i];
         [self.view addSubview:btn];
-        [normal release];
-        [active release];
     }
     
     UIButton *backbtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -108,6 +111,11 @@
     [imageView addGestureRecognizer:rotationRecognize];
     [imageView addGestureRecognizer:panRcognize];
     [imageView addGestureRecognizer:pinchRcognize];
+    
+    [rotationRecognize release];
+    [panRcognize release];
+    [pinchRcognize release];
+    
 }
 
 -(void) BtnClicked:(id)sender
@@ -234,30 +242,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)imageViewLoadedImage:(EGOImageView*)imageview
-{
-    CGFloat w = 1.0f;
-    CGFloat h = 1.0f;
-    if (imageview.image.size.width>300) {
-        w = imageview.image.size.width/300;
-    }
-    if (imageview.image.size.height>400) {
-        h = imageview.image.size.height/400;
-    }
-    CGFloat scole = w>h ? w:h;
-    
-    CGRect rect = CGRectMake(0, 0,imageview.image.size.width/scole,imageview.image.size.height/scole);
-    [imageView setFrame:rect];
-    imageView.center = self.view.center;
-}
-
-- (void)imageViewFailedToLoadImage:(EGOImageView*)imageview error:(NSError*)error
-{
-    [self.imageView cancelImageLoad];
-    NSLog(@"Failed to load %@", imgUrl);
-}
-
-
 -(void) fadeIn
 {
     CGRect rect = [[UIScreen mainScreen] bounds];
@@ -265,9 +249,8 @@
     [UIView animateWithDuration:0.5f animations:^{
          self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight/2+10);
     } completion:^(BOOL finished) {
-        [imageView setImageURL:[NSURL URLWithString:imgUrl]];
-    }];
-     
+        [imageView setImageWithURL:[NSURL URLWithString:imgUrl]];
+    }];     
 }
 
 -(void) fadeOut
@@ -276,11 +259,9 @@
     [UIView animateWithDuration:0.5f animations:^{
         self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight*1.5);
     } completion:^(BOOL finished) {
-        [imageView cancelImageLoad];
+        [imageView cancelCurrentImageLoad];
         [imageView release];
         [imgUrl release];
-        imageView = nil;
-        imgUrl = nil;
         [self.view removeFromSuperview];
     }];
 }

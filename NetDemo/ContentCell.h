@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageButton.h"
 #import "PhotoViewer.h"
-@interface ContentCell : UITableViewCell<EGOImageButtonDelegate>
+@interface ContentCell : UITableViewCell
 {
      //糗事图片
-    EGOImageButton *imgPhoto;
+    UIImageView *imgPhoto;
     //糗事图片的小图url
     NSString *imgUrl;
     //糗事图片的大图url
@@ -38,7 +37,7 @@
     //评论按钮  
     UIButton *commentsbtn;        
 }
-@property(nonatomic,retain) EGOImageButton *imgPhoto;
+@property(nonatomic,retain) UIImageView *imgPhoto;
 @property(nonatomic,retain) UIImageView *headPhoto;
 @property(nonatomic,retain) UIImageView *TagPhoto;
 @property(nonatomic,retain) UILabel *txtTag;

@@ -11,6 +11,7 @@
 #import "AddNewNoteViewController.h"
 #import "Flurry.h"
 #import "AppDelegate.h"
+#import "UIImageView+WebCache.h"
 #define FGOOD       101
 #define FBAD        102
 #define FCOMMITE    103
@@ -32,6 +33,7 @@
         
         UIImage *centerimage = [UIImage imageNamed:@"block_center_background.png"];
         centerimageView = [[UIImageView alloc]initWithImage:centerimage];
+        
         NSInteger deviceWidth = [[UIScreen mainScreen]applicationFrame].size.width;
         //        [centerimageView setFrame:CGRectMake(0, 0, 320, 220)];
         [centerimageView setFrame:CGRectMake(0, 0, deviceWidth, 220)];
@@ -45,10 +47,19 @@
         [txtContent setLineBreakMode:UILineBreakModeTailTruncation];
         [self addSubview:txtContent];
         
-        imgPhoto = [[EGOImageButton alloc]initWithPlaceholderImage:[UIImage imageNamed:@"thumb_pic.png"] delegate:self];
+        imgPhoto = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thumb_pic.png"]];
+        imgPhoto.contentMode = UIViewContentModeScaleAspectFit;
         [imgPhoto setFrame:CGRectMake(0, 0, 0, 0)];
         
-        [imgPhoto addTarget:self action:@selector(ImageBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                                 initWithTarget:self action:@selector(ImageBtnClicked:)];
+        [tapRecognizer setNumberOfTouchesRequired:1];
+        [tapRecognizer setDelegate:self];
+        //Don't forget to set the userInteractionEnabled to YES, by default It's NO.
+        imgPhoto.userInteractionEnabled = YES;
+        [imgPhoto addGestureRecognizer:tapRecognizer];
+        [tapRecognizer release];
+        
         [self addSubview:imgPhoto];
         
         headPhoto = [[UIImageView alloc]initWithFrame:CGRectMake(15, 5, 24, 24)];
@@ -82,7 +93,7 @@
         
         //添加Button，顶，踩，评论
         CGFloat fontSize = 10;
-        goodbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        goodbtn = [[UIButton buttonWithType:UIButtonTypeCustom]retain];
         [goodbtn setFrame:CGRectMake(10,txtContent.frame.size.height-30,70,32)];
         [goodbtn setBackgroundImage:[UIImage imageNamed:@"button_vote.png"] forState:UIControlStateNormal];
         [goodbtn setBackgroundImage:[UIImage imageNamed:@"button_vote_active.png"] forState:UIControlStateHighlighted];
@@ -98,7 +109,7 @@
         //goodbtn.hidden = YES;
         
         
-        badbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        badbtn = [[UIButton buttonWithType:UIButtonTypeCustom]retain];
         [badbtn setFrame:CGRectMake(100,txtContent.frame.size.height-30,100,32)];
         [badbtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 25)];
         [badbtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 25)];
@@ -113,7 +124,7 @@
         [self addSubview:badbtn];
         //badbtn.hidden = YES;
         
-        commentsbtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        commentsbtn = [[UIButton buttonWithType:UIButtonTypeCustom]retain];
         [commentsbtn setFrame:CGRectMake(200,txtContent.frame.size.height-30,70,32)];
         [commentsbtn setBackgroundImage:[UIImage imageNamed:@"button_vote.png"] forState:UIControlStateNormal];
         [commentsbtn setBackgroundImage:[UIImage imageNamed:@"button_vote_active.png"] forState:UIControlStateHighlighted];
@@ -146,12 +157,11 @@
     if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
         [imgPhoto setFrame:CGRectMake(30, size.height+70, 72, 72)];
         [centerimageView setFrame:CGRectMake(0, 0, kDeviceWidth, size.height+200)];
-        [imgPhoto setImageURL:[NSURL URLWithString:imgUrl]];
-        [self imageButtonLoadedImage:imgPhoto];
+        [imgPhoto setImageWithURL:[NSURL URLWithString:imgUrl]];
     }
     else
     {
-        [imgPhoto cancelImageLoad];
+        [imgPhoto cancelCurrentImageLoad];
         [imgPhoto setFrame:CGRectMake(120, size.height, 0, 0)];
         [centerimageView setFrame:CGRectMake(0, 0, kDeviceWidth, size.height+120)];
     }
@@ -168,8 +178,9 @@
 -(void) ImageBtnClicked:(id)sender
 {
     PhotoViewer *photoview = [[PhotoViewer alloc]initWithNibName:@"PhotoViewer" bundle:nil];
-    [photoview.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
     photoview.imgUrl = self.imgMidUrl;
+    [photoview.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
+    
     [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];    
     [photoview fadeIn];
 }
@@ -228,30 +239,5 @@
     [super dealloc];
 }
 
-#pragma mark - delegate
 
-- (void)imageButtonLoadedImage:(EGOImageButton*)imageButton
-{
-    // NSLog(@" Did finish load %@",imgUrl);
-    UIImage *image = imageButton.imageView.image;
-    CGFloat w = 1.0f;
-    CGFloat h = 1.0f;
-    if (image.size.width>280) {
-        w = image.size.width/280;
-    }
-    if (image.size.height>72) {
-        h = image.size.height/72;
-    }
-    CGFloat scole = w>h ? w:h;
-    
-    CGRect rect = CGRectMake(30 ,imageButton.frame.origin.y,image.size.width/scole,image.size.height/scole);
-    [imgPhoto setFrame:rect];
-    
-}
-
-- (void)imageButtonFailedToLoadImage:(EGOImageButton*)imageButton error:(NSError*)error;
-{
-    [imageButton cancelImageLoad];
-    //NSLog(@"Failed to load %@", imgUrl);
-}
 @end

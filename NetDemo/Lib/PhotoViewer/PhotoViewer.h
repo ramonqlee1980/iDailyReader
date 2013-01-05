@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageView.h"
-@interface PhotoViewer : UIViewController<EGOImageViewDelegate,UIGestureRecognizerDelegate>
+
+@interface PhotoViewer : UIViewController<UIGestureRecognizerDelegate>
 {
     NSString *imgUrl;
-    EGOImageView *imageView;
+    UIImageView *imageView;
     CGFloat roation;
     CGFloat scale;
 }
 
-@property (nonatomic,retain) EGOImageView *imageView;
+@property (nonatomic,retain) UIImageView *imageView;
 @property (nonatomic,retain) NSString *imgUrl;
 -(void) fadeOut;
 -(void) fadeIn;
