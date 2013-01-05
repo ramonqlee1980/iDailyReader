@@ -127,7 +127,12 @@
     SoftRcmListViewController* recommendCtrl = [[SoftRcmListViewController alloc]initWithStyle:UITableViewStyleGrouped];
     FlipViewController *flip = [[FlipViewController alloc]initWithNibName:@"FlipViewController" bundle:nil];
     UINavigationController* navi2 = [[UINavigationController alloc]initWithRootViewController:flip];
-    EmbarassViewController* funZone=[[EmbarassViewController alloc] initWithNibName:@"EmbarassViewController" bundle:nil];
+    
+    EmbarassViewController* funZoneInner=[[EmbarassViewController alloc] initWithNibName:@"EmbarassViewController" bundle:nil];
+    
+    UINavigationController* funZone = [[UINavigationController alloc]initWithRootViewController:funZoneInner];
+    [funZoneInner release];
+    
     UIViewController* moreCtrl = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
     UINavigationController* moreNavi = [[UINavigationController alloc]initWithRootViewController:moreCtrl];
     

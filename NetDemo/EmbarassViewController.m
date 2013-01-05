@@ -8,13 +8,14 @@
 
 #import "EmbarassViewController.h"
 #import "Constants.h"
+#define FTop      0
+#define FRecent   1
+#define FPhoto    2
+
 #define FRegsiter 10
 #define FLogin    102
 #define FHelp     103
-#define FTop      104
-#define FRecent   105
 #define FSetting  106
-#define FPhoto    107
 #define FFourtype 108
 #define FWrite    109
 
@@ -44,10 +45,10 @@
 
 -(void) BtnClicked:(id)sender
 {
-#if 0
-    UIButton *btn =(UIButton *) sender;
-    switch (btn.tag) {
-        case FLogin:
+#if 1
+    UISegmentedControl *btn =(UISegmentedControl *) sender;
+    switch (btn.selectedSegmentIndex) {
+        /*case FLogin:
         {
             LoginViewController *loginView = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
             [loginView.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
@@ -107,6 +108,7 @@
             }
            
         }break;
+            */
         case FTop:
         {
             topbtn.enabled = NO;
@@ -132,7 +134,7 @@
             [m_contentView LoadPageOfQiushiType:QiuShiTypePhoto Time:QiuShiTimeRandom];
             [fourTypebtn setTitle:@"真相" forState:UIControlStateNormal];
         }break;
-        case FSetting:
+        /*case FSetting:
         {
             topbtn.enabled = YES;
             recentbtn.enabled = YES;
@@ -142,16 +144,38 @@
             [self.view addSubview:m_settingView.view];
             
         }break;
-        
+        */
         default:
             break;
     }
 #endif
 }
-
+-(void)loadSegmentBar
+{
+    const CGFloat kNavigationBarInnerViewMargin = 7;
+    const CGFloat segmentedControlHeight = self.navigationController.navigationBar.frame.size.height-kNavigationBarInnerViewMargin*2;
+    // segmented control as the custom title view
+	NSArray *segmentTextContent = [NSArray arrayWithObjects:
+                                   NSLocalizedString(@"最糗", @""),
+                                   NSLocalizedString(@"最新", @""),
+                                   NSLocalizedString(@"真相", @""),
+								   nil];
+	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+	segmentedControl.selectedSegmentIndex = FRecent;//the middle one
+	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+	segmentedControl.frame = CGRectMake(0, 0, 400, segmentedControlHeight);
+	[segmentedControl addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventValueChanged];
+	
+    //	defaultTintColor = [segmentedControl.tintColor retain];	// keep track of this for later
+    
+	self.navigationItem.titleView = segmentedControl;
+	[segmentedControl release];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadSegmentBar];
     // Do any additional setup after loading the view from its nib.
    
     //设置背景颜色

@@ -50,8 +50,7 @@ UITableViewDelegate
     // If you create your views manually, you MUST override this method and use it to create your views.
     // If you use Interface Builder to create your views, then you must NOT override this method.
     [super loadView];
-    
-    
+      
     
 }
 
@@ -72,7 +71,8 @@ UITableViewDelegate
     [self.view addSubview:self.tableView];
     
     asiRequest = nil;
-    
+    Qiutype = QiuShiTimeRandom;
+    QiuTime = QiuShiTypeNew;
     if (self.page == 0) {
         [self.tableView launchRefreshing];
     }
@@ -283,7 +283,6 @@ UITableViewDelegate
     self.QiuTime = time;
     self.page =0;
     [self.tableView launchRefreshing];
-    
 }
 
 

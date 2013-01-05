@@ -79,7 +79,8 @@ const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
 }
 
 -(void)setRightAdButton:(BOOL)closeAdsButton
-{    
+{
+    return;
     NSString* title = closeAdsButton?NSLocalizedString(@"AdsWallSwitch",@""):NSLocalizedString(@"Donate",@"");
     if (!closeAdsButton) {//hide this button
         return;
