@@ -414,7 +414,7 @@
     [alert release];
 }
 
-
+#ifdef kETMobOn
 - (void)openEtmobAdWall:(id)sender
 {
     if ([self respondsToSelector:@selector(presentViewController:animated:completion:)])
@@ -491,7 +491,7 @@
     
     NSLog(@"%s Error: %@", __func__, error);
 }
- 
+#endif
 
 -(void)popupAdsageRecommendView:(NSString*)wallName
 {
@@ -500,8 +500,10 @@
     }
     if (NSOrderedSame==[AdsPlatformEtmobWall caseInsensitiveCompare:wallName])
     {
+#ifdef kETMobOn
         [[ETMobAdWall sharedAdWall] setDelegate:self];
         [self openEtmobAdWall:nil];
+#endif
     }
     else if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {

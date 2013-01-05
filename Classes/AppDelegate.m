@@ -13,7 +13,7 @@
 #import "SoftRcmListViewController.h"
 #import "FlipViewController.h"
 #import "iRate.h"
-#import "MainViewController.h"
+#import "EmbarassViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MoreViewController.h"
 #import "InAppRageIAPHelper.h"
@@ -127,7 +127,7 @@
     SoftRcmListViewController* recommendCtrl = [[SoftRcmListViewController alloc]initWithStyle:UITableViewStyleGrouped];
     FlipViewController *flip = [[FlipViewController alloc]initWithNibName:@"FlipViewController" bundle:nil];
     UINavigationController* navi2 = [[UINavigationController alloc]initWithRootViewController:flip];
-    MainViewController* funZone=[[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    EmbarassViewController* funZone=[[EmbarassViewController alloc] initWithNibName:@"EmbarassViewController" bundle:nil];
     UIViewController* moreCtrl = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
     UINavigationController* moreNavi = [[UINavigationController alloc]initWithRootViewController:moreCtrl];
     

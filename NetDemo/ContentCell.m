@@ -169,8 +169,8 @@
 {
     PhotoViewer *photoview = [[PhotoViewer alloc]initWithNibName:@"PhotoViewer" bundle:nil];
     [photoview.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
-    [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];
     photoview.imgUrl = self.imgMidUrl;
+    [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];    
     [photoview fadeIn];
 }
 

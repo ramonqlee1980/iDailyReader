@@ -11,6 +11,7 @@
 //appstore switch
 #define k91Appstore
 #define __IN_APP_SUPPORT__
+//#define kETMobOn //switch for etmob ad,no emulator support right now
 
 //switch for ads config
 //#define MHealth
@@ -19,13 +20,13 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-//#define Makeup
+#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
-#define EnglishSuffix
+//#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
 
@@ -241,6 +242,10 @@
 #define kYoumiSecret kDefaultAppSecret_iOS
 #define kAdmobID @"a14f1b56e4ba533"
 #define kWapsId @"5a3029e17a29d1f8d8fb764318406970"
+//default etmob apptoken
+#ifndef kEtmobeAppToken
+#define kEtmobeAppToken @"0fade664-5374-42d8-8488-d505b5c11dcc"
+#endif
 #elif defined TraditionalChineseMedicine
 
 #define kWixinChatID @"wx4dd2eafc51284cd5"
@@ -469,10 +474,7 @@
 #define AdsPlatformDefaultWall AdsPlatformYoumiWall
 
 #define kETmobUrl @"http://etmob.etonenet.com/"
-//default etmob apptoken
-#ifndef kEtmobeAppToken
-#define kEtmobeAppToken @"0fade664-5374-42d8-8488-d505b5c11dcc"
-#endif
+
 
 
 #define kNewContentScale 5
