@@ -20,12 +20,12 @@
 //#define careerGuide
 //#define RaisingKids
 //#define TodayinHistory
-#define Makeup
+//#define Makeup
 //#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
-//#define EnglishPrefix
+#define EnglishPrefix
 //#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
@@ -156,6 +156,7 @@
 
 
 //id for ads
+#define kMobiSageIDOther_iPhone   @"b67b0ff55e244aa5a527db004a03261c"
 #define kMobiSageID_iPhone  @"b67b0ff55e244aa5a527db004a03261c"
 #define kWiyunID_iPhone  @"e422a3e49716ba1f"
 #define kWiyunID_iPad    @"626a94c2b610df0f"
