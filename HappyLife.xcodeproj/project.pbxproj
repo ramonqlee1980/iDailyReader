@@ -17,6 +17,7 @@
 		04360A481698CC630046440C /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04360A3E1698CC630046440C /* SDWebImageDownloader.m */; };
 		04360A491698CC630046440C /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04360A411698CC630046440C /* SDWebImageManager.m */; };
 		04360A4A1698CC630046440C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04360A441698CC630046440C /* UIImageView+WebCache.m */; };
+		04360D041699BBFF0046440C /* Bookworm.png in Resources */ = {isa = PBXBuildFile; fileRef = 04360D031699BBFF0046440C /* Bookworm.png */; };
 		046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */; };
 		046606741657D04A000D7FD2 /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 046606731657D04A000D7FD2 /* micro_messenger.png */; };
 		04914003165C36E400A67B7E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04914000165C36E400A67B7E /* IAPHelper.m */; };
@@ -440,6 +441,7 @@
 		04360A421698CC630046440C /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		04360A431698CC630046440C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		04360A441698CC630046440C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		04360D031699BBFF0046440C /* Bookworm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookworm.png; sourceTree = "<group>"; };
 		0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
 		0466066F1657C74A000D7FD2 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		046606701657C74A000D7FD2 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -2336,6 +2338,7 @@
 		C125E07C15BE0B7200CC2378 /* recommendList */ = {
 			isa = PBXGroup;
 			children = (
+				04360D031699BBFF0046440C /* Bookworm.png */,
 				C1B412A815BEEB6F00416965 /* makeup.png */,
 				C1B4129615BEEA2300416965 /* careerGuide.png */,
 				C1B4129715BEEA2300416965 /* EnglishPrefix.png */,
@@ -2651,6 +2654,7 @@
 				04360A451698CC630046440C /* LICENSE in Resources */,
 				04360A461698CC630046440C /* README.md in Resources */,
 				04D7C5011699438800195213 /* icon-144.png in Resources */,
+				04360D041699BBFF0046440C /* Bookworm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
