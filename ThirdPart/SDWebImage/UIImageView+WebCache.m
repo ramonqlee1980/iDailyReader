@@ -24,11 +24,7 @@
     // Remove in progress downloader from queue
     [manager cancelForDelegate:self];
     
-    if(!self.image )
-    {
-        UIImage* cacheImage = [[SDImageCache sharedImageCache] imageFromKey:[url absoluteString]];
-        self.image = cacheImage?cacheImage:placeholder;
-    }
+    self.image = placeholder;
     
     if (url)
     {

@@ -8,6 +8,7 @@
 
 #import "PhotoViewer.h"
 #import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
 
 @interface PhotoViewer()
 -(void) BtnClicked:(id)sender;
@@ -46,7 +47,10 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     // Do any additional setup after loading the view from its nib.
     imageView = [[UIImageView alloc]init];
-    [imageView setImageWithURL:[NSURL URLWithString:imgPlaceholderUrl] placeholderImage:kThumbImage];
+    
+    UIImage* placeholderImage = [[SDImageCache sharedImageCache] imageFromKey:imgPlaceholderUrl];
+        
+    [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:(placeholderImage?placeholderImage:kThumbImage)];
     
     [imageView setFrame:CGRectMake(kDeviceWidth/2-150,KDeviceHeight/2-150,300,300)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
