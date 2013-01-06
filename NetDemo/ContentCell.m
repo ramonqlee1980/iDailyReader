@@ -16,6 +16,8 @@
 #define FBAD        102
 #define FCOMMITE    103
 
+
+#define  kThumbImage @"thumb_pic.png"
 @interface ContentCell()
 -(void) BtnClicked:(id)sender;
 -(void) ImageBtnClicked:(id)sender;
@@ -46,10 +48,10 @@
         [txtContent setFont:[UIFont fontWithName:@"Arial" size:14]];
         [txtContent setLineBreakMode:UILineBreakModeTailTruncation];
         [self addSubview:txtContent];
-        
-        imgPhoto = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"thumb_pic.png"]];
+
+        imgPhoto = [[UIImageView alloc]initWithImage:[UIImage imageNamed:kThumbImage]];
         imgPhoto.contentMode = UIViewContentModeScaleAspectFit;
-        [imgPhoto setFrame:CGRectMake(0, 0, 0, 0)];
+        //[imgPhoto setFrame:CGRectMake(0, 0, 0, 0)];
         
         UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                                  initWithTarget:self action:@selector(ImageBtnClicked:)];
@@ -157,7 +159,7 @@
     if (imgUrl!=nil&&![imgUrl isEqualToString:@""]) {
         [imgPhoto setFrame:CGRectMake(30, size.height+70, 72, 72)];
         [centerimageView setFrame:CGRectMake(0, 0, kDeviceWidth, size.height+200)];
-        [imgPhoto setImageWithURL:[NSURL URLWithString:imgUrl]];
+        [imgPhoto setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:kThumbImage]];
     }
     else
     {

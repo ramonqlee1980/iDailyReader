@@ -24,9 +24,6 @@
 		04914006165C3B8200A67B7E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04914005165C3B8200A67B7E /* StoreKit.framework */; };
 		049327CC16761A6A0087ACC2 /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = 049327CA16761A6A0087ACC2 /* color.png */; };
 		049327CD16761A6A0087ACC2 /* color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049327CB16761A6A0087ACC2 /* color@2x.png */; };
-		049569CE1676C2C8006F9BF5 /* icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 049569CD1676C2C8006F9BF5 /* icon_144.png */; };
-		049569D816775F4C006F9BF5 /* ETMobAdWallResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 049569D416775F4C006F9BF5 /* ETMobAdWallResources.bundle */; };
-		049569D916775F4C006F9BF5 /* libETMobAdWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 049569D716775F4C006F9BF5 /* libETMobAdWall.a */; };
 		049635D4167C7862002F189C /* 000_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04963465167C7861002F189C /* 000_Unicode.txt */; };
 		049635D5167C7862002F189C /* 001_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04963466167C7861002F189C /* 001_Unicode.txt */; };
 		049635D6167C7862002F189C /* 002_Unicode.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04963467167C7861002F189C /* 002_Unicode.txt */; };
@@ -634,6 +631,7 @@
 		04C50C031635FBA800A6C067 /* YouMiViewController_468x60.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BEE1635FBA800A6C067 /* YouMiViewController_468x60.m */; };
 		04C50C041635FBA800A6C067 /* YouMiViewController_728x90.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C50BF01635FBA800A6C067 /* YouMiViewController_728x90.m */; };
 		04C50C051635FBA800A6C067 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C50BFF1635FBA800A6C067 /* libYouMi.a */; };
+		04D7C5011699438800195213 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D7C5001699438700195213 /* icon-144.png */; };
 		1811EE1111D015E20068DA4C /* LightBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811EE0011D015E20068DA4C /* LightBackground.png */; };
 		1811EE1211D015E20068DA4C /* MathGraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811EE0111D015E20068DA4C /* MathGraph.png */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -821,9 +819,6 @@
 		049327CA16761A6A0087ACC2 /* color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color.png; sourceTree = "<group>"; };
 		049327CB16761A6A0087ACC2 /* color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color@2x.png"; sourceTree = "<group>"; };
 		049569CD1676C2C8006F9BF5 /* icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_144.png; sourceTree = "<group>"; };
-		049569D416775F4C006F9BF5 /* ETMobAdWallResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ETMobAdWallResources.bundle; sourceTree = "<group>"; };
-		049569D616775F4C006F9BF5 /* ETMobAdWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMobAdWall.h; sourceTree = "<group>"; };
-		049569D716775F4C006F9BF5 /* libETMobAdWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libETMobAdWall.a; sourceTree = "<group>"; };
 		04963465167C7861002F189C /* 000_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 000_Unicode.txt; sourceTree = "<group>"; };
 		04963466167C7861002F189C /* 001_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 001_Unicode.txt; sourceTree = "<group>"; };
 		04963467167C7861002F189C /* 002_Unicode.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 002_Unicode.txt; sourceTree = "<group>"; };
@@ -1501,6 +1496,7 @@
 		04C50BFD1635FBA800A6C067 /* YouMiDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDataCenter.h; sourceTree = "<group>"; };
 		04C50BFE1635FBA800A6C067 /* YouMiPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPush.h; sourceTree = "<group>"; };
 		04C50BFF1635FBA800A6C067 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
+		04D7C5001699438700195213 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
 		1811EE0011D015E20068DA4C /* LightBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LightBackground.png; path = images/LightBackground.png; sourceTree = "<group>"; };
 		1811EE0111D015E20068DA4C /* MathGraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MathGraph.png; path = images/MathGraph.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1813,7 +1809,6 @@
 				0496470216374F4B00D7E7CE /* libMobiSageRecommend.a in Frameworks */,
 				0496470316374F4B00D7E7CE /* libMobiSageSDK.a in Frameworks */,
 				046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
-				049569D916775F4C006F9BF5 /* libETMobAdWall.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1879,25 +1874,6 @@
 				04914002165C36E400A67B7E /* InAppRageIAPHelper.m */,
 			);
 			name = InAppPurchase;
-			sourceTree = "<group>";
-		};
-		049569D316775F4C006F9BF5 /* ETmob */ = {
-			isa = PBXGroup;
-			children = (
-				049569D416775F4C006F9BF5 /* ETMobAdWallResources.bundle */,
-				049569D516775F4C006F9BF5 /* include */,
-				049569D716775F4C006F9BF5 /* libETMobAdWall.a */,
-			);
-			name = ETmob;
-			path = "SDK Redistribution";
-			sourceTree = "<group>";
-		};
-		049569D516775F4C006F9BF5 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				049569D616775F4C006F9BF5 /* ETMobAdWall.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		04963464167C7850002F189C /* New Group */ = {
@@ -3013,6 +2989,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04D7C5001699438700195213 /* icon-144.png */,
 				04963464167C7850002F189C /* New Group */,
 				049569CD1676C2C8006F9BF5 /* icon_144.png */,
 				049327CA16761A6A0087ACC2 /* color.png */,
@@ -3157,7 +3134,6 @@
 		309D073A154998C5006B2041 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				049569D316775F4C006F9BF5 /* ETmob */,
 				049645B816374F4A00D7E7CE /* mobisage */,
 				30B92E6A15FFEE1C00A9E196 /* WQMobile */,
 				30999D5B15A65167002F1AD8 /* Flurry_iPhone_SDK_v4.0.0 */,
@@ -3782,8 +3758,6 @@
 				046606741657D04A000D7FD2 /* micro_messenger.png in Resources */,
 				049327CC16761A6A0087ACC2 /* color.png in Resources */,
 				049327CD16761A6A0087ACC2 /* color@2x.png in Resources */,
-				049569CE1676C2C8006F9BF5 /* icon_144.png in Resources */,
-				049569D816775F4C006F9BF5 /* ETMobAdWallResources.bundle in Resources */,
 				049635D4167C7862002F189C /* 000_Unicode.txt in Resources */,
 				049635D5167C7862002F189C /* 001_Unicode.txt in Resources */,
 				049635D6167C7862002F189C /* 002_Unicode.txt in Resources */,
@@ -4154,6 +4128,7 @@
 				043606EA16978D760046440C /* EmbarassViewController.xib in Resources */,
 				04360A451698CC630046440C /* LICENSE in Resources */,
 				04360A461698CC630046440C /* README.md in Resources */,
+				04D7C5011699438800195213 /* icon-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

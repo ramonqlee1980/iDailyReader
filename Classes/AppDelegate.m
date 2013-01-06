@@ -342,19 +342,16 @@
 {
     NSArray*oldV = [oldVersion componentsSeparatedByString:@"."];
     NSArray*newV = [newVersion componentsSeparatedByString:@"."];
+    NSUInteger len = MIN(oldV.count,newV.count);
     
-    if (oldV.count == newV.count) {
-        for (NSInteger i = 0; i < oldV.count; i++) {
-            NSInteger old = [(NSString *)[oldV objectAtIndex:i] integerValue];
-            NSInteger new = [(NSString *)[newV objectAtIndex:i] integerValue];
-            if (old < new) {
-                return YES;
-            }
-        }
-        return NO;
-    } else {
-        return NO;
+    for (NSInteger i = 0; i < len; i++) {
+        NSInteger old = [(NSString *)[oldV objectAtIndex:i] integerValue];
+        NSInteger new = [(NSString *)[newV objectAtIndex:i] integerValue];
+        if (old != new) {
+            return (new>old);
+        }        
     }
+    return NO;    
 }
 
 -(NSInteger)newContentCount

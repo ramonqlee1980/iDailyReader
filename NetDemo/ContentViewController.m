@@ -192,7 +192,8 @@ UITableViewDelegate
     
     QiuShi *qs = [self.list objectAtIndex:[indexPath row]];
     //设置内容
-    cell.txtContent.text = qs.content;
+    
+    cell.txtContent.text =[NSString stringWithFormat:@"%@(来自糗事百科)",qs.content];// ;
     //设置图片
     if (qs.imageURL!=nil && qs.imageURL!= @"") {
         cell.imgUrl = qs.imageURL;

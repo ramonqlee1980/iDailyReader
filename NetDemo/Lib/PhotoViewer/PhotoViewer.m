@@ -38,6 +38,7 @@
 
 #pragma mark - View lifecycle
 
+#define kThumbImage [UIImage imageNamed:@"thumb_pic.png"]
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,7 +46,7 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     // Do any additional setup after loading the view from its nib.
     imageView = [[UIImageView alloc]init];
-    [imageView setImageWithURL:[NSURL URLWithString:imgPlaceholderUrl] placeholderImage:[UIImage imageNamed:@"thumb_pic.png"]];
+    [imageView setImageWithURL:[NSURL URLWithString:imgPlaceholderUrl] placeholderImage:kThumbImage];
     
     [imageView setFrame:CGRectMake(kDeviceWidth/2-150,KDeviceHeight/2-150,300,300)];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -249,7 +250,7 @@
     [UIView animateWithDuration:0.5f animations:^{
          self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight/2+10);
     } completion:^(BOOL finished) {
-        [imageView setImageWithURL:[NSURL URLWithString:imgUrl]];
+        [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:kThumbImage];
     }];     
 }
 
