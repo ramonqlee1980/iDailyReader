@@ -254,8 +254,8 @@
     [UIView animateWithDuration:0.5f animations:^{
          self.view.center = CGPointMake(rect.size.width/2, KDeviceHeight/2+10);
     } completion:^(BOOL finished) {
-        [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:kThumbImage];
-    }];     
+//        [imageView setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:kThumbImage];
+    }];
 }
 
 -(void) fadeOut
