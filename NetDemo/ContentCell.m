@@ -12,6 +12,7 @@
 #import "Flurry.h"
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
+#import "SDWebImageManager.h"
 #define FGOOD       101
 #define FBAD        102
 #define FCOMMITE    103
@@ -139,7 +140,7 @@
         [commentsbtn addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [commentsbtn setTag:FCOMMITE];
         [self addSubview:commentsbtn];
-        //commentsbtn.hidden = YES;
+        commentsbtn.hidden = YES;
         
     }
     return self;
@@ -205,7 +206,9 @@
         case FBAD:     //share to wixin chat
         {
             AppDelegate* delegate = SharedDelegate;
-            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
+            NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
+            [delegate shareByShareKit:kWixinTitle description:description image:[[SDWebImageManager sharedManager]imageWithURL:[NSURL URLWithString:imgUrl]]];
+//            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
         }
             break;
         case FCOMMITE: //评论

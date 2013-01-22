@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0411410E164DC913003A1382 /* 640_960_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410C164DC913003A1382 /* 640_960_splash.png */; };
 		0411410F164DC913003A1382 /* 640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410D164DC913003A1382 /* 640_960.png */; };
+		04235CA116ADEC6400D620CA /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04235C9916ADEC6300D620CA /* AGCommon.framework */; };
+		04235CA216ADEC6400D620CA /* Appgo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04235C9A16ADEC6300D620CA /* Appgo.bundle */; };
+		04235CA316ADEC6400D620CA /* QQApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04235C9B16ADEC6300D620CA /* QQApi.framework */; };
+		04235CA416ADEC6400D620CA /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04235C9D16ADEC6400D620CA /* libWeChatSDK_armv7_armv7s.a */; };
+		04235CA516ADEC6400D620CA /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04235CA016ADEC6400D620CA /* ShareSDK.framework */; };
 		042932701627898500FCBA96 /* WapsOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429326F1627898500FCBA96 /* WapsOffer.framework */; };
 		043606EA16978D760046440C /* EmbarassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043606E916978D760046440C /* EmbarassViewController.xib */; };
 		04360A451698CC630046440C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 04360A371698CC630046440C /* LICENSE */; };
@@ -18,7 +23,6 @@
 		04360A491698CC630046440C /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04360A411698CC630046440C /* SDWebImageManager.m */; };
 		04360A4A1698CC630046440C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04360A441698CC630046440C /* UIImageView+WebCache.m */; };
 		04360D041699BBFF0046440C /* Bookworm.png in Resources */ = {isa = PBXBuildFile; fileRef = 04360D031699BBFF0046440C /* Bookworm.png */; };
-		046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */; };
 		046606741657D04A000D7FD2 /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 046606731657D04A000D7FD2 /* micro_messenger.png */; };
 		04914003165C36E400A67B7E /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04914000165C36E400A67B7E /* IAPHelper.m */; };
 		04914004165C36E400A67B7E /* InAppRageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04914002165C36E400A67B7E /* InAppRageIAPHelper.m */; };
@@ -425,6 +429,13 @@
 /* Begin PBXFileReference section */
 		0411410C164DC913003A1382 /* 640_960_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960_splash.png; sourceTree = "<group>"; };
 		0411410D164DC913003A1382 /* 640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960.png; sourceTree = "<group>"; };
+		04235C9916ADEC6300D620CA /* AGCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGCommon.framework; sourceTree = "<group>"; };
+		04235C9A16ADEC6300D620CA /* Appgo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Appgo.bundle; sourceTree = "<group>"; };
+		04235C9B16ADEC6300D620CA /* QQApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQApi.framework; sourceTree = "<group>"; };
+		04235C9D16ADEC6400D620CA /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
+		04235C9E16ADEC6400D620CA /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		04235C9F16ADEC6400D620CA /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		04235CA016ADEC6400D620CA /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		0429326F1627898500FCBA96 /* WapsOffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WapsOffer.framework; sourceTree = "<group>"; };
 		043606E916978D760046440C /* EmbarassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmbarassViewController.xib; sourceTree = "<group>"; };
 		04360A371698CC630046440C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -442,9 +453,6 @@
 		04360A431698CC630046440C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		04360A441698CC630046440C /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		04360D031699BBFF0046440C /* Bookworm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookworm.png; sourceTree = "<group>"; };
-		0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK_armv7_armv7s.a; sourceTree = "<group>"; };
-		0466066F1657C74A000D7FD2 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		046606701657C74A000D7FD2 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		046606731657D04A000D7FD2 /* micro_messenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro_messenger.png; sourceTree = "<group>"; };
 		04913FFF165C36E400A67B7E /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		04914000165C36E400A67B7E /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -1075,7 +1083,10 @@
 				04C50C051635FBA800A6C067 /* libYouMi.a in Frameworks */,
 				0496470216374F4B00D7E7CE /* libMobiSageRecommend.a in Frameworks */,
 				0496470316374F4B00D7E7CE /* libMobiSageSDK.a in Frameworks */,
-				046606721657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
+				04235CA116ADEC6400D620CA /* AGCommon.framework in Frameworks */,
+				04235CA316ADEC6400D620CA /* QQApi.framework in Frameworks */,
+				04235CA416ADEC6400D620CA /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
+				04235CA516ADEC6400D620CA /* ShareSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,6 +1101,28 @@
 			);
 			name = splash;
 			path = zake;
+			sourceTree = "<group>";
+		};
+		04235C9816ADEC6300D620CA /* ShareSDK_v1.0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				04235C9916ADEC6300D620CA /* AGCommon.framework */,
+				04235C9A16ADEC6300D620CA /* Appgo.bundle */,
+				04235C9B16ADEC6300D620CA /* QQApi.framework */,
+				04235C9C16ADEC6300D620CA /* SDKExport */,
+				04235CA016ADEC6400D620CA /* ShareSDK.framework */,
+			);
+			path = ShareSDK_v1.0.1;
+			sourceTree = "<group>";
+		};
+		04235C9C16ADEC6300D620CA /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				04235C9D16ADEC6400D620CA /* libWeChatSDK_armv7_armv7s.a */,
+				04235C9E16ADEC6400D620CA /* WXApi.h */,
+				04235C9F16ADEC6400D620CA /* WXApiObject.h */,
+			);
+			path = SDKExport;
 			sourceTree = "<group>";
 		};
 		04360A361698CC630046440C /* SDWebImage */ = {
@@ -1116,20 +1149,9 @@
 		0466066A1657C736000D7FD2 /* SNS */ = {
 			isa = PBXGroup;
 			children = (
-				0466066C1657C74A000D7FD2 /* WixinChat */,
+				04235C9816ADEC6300D620CA /* ShareSDK_v1.0.1 */,
 			);
 			name = SNS;
-			sourceTree = "<group>";
-		};
-		0466066C1657C74A000D7FD2 /* WixinChat */ = {
-			isa = PBXGroup;
-			children = (
-				0466066E1657C74A000D7FD2 /* libWeChatSDK_armv7_armv7s.a */,
-				0466066F1657C74A000D7FD2 /* WXApi.h */,
-				046606701657C74A000D7FD2 /* WXApiObject.h */,
-			);
-			name = WixinChat;
-			path = SDKExport;
 			sourceTree = "<group>";
 		};
 		04913FFD165C36C200A67B7E /* InAppPurchase */ = {
@@ -2655,6 +2677,7 @@
 				04360A461698CC630046440C /* README.md in Resources */,
 				04D7C5011699438800195213 /* icon-144.png in Resources */,
 				04360D041699BBFF0046440C /* Bookworm.png in Resources */,
+				04235CA216ADEC6400D620CA /* Appgo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2916,6 +2939,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/ETMobAdWall.embeddedframework\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2988,6 +3012,7 @@
 					"\"$(SRCROOT)/lib/youmi/lib\"",
 					"\"$(SRCROOT)/SDKExport\"",
 					"\"$(SRCROOT)/lib/SDK Redistribution\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -3017,6 +3042,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/ETMobAdWall.embeddedframework\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HappyLife_Prefix.pch;
@@ -3086,6 +3112,7 @@
 					"\"$(SRCROOT)/lib/youmi/lib\"",
 					"\"$(SRCROOT)/SDKExport\"",
 					"\"$(SRCROOT)/lib/SDK Redistribution\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -3140,6 +3167,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/ETMobAdWall.embeddedframework\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HappyLife_Prefix.pch;
@@ -3209,6 +3237,7 @@
 					"\"$(SRCROOT)/lib/youmi/lib\"",
 					"\"$(SRCROOT)/SDKExport\"",
 					"\"$(SRCROOT)/lib/SDK Redistribution\"",
+					"\"$(SRCROOT)/ShareSDK_v1.0.1/SDKExport\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

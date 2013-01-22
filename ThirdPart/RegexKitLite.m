@@ -1031,13 +1031,13 @@ exitNow:
 
 // We do not depend on this cleanup function being called.  It is used only as an extra safety net.  It is probably a bug in RegexKitLite if it is ever invoked and forced to take some kind of protective action.
 
-volatile NSUInteger rkl_debugCacheSpinLockCount = 0UL;
+volatile NSUInteger rkl_debugCacheSpinLockCountEx = 0UL;
 
-void        rkl_debugCacheSpinLock          (void)                                            RKL_ATTRIBUTES(used, noinline, visibility("default"));
+void        rkl_debugCacheSpinLockEx          (void)                                            RKL_ATTRIBUTES(used, noinline, visibility("default"));
 static void rkl_cleanup_cacheSpinLockStatus (volatile NSUInteger *rkl_cacheSpinLockStatusPtr) RKL_ATTRIBUTES(used);
 
-void rkl_debugCacheSpinLock(void) {
-  rkl_debugCacheSpinLockCount++; // This is here primarily to prevent the optimizer from optimizing away the function.
+void rkl_debugCacheSpinLockEx(void) {
+  rkl_debugCacheSpinLockCountEx++; // This is here primarily to prevent the optimizer from optimizing away the function.
 }
 
 static void rkl_cleanup_cacheSpinLockStatus(volatile NSUInteger *rkl_cacheSpinLockStatusPtr) {
@@ -1047,11 +1047,11 @@ static void rkl_cleanup_cacheSpinLockStatus(volatile NSUInteger *rkl_cacheSpinLo
   if(RKL_EXPECTED((rkl_cacheSpinLockStatus & RKLUnlockedCacheSpinLock) == 0UL, 0L) && RKL_EXPECTED((rkl_cacheSpinLockStatus & RKLLockedCacheSpinLock) != 0UL, 1L)) {
     if(rkl_cacheSpinLock != (OSSpinLock)0) {
       if(didPrintForcedUnlockWarning == 0UL) { didPrintForcedUnlockWarning = 1UL; NSLog(@"[RegexKitLite] Unusual condition detected: Recorded that rkl_cacheSpinLock was locked, but for some reason it was not unlocked.  Forcibly unlocking rkl_cacheSpinLock. Set a breakpoint at rkl_debugCacheSpinLock to debug. This warning is only printed once."); }
-      rkl_debugCacheSpinLock(); // Since this is an unusual condition, offer an attempt to catch it before we unlock.
+      rkl_debugCacheSpinLockEx(); // Since this is an unusual condition, offer an attempt to catch it before we unlock.
       OSSpinLockUnlock(&rkl_cacheSpinLock);
     } else {
       if(didPrintNotLockedWarning    == 0UL) { didPrintNotLockedWarning    = 1UL; NSLog(@"[RegexKitLite] Unusual condition detected: Recorded that rkl_cacheSpinLock was locked, but for some reason it was not unlocked, yet rkl_cacheSpinLock is currently not locked? Set a breakpoint at rkl_debugCacheSpinLock to debug. This warning is only printed once."); }
-      rkl_debugCacheSpinLock();
+      rkl_debugCacheSpinLockEx();
     }
   }
 }
@@ -1797,7 +1797,7 @@ static id rkl_performEnumerationUsingBlock(id self, SEL _cmd,
 
 // This is an object meant for internal use only.  It wraps and abstracts various functionality to simplify ^Blocks support.
 
-@interface RKLBlockEnumerationHelper : NSObject {
+@interface RKLBlockEnumerationHelperEx : NSObject {
   @public
   RKLCachedRegex cachedRegex;
   RKLBuffer      buffer;
@@ -1807,7 +1807,7 @@ static id rkl_performEnumerationUsingBlock(id self, SEL _cmd,
 - (id)initWithRegex:(NSString *)initRegexString options:(RKLRegexOptions)initOptions string:(NSString *)initString range:(NSRange)initRange error:(NSError **)initError;
 @end
 
-@implementation RKLBlockEnumerationHelper
+@implementation RKLBlockEnumerationHelperEx
 
 - (id)initWithRegex:(NSString *)initRegexString options:(RKLRegexOptions)initOptions string:(NSString *)initString range:(NSRange)initRange error:(NSError **)initError
 {
@@ -1975,7 +1975,7 @@ static id rkl_performEnumerationUsingBlock(id self, SEL _cmd,
                                            void (^stringsAndRangesBlock)(NSInteger capturedCount, NSString * const capturedStrings[capturedCount], const NSRange capturedStringRanges[capturedCount], volatile BOOL * const stop),
                                            NSString *(^replaceStringsAndRangesBlock)(NSInteger capturedCount, NSString * const capturedStrings[capturedCount], const NSRange capturedStringRanges[capturedCount], volatile BOOL * const stop)) {
   NSMutableArray            * RKL_GC_VOLATILE autoreleaseArray              = NULL;
-  RKLBlockEnumerationHelper * RKL_GC_VOLATILE blockEnumerationHelper        = NULL;
+  RKLBlockEnumerationHelperEx * RKL_GC_VOLATILE blockEnumerationHelper        = NULL;
   NSMutableString           * RKL_GC_VOLATILE mutableReplacementString      = NULL;
   RKL_STRONG_REF UniChar    * RKL_GC_VOLATILE blockEnumerationHelperUniChar = NULL;
   NSUInteger    errorFree                = NO;
@@ -2011,7 +2011,7 @@ static id rkl_performEnumerationUsingBlock(id self, SEL _cmd,
   RKLCDelayedAssert((self != NULL) && (_cmd != NULL) && ((blockEnumerationOp == RKLBlockEnumerationMatchOp) ? (((regexOp == RKLCapturesArrayOp) || (regexOp == RKLSplitOp)) && (stringsAndRangesBlock != NULL) && (replaceStringsAndRangesBlock == NULL)) : 1) && ((blockEnumerationOp == RKLBlockEnumerationReplaceOp) ? ((regexOp == RKLCapturesArrayOp) && (stringsAndRangesBlock == NULL) && (replaceStringsAndRangesBlock != NULL)) : 1) , &exception, exitNow);
 
   if((rkl_collectingEnabled() == NO) && RKL_EXPECTED((autoreleaseArray = rkl_CFAutorelease(CFArrayCreateMutable(NULL, 0L, &rkl_transferOwnershipArrayCallBacks))) == NULL, 0L))          { goto exitNow; } // Warning about potential leak of Core Foundation object can be safely ignored.
-  if(RKL_EXPECTED((blockEnumerationHelper = [[RKLBlockEnumerationHelper alloc] initWithRegex:regexString options:options string:matchString range:matchRange error:error]) == NULL, 0L)) { goto exitNow; } // Warning about potential leak of blockEnumerationHelper can be safely ignored.
+  if(RKL_EXPECTED((blockEnumerationHelper = [[RKLBlockEnumerationHelperEx alloc] initWithRegex:regexString options:options string:matchString range:matchRange error:error]) == NULL, 0L)) { goto exitNow; } // Warning about potential leak of blockEnumerationHelper can be safely ignored.
   if(autoreleaseArray != NULL) { CFArrayAppendValue((CFMutableArrayRef)autoreleaseArray, blockEnumerationHelper); autoreleaseReplaceRange.location++; } // We do not autorelease blockEnumerationHelper, but instead add it to autoreleaseArray.
   
   if(performStringReplacement == YES) {

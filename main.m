@@ -5,6 +5,7 @@
 #import "AppDelegate.h"
 #import "WapsOffer/AppConnect.h"
 //#import "MiidiManager.h"
+#import <ShareSDK/ShareConfig.h>
 
 int main(int argc, char *argv[])
 {

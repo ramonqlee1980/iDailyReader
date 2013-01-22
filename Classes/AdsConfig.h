@@ -21,11 +21,11 @@
 //#define RaisingKids
 //#define TodayinHistory
 //#define Makeup
-//#define MakeToast
+#define MakeToast
 //#define TraditionalChineseMedicine
 //#define SpouseTalks
 //#define Humer
-#define EnglishPrefix
+//#define EnglishPrefix
 //#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 

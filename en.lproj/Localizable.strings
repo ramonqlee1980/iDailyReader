@@ -5,15 +5,15 @@
   Created by ramonqlee on 8/24/11.
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
-"Title"="EnglishPrefix";
-"About"="Version V3.2.23 IDreems.com Presents";
+"Title"="MakeToast";
+"About"="Version V3.2.24 IDreems.com Presents";
 
 "kToday"="Hot";
 "kRecommendList"="Recommend";
 "kFun"="糗事";
 
 "add2FavTip"="收藏";
-"share2WixinChat"="分享微信好友";
+"share2WixinChat"="分享好友";
 "share2WixinFriends"="分享微信朋友圈";
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "Back";

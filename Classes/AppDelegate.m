@@ -17,6 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MoreViewController.h"
 #import "InAppRageIAPHelper.h"
+#import <ShareSDK/ShareSDK.h>
 
 #define kLocalNotificationSet @"LocalNotificationSet"
 #define kAdsWallShowDelayTime 10*60 //ads display delay time
@@ -114,6 +115,9 @@
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSLog(@"didFinishLaunchingWithOptions begin");
+    //TODO::key?
+    [ShareSDK registerApp:@"287edfff80"];
+    
     //向微信注册
     [WXApi registerApp:kWixinChatID];
     //in-app purchase
@@ -941,12 +945,14 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    return  [WXApi handleOpenURL:url delegate:self];
+    return [ShareSDK handleOpenURL:url wxDelegate:self];
+    //return  [WXApi handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return  [WXApi handleOpenURL:url delegate:self];
+    return [ShareSDK handleOpenURL:url wxDelegate:self];
+    //return  [WXApi handleOpenURL:url delegate:self];
 }
 
 #pragma mark WXApiDelegate
@@ -1019,6 +1025,56 @@
 }
 
 #pragma mark Weixin SendAppContent
+- (void) shareByShareKit:(NSString*)title description:(NSString*)content image:(UIImage*)image
+{
+    UIViewController*ctrl = [[UIApplication sharedApplication]keyWindow].rootViewController;
+    id<ISSPublishContent> publishContent = [ShareSDK publishContent:content defaultContent:content
+                                                              image:image imageQuality:0.8
+                                                          mediaType:SSPublishContentMediaTypeApp title:title
+                                                                url:mTrackViewUrl                                                        musicFileUrl:nil
+                                                            extInfo:nil fileData:nil];
+    
+    NSArray* shareList = [ShareSDK getShareListWithType:
+                          ShareTypeSinaWeibo, /**< 新浪微博 */
+                          ShareTypeTencentWeibo, /**< 腾讯微博 */
+                          ShareTypeSohuWeibo, /**< 搜狐微博 */
+                          ShareType163Weibo, /**< 网易微博 */
+                          ShareTypeDouBan, /**< 豆瓣社区 */
+                          ShareTypeQQSpace, /**< QQ空间 */
+                          ShareTypeRenren, /**< 人人网 */
+                          ShareTypeKaixin, /**< 开心网 */
+                          ShareTypePengyou, /**< 朋友网 */
+                          ShareTypeFacebook, /**< Facebook */
+                          ShareTypeTwitter, /**< Twitter */
+                          ShareTypeEvernote, /**< 印象笔记 */
+                          ShareTypeFoursquare, /**< Foursquare */
+                          ShareTypeGooglePlus, /**< Google＋ */
+                          ShareTypeInstagram, /**< Instagram */
+                          ShareTypeLinkedIn, /**< LinkedIn */
+                          ShareTypeTumbir, /**< Tumbir */
+                          ShareTypeMail, /**< 邮件分享 */
+                          ShareTypeSMS, /**< 短信分享 */
+                          ShareTypeAirPrint, /**< 打印 */
+                          ShareTypeCopy, /**< 拷贝 */
+                          ShareTypeWeixiSession, /**< 微信好友 */
+                          ShareTypeWeixiTimeline, /**< 微信朋友圈 */
+                          ShareTypeQQ /**< QQ */];
+    
+    [ShareSDK showShareActionSheet:ctrl shareList:shareList
+                           content:publishContent statusBarTips:YES
+                   oneKeyShareList:[NSArray defaultOneKeyShareList]
+                    shareViewStyle:ShareViewStyleDefault
+                    shareViewTitle:@"内容分享"
+                            result:^(ShareType type, SSPublishContentState state, id<ISSStatusInfo>
+                                     statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                if (state == SSPublishContentStateSuccess)
+                                {
+                                    NSLog(@"成功!");
+                                }
+                                else if(state == SSPublishContentStateFail) {
+                                    NSLog(@"失败!"); }
+                            }];
+}
 //scene:WXSceneSession;//WXSceneTimeline
 - (void) sendAppContent:(NSString*)title description:(NSString*)description image:(NSString*)name scene:(int)scene
 {

@@ -74,6 +74,7 @@
 - (NSString *)applicationDocumentsDirectory ;
 
 - (void) sendAppContent:(NSString*)title description:(NSString*)description image:(NSString*)name scene:(int)scene;
+- (void) shareByShareKit:(NSString*)title description:(NSString*)description image:(UIImage*)image;
 
 +(BOOL)isPurchased;
 @end

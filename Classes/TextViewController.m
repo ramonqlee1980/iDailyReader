@@ -17,6 +17,7 @@
 #import "InAppRageIAPHelper.h"
 #import "MBProgressHUD.h"
 #import "ReachabilityAs.h"
+#import <ShareSDK/ShareSDK.h>
 
 const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
 
@@ -818,8 +819,18 @@ const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
 -(IBAction)share2WixinChat
 {
     NSString* title = self.title;
-    NSString* content = textView.text;
-    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+    NSString* url = ((AppDelegate*)SharedDelegate).mTrackViewUrl;
+    NSString* content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",url,((AppDelegate*)SharedDelegate).mTrackName,textView.text];
+    
+    /*NSString* kEllipseString = @"...";
+    const NSUInteger kEllipseLength = kEllipseString.length;
+    const NSUInteger kTrim2Length = kWeiboMaxLength+kEllipseLength;
+    if (content.length>=kTrim2Length) {
+        content = [content substringToIndex:kTrim2Length];
+        content = [NSString stringWithFormat:@"%@%@",content,kEllipseString];
+    } */   
+    //[SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+    [SharedDelegate shareByShareKit:title description:content image:[UIImage imageNamed:@"icon-57"]];
 }
 -(IBAction)share2WixinFriends
 {
