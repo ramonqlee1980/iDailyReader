@@ -220,8 +220,8 @@
         {
             AppDelegate* delegate = SharedDelegate;
             NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
-            [delegate shareByShareKit:kWixinTitle description:description image:[[SDWebImageManager sharedManager]imageWithURL:[NSURL URLWithString:imgUrl]]];
-//            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
+//            [delegate shareByShareKit:kWixinTitle description:description image:[UIImage imageWithData: [[SDWebImageManager sharedManager]imageWithURL:[NSURL URLWithString:imgUrl]]]];
+            [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
         }
             break;
         case FCOMMITE: //评论

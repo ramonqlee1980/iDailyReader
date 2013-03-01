@@ -11,6 +11,7 @@
 #import "TextImageSyncController.h"
 #import "AppDelegate.h"
 #import "Constants.h"
+#import "Flurry.h"
 
 #define kInitialItemCount 5
 #define kFun @"kFun"
@@ -103,6 +104,8 @@
         TextImageSyncController* t = (TextImageSyncController*)ctrl;
         t.resourceName = p.itemDisplayName;
         t.resourceUrl = p.url;
+        
+        [Flurry logEvent:p.itemDisplayName];
     }
     UINavigationController* navi = [[[UINavigationController alloc]initWithRootViewController:ctrl]autorelease];
     [self presentModalViewController:navi animated:YES];
@@ -141,23 +144,13 @@
         switch (i) {
             case 0:
             {
-                p.itemDisplayName = @"糗图";                
+                p.itemDisplayName = @"糗事大全";                
                 p.url = @"nil";
                 p.className = @"EmbarassViewController";
                 p.xibName = p.className;
-                
-//                EmbarassViewController* funZoneInner=[[EmbarassViewController alloc] initWithNibName:@"EmbarassViewController" bundle:nil];
             }
                 break;
             case 1:
-            {
-                p.itemDisplayName = @"糗事大全";
-                p.url = @"http://www.idreems.com/php/embarrasepisode/embarrassing.php?type=hot_latest&page=%d&count=20";
-                p.className = @"TextImageSyncController";
-                p.xibName = p.className;
-            }
-                break;
-            case 2:
             {
                 p.itemDisplayName = @"搞笑段子";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/implicitessays_top.php?type=joke&count=20&page=%d";
@@ -165,7 +158,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 3:
+            case 2:
             {
                 p.itemDisplayName = @"搞笑动画";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/implicitessays_top.php?type=gif&count=20&page=%d";
@@ -173,7 +166,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 4:
+            case 3:
             {
                 p.itemDisplayName = @"搞笑萌图";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/implicitessays_top.php?type=meng&count=20&page=%d";
@@ -181,7 +174,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 5:
+            case 4:
             {
                 p.itemDisplayName = @"暴笑";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/implicitessays_top.php?type=heavy&count=20&page=%d";
@@ -189,7 +182,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 6:
+            case 5:
             {
                 p.itemDisplayName = @"搞笑漫画";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/implicitessays_top.php?type=comic&count=20&page=%d";
@@ -197,7 +190,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 7:
+            case 6:
             {
                 p.itemDisplayName = @"抱走漫画热门";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/comic_bz.php?type=hot&page=%d&count=20";
@@ -205,7 +198,7 @@
                 p.xibName = p.className;
             }
                 break;
-            case 8:
+            case 7:
             {
                 p.itemDisplayName = @"抱走漫画最新";
                 p.url = @"http://www.idreems.com/php/embarrasepisode/comic_bz.php?type=latest&page=%d&count=20";

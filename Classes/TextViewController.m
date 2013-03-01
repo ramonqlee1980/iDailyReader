@@ -19,7 +19,7 @@
 #import "ReachabilityAs.h"
 #import <ShareSDK/ShareSDK.h>
 
-const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
+const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 
 @interface TextViewController()
 
@@ -601,7 +601,9 @@ const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
     textView.editable = NO;
     NSMutableString* content= [NSMutableString stringWithString:[delegate getContent:index.row]];
     [content replaceOccurrencesOfString:@"\n\n" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [content length])];
-    textView.text = content;
+    NSString* tipContent = [NSString stringWithFormat:@"(字体过小，手势缩放下吧)\n\n%@",content];
+    
+    textView.text = tipContent;
     if (UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM()) {
         //textView.font = [UIFont fontWithName:kHuakangFontName size:kIPadFontSizeEx];
     }
@@ -823,15 +825,15 @@ const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
     NSString* url = ((AppDelegate*)SharedDelegate).mTrackViewUrl;
     NSString* content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",url,((AppDelegate*)SharedDelegate).mTrackName,textView.text];
     
-    /*NSString* kEllipseString = @"...";
+    NSString* kEllipseString = @"...";
     const NSUInteger kEllipseLength = kEllipseString.length;
     const NSUInteger kTrim2Length = kWeiboMaxLength+kEllipseLength;
     if (content.length>=kTrim2Length) {
         content = [content substringToIndex:kTrim2Length];
         content = [NSString stringWithFormat:@"%@%@",content,kEllipseString];
-    } */   
-    //[SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
-    [SharedDelegate shareByShareKit:title description:content image:[UIImage imageNamed:@"icon-57"]];
+    }
+    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+//    [SharedDelegate shareByShareKit:title description:content image:[UIImage imageNamed:@"icon-57"]];
 }
 -(IBAction)share2WixinFriends
 {

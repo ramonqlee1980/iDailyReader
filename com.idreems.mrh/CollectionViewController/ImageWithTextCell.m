@@ -111,7 +111,9 @@
 //        shareButton = [[UIButton buttonWithType:UIButtonTypeContactAdd]retain];
         shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
         shareButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth;
-        [shareButton setBackgroundImage:[UIImage imageNamed:@"micro_messenger"]forState:UIControlStateNormal];
+        [shareButton setBackgroundImage:[UIImage imageNamed:@"button_vote.png"] forState:UIControlStateNormal];
+        [shareButton setBackgroundImage:[UIImage imageNamed:@"button_vote_active.png"] forState:UIControlStateHighlighted];
+        [shareButton setImage:[UIImage imageNamed:@"micro_messenger"] forState:UIControlStateNormal];
         [shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:shareButton];
     }
@@ -178,6 +180,7 @@
     shareButtonRect.size.height = kShareButtonSize;
     shareButtonRect.origin.y -= shareButtonRect.size.height;
     shareButtonRect.origin.x = kDeviceWidth-shareButtonRect.size.width-2*CELL_CONTENT_MARGIN;
+    shareButtonRect.size.width *= 2;
     shareButton.frame = shareButtonRect;
     
     backgroundRect.size.width = footerViewRect.size.width;
@@ -210,7 +213,8 @@
     NSString* url = [CommonHelper appStoreUrl];
     NSString* content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",url,title,description];
     //TODO::
-    [SharedDelegate shareByShareKit:title description:content image:image];
+//    [SharedDelegate shareByShareKit:title description:content image:image];
+    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
 
 }
 -(void) ImageBtnClicked:(id)sender
