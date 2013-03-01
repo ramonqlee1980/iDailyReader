@@ -523,6 +523,7 @@
 #define kFlurryConfirmOpenWeixinInAppstore @"kConfirmOpenWeixinInAppstore"
 #define kFlurryCancelOpenWeixinInAppstore @"kCancelOpenWeixinInAppstore"
 #define kShareByWeixin @"kShareByWeixin"
+#define kShareByShareKit @"kShareByShareKit"
 
 #define kCountPerSection 3
 

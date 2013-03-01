@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "UIImageView+WebCache.h"
 #import "SDWebImageManager.h"
+#import "ImageBrowser.h"
 #define FGOOD       101
 #define FBAD        102
 #define FCOMMITE    103
@@ -180,6 +181,7 @@
 
 -(void) ImageBtnClicked:(id)sender
 {
+    /*
     PhotoViewer *photoview = [[PhotoViewer alloc]initWithNibName:@"PhotoViewer" bundle:nil];
     photoview.imgUrl = self.imgMidUrl;
     photoview.imgPlaceholderUrl = self.imgUrl;
@@ -187,6 +189,17 @@
     
     [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];    
     [photoview fadeIn];
+     */
+    UIApplication *app = [UIApplication sharedApplication];
+    ImageBrowser* browserView = [[[ImageBrowser alloc]initWithFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)] autorelease];
+    [browserView setUp];
+    
+    browserView.image = imgPhoto.image;
+    browserView.bigImageURL = self.imgMidUrl;
+    [browserView loadImage];
+    
+    app.statusBarHidden = YES;
+    [[app keyWindow]addSubview:browserView];
 }
 
 -(void) BtnClicked:(id)sender

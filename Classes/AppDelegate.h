@@ -4,6 +4,7 @@
 
 #define SharedDelegate (AppDelegate*)[[UIApplication sharedApplication]delegate]
 #define kAdd2Favorite @"kAdd2Favorite"
+@class FileModel;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate,WXApiDelegate>
 {
@@ -30,7 +31,14 @@
     UIView *rView;//图片的UIView
     NSUInteger mDialogType;
     BOOL isWhiteColor;
+    NSOperationQueue* mOperationQueue;
 }
+@property(nonatomic,retain)NSMutableArray *finishedlist;//已下载完成的文件列表（文件对象）
+
+@property(nonatomic,retain)NSMutableArray *downinglist;//正在下载的文件列表(ASIHttpRequest对象)
+
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow;
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;

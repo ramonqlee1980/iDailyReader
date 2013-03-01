@@ -171,6 +171,15 @@
     
 	self.navigationItem.titleView = segmentedControl;
 	[segmentedControl release];
+    
+    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.rightBarButtonItem = backButton;
+    [backButton release];
+}
+-(void)back
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 - (void)viewDidLoad
 {

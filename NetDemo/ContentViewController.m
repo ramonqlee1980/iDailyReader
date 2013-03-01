@@ -12,6 +12,7 @@
 #import "QiuShi.h"
 #import "Flurry.h"
 #import "AdsConfig.h"
+#import "ImageViewController.h"
 
 
 
@@ -275,6 +276,12 @@ UITableViewDelegate
     
     [UIView commitAnimations];
 #endif
+    QiuShi *qs = [self.list objectAtIndex:[indexPath row]];
+
+    ImageViewController* detail = [[[ImageViewController alloc]init]autorelease];
+    
+    [detail initWithData:qs.content imageUrl:qs.imageMidURL placeHolderImageUrl:qs.imageURL imageWidth:1 imageHeight:1];
+	[self.navigationController pushViewController:detail animated:YES];
 }
 
 #pragma mark - LoadPage

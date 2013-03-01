@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "AdsConfig.h"
 #import "Flurry.h"
-#import "WapsOffer/AppConnect.h"
+//#import "WapsOffer/AppConnect.h"
 //#import "MiidiAdWall.h"
 
 #define kTextLabeFontSize 25
@@ -510,10 +510,10 @@
         [self loadAdsageRecommendView:YES];
         [self.recmdView OpenAdSageRecmdModalView];
     }
-    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
-    {
-        [AppConnect showOffers];
-    }
+//    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
+//    {
+//        [AppConnect showOffers];
+//    }
     else if(NSOrderedSame==[AdsPlatformImmobWall caseInsensitiveCompare:wallName])
     {
         if(mImmobWall)

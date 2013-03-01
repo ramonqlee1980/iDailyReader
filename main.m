@@ -3,7 +3,7 @@
 #import "AdsConfig.h"
 #import "YouMiWall.h"
 #import "AppDelegate.h"
-#import "WapsOffer/AppConnect.h"
+//#import "WapsOffer/AppConnect.h"
 //#import "MiidiManager.h"
 #import <ShareSDK/ShareConfig.h>
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     
     //注意:这里必须填写您的App_ID. 您可以从www.waps.cn注册后获取,pid为渠道编号,比如@"appstore",@"91"
 	//[AppConnect getConnect:@"1bf390a13d540df7bf72418498dfe503" pid:@"appstore"];
-    [AppConnect getConnect:kWapsId]; //不指定pid
+//    [AppConnect getConnect:kWapsId]; //不指定pid
     
     //
 	// 设置发布应用的应用id, 应用密码等信息,必须在应用启动的时候呼叫

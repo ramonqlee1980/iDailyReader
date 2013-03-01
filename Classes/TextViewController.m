@@ -13,7 +13,7 @@
 #import "AddNewNoteViewController.h"
 #import "MobiSageSDK.h"
 #import "WQAdView.h"
-#import "WapsOffer/AppConnect.h"
+//#import "WapsOffer/AppConnect.h"
 #import "InAppRageIAPHelper.h"
 #import "MBProgressHUD.h"
 #import "ReachabilityAs.h"
@@ -690,11 +690,12 @@ const CGFloat kMinFontSize = 18;//[UIFont systemFontSize];
     
 #else
     mWallName = [delegate currentAdsWall];
-    if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:mWallName])
-    {
-        [AppConnect showOffers];
-    }
-    else if(NSOrderedSame==[AdsPlatformYoumiWall caseInsensitiveCompare:mWallName])
+//    if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:mWallName])
+//    {
+//        [AppConnect showOffers];
+//    }
+//    else
+        if(NSOrderedSame==[AdsPlatformYoumiWall caseInsensitiveCompare:mWallName])
     {        
         UIViewController *detailViewController;
         detailViewController = [[[RewardedWallViewController alloc] init:closeAds]autorelease];
