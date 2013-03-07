@@ -137,6 +137,7 @@
 {
     [self loadNeededView];
     [super viewDidLoad];
+    
     [self loadAdsageRecommendView:NO];
     
     mYoumiFeatureWallShowCount = 0;
@@ -508,6 +509,7 @@
     else if(NSOrderedSame==[AdsPlatformMobisageWall caseInsensitiveCompare:wallName])
     {
         [self loadAdsageRecommendView:YES];
+        
         [self.recmdView OpenAdSageRecmdModalView];
     }
 //    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
@@ -539,6 +541,7 @@
 -(void)loadRecommendAdsWall:(NSString*)wallName
 {
     [self loadAdsageRecommendView:YES];
+    
     [self performSelector:@selector(popupAdsageRecommendView:) withObject:wallName afterDelay:kLoadMobisageRecommendViewDelayTime];
 }
 #pragma mark immob delegate

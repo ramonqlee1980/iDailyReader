@@ -7,6 +7,7 @@
     #import <QuartzCore/QuartzCore.h>
 #endif
 
+
 //close log
 #define __RELEASE__
 #ifdef __RELEASE__
@@ -17,13 +18,37 @@
 #define KDeviceHeight [UIScreen mainScreen].bounds.size.height
 #define fLocalStringNotFormat(key) NSLocalizedString(key, nil)
 
+
+#ifdef kIdreemsServerEnabled
+
+#define kBaseUrl @"http://www.idreems.com/PHP/embarrasepisode/embarrassing.php"
+#define kLatest @"hot_latest"
+#define kImage @"image_latest"
+#define kSuggest @"hot_suggest"
+#define kDay @"top_day"
+#define kWeek @"top_week"
+#define kMonth @"top_month"
+
+
+#define TemplateURLString(type,count,page) [NSString stringWithFormat:@"%@?type=%@&count=%d&page=%d",kBaseUrl,type,count,page]
+
+#define LastestURLString(count,page) TemplateURLString(kLatest,count,page)
+#define ImageURLString(count,page) TemplateURLString(kImage,count,page)
+#define SuggestURLString(count,page) TemplateURLString(kSuggest,count,page)
+#define DayURLString(count,page) TemplateURLString(kDay,count,page)
+#define WeekURLString(count,page) TemplateURLString(kWeek,count,page)
+#define MonthURLString(count,page) TemplateURLString(kMonth,count,page)
+#define CommentsURLString(ID) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/%@/comments?count=500&page=1",ID]
+#else
+
 #define LastestURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/latest?count=%d&page=%d",count,page]
 #define ImageURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/images?count=%d&page=%d",count,page]
 #define SuggestURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/suggest?count=%d&page=%d",count,page]
 #define DayURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/day?count=%d&page=%d",count,page]
-#define WeakURlString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/week?count=%d&page=%d",count,page]
+#define WeekURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/week?count=%d&page=%d",count,page]
 #define MonthURLString(count,page) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/list/month?count=%d&page=%d",count,page]
 #define CommentsURLString(ID) [NSString stringWithFormat:@"http://m2.qiushibaike.com/article/%@/comments?count=500&page=1",ID]
+#endif//#ifdef kIdreemsServerEnabled
 
 #define ClearRequest(request) if(request!=nil){[request clearDelegatesAndCancel];[request release];request=nil;}
 

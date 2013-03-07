@@ -25,19 +25,30 @@
     {
         self.tag = [dictionary objectForKey:@"tag"];
         self.qiushiID = [dictionary objectForKey:@"id"];
+#ifdef kIdreemsServerEnabled
+        self.content = [dictionary objectForKey:@"description"];
+#else
         self.content = [dictionary objectForKey:@"content"];
+#endif//#ifdef kIdreemsServerEnabled
         self.published_at = [[dictionary objectForKey:@"published_at"] doubleValue];
         self.commentsCount = [[dictionary objectForKey:@"comments_count"] intValue];
         
         id image = [dictionary objectForKey:@"image"];
         if ((NSNull *)image != [NSNull null]) 
         {
+#ifdef kIdreemsServerEnabled
+            self.imageURL = [dictionary objectForKey:@"thumbnailUrl"];
+            self.imageMidURL = [dictionary objectForKey:@"largeUrl"];
+#else
             self.imageURL = [dictionary objectForKey:@"image"];
-
-            NSString *newImageURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/small/%@",qiushiID,imageURL];
-            NSString *newImageMidURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/medium/%@",qiushiID,imageURL];
+            
+            NSRange range = NSRangeFromString(@"0,4");
+            NSString* rangeId = [qiushiID substringWithRange:range];
+            NSString *newImageURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/small/%@",rangeId,qiushiID,imageURL];
+            NSString *newImageMidURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/medium/%@",rangeId,qiushiID,imageURL];
             self.imageURL = newImageURL;
             self.imageMidURL = newImageMidURL;
+#endif
         }
         
         NSDictionary *vote = [NSDictionary dictionaryWithDictionary:[dictionary objectForKey:@"votes"]];
@@ -50,6 +61,7 @@
             NSDictionary *user = [NSDictionary dictionaryWithDictionary:[dictionary objectForKey:@"user"]];
             self.anchor = [user objectForKey:@"login"];
         }
+    
     }
     return self;
 }

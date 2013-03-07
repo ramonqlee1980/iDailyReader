@@ -21,14 +21,15 @@
 //#define RaisingKids
 //#define TodayinHistory
 //#define Makeup
-#define MakeToast
-//#define TraditionalChineseMedicine
+//#define MakeToast
+#define TraditionalChineseMedicine //中医小窍门
 //#define SpouseTalks
 //#define Humer
 //#define EnglishPrefix
 //#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast
 
+//#define kIdreemsServerEnabled //enable idreems server
 
 //ads url
 #define kDefaultAds @"defaultAds"

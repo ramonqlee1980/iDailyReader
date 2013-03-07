@@ -55,6 +55,7 @@
         NSString *xmlPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"SoftList.xml"];
         [_softRcmList loadData:xmlPath];
         
+#if 0
         [self loadAdsageRecommendView];
 #ifndef k91Appstore
         //AdsConfig* config = [AdsConfig sharedAdsConfig];
@@ -70,6 +71,7 @@
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestOffersOpenDataSuccess:) name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
             [wall requestOffersAppData:YES pageCount:15];
         }
+#endif
 #endif
     }
     return self;

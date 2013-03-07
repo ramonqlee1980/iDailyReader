@@ -819,7 +819,13 @@
     unsigned int unitFlags = NSMonthCalendarUnit | NSDayCalendarUnit ;
     NSDateComponents *dd = [cal components:unitFlags fromDate:[NSDate date]];
     
-    return [NSString stringWithFormat:@"%d%d",[dd month],[dd day]];
+#define kTen 10
+    int month = [dd month];
+    int day = [dd day];
+    
+    NSString* ret =  [NSString stringWithFormat:@"%d%d",month,day];
+    
+    return ret;
 }
 +(NSDate*)getTomorrowDate
 {

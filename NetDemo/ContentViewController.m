@@ -105,7 +105,7 @@ UITableViewDelegate
             url = [NSURL URLWithString:DayURLString(10,self.page)];
             break;
         case QiuShiTimeWeek:
-            url = [NSURL URLWithString:WeakURlString(10,self.page)];
+            url = [NSURL URLWithString:WeekURLString(10,self.page)];
             break;
         case QiuShiTimeMonth:
             url = [NSURL URLWithString:MonthURLString(10,self.page)];
@@ -134,6 +134,8 @@ UITableViewDelegate
     [asiRequest setDidFailSelector:@selector(GetErr:)];
     [asiRequest startAsynchronous];
     
+    [Flurry logEvent:@"StartRequestQiushi"];
+    
 }
 
 -(void) GetErr:(ASIHTTPRequest *)request
@@ -141,11 +143,12 @@ UITableViewDelegate
     self.refreshing = NO;
     [self.tableView tableViewDidFinishedLoading];
     [tooles MsgBox:@"连接网络失败，请检查是否开启移动数据"];
-    
+    [Flurry logEvent:@"RequestQiushiFail"];
 }
 
 -(void) GetResult:(ASIHTTPRequest *)request
 {
+    [Flurry logEvent:@"RequestQiushiSuccess"];
     
     if (self.refreshing) {
         self.page = 1;
@@ -154,8 +157,13 @@ UITableViewDelegate
     }
     NSData *data =[request responseData];
     NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
-    if ([dictionary objectForKey:@"items"]) {
-		NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:@"items"]];
+#ifdef kIdreemsServerEnabled
+    NSString* rootItem = @"data";
+#else
+    NSString* rootItem = @"items";
+#endif
+    if ([dictionary objectForKey:rootItem]) {
+		NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
         for (NSDictionary *qiushi in array) {
             QiuShi *qs = [[[QiuShi alloc]initWithDictionary:qiushi]autorelease];
             [self.list addObject:qs];
