@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhotoViewer.h"
+
 @interface ContentCell : UITableViewCell
 {
      //糗事图片

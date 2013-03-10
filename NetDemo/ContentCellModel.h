@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QiuShi : NSObject
+@interface ContentCellModel : NSObject
 {
     //小图片链接地址
     NSString *imageURL;

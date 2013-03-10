@@ -146,7 +146,7 @@
             {
                 p.itemDisplayName = @"糗事大全";                
                 p.url = @"nil";
-                p.className = @"EmbarassViewController";
+                p.className = @"PullRefreshBaseController";
                 p.xibName = p.className;
             }
                 break;

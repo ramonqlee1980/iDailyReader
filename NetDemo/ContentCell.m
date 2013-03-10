@@ -181,15 +181,6 @@
 
 -(void) ImageBtnClicked:(id)sender
 {
-    /*
-    PhotoViewer *photoview = [[PhotoViewer alloc]initWithNibName:@"PhotoViewer" bundle:nil];
-    photoview.imgUrl = self.imgMidUrl;
-    photoview.imgPlaceholderUrl = self.imgUrl;
-    [photoview.view setFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)];
-    
-    [[[UIApplication sharedApplication]keyWindow] addSubview:photoview.view];    
-    [photoview fadeIn];
-     */
     UIApplication *app = [UIApplication sharedApplication];
     ImageBrowser* browserView = [[[ImageBrowser alloc]initWithFrame:CGRectMake(0, 0, kDeviceWidth, KDeviceHeight)] autorelease];
     [browserView setUp];

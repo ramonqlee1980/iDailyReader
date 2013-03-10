@@ -5,8 +5,11 @@
   Created by ramonqlee on 8/24/11.
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
-"Title"="TraditionalChineseMedicine";
+"Title"="MakeToast";
 "About"="Version V3.2.25 IDreems.com Presents";
+
+"kLocalContent"="实用篇";
+"kOnlineContent"="网友揭秘";
 
 "kToday"="Hot";
 "kRecommendList"="Recommend";

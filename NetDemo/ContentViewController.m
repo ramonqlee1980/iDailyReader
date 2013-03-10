@@ -9,7 +9,7 @@
 #import "ContentViewController.h"
 #import "PullingRefreshTableView.h"
 #import "CJSONDeserializer.h"
-#import "QiuShi.h"
+#import "ContentCellModel.h"
 #import "Flurry.h"
 #import "AdsConfig.h"
 #import "ImageViewController.h"
@@ -50,9 +50,7 @@ UITableViewDelegate
 {
     // If you create your views manually, you MUST override this method and use it to create your views.
     // If you use Interface Builder to create your views, then you must NOT override this method.
-    [super loadView];
-      
-    
+    [super loadView];    
 }
 
 - (void)viewDidLoad
@@ -165,7 +163,7 @@ UITableViewDelegate
     if ([dictionary objectForKey:rootItem]) {
 		NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
         for (NSDictionary *qiushi in array) {
-            QiuShi *qs = [[[QiuShi alloc]initWithDictionary:qiushi]autorelease];
+            ContentCellModel *qs = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
             [self.list addObject:qs];
         }
 		
@@ -199,7 +197,7 @@ UITableViewDelegate
         [cell.txtContent setNumberOfLines:12];
     }
     
-    QiuShi *qs = [self.list objectAtIndex:[indexPath row]];
+    ContentCellModel *qs = [self.list objectAtIndex:[indexPath row]];
     //设置内容
     
     cell.txtContent.text =qs.content ;
@@ -284,7 +282,7 @@ UITableViewDelegate
     
     [UIView commitAnimations];
 #endif
-    QiuShi *qs = [self.list objectAtIndex:[indexPath row]];
+    ContentCellModel *qs = [self.list objectAtIndex:[indexPath row]];
 
     ImageViewController* detail = [[[ImageViewController alloc]init]autorelease];
     
@@ -308,7 +306,7 @@ UITableViewDelegate
     // 设置字体
     UIFont *font = [UIFont fontWithName:@"Arial" size:14];
     
-    QiuShi *qs =[self.list objectAtIndex:row];
+    ContentCellModel *qs =[self.list objectAtIndex:row];
     // 显示的内容
     NSString *content = qs.content;
     // 计算出长宽

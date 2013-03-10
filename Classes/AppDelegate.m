@@ -13,7 +13,7 @@
 #import "SoftRcmListViewController.h"
 #import "FlipViewController.h"
 #import "iRate.h"
-#import "EmbarassViewController.h"
+#import "PullRefreshBaseController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MoreViewController.h"
 #import "InAppRageIAPHelper.h"

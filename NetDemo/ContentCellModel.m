@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "QiuShi.h"
+#import "ContentCellModel.h"
 
-@implementation QiuShi
+@implementation ContentCellModel
 @synthesize imageMidURL;
 @synthesize imageURL;
 @synthesize published_at;

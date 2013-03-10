@@ -19,12 +19,12 @@
 //#define LosingWeight
 //#define careerGuide
 //#define RaisingKids
-//#define TodayinHistory
-//#define Makeup
-//#define MakeToast
-#define TraditionalChineseMedicine //中医小窍门
+//#define TodayinHistory//史上今日
+//#define Makeup//美容秘笈
+#define MakeToast//场面话之祝酒词
+//#define TraditionalChineseMedicine //中医小窍门
 //#define SpouseTalks
-//#define Humer
+//#define Humer//搞笑集锦
 //#define EnglishPrefix
 //#define EnglishSuffix
 //#define LearnEnglishBySinging MakeToast

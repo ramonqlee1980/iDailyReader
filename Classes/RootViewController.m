@@ -21,7 +21,8 @@
 
 //#define kNextDelayTime 60
 
-
+#define kLocalContent 0
+#define kOnlineContent 1
 
 @interface RootViewController()
 {
@@ -135,6 +136,7 @@
 
 - (void)viewDidLoad
 {
+    [self loadSegmentBar];
     [self loadNeededView];
     [super viewDidLoad];
     
@@ -153,19 +155,6 @@
     AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     self.data = delegate.data;
-	
-	// create our UINib instance which will later help us load and instanciate the
-	// UITableViewCells's UI via a xib file.
-	//
-	// Note:
-	// The UINib classe provides better performance in situations where you want to create multiple
-	// copies of a nib file’s contents. The normal nib-loading process involves reading the nib file
-	// from disk and then instantiating the objects it contains. However, with the UINib class, the
-	// nib file is read from disk once and the contents are stored in memory.
-	// Because they are in memory, creating successive sets of objects takes less time because it
-	// does not require accessing the disk.
-	//
-	//self.cellNib = [UINib nibWithNibName:@"IndividualSubviewsBasedApplicationCell" bundle:nil];
     
     
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];
@@ -512,10 +501,10 @@
         
         [self.recmdView OpenAdSageRecmdModalView];
     }
-//    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
-//    {
-//        [AppConnect showOffers];
-//    }
+    //    else if(NSOrderedSame==[AdsPlatformWapsWall caseInsensitiveCompare:wallName])
+    //    {
+    //        [AppConnect showOffers];
+    //    }
     else if(NSOrderedSame==[AdsPlatformImmobWall caseInsensitiveCompare:wallName])
     {
         if(mImmobWall)
@@ -591,5 +580,47 @@
 {
     return self;
 }
+#pragma util
+-(void)loadSegmentBar
+{
+    const CGFloat kNavigationBarInnerViewMargin = 7;
+    const CGFloat segmentedControlHeight = self.navigationController.navigationBar.frame.size.height-kNavigationBarInnerViewMargin*2;
+    // segmented control as the custom title view
+	NSArray *segmentTextContent = [NSArray arrayWithObjects:
+                                   NSLocalizedString(@"kLocalContent", @""),
+                                   NSLocalizedString(@"kOnlineContent", @""),
+								   nil];
+	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+	segmentedControl.selectedSegmentIndex = kLocalContent;//the middle one
+	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+	segmentedControl.frame = CGRectMake(0, 0, 400, segmentedControlHeight);
+	[segmentedControl addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventValueChanged];
+	
+    //	defaultTintColor = [segmentedControl.tintColor retain];	// keep track of this for later
+    
+	self.navigationItem.titleView = segmentedControl;
+	[segmentedControl release];
+}
 
+-(void) BtnClicked:(id)sender
+{
+    UISegmentedControl *btn =(UISegmentedControl *) sender;
+    switch (btn.selectedSegmentIndex) {
+        case kLocalContent:
+        {
+            
+        }
+            break;
+        case kOnlineContent:
+        {
+           
+        }
+
+         break;
+        default:
+            break;
+    }
+    
+}
 @end

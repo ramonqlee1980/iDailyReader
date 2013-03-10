@@ -31,7 +31,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>TraditionalChineseMedicine</string>
+	<string>MakeToast</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -57,7 +57,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>820</string>
+	<string>828</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSHasLocalizedDisplayName</key>
@@ -73,8 +73,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
