@@ -59,12 +59,6 @@
     loadingLabel.textAlignment = UITextAlignmentCenter;
     collectionView.loadingView = loadingLabel;
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-    [super viewWillAppear:animated];
-    
-}
 
 #pragma mark util methods
 -(void)notifyDataChanged

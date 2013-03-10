@@ -1324,10 +1324,19 @@
     {
         NSLog(@"%@",[error description]);
     }
+    NSLog(@"request.responseStatusCode:%d",request.responseStatusCode);
     if(kHTTPOK != request.responseStatusCode)
     {
         //pop up a tip only
         //[[NSNotificationCenter defaultCenter]postNotificationName:kFileDownloadFail object:fileInfo];
+        NSError *error=[request error];
+        NSLog(@"ASIHttpRequest出错了!%@",error);
+        FileModel *fileModel=[request.userInfo objectForKey:@"File"];
+        if(fileModel && fileModel.notificationName && fileModel.notificationName.length)
+        {
+            [[NSNotificationCenter defaultCenter]postNotificationName:fileModel.notificationName object:error];
+        }
+
     }
     else
     {

@@ -19,6 +19,7 @@
     
     //添加内容的TableView
     self.m_contentViewController = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
+
     [self.view addSubview:m_contentViewController.view];
 }
 

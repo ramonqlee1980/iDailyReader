@@ -8,6 +8,6 @@
 
 #import "PullRefreshBaseController.h"
 
-@interface EmbarrassController : PullRefreshBaseController
+@interface EmbarrassController : PullRefreshBaseController<PullingRefreshDelegate>
 
 @end

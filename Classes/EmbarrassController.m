@@ -8,17 +8,31 @@
 
 #import "EmbarrassController.h"
 #import "Constants.h"
+#import "CJSONDeserializer.h"
+#import "ContentCellModel.h"
+#import "FileModel.h"
+#import "AppDelegate.h"
+
 #define FTop      0
 #define FRecent   1
 #define FPhoto    2
 
+#define kFileDir @"EMData"
+#define kRefreshFileName @"EMRefresh"
+#define kLoadMoreFileName @"EMLoadmore"
+
+#define kInitPage 1
 
 @interface EmbarrassController ()
+
+@property(nonatomic,assign)NSUInteger page;
+@property(nonatomic,assign)NSUInteger selectedSegmentIndex;
 -(void) BtnClicked:(id)sender;
 @end
 
 @implementation EmbarrassController
-
+@synthesize page;
+@synthesize selectedSegmentIndex;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,33 +45,63 @@
     return self;
 }
 
+#pragma  PullingRefreshDelegate
+-(void)refreshData:(FileModel*)fileModel
+{
+    NSString* url = [self getUrl];
+    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    
+    fileModel.destPath = kFileDir;
+    fileModel.fileName = [NSString stringWithFormat:@"%@%d",kRefreshFileName,selectedSegmentIndex];
+        
+    [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+}
+-(void)loadMoreData:(FileModel*)fileModel
+{
+    NSString* url = [self getUrl];
+    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    
+    fileModel.destPath = kFileDir;
+    fileModel.fileName = [NSString stringWithFormat:@"%@%d",kLoadMoreFileName,selectedSegmentIndex];
+    
+    [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+}
+
+-(NSArray*)parseData:(NSData*)data
+{
+    NSMutableArray* dataArray = [[NSMutableArray alloc]initWithCapacity:0];
+    if (data) {
+        NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+#ifdef kIdreemsServerEnabled
+        NSString* rootItem = @"data";
+#else
+        NSString* rootItem = @"items";
+#endif
+        if ([dictionary objectForKey:rootItem]) {
+            NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
+            for (NSDictionary *qiushi in array) {
+                ContentCellModel *qs = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
+                [dataArray addObject:qs];
+            }
+        }
+    }
+    return dataArray;
+}
+
 #pragma mark segmentbar
 -(void) BtnClicked:(id)sender
 {
-    UISegmentedControl *btn =(UISegmentedControl *) sender;
-    QiuShiType type  = QiuShiTypeTop;
-    switch (btn.selectedSegmentIndex) {
-        case FTop:
-        {
-            type = QiuShiTypeTop;
-        }
-            break;
-        case FRecent:
-        {
-            type = QiuShiTypeNew;
-        }
-            break;
-        case FPhoto:
-        {
-            type = QiuShiTypePhoto;
-        }
-            break;
-        default:
-            break;
-    }
-    [m_contentViewController LoadPageOfQiushiType:type Time:QiuShiTimeRandom];
+    //reset page
+    page = kInitPage;//page starts from 1
     
+    UISegmentedControl *btn =(UISegmentedControl *) sender;
+    //same?
+    if (selectedSegmentIndex!=btn.selectedSegmentIndex) {
+        [self.m_contentViewController launchRefreshing];
+    }
+    selectedSegmentIndex = btn.selectedSegmentIndex;    
 }
+
 -(void)loadSegmentBar
 {
     const CGFloat kNavigationBarInnerViewMargin = 7;
@@ -69,6 +113,7 @@
                                    NSLocalizedString(@"真相", @""),
 								   nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+    selectedSegmentIndex = FRecent;
 	segmentedControl.selectedSegmentIndex = FRecent;//the middle one
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -82,7 +127,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
+    page = kInitPage;
+    self.m_contentViewController.delegate = self;
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem = backButton;
@@ -91,10 +138,40 @@
     [self loadSegmentBar];
 }
 
+-(void)dealloc
+{
+    [super dealloc];
+}
 #pragma mark util methods
 -(void)back
 {
     [self dismissModalViewControllerAnimated:YES];
 }
-
+-(NSString*)getUrl
+{
+    int count = 30;
+    
+    NSString* url = @"";
+    switch (selectedSegmentIndex) {
+        case FTop:
+        {
+            url = SuggestURLString(count,page);
+        }
+            
+            break;
+        case FPhoto:
+        {
+            url = ImageURLString(count, page);
+        }
+            break;
+        case FRecent:
+        default:
+        {
+            url = LastestURLString(count, page);
+        }
+            break;
+    }
+    
+    return url;
+}
 @end

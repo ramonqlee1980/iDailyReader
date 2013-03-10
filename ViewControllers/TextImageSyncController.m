@@ -104,9 +104,7 @@
     }
     
     fileModel = [[FileModel alloc]init];
-    //get data
-    
-//    fileModel.fileURL = kTimelineJson;
+   
     fileModel.fileName = kRefreshFileName;
     fileModel.destPath = kDefaultResouceName;
     if (self.resourceName) {

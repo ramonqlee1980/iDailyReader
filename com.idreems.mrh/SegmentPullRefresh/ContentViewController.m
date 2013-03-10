@@ -1,11 +1,3 @@
-//
-//  ContentViewController.m
-//  NetDemo
-//
-//  Created by  on 12-6-6.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
-
 #import "ContentViewController.h"
 #import "PullingRefreshTableView.h"
 #import "CJSONDeserializer.h"
@@ -13,46 +5,45 @@
 #import "Flurry.h"
 #import "AdsConfig.h"
 #import "ImageViewController.h"
+#import "FileModel.h"
+#import "CommonHelper.h"
+#import "AppDelegate.h"
+#import "ContentCell.h"
+#import "tools.h"
 
-
+#define kTimelineJsonRefreshChanged @"kEMTimelineJsonRefreshChanged"
+#define kTimelineJsonLoadMoreChanged @"kEMTimelineJsonLoadMoreChanged"
 
 @interface ContentViewController () <
 PullingRefreshTableViewDelegate,ASIHTTPRequestDelegate,
 UITableViewDataSource,
 UITableViewDelegate
 >
--(void) GetErr:(ASIHTTPRequest *)request;
--(void) GetResult:(ASIHTTPRequest *)request;
 @property (retain,nonatomic) PullingRefreshTableView *tableView;
 @property (retain,nonatomic) NSMutableArray *list;
 @property (nonatomic) BOOL refreshing;
-@property (assign,nonatomic) NSInteger page;
+
+-(CGFloat) getTheHeight:(NSInteger)row;
 @end
 
 @implementation ContentViewController
 @synthesize tableView = _tableView;
 @synthesize list = _list;
 @synthesize refreshing = _refreshing;
-@synthesize page = _page;
-@synthesize asiRequest;
-@synthesize Qiutype,QiuTime;
-
+@synthesize delegate;
+@synthesize fileModel;
 
 
 - (void)dealloc{
     [_list release];
     _list = nil;
     [self.tableView release];
+    self.fileModel = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
 
-- (void)loadView
-{
-    // If you create your views manually, you MUST override this method and use it to create your views.
-    // If you use Interface Builder to create your views, then you must NOT override this method.
-    [super loadView];    
-}
-
+#pragma mark - LoadPage
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,118 +60,133 @@ UITableViewDelegate
     _tableView.delegate = self;
     [self.view addSubview:self.tableView];
     
-    asiRequest = nil;
-    Qiutype = QiuShiTimeRandom;
-    QiuTime = QiuShiTypeNew;
-    if (self.page == 0) {
-        [self.tableView launchRefreshing];
-    }
-    [Flurry logEvent:kQiushiReviewed];
+    fileModel = [[FileModel alloc]init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetTimeLine:)    name:kTimelineJsonRefreshChanged          object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetTimeLine:)    name:kTimelineJsonLoadMoreChanged          object:nil];
+    
+    [self launchRefreshing];
+    
+//    [Flurry logEvent:kQiushiReviewed];
 }
-
-- (void)viewDidUnload
+-(void)launchRefreshing
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [self.tableView launchRefreshing];
 }
 
 #pragma mark - Your actions
-
-- (void)loadData{
+-(void)refreshData
+{
+    if (delegate) {
+        if (fileModel) {
+            fileModel.notificationName = kTimelineJsonRefreshChanged;
+        }       
+        
+        [delegate refreshData:fileModel];
+        //load local cache
+        if(delegate)
+        {
+            NSString* fileName = [self cacheFile];
+            [self.list addObjectsFromArray:[delegate parseData:[NSData dataWithContentsOfFile:fileName]]];
+            [self.tableView reloadData];
+        }
+    }
+}
+-(void)loadMoreData
+{
+    if (delegate) {
+        if (fileModel) {
+            fileModel.notificationName = kTimelineJsonLoadMoreChanged;
+        }
+        [delegate loadMoreData:fileModel];
+    }
+}
+-(void)didGetTimeLineOnMainThread:(NSNotification*)notification
+{
+    //    [Flurry logEvent:@"RequestQiushiSuccess"];
     
-    self.page++;
-    NSURL *url;
-    switch (QiuTime) {
-        case QiuShiTimeRandom:
-            url = [NSURL URLWithString:LastestURLString(10,self.page)];
-            break;
-        case QiuShiTimeDay:
-            url = [NSURL URLWithString:DayURLString(10,self.page)];
-            break;
-        case QiuShiTimeWeek:
-            url = [NSURL URLWithString:WeekURLString(10,self.page)];
-            break;
-        case QiuShiTimeMonth:
-            url = [NSURL URLWithString:MonthURLString(10,self.page)];
-            break;
-        default:
-            break;
+    if (self.refreshing) {
+        //        self.page = 1;
+        self.refreshing = NO;
+        [self.list removeAllObjects];
     }
     
-    switch (Qiutype) {
-        case QiuShiTypeTop:
-            url = [NSURL URLWithString:SuggestURLString(10,self.page)];
-            break;
-        case QiuShiTypeNew:
-            url = [NSURL URLWithString:LastestURLString(10,self.page)];
-            break;
-        case QiuShiTypePhoto:
-            url = [NSURL URLWithString:ImageURLString(10,self.page)];
-            break;
-        default:
-            break;
+    if(delegate)
+    {
+        NSString* fileName = [self cacheFile];
+        [self.list addObjectsFromArray:[delegate parseData:[NSData dataWithContentsOfFile:fileName]]];
     }
     
-    asiRequest = [ASIHTTPRequest requestWithURL:url];
-    [asiRequest setDelegate:self];
-    [asiRequest setDidFinishSelector:@selector(GetResult:)];
-    [asiRequest setDidFailSelector:@selector(GetErr:)];
-    [asiRequest startAsynchronous];
-    
-    [Flurry logEvent:@"StartRequestQiushi"];
+    //    if (self.page >=20) {
+    //        [self.tableView tableViewDidFinishedLoadingWithMessage:@"下面没有了.."];
+    //        self.tableView.reachedTheEnd  = YES;
+    //    }
+    //    else
+    {
+        [self.tableView tableViewDidFinishedLoading];
+        self.tableView.reachedTheEnd  = NO;
+        [self.tableView reloadData];
+    }
+    //    [Flurry logEvent:kQiushiRefreshed];
     
 }
 
+
+#pragma common
+-(void)didGetTimeLine:(NSNotification*)notification
+{
+    if(notification && [notification.object isKindOfClass:[NSError class]])//error
+    {
+        [self GetErr:nil];
+    }
+    else
+    {
+        [self performSelectorOnMainThread:@selector(didGetTimeLineOnMainThread:) withObject:notification waitUntilDone:YES];
+    }
+}
 -(void) GetErr:(ASIHTTPRequest *)request
 {
     self.refreshing = NO;
     [self.tableView tableViewDidFinishedLoading];
     [tools MsgBox:@"连接网络失败，请检查是否开启移动数据"];
-    [Flurry logEvent:@"RequestQiushiFail"];
+    
 }
-
--(void) GetResult:(ASIHTTPRequest *)request
+-(NSString*)cacheFile
 {
-    [Flurry logEvent:@"RequestQiushiSuccess"];
-    
-    if (self.refreshing) {
-        self.page = 1;
-        self.refreshing = NO;
-        [self.list removeAllObjects];
-    }
-    NSData *data =[request responseData];
-    NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
-#ifdef kIdreemsServerEnabled
-    NSString* rootItem = @"data";
-#else
-    NSString* rootItem = @"items";
-#endif
-    if ([dictionary objectForKey:rootItem]) {
-		NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
-        for (NSDictionary *qiushi in array) {
-            ContentCellModel *qs = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
-            [self.list addObject:qs];
-        }
-		
+    FileModel* model = [self fileModel];
+    if (!model) {
+        return @"";
     }
     
-    if (self.page >=20) {
-        [self.tableView tableViewDidFinishedLoadingWithMessage:@"下面没有了.."];
-        self.tableView.reachedTheEnd  = YES;
-    } else {
-        [self.tableView tableViewDidFinishedLoading];
-        self.tableView.reachedTheEnd  = NO;
-        [self.tableView reloadData];
-    }
-    [Flurry logEvent:kQiushiRefreshed];
+    return [[CommonHelper getTargetBookPath:model.destPath] stringByAppendingPathComponent:model.fileName];
 }
-#pragma mark - TableView*
+-(NSString*)startNetworkRequest
+{
+    //start request for data
+    FileModel* model = [self fileModel];
+    [SharedDelegate beginRequest:model isBeginDown:YES setAllowResumeForFileDownloads:NO];
+    
+    return [[CommonHelper getTargetBookPath:model.destPath] stringByAppendingPathComponent:model.fileName];
+}
 
+#pragma mark
+//merge and remove duplicate items
+-(void)mergeArray:(NSMutableArray*)desArray withObjects:(NSArray *)objects
+{
+    if(!desArray || !objects)
+    {
+        return;
+    }
+    
+    for (NSObject* obj in objects) {
+        if(NSNotFound==[desArray indexOfObject:obj])
+        {
+            [desArray addObject:obj];
+        }
+    }
+}
+
+#pragma mark - TableView*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.list count];
 }
@@ -229,7 +235,7 @@ UITableViewDelegate
         cell.txtTag.text = @"";
     }
     //设置up ，down and commits
-//    [cell.goodbtn setTitle:[NSString stringWithFormat:@"%d",qs.upCount] forState:UIControlStateNormal];
+    //    [cell.goodbtn setTitle:[NSString stringWithFormat:@"%d",qs.upCount] forState:UIControlStateNormal];
     [cell.goodbtn setTitle:NSLocalizedString(@"add2FavTip", "") forState:UIControlStateNormal];
     [cell.badbtn setTitle:NSLocalizedString(@"share2WixinChat", "")  forState:UIControlStateNormal];
     [cell.commentsbtn setTitle:NSLocalizedString(@"share2WixinFriends", "") forState:UIControlStateNormal];
@@ -248,12 +254,11 @@ UITableViewDelegate
 #pragma mark - PullingRefreshTableViewDelegate
 - (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
     self.refreshing = YES;
-    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
+    [self performSelector:@selector(refreshData) withObject:nil afterDelay:1.f];
 }
 
-
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
-    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.f];
+    [self performSelector:@selector(loadMoreData) withObject:nil afterDelay:1.f];
 }
 
 #pragma mark - Scroll
@@ -269,34 +274,12 @@ UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-#if 0
-    CommentsViewController *demoView=[[CommentsViewController alloc]initWithNibName:@"CommentsViewController" bundle:nil];
-    demoView.qs = [self.list objectAtIndex:indexPath.row];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.view.superview addSubview:demoView.view];
-    [UIView beginAnimations:nil context:nil];
-    //指定动画的持续时间
-    [UIView setAnimationDuration:1];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.view.superview cache:YES];
-    
-    [UIView commitAnimations];
-#endif
     ContentCellModel *qs = [self.list objectAtIndex:[indexPath row]];
-
+    
     ImageViewController* detail = [[[ImageViewController alloc]init]autorelease];
     
     [detail initWithData:qs.content imageUrl:qs.imageMidURL placeHolderImageUrl:qs.imageURL imageWidth:1 imageHeight:1];
 	[self.navigationController pushViewController:detail animated:YES];
-}
-
-#pragma mark - LoadPage
--(void) LoadPageOfQiushiType:(QiuShiType) type Time:(QiuShiTime) time
-{
-    self.Qiutype = type;
-    self.QiuTime = time;
-    self.page =0;
-    [self.tableView launchRefreshing];
 }
 
 
