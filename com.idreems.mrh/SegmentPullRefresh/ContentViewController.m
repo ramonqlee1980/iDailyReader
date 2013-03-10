@@ -133,6 +133,13 @@ UITableViewDelegate
 
 
 #pragma common
+-(void)tableViewDidFinishedLoading
+{
+    if (self.refreshing) {
+        self.refreshing = NO;
+    }
+    [self.tableView tableViewDidFinishedLoading];    
+}
 -(void)didGetTimeLine:(NSNotification*)notification
 {
     if(notification && [notification.object isKindOfClass:[NSError class]])//error

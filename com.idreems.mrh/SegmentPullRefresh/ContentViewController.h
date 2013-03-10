@@ -15,4 +15,5 @@
 @property(nonatomic,assign)id<PullingRefreshDelegate> delegate;
 
 -(void)launchRefreshing;
+-(void)tableViewDidFinishedLoading;
 @end

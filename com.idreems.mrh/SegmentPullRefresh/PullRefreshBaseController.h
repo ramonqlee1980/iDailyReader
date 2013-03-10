@@ -8,4 +8,5 @@
 }
 @property (nonatomic,retain) ContentViewController *m_contentViewController;
 
+-(void)hideContentView:(BOOL)hide;
 @end

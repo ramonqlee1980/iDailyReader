@@ -7,7 +7,13 @@
 {
     return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
-
+-(void)hideContentView:(BOOL)hide
+{
+    if (self.m_contentViewController) {
+        self.m_contentViewController.view.hidden = hide;
+        [self.m_contentViewController tableViewDidFinishedLoading];
+    }
+}
 #pragma mark view lifecycle
 - (void)viewDidLoad
 {

@@ -5,12 +5,13 @@
 #import "YouMiWall.h"
 #import "MobiSageRecommendSDK.h"
 #import <immobSDK/immobView.h>
+#import "PullRefreshBaseController.h"
 
 #ifdef kETMobOn
 #import "ETMobAdWall.h"
 #endif
 
-@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate
+@interface RootViewController : PullRefreshBaseController<PullingRefreshDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate
 #ifdef kETMobOn
 ,ETMobAdWallDelegate
 #endif

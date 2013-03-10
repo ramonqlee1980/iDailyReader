@@ -18,8 +18,8 @@
 #define FPhoto    2
 
 #define kFileDir @"EMData"
-#define kRefreshFileName @"EMRefresh"
-#define kLoadMoreFileName @"EMLoadmore"
+#define kRefreshFileName @"Refresh"
+#define kLoadMoreFileName @"Loadmore"
 
 #define kInitPage 1
 
@@ -80,8 +80,8 @@
         if ([dictionary objectForKey:rootItem]) {
             NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
             for (NSDictionary *qiushi in array) {
-                ContentCellModel *qs = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
-                [dataArray addObject:qs];
+                ContentCellModel *model = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
+                [dataArray addObject:model];
             }
         }
     }
@@ -96,10 +96,11 @@
     
     UISegmentedControl *btn =(UISegmentedControl *) sender;
     //same?
-    if (selectedSegmentIndex!=btn.selectedSegmentIndex) {
-        [self.m_contentViewController launchRefreshing];
+    if (selectedSegmentIndex==btn.selectedSegmentIndex) {
+        return;
     }
-    selectedSegmentIndex = btn.selectedSegmentIndex;    
+    selectedSegmentIndex = btn.selectedSegmentIndex;
+    [self.m_contentViewController launchRefreshing];
 }
 
 -(void)loadSegmentBar
@@ -123,6 +124,8 @@
 	self.navigationItem.titleView = segmentedControl;
 	[segmentedControl release];
 }
+
+
 #pragma mark view lifecycle
 - (void)viewDidLoad
 {
@@ -130,12 +133,14 @@
     
     page = kInitPage;
     self.m_contentViewController.delegate = self;
+    [self loadSegmentBar];
+    
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem = backButton;
     [backButton release];
     
-    [self loadSegmentBar];
+    
 }
 
 -(void)dealloc

@@ -12,6 +12,9 @@
 #import "Flurry.h"
 //#import "WapsOffer/AppConnect.h"
 //#import "MiidiAdWall.h"
+#import "FileModel.h"
+#import "CJSONDeserializer.h"
+#import "ContentCellModel.h"
 
 #define kTextLabeFontSize 25
 #define kDetailTextLableFontSize 20
@@ -24,6 +27,17 @@
 #define kLocalContent 0
 #define kOnlineContent 1
 
+
+#define FTop      0
+#define FRecent   1
+#define FPhoto    2
+
+#define kFileDir @"RootData"
+#define kRefreshFileName @"Refresh"
+#define kLoadMoreFileName @"Loadmore"
+
+#define kInitPage 1
+
 @interface RootViewController()
 {
     BOOL mYoumiFeaturedWallShown;
@@ -32,6 +46,10 @@
     BOOL mYoumiFeaturedWallShouldShow;//time's up for the next youmi wall show
     BOOL mYoumiFeatureWallShowCount;
 }
+
+@property(nonatomic,assign)NSUInteger page;
+@property(nonatomic,assign)NSUInteger selectedSegmentIndex;
+-(void) SegmentBtnClicked:(id)sender;
 
 -(void)closeAds:(BOOL)popClosingTip;
 -(void)loadNeededView;
@@ -45,6 +63,7 @@
 @synthesize data;
 @synthesize tableView;
 @synthesize recmdView = _recmdView;
+@synthesize page,selectedSegmentIndex;
 
 
 #pragma mark -
@@ -136,9 +155,13 @@
 
 - (void)viewDidLoad
 {
-    [self loadSegmentBar];
-    [self loadNeededView];
     [super viewDidLoad];
+    page = kInitPage;
+    self.m_contentViewController.delegate = self;
+    [self loadSegmentBar];
+    
+    [self loadNeededView];
+    
     
     [self loadAdsageRecommendView:NO];
     
@@ -580,7 +603,58 @@
 {
     return self;
 }
-#pragma util
+
+
+#pragma  PullingRefreshDelegate
+-(void)refreshData:(FileModel*)fileModel
+{
+    NSString* url = [self getUrl];
+    if (!url || url.length==0) {
+        [super hideContentView:YES];
+        return;
+    }
+    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    
+    fileModel.destPath = kFileDir;
+    fileModel.fileName = [NSString stringWithFormat:@"%@%d",kRefreshFileName,selectedSegmentIndex];
+    
+    [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+}
+-(void)loadMoreData:(FileModel*)fileModel
+{
+    NSString* url = [self getUrl];
+    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    
+    fileModel.destPath = kFileDir;
+    fileModel.fileName = [NSString stringWithFormat:@"%@%d",kLoadMoreFileName,selectedSegmentIndex];
+    
+    [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+}
+
+-(NSArray*)parseData:(NSData*)stream
+{
+    //TODO::parse data
+    NSMutableArray* dataArray = [[NSMutableArray alloc]initWithCapacity:0];
+    if (stream) {
+        NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:stream error:nil];
+#ifdef kIdreemsServerEnabled
+        NSString* rootItem = @"data";
+#else
+        NSString* rootItem = @"items";
+#endif
+        if ([dictionary objectForKey:rootItem]) {
+            NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
+            for (NSDictionary *qiushi in array) {
+                ContentCellModel *model = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
+                [dataArray addObject:model];
+            }
+        }
+    }
+    return dataArray;
+}
+
+#pragma mark segmentbar
+
 -(void)loadSegmentBar
 {
     const CGFloat kNavigationBarInnerViewMargin = 7;
@@ -591,36 +665,40 @@
                                    NSLocalizedString(@"kOnlineContent", @""),
 								   nil];
 	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
-	segmentedControl.selectedSegmentIndex = kLocalContent;//the middle one
+    selectedSegmentIndex = kLocalContent;
+	segmentedControl.selectedSegmentIndex = kLocalContent;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 400, segmentedControlHeight);
-	[segmentedControl addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventValueChanged];
-	
-    //	defaultTintColor = [segmentedControl.tintColor retain];	// keep track of this for later
+	[segmentedControl addTarget:self action:@selector(SegmentBtnClicked:) forControlEvents:UIControlEventValueChanged];
     
 	self.navigationItem.titleView = segmentedControl;
 	[segmentedControl release];
 }
-
--(void) BtnClicked:(id)sender
+-(void) SegmentBtnClicked:(id)sender
 {
-    UISegmentedControl *btn =(UISegmentedControl *) sender;
-    switch (btn.selectedSegmentIndex) {
-        case kLocalContent:
-        {
-            
-        }
-            break;
-        case kOnlineContent:
-        {
-           
-        }
-
-         break;
-        default:
-            break;
-    }
+    //reset page
+    page = kInitPage;//page starts from 1    
     
+    UISegmentedControl *btn =(UISegmentedControl *) sender;
+    //same?
+    if (selectedSegmentIndex==btn.selectedSegmentIndex) {
+        return;
+    }
+    selectedSegmentIndex = btn.selectedSegmentIndex;
+    tableView.hidden = (selectedSegmentIndex!=kLocalContent);
+    [super hideContentView:!tableView.hidden];
+    [self.m_contentViewController launchRefreshing];
 }
+
+#define kTag @"场面话" 
+#define OnlineContentURLString(count,page) [NSString stringWithFormat:@"http://www.idreems.com/wordpress/?json=get_tag_posts&slug=%@&count=%d&page=%d",kTag,count,page]
+
+-(NSString*)getUrl
+{
+    int count = 30;
+    
+    return (selectedSegmentIndex==kOnlineContent)?OnlineContentURLString(count,page):@"";
+}
+
 @end
