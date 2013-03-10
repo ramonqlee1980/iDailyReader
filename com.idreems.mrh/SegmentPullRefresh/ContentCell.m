@@ -210,7 +210,7 @@
         case FBAD:     //share to wixin chat
         {
             AppDelegate* delegate = SharedDelegate;
-            NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
+//            NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
 //            [delegate shareByShareKit:kWixinTitle description:description image:[UIImage imageWithData: [[SDWebImageManager sharedManager]imageWithURL:[NSURL URLWithString:imgUrl]]]];
             [delegate sendAppContent:kWixinTitle description:content image:imgUrl scene:WXSceneSession];
         }

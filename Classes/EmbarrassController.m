@@ -1,24 +1,23 @@
 //
-//  MainViewController.m
-//  NetDemo
+//  EmbarrassController.m
+//  HappyLife
 //
-//  Created by 海锋 周 on 12-6-6.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by ramonqlee on 3/10/13.
+//
 //
 
-#import "PullRefreshBaseController.h"
+#import "EmbarrassController.h"
 #import "Constants.h"
 #define FTop      0
 #define FRecent   1
 #define FPhoto    2
 
 
-@interface PullRefreshBaseController ()
+@interface EmbarrassController ()
 -(void) BtnClicked:(id)sender;
 @end
 
-@implementation PullRefreshBaseController
-@synthesize m_contentViewController;
+@implementation EmbarrassController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,27 +76,19 @@
 	[segmentedControl addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventValueChanged];
     
 	self.navigationItem.titleView = segmentedControl;
-	[segmentedControl release];   
+	[segmentedControl release];
 }
 #pragma mark view lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadSegmentBar];
-    
+   
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem = backButton;
     [backButton release];
     
-    // Do any additional setup after loading the view from its nib.
-    
-    //设置背景颜色
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
-    
-    //添加内容的TableView
-    self.m_contentViewController = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
-    [self.view addSubview:m_contentViewController.view];
+    [self loadSegmentBar];
 }
 
 #pragma mark util methods
@@ -105,6 +96,5 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
-
 
 @end

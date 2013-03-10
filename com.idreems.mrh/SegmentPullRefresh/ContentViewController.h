@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ContentCell.h"
 #import "ASIHTTPRequest.h"
-#import "tooles.h"
+#import "tools.h"
 @interface ContentViewController : UIViewController
 {
         //http 请求

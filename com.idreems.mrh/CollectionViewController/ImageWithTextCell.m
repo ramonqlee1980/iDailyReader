@@ -207,7 +207,7 @@
 -(void)share:(id)sender
 {
 #define kWeiboTxtMaxLength 140
-    UIImage* image = [UIImage imageNamed:@"icon-57"];
+//    UIImage* image = [UIImage imageNamed:@"icon-57"];
     NSString* title = NSLocalizedString(@"Title", @"");
     NSString* description = response.description;
     NSString* url = [CommonHelper appStoreUrl];

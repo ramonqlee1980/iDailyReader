@@ -286,14 +286,14 @@ static AdsConfig * sSharedInstance;
 {    
     NSDate *date = [NSDate date];
     
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//    NSTimeZone *zone = [NSTimeZone systemTimeZone];
     
-    NSInteger interval = [zone secondsFromGMTForDate: date];
+//    NSInteger interval = [zone secondsFromGMTForDate: date];
     
-    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];  
-    
-    NSLog(@"%@", localeDate);
-    return date;    
+//    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];  
+//    
+//    NSLog(@"%@", localeDate);
+    return date;
 }
 +(BOOL)neverCloseAds
 {

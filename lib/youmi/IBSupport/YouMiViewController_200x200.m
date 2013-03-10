@@ -18,7 +18,6 @@
     
     ////////////////[必填]///////////////////
     // 设置APP ID 和 APP Secret
-#warning 修改为你自己的AppID和AppSecret
     adView.appID = kGlobalYouMiAdAppID;  // 该地方请填写您直接的APP ID
     adView.appSecret = kGlobalYouMiAdAppSecret; // 该地方请填写您直接的APP Secret
     

@@ -6,10 +6,10 @@
 //  Copyright 2011 paduu. All rights reserved.
 //
 
-#import "tooles.h"
+#import "tools.h"
 #define MsgBox(msg) [self MsgBox:msg]
 
-@implementation tooles
+@implementation tools
 
 static MBProgressHUD *HUD;
 //程序中使用的，将日期显示成  2011年4月4日 星期一

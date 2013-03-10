@@ -8,12 +8,10 @@
 #import "ASIFormDataRequest.h"
 #import "RootViewController.h"
 #import "Flurry.h"
-//#import "JSONKit.h"
 #import "RootViewController.h"
 #import "SoftRcmListViewController.h"
 #import "FlipViewController.h"
 #import "iRate.h"
-#import "PullRefreshBaseController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MoreViewController.h"
 #import "InAppRageIAPHelper.h"
@@ -323,7 +321,7 @@
         return;
     }
     
-    NSDictionary *loginAuthenticationResponse = [jsonResponseString objectFromJSONString];
+    NSDictionary *loginAuthenticationResponse = [jsonResponseString performSelector:@selector(objectFromJSONString) withObject:nil];// objectFromJSONString];
     
     NSArray *configData = [loginAuthenticationResponse valueForKey:@"results"];
     NSString* releaseNotes;

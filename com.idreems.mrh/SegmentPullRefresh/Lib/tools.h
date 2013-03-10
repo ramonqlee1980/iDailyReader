@@ -1,5 +1,5 @@
 //
-//  tooles.h
+//  tools.h
 //  huoche
 //
 //  Created by kan xu on 11-1-22.
@@ -10,7 +10,7 @@
 #import "MBProgressHUD.h"
 
 
-@interface tooles : NSObject {	
+@interface tools : NSObject {	
 	
 
 

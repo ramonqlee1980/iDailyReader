@@ -294,15 +294,15 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
             CGFloat height = self.navigationController.navigationBar.frame.size.height;//self.recmdView.frame.size.height
             self.recmdView.frame = CGRectMake(0, 0, self.recmdView.frame.size.width, height);
             if ([self.recmdView respondsToSelector:@selector(setTitle:)]) {
-                [self.recmdView setTitle:@"免费热门应用推荐"];
+                [self.recmdView performSelector:@selector(setTitle:) withObject:@"免费热门应用推荐"];
             }
             if([self.recmdView respondsToSelector:@selector(setSubtitle:)])
             {
-                [self.recmdView setSubtitle:@"游戏，小说，团购，MM美图..."];
+                [self.recmdView performSelector:@selector(setSubtitle:) withObject:@"游戏，小说，团购，MM美图..."];
             }  
             if([self.recmdView respondsToSelector:@selector(setBanner:)])
             {
-                [self.recmdView setBanner:YES];
+                [self.recmdView performSelector:@selector(setBanner:) withObject:YES];
             }            
         }
         self.mAdView = self.recmdView; 
@@ -875,8 +875,8 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
     
-    NSString *productIdentifier = (NSString *) notification.object;
-    NSLog(@"Purchased: %@", productIdentifier);
+//    NSString *productIdentifier = (NSString *) notification.object;
+//    NSLog(@"Purchased: %@", productIdentifier);
     
     //hide purchase button
     self.navigationItem.rightBarButtonItem = nil;

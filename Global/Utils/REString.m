@@ -42,7 +42,7 @@
 			result = YES;
 			if (substring  != nil){
 				int i = 1;
-				for (i; i < nmatch; i++){
+				for (; i < nmatch; i++){
 					if (pmatch[i].rm_so == pmatch[i].rm_eo & pmatch[i].rm_so == -1) {
 						// there is no matching charaters for this partial expression
 						[substring addObject:@""];
