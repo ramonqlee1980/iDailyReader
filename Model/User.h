@@ -1,4 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "sqlite3.h"
+#import "GlobalCore.h"
+
+#import "DBConnection.h"
+#import "Statement.h"
 
 typedef enum {
     GenderUnknow = 0,
@@ -18,7 +23,6 @@ typedef enum {
 	NSString*   description; //个人描述
 	NSString*   url; //用户博客地址
 	NSString*   profileImageUrl; //自定义图像
-    UIImage*    avatarImage;//头像image
 	NSString*	profileLargeImageUrl; //大图像地址
 	NSString*	domain; //用户个性化URL
 	Gender		gender; //性别,m--男，f--女,n--未知
@@ -55,9 +59,15 @@ typedef enum {
 @property (nonatomic, assign) BOOL		verified;
 @property (nonatomic, assign) BOOL		allowAllActMsg;
 @property (nonatomic, assign) BOOL		geoEnabled;
-@property (nonatomic, retain) UIImage*    avatarImage;
+
++ (User*)userWithId:(long long)uid;
++ (User*)userWithScreenName:(NSString *)_screenName;
++ (User*)userWithJsonDictionary:(NSDictionary*)dic;
+
+- (id)initWithStatement:(Statement *)stmt;
 
 - (User*)initWithJsonDictionary:(NSDictionary*)dic;
 - (void)updateWithJSonDictionary:(NSDictionary*)dic;
-+ (User*)userWithJsonDictionary:(NSDictionary*)dic;
+
+- (void)updateDB;
 @end

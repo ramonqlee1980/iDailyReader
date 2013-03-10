@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
+#import "NSDictionaryAdditions.h"
 #import "User.h"
 #import "Status.h"
 

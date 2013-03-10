@@ -60,6 +60,29 @@
 }
 
 
+- (id)initWithStatement:(Statement *)stmt {
+	if (self = [super init]) {
+		draftId = [[stmt getString:0] retain];
+		draftType = [stmt getInt32:1];
+		draftStatus = [stmt getInt32:2];
+		statusId = [stmt getInt64:3];
+		commentId = [stmt getInt64:4];
+		recipientedId = [stmt getInt32:5];
+		commentOrRetweet = [stmt getInt32:6];
+		createdAt = [stmt getInt32:7];
+		text = [[stmt getString:8] retain];
+		latitude = [stmt getDouble:9];
+		longitude = [stmt getDouble:10];
+
+		NSData *data = [stmt getData:11];
+		if (data) {
+			attachmentData = [data retain];
+			attachmentImage = [[UIImage imageWithData:attachmentData] retain];
+		}
+	}
+	return self;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder {
 	if (self = [super init]) {
 		draftId = [[decoder decodeObjectForKey:@"draftId"] retain];
@@ -97,6 +120,42 @@
 	[encoder encodeDouble:latitude forKey:@"latitude"];
 	[encoder encodeDouble:longitude forKey:@"longitude"];
 	[encoder encodeObject:attachmentData forKey:@"attachmentImage"];
+}
+
+- (void)updateDB
+{
+    static Statement *stmt = nil;
+    if (stmt == nil) {
+        stmt = [DBConnection statementWithQuery:"REPLACE INTO drafts VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"];
+        [stmt retain];
+    }
+    [stmt bindString:draftId              forIndex:1];
+    [stmt bindInt32:draftType               forIndex:2];
+	[stmt bindInt32:draftStatus forIndex:3];
+    [stmt bindInt64:statusId         forIndex:4];
+    [stmt bindInt64:commentId         forIndex:5];
+    [stmt bindInt32:recipientedId         forIndex:6];
+	[stmt bindInt32:commentOrRetweet forIndex:7];
+    [stmt bindInt32:createdAt           forIndex:8];
+    [stmt bindString:text        forIndex:9];
+    [stmt bindDouble:latitude                forIndex:10];
+    [stmt bindDouble:longitude    forIndex:11];
+	[stmt bindData:attachmentData forIndex:12];
+	
+	int step = [stmt step];
+    if (step != SQLITE_DONE) {
+		NSLog(@"update error draft: %@.%d.%@", draftId, draftType, text);
+        [DBConnection alert];
+    }
+    [stmt reset];
+}
+
+
+- (void)deleteFromDB
+{
+    Statement *stmt = [DBConnection statementWithQuery:"DELETE FROM drafts WHERE draftId = ?"];
+    [stmt bindString:draftId forIndex:1];
+    [stmt step]; // ignore error
 }
 
 /*

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Statement.h"
+#import "DBConnection.h"
 
 typedef enum {
 	DraftTypeNewTweet,
@@ -53,5 +55,8 @@ typedef enum {
 
 - (id)initWithType:(DraftType)_draftType;
 
+- (void)updateDB;
+
+- (void)deleteFromDB;
 
 @end
