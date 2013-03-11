@@ -627,10 +627,7 @@ enum ShareOption
     mLoginWeiboCanceled = FALSE;
     
     [self loadAd];
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];  
-    [[self navigationItem] setBackBarButtonItem: newBackButton];  
-    [newBackButton release]; 
-    
+        
     // Do any additional setup after loading the view from its nib.
 //    self.title = [delegate getTitle:index.row];
     

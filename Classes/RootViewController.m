@@ -162,6 +162,16 @@
     
     [self loadNeededView];
     
+    UIButton* writebtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [writebtn setFrame:CGRectMake(0,0,32,32)];
+    [writebtn setImage:[UIImage imageNamed:@"icon_post_enable.png"] forState:UIControlStateNormal];
+    [writebtn addTarget:self action:@selector(WriteBtnClicked:) forControlEvents:UIControlEventTouchUpInside];    
+    UIBarButtonItem *rightButton = [[[UIBarButtonItem alloc] initWithCustomView:writebtn]autorelease];
+    [[self navigationItem] setRightBarButtonItem:rightButton];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+    [newBackButton release];
     
     [self loadAdsageRecommendView:NO];
     
@@ -178,12 +188,6 @@
     AppDelegate* delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     self.data = delegate.data;
-    
-    
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];
-    [[self navigationItem] setBackBarButtonItem: newBackButton];
-    [newBackButton release];
-    
     
     // Create a final modal view controller
     //	UIButton* modalViewButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -254,11 +258,6 @@
 
 - (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
 {    
-    //hide local tableview
-    if(selectedSegmentIndex==kOnlineContent)
-    {
-        return 0;
-    }
     NSInteger count = [data count]/kItemPerSection;//+[openApps count];
     NSLog(@"contentCount:%d",count);
     return count;//one for title,one for content
@@ -670,6 +669,7 @@
 {
     const CGFloat kNavigationBarInnerViewMargin = 7;
     const CGFloat segmentedControlHeight = self.navigationController.navigationBar.frame.size.height-kNavigationBarInnerViewMargin*2;
+    const CGFloat kItemWidth = 40;
     // segmented control as the custom title view
 	NSArray *segmentTextContent = [NSArray arrayWithObjects:
                                    NSLocalizedString(@"kLocalContent", @""),
@@ -680,11 +680,15 @@
 	segmentedControl.selectedSegmentIndex = kLocalContent;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-	segmentedControl.frame = CGRectMake(0, 0, 400, segmentedControlHeight);
+	segmentedControl.frame = CGRectMake(0, 0, segmentTextContent.count*kItemWidth, segmentedControlHeight);
 	[segmentedControl addTarget:self action:@selector(SegmentBtnClicked:) forControlEvents:UIControlEventValueChanged];
     
 	self.navigationItem.titleView = segmentedControl;
 	[segmentedControl release];
+}
+-(void)WriteBtnClicked:(id)sender
+{
+    
 }
 -(void) SegmentBtnClicked:(id)sender
 {
@@ -700,21 +704,17 @@
     selectedSegmentIndex = btn.selectedSegmentIndex;
     BOOL hide = (selectedSegmentIndex!=kLocalContent);
     
-    [tableView setHidden:hide];
-    if (hide) {        
-        [tableView removeFromSuperview];
-        self.tableView = nil;
-    }
-    else
-    {
-        [self loadNeededView];
-    }
-        
-    [super hideContentView:!hide];
-    if(hide)
-    {
-        [self.m_contentViewController launchRefreshing];
-    }
+    [UIView animateWithDuration:1 animations:^{
+        [self.tableView setHidden:hide];
+                
+        [super hideContentView:!hide];
+        if(hide)
+        {
+            [self.m_contentViewController launchRefreshing];
+        }
+    } completion:^(BOOL bl){
+
+    }];    
 }
 
 #define kTag @"场面话"
