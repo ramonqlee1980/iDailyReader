@@ -11,6 +11,7 @@
 
 @interface ContentViewController : UIViewController
 
+@property(nonatomic,retain) UINavigationController *customNavigationController;
 @property(nonatomic,assign)FileModel* fileModel;
 @property(nonatomic,assign)id<PullingRefreshDelegate> delegate;
 

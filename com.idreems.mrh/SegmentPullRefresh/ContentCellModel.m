@@ -10,15 +10,15 @@
 #import "NSString+HTML.h"
 
 @implementation ContentCellModel
-@synthesize imageMidURL;
-@synthesize imageURL;
+@synthesize largeImageUrl;
+@synthesize thumbnailUrl;
 @synthesize published_at;
 @synthesize tag;
-@synthesize qiushiID;
+@synthesize feedID;
 @synthesize content;
 @synthesize commentsCount;
 @synthesize downCount,upCount;
-@synthesize anchor;
+@synthesize author;
 
 -(id)initWithWordPressDictionary:(NSDictionary *)dictionary
 {
@@ -46,7 +46,7 @@
     if (self = [super init])
     {
         self.tag = [dictionary objectForKey:@"tag"];
-        self.qiushiID = [dictionary objectForKey:@"id"];
+        self.feedID = [dictionary objectForKey:@"id"];
 #ifdef kIdreemsServerEnabled
         self.content = [dictionary objectForKey:@"description"];
 #else
@@ -62,14 +62,14 @@
             self.imageURL = [dictionary objectForKey:@"thumbnailUrl"];
             self.imageMidURL = [dictionary objectForKey:@"largeUrl"];
 #else
-            self.imageURL = [dictionary objectForKey:@"image"];
+            self.thumbnailUrl = [dictionary objectForKey:@"image"];
             
             NSRange range = NSRangeFromString(@"0,4");
-            NSString* rangeId = [qiushiID substringWithRange:range];
-            NSString *newImageURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/small/%@",rangeId,qiushiID,imageURL];
-            NSString *newImageMidURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/medium/%@",rangeId,qiushiID,imageURL];
-            self.imageURL = newImageURL;
-            self.imageMidURL = newImageMidURL;
+            NSString* rangeId = [feedID substringWithRange:range];
+            NSString *newImageURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/small/%@",rangeId,feedID,thumbnailUrl];
+            NSString *newImageMidURL = [NSString stringWithFormat:@"http://img.qiushibaike.com/system/pictures/%@/%@/medium/%@",rangeId,feedID,thumbnailUrl];
+            self.thumbnailUrl = newImageURL;
+            self.largeImageUrl = newImageMidURL;
 #endif
         }
         
@@ -81,7 +81,11 @@
         if ((NSNull *)user != [NSNull null])
         {
             NSDictionary *user = [NSDictionary dictionaryWithDictionary:[dictionary objectForKey:@"user"]];
-            self.anchor = [user objectForKey:@"login"];
+            self.author = [user objectForKey:@"login"];
+            if(!self.author || self.author.length==0)
+            {
+                self.author = @"匿名";
+            }
         }
         
     }
@@ -89,11 +93,11 @@
 }
 
 - (void)dealloc {
-    self.imageURL = nil;
+    self.thumbnailUrl = nil;
     self.tag = nil;
-    self.qiushiID = nil;
+    self.feedID = nil;
     self.content = nil;
-    self.anchor = nil;
+    self.author = nil;
     [super dealloc];
 }
 

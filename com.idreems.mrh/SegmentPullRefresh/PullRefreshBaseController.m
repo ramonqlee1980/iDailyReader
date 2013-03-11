@@ -25,7 +25,9 @@
     
     //添加内容的TableView
     self.m_contentViewController = [[ContentViewController alloc]initWithNibName:@"ContentViewController" bundle:nil];
-
+    if (!self.m_contentViewController.navigationController) {
+        self.m_contentViewController.customNavigationController = self.navigationController;
+    }
     [self.view addSubview:m_contentViewController.view];
 }
 

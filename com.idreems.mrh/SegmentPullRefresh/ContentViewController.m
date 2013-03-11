@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ContentCell.h"
 #import "tools.h"
+#import "TextViewController.h"
 
 #define kTimelineJsonRefreshChanged @"kEMTimelineJsonRefreshChanged"
 #define kTimelineJsonLoadMoreChanged @"kEMTimelineJsonLoadMoreChanged"
@@ -32,6 +33,7 @@ UITableViewDelegate
 @synthesize refreshing = _refreshing;
 @synthesize delegate;
 @synthesize fileModel;
+@synthesize customNavigationController;
 
 
 - (void)dealloc{
@@ -39,6 +41,7 @@ UITableViewDelegate
     _list = nil;
     [self.tableView release];
     self.fileModel = nil;
+    self.customNavigationController = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
 }
@@ -267,9 +270,9 @@ UITableViewDelegate
     
     cell.txtContent.text =qs.content ;
     //设置图片
-    if (qs.imageURL!=nil && [qs.imageURL length]!=0) {
-        cell.imgUrl = qs.imageURL;
-        cell.imgMidUrl = qs.imageMidURL;
+    if (qs.thumbnailUrl!=nil && [qs.thumbnailUrl length]!=0) {
+        cell.imgUrl = qs.thumbnailUrl;
+        cell.imgMidUrl = qs.largeImageUrl;
         // cell.imgPhoto.hidden = NO;
     }else
     {
@@ -278,9 +281,9 @@ UITableViewDelegate
         // cell.imgPhoto.hidden = YES;
     }
     //设置用户名
-    if (qs.anchor!=nil && qs.anchor.length!=0)
+    if (qs.author!=nil && qs.author.length!=0)
     {
-        cell.txtAnchor.text = qs.anchor;
+        cell.txtAnchor.text = qs.author;
     }else
     {
         cell.txtAnchor.text = @"匿名";
@@ -309,7 +312,36 @@ UITableViewDelegate
 {
     return [self getTheHeight:indexPath.row];
 }
-
+- (void)tableView:(UITableView *)tView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"didSelectRowAtIndexPath:%d",indexPath.row);
+    
+    UIViewController *controller = nil;
+    ContentCellModel *data = [self.list objectAtIndex:[indexPath row]];
+    if (!data.largeImageUrl || data.largeImageUrl.length==0) {
+        TextViewController *detail = [(TextViewController*)[[TextViewController alloc] init]autorelease];
+        detail.title = data.author;
+        detail.content = data.content;
+        detail.hidesBottomBarWhenPushed = YES;
+        controller = detail;        
+    }
+    else
+    {
+        ImageViewController* detail = [[[ImageViewController alloc]init]autorelease];
+        [detail initWithData:data.content imageUrl:data.largeImageUrl placeHolderImageUrl:data.thumbnailUrl imageWidth:1 imageHeight:1];
+        controller = detail;
+    }
+    if(self.navigationController)
+    {
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else
+    {
+        [self.customNavigationController pushViewController:controller animated:YES];
+    }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 #pragma mark - PullingRefreshTableViewDelegate
 - (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
     self.refreshing = YES;
@@ -330,18 +362,6 @@ UITableViewDelegate
     [self.tableView tableViewDidEndDragging:scrollView];
 }
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ContentCellModel *qs = [self.list objectAtIndex:[indexPath row]];
-    
-    ImageViewController* detail = [[[ImageViewController alloc]init]autorelease];
-    
-    [detail initWithData:qs.content imageUrl:qs.imageMidURL placeHolderImageUrl:qs.imageURL imageWidth:1 imageHeight:1];
-	[self.navigationController pushViewController:detail animated:YES];
-}
-
-
 -(CGFloat) getTheHeight:(NSInteger)row
 {
     CGFloat contentWidth = 280;
@@ -355,7 +375,7 @@ UITableViewDelegate
     CGSize size = [content sizeWithFont:font constrainedToSize:CGSizeMake(contentWidth, 220) lineBreakMode:UILineBreakModeTailTruncation];
     CGFloat height;
     const NSInteger bottomMargin = 140;
-    if (qs.imageURL==nil) {
+    if (qs.thumbnailUrl==nil) {
         height = size.height+bottomMargin;//140;
     }else
     {

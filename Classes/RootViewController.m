@@ -302,18 +302,17 @@
     NSString* title = [delegate getTitle:row];
     NSString* content = [delegate getContent:row];
     
-    TextViewController *detail = (TextViewController*)[[TextViewController alloc] init];
-    detail.title = title;
-    detail.content = content;
-    detail.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:detail animated:YES];
-    [detail release];
-    
     //flurry
     
     NSDictionary *dict = [NSDictionary dictionaryWithObject:NSStringFromCGPoint(CGPointMake(0, row)) forKey:title];
     [Flurry logEvent:kFlurryDidReviewContentFromMainList withParameters:dict];
     
+    TextViewController *detail = (TextViewController*)[[TextViewController alloc] init];
+    detail.title = title;
+    detail.content = content;
+    detail.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detail animated:YES];
+    [detail release];   
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
