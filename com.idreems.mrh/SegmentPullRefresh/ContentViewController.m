@@ -63,7 +63,7 @@ UITableViewDelegate
     fileModel = [[FileModel alloc]init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetTimeLine:)    name:kTimelineJsonRefreshChanged          object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetTimeLine:)    name:kTimelineJsonLoadMoreChanged          object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didGetMore:)    name:kTimelineJsonLoadMoreChanged          object:nil];
     
     [self launchRefreshing];
     
@@ -101,6 +101,41 @@ UITableViewDelegate
         [delegate loadMoreData:fileModel];
     }
 }
+
+-(void)didGetMoreOnMainThread:(NSNotification*)notification
+{
+    //    [Flurry logEvent:@"RequestQiushiSuccess"];
+    
+    if (self.refreshing) {
+        //        self.page = 1;
+        self.refreshing = NO;
+    }
+    
+    if(delegate)
+    {
+        NSString* fileName = [self cacheFile];
+        
+        //clear and refresh or keep current data
+        NSArray* array = [delegate parseData:[NSData dataWithContentsOfFile:fileName]];
+        if (array && [array count]) {            
+            [self.list addObjectsFromArray:array];
+        }
+    }
+    
+    //    if (self.page >=20) {
+    //        [self.tableView tableViewDidFinishedLoadingWithMessage:@"下面没有了.."];
+    //        self.tableView.reachedTheEnd  = YES;
+    //    }
+    //    else
+    {
+        [self.tableView tableViewDidFinishedLoading];
+        self.tableView.reachedTheEnd  = NO;
+        [self.tableView reloadData];
+    }
+    //    [Flurry logEvent:kQiushiRefreshed];
+    
+}
+
 -(void)didGetTimeLineOnMainThread:(NSNotification*)notification
 {
     //    [Flurry logEvent:@"RequestQiushiSuccess"];
@@ -108,13 +143,18 @@ UITableViewDelegate
     if (self.refreshing) {
         //        self.page = 1;
         self.refreshing = NO;
-        [self.list removeAllObjects];
     }
     
     if(delegate)
     {
         NSString* fileName = [self cacheFile];
-        [self.list addObjectsFromArray:[delegate parseData:[NSData dataWithContentsOfFile:fileName]]];
+        
+        //clear and refresh or keep current data
+        NSArray* array = [delegate parseData:[NSData dataWithContentsOfFile:fileName]];
+        if (array && [array count]) {
+            [self.list removeAllObjects];
+            [self.list addObjectsFromArray:array];
+        }        
     }
     
     //    if (self.page >=20) {
@@ -151,6 +191,18 @@ UITableViewDelegate
         [self performSelectorOnMainThread:@selector(didGetTimeLineOnMainThread:) withObject:notification waitUntilDone:YES];
     }
 }
+-(void)didGetMore:(NSNotification*)notification
+{
+    if(notification && [notification.object isKindOfClass:[NSError class]])//error
+    {
+        [self GetErr:nil];
+    }
+    else
+    {
+        [self performSelectorOnMainThread:@selector(didGetMoreOnMainThread:) withObject:notification waitUntilDone:YES];
+    }
+}
+
 -(void) GetErr:(ASIHTTPRequest *)request
 {
     self.refreshing = NO;

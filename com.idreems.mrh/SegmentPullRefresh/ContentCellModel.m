@@ -7,6 +7,7 @@
 //
 
 #import "ContentCellModel.h"
+#import "NSString+HTML.h"
 
 @implementation ContentCellModel
 @synthesize imageMidURL;
@@ -19,6 +20,27 @@
 @synthesize downCount,upCount;
 @synthesize anchor;
 
+-(id)initWithWordPressDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        self.content = [dictionary objectForKey:@"content"];
+        if([self.content respondsToSelector:@selector(stringByConvertingHTMLToPlainText)])
+        {
+            self.content = [self.content stringByConvertingHTMLToPlainText];
+        }
+        
+        NSDateFormatter* formatter = [[[NSDateFormatter alloc]init]autorelease];
+        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate* date = [formatter dateFromString:[dictionary objectForKey:@"modified"]];
+        
+        NSTimeZone* timeZone = [NSTimeZone systemTimeZone];
+        NSDate* newDate = (NSDate*)[date dateByAddingTimeInterval:[timeZone secondsFromGMTForDate:date]];
+        
+        self.published_at = [newDate timeIntervalSince1970];
+        self.commentsCount = [[dictionary objectForKey:@"comments_count"] intValue];
+    }
+    return self;
+}
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init])
@@ -34,7 +56,7 @@
         self.commentsCount = [[dictionary objectForKey:@"comments_count"] intValue];
         
         id image = [dictionary objectForKey:@"image"];
-        if ((NSNull *)image != [NSNull null]) 
+        if ((NSNull *)image != [NSNull null])
         {
 #ifdef kIdreemsServerEnabled
             self.imageURL = [dictionary objectForKey:@"thumbnailUrl"];
@@ -56,12 +78,12 @@
         self.upCount = [[vote objectForKey:@"up"]intValue];
         
         id user = [dictionary objectForKey:@"user"];
-        if ((NSNull *)user != [NSNull null]) 
+        if ((NSNull *)user != [NSNull null])
         {
             NSDictionary *user = [NSDictionary dictionaryWithDictionary:[dictionary objectForKey:@"user"]];
             self.anchor = [user objectForKey:@"login"];
         }
-    
+        
     }
     return self;
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DB36016EE23520049A68C /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DB35D16EE23520049A68C /* GTMNSString+HTML.m */; };
+		040DB36116EE23520049A68C /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DB35F16EE23520049A68C /* NSString+HTML.m */; };
 		0411410E164DC913003A1382 /* 640_960_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410C164DC913003A1382 /* 640_960_splash.png */; };
 		0411410F164DC913003A1382 /* 640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 0411410D164DC913003A1382 /* 640_960.png */; };
 		04235CA116ADEC6400D620CA /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04235C9916ADEC6300D620CA /* AGCommon.framework */; };
@@ -563,6 +565,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040DB35C16EE23520049A68C /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		040DB35D16EE23520049A68C /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		040DB35E16EE23520049A68C /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		040DB35F16EE23520049A68C /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		0411410C164DC913003A1382 /* 640_960_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960_splash.png; sourceTree = "<group>"; };
 		0411410D164DC913003A1382 /* 640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640_960.png; sourceTree = "<group>"; };
 		04235C9916ADEC6300D620CA /* AGCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AGCommon.framework; sourceTree = "<group>"; };
@@ -1485,6 +1491,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040DB35B16EE23520049A68C /* NSString-HTML */ = {
+			isa = PBXGroup;
+			children = (
+				040DB35C16EE23520049A68C /* GTMNSString+HTML.h */,
+				040DB35D16EE23520049A68C /* GTMNSString+HTML.m */,
+				040DB35E16EE23520049A68C /* NSString+HTML.h */,
+				040DB35F16EE23520049A68C /* NSString+HTML.m */,
+			);
+			path = "NSString-HTML";
+			sourceTree = "<group>";
+		};
 		041140EB164DC0DB003A1382 /* splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -1544,6 +1561,7 @@
 		0481290916E0163300B1CDF6 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				040DB35B16EE23520049A68C /* NSString-HTML */,
 				04AF6A8A16ECA6570043B136 /* SegmentPullRefresh */,
 				0481290A16E0163300B1CDF6 /* Additions */,
 				30998CC1155E7472008EAEAC /* adsConfig */,
@@ -3889,6 +3907,8 @@
 				04AF6B8B16ECA6580043B136 /* SHSShareViewController.m in Sources */,
 				04AF6B8C16ECA6580043B136 /* tools.m in Sources */,
 				04AF6B8D16ECA6580043B136 /* PullRefreshBaseController.m in Sources */,
+				040DB36016EE23520049A68C /* GTMNSString+HTML.m in Sources */,
+				040DB36116EE23520049A68C /* NSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

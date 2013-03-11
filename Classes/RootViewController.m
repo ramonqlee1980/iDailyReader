@@ -253,7 +253,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
-{
+{    
+    //hide local tableview
+    if(selectedSegmentIndex==kOnlineContent)
+    {
+        return 0;
+    }
     NSInteger count = [data count]/kItemPerSection;//+[openApps count];
     NSLog(@"contentCount:%d",count);
     return count;//one for title,one for content
@@ -283,8 +288,7 @@
     
     cell.detailTextLabel.numberOfLines = 3;
     cell.detailTextLabel.textColor = [UIColor blueColor];
-    
-    
+   
     return cell;
 }
 
@@ -608,12 +612,12 @@
 #pragma  PullingRefreshDelegate
 -(void)refreshData:(FileModel*)fileModel
 {
-    NSString* url = [self getUrl];
+    NSString* url = [self getUrl:kInitPage];
     if (!url || url.length==0) {
         [super hideContentView:YES];
         return;
     }
-    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    fileModel.fileURL = url;//for the latest page
     
     fileModel.destPath = kFileDir;
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kRefreshFileName,selectedSegmentIndex];
@@ -622,8 +626,12 @@
 }
 -(void)loadMoreData:(FileModel*)fileModel
 {
-    NSString* url = [self getUrl];
-    fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
+    NSString* url = [self getUrl:++self.page];
+    if (!url || url.length==0) {
+        [super hideContentView:YES];
+        return;
+    }
+    fileModel.fileURL = url;//for the latest page
     
     fileModel.destPath = kFileDir;
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kLoadMoreFileName,selectedSegmentIndex];
@@ -637,18 +645,18 @@
     NSMutableArray* dataArray = [[NSMutableArray alloc]initWithCapacity:0];
     if (stream) {
         NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:stream error:nil];
-#ifdef kIdreemsServerEnabled
-        NSString* rootItem = @"data";
-#else
-        NSString* rootItem = @"items";
-#endif
+        NSString* rootItem = @"posts";
         if ([dictionary objectForKey:rootItem]) {
             NSArray *array = [NSArray arrayWithArray:[dictionary objectForKey:rootItem]];
-            for (NSDictionary *qiushi in array) {
-                ContentCellModel *model = [[[ContentCellModel alloc]initWithDictionary:qiushi]autorelease];
+            for (NSDictionary *wordpress in array) {
+                ContentCellModel *model = [[[ContentCellModel alloc]initWithWordPressDictionary:wordpress]autorelease];
                 [dataArray addObject:model];
             }
         }
+    }
+    //not more content,keep initial page
+    if ([dataArray count]==0) {
+        page = kInitPage;
     }
     return dataArray;
 }
@@ -685,20 +693,27 @@
     if (selectedSegmentIndex==btn.selectedSegmentIndex) {
         return;
     }
+    
     selectedSegmentIndex = btn.selectedSegmentIndex;
-    tableView.hidden = (selectedSegmentIndex!=kLocalContent);
-    [super hideContentView:!tableView.hidden];
-    [self.m_contentViewController launchRefreshing];
+    BOOL hide = (selectedSegmentIndex!=kLocalContent);
+    [tableView setHidden:hide];
+    [tableView reloadData];
+    
+    [super hideContentView:!hide];
+    if(hide)
+    {
+        [self.m_contentViewController launchRefreshing];
+    }
 }
 
-#define kTag @"场面话" 
+#define kTag @"场面话"
 #define OnlineContentURLString(count,page) [NSString stringWithFormat:@"http://www.idreems.com/wordpress/?json=get_tag_posts&slug=%@&count=%d&page=%d",kTag,count,page]
 
--(NSString*)getUrl
+-(NSString*)getUrl:(NSInteger)currentPage
 {
     int count = 30;
     
-    return (selectedSegmentIndex==kOnlineContent)?OnlineContentURLString(count,page):@"";
+    return (selectedSegmentIndex==kOnlineContent)?OnlineContentURLString(count,currentPage):@"";
 }
 
 @end

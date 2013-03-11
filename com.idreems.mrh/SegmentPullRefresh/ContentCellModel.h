@@ -45,5 +45,6 @@
 @property (nonatomic,assign) int upCount;
 @property (nonatomic,copy) NSString *anchor;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+-(id)initWithWordPressDictionary:(NSDictionary *)dictionary;
 
 @end
