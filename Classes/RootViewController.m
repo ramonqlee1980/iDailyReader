@@ -699,9 +699,17 @@
     
     selectedSegmentIndex = btn.selectedSegmentIndex;
     BOOL hide = (selectedSegmentIndex!=kLocalContent);
-    [tableView setHidden:hide];
-    [tableView reloadData];
     
+    [tableView setHidden:hide];
+    if (hide) {        
+        [tableView removeFromSuperview];
+        self.tableView = nil;
+    }
+    else
+    {
+        [self loadNeededView];
+    }
+        
     [super hideContentView:!hide];
     if(hide)
     {
