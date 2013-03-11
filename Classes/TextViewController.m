@@ -21,19 +21,67 @@
 
 const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 
+enum ShareOption
+{
+    kShareByEmailOption = 0
+};
+
 @interface TextViewController()
 
+{
+    UIView *contentView;
+    UITextView* textView;
+    AppDelegate* delegate;
+    UIView* mAdView;
+    UITabBarItem *mAdsSwitchBarItem;
+    
+    OAuthEngine				*_engine;
+    BOOL mWeibo;
+    BOOL mLoginWeiboCanceled;
+    BOOL mAdsWallShouldShow;
+    BOOL _tempCloseRequest;
+    MobiSageRecommendView *_recmdView;
+    BOOL mWallOpened;//open ad wall
+    NSString* mWallName;
+    UIView* mWall;
+    
+    MBProgressHUD *_hud;
+}
 -(void)setRightAdButton:(BOOL)closeAdsButton;
 -(void)closeAds:(BOOL)popClosingTip;
 -(void)closeAdsTemp;
 
 
+@property (retain) MBProgressHUD *hud;
+@property(nonatomic, retain) MobiSageRecommendView *recmdView;
+@property (nonatomic, retain) IBOutlet UITabBarItem *mAdsSwitchBarItem;
+@property(nonatomic, retain) UIView *mAdView;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property(nonatomic, retain) IBOutlet UIView *contentView;
+
+
+- (IBAction)compose:(id)sender;
+- (IBAction)feedback:(id)sender;
+- (IBAction)signOut:(id)sender;
+- (IBAction)closeAd:(id)sender;
+-(IBAction)emailShare;
+-(IBAction)add2Favorate;
+-(IBAction)share2WixinChat;
+-(IBAction)share2WixinFriends;
+-(IBAction)changeColor;
+
+-(void)launchMailAppOnDevice:(BOOL)feedback;
+-(void)displayComposerSheet:(BOOL)feedback;
+
+-(void)loadAd;
+- (void)adjustAdSize;
 @end
 
 @implementation TextViewController
 
-@synthesize contentView,textView,index,mAdView,mAdsSwitchBarItem;
+@synthesize contentView,textView,mAdView,mAdsSwitchBarItem;
 @synthesize recmdView = _recmdView;
+@synthesize content;
 #pragma mark immob delegate
 /**
  *email phone sms等所需要
@@ -404,16 +452,6 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 	NSLog(@"The view did Dismiss Full Screen");
 }
 
--(id)initWithIndexPath:(NSIndexPath*)indexPath
-{
-    self = [super init];
-    if(self)
-    {
-        self.index = indexPath;
-        delegate = SharedDelegate;
-    }
-    return self;
-}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -451,15 +489,15 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
     //    NSString *recipients = @"mailto:first@example.com?cc=second@example.com,third@example.com&subject=Hello from California!";
     //    NSString *body = @"&body=It is raining in sunny California!";
     
-    NSString* content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,[delegate getContent:index.row]];
+    NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
     
     NSString * email = nil;
     if (feeback) {
-        email = [NSString stringWithFormat:@"mailto:&subject=%@&body=%@", [delegate getTitle:index.row], @""];
+        email = [NSString stringWithFormat:@"mailto:&subject=%@&body=%@", self.title, @""];
     }
     else
     {
-        email = [NSString stringWithFormat:@"mailto:feedback4iosapp@gmail.com&subject=%@&body=%@", [delegate getTitle:index.row], content];
+        email = [NSString stringWithFormat:@"mailto:feedback4iosapp@gmail.com&subject=%@&body=%@", self.title, description];
     }
     email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
@@ -476,20 +514,20 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
     MFMailComposeViewController *picker = [[[MFMailComposeViewController alloc] init]autorelease];
     picker.mailComposeDelegate = self;
     
-    [picker setSubject:[delegate getTitle:index.row]];
+    [picker setSubject:self.title];
     
     
-    NSString* content = nil;
+    NSString* description = nil;
     if(!feedback)
     {
-        content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,[delegate getContent:index.row]];
+        description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",delegate.mTrackViewUrl,delegate.mTrackName,content];
     }
     else
     {
-        content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n",delegate.mTrackViewUrl,delegate.mTrackName];
+        description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n",delegate.mTrackViewUrl,delegate.mTrackName];
     }
     
-    [picker setMessageBody:content isHTML:YES]; 
+    [picker setMessageBody:description isHTML:YES]; 
     
     
     // Set up recipients
@@ -594,13 +632,13 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
     [newBackButton release]; 
     
     // Do any additional setup after loading the view from its nib.
-    self.title = [delegate getTitle:index.row];
+//    self.title = [delegate getTitle:index.row];
     
     [self adjustAdSize];
     
     textView.editable = NO;
-    NSMutableString* content= [NSMutableString stringWithString:[delegate getContent:index.row]];
-    [content replaceOccurrencesOfString:@"\n\n" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [content length])];
+//    NSMutableString* content= [NSMutableString stringWithString:[delegate getContent:index.row]];
+//    [content replaceOccurrencesOfString:@"\n\n" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [content length])];
     NSString* tipContent = [NSString stringWithFormat:@"(字体过小，手势缩放下吧)\n\n%@",content];
     
     textView.text = tipContent;
@@ -627,10 +665,8 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 }
 -(IBAction)add2Favorate
 {     
-    NSString* title = self.title;
-    NSString* content = textView.text;
     
-    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:content,@"text",title,@"date", nil];
+    NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:content,@"text",self.title,@"date", nil];
     [[NSNotificationCenter defaultCenter]postNotificationName:kAdd2Favorite object:nil userInfo:dict];
     
 }
@@ -776,7 +812,7 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
     [_hud release];
     _hud = nil;
     
-    self.index = nil;   
+    self.content = nil;
     if ([mAdView isKindOfClass:[DoMobView class]]) {
         ((DoMobView*)mAdView).doMobDelegate = nil;
     }
@@ -823,23 +859,20 @@ const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 {
     NSString* title = self.title;
     NSString* url = ((AppDelegate*)SharedDelegate).mTrackViewUrl;
-    NSString* content = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",url,((AppDelegate*)SharedDelegate).mTrackName,textView.text];
+    NSString* description = [NSString stringWithFormat:@"<a href=\"%@\">%@</a>\r\n\n\n%@",url,((AppDelegate*)SharedDelegate).mTrackName,content];
     
     NSString* kEllipseString = @"...";
     const NSUInteger kEllipseLength = kEllipseString.length;
     const NSUInteger kTrim2Length = kWeiboMaxLength+kEllipseLength;
-    if (content.length>=kTrim2Length) {
-        content = [content substringToIndex:kTrim2Length];
-        content = [NSString stringWithFormat:@"%@%@",content,kEllipseString];
+    if (description.length>=kTrim2Length) {
+        description = [content substringToIndex:kTrim2Length];
+        description = [NSString stringWithFormat:@"%@%@",content,kEllipseString];
     }
-    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
-//    [SharedDelegate shareByShareKit:title description:content image:[UIImage imageNamed:@"icon-57"]];
+    [SharedDelegate sendAppContent:title description:description image:nil scene:WXSceneSession];
 }
 -(IBAction)share2WixinFriends
 {
-    NSString* title = self.title;
-    NSString* content = textView.text;
-    [SharedDelegate sendAppContent:title description:content image:nil scene:WXSceneSession];
+    [SharedDelegate sendAppContent:self.title description:content image:nil scene:WXSceneSession];
 }
 
 

@@ -298,15 +298,19 @@
     
     
     NSUInteger row = indexPath.row-[openApps count];
-    NSIndexPath* reIndexPath = [NSIndexPath indexPathForRow:row inSection:indexPath.section];
-    TextViewController *detail = (TextViewController*)[[TextViewController alloc] initWithIndexPath:reIndexPath];
+    AppDelegate* delegate = SharedDelegate;
+    NSString* title = [delegate getTitle:row];
+    NSString* content = [delegate getContent:row];
+    
+    TextViewController *detail = (TextViewController*)[[TextViewController alloc] init];
+    detail.title = title;
+    detail.content = content;
     detail.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:YES];
     [detail release];
     
     //flurry
-    AppDelegate* delegate = SharedDelegate;
-    NSString* title = [delegate getTitle:row];
+    
     NSDictionary *dict = [NSDictionary dictionaryWithObject:NSStringFromCGPoint(CGPointMake(0, row)) forKey:title];
     [Flurry logEvent:kFlurryDidReviewContentFromMainList withParameters:dict];
     
