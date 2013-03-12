@@ -15,6 +15,7 @@
 #import "FileModel.h"
 #import "CJSONDeserializer.h"
 #import "ContentCellModel.h"
+#import "ComposeViewController.h"
 
 #define kTextLabeFontSize 25
 #define kDetailTextLableFontSize 20
@@ -165,7 +166,7 @@
     UIButton* writebtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [writebtn setFrame:CGRectMake(0,0,32,32)];
     [writebtn setImage:[UIImage imageNamed:@"icon_post_enable.png"] forState:UIControlStateNormal];
-    [writebtn addTarget:self action:@selector(WriteBtnClicked:) forControlEvents:UIControlEventTouchUpInside];    
+    [writebtn addTarget:self action:@selector(WriteBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightButton = [[[UIBarButtonItem alloc] initWithCustomView:writebtn]autorelease];
     [[self navigationItem] setRightBarButtonItem:rightButton];
     
@@ -688,7 +689,9 @@
 }
 -(void)WriteBtnClicked:(id)sender
 {
-    
+    ComposeViewController *composeViewController = [[ComposeViewController alloc] init];
+	[self.navigationController pushViewController:composeViewController animated:YES];
+	[composeViewController release];
 }
 -(void) SegmentBtnClicked:(id)sender
 {
