@@ -9,7 +9,7 @@
 
 
 //close log
-#define __RELEASE__
+//#define __RELEASE__
 #ifdef __RELEASE__
 #define NSLog(...) {}
 #endif

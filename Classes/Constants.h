@@ -17,3 +17,5 @@
 #define kIconFun @"ICN_download"
 #define kIconFavorite @"ICN_badge-favorite"
 #define kIconSetting @"ICN_setting"
+
+#define kPostNotification @"kPostNotification"//notification for post

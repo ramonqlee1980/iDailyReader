@@ -1185,7 +1185,21 @@
     return NO;
 #endif
 }
-
+#pragma mark 
+-(void)beginPostRequest:(NSString*)url withDictionary:(NSDictionary*)postData
+{
+    if (!url || url.length==0) {
+        return;
+    }
+    NSString* tempUrl = ([url rangeOfString:@"%"].length==0)?[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:url;
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:tempUrl]];
+    for (NSString* key in postData) {
+        [request setPostValue:[postData objectForKey:key] forKey:key];
+    }
+    [request setDelegate:self];
+    [request setTimeOutSeconds:30.0f];
+    [request startAsynchronous];
+}
 #pragma mark HTTPRequest
 -(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow
 {
@@ -1254,15 +1268,21 @@
     NSError *error=[request error];
     NSLog(@"ASIHttpRequest出错了!%@",error);
     FileModel *fileModel=[request.userInfo objectForKey:@"File"];
+    
     if(fileModel && fileModel.notificationName && fileModel.notificationName.length)
     {
         [[NSNotificationCenter defaultCenter]postNotificationName:fileModel.notificationName object:error];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter]postNotificationName:kPostNotification object:error];
     }
 }
 
 -(void)requestStarted:(ASIHTTPRequest *)request
 {
     NSLog(@"开始了!");
+
 }
 - (void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
 {
@@ -1304,6 +1324,18 @@
     const NSUInteger kHTTPOK =  200;
     //[self playDownloadFinishSound];
     FileModel *fileInfo=(FileModel *)[request.userInfo objectForKey:@"File"];
+    if (!fileInfo) {//POST
+        NSError *error=nil;
+        if(kHTTPOK != request.responseStatusCode)
+        {
+            error=[request error];
+            NSLog(@"ASIHttpRequest出错了!%@",error);            
+        }
+        [[NSNotificationCenter defaultCenter]postNotificationName:kPostNotification object:error];
+        return;
+    }
+    
+    
     NSLog(@"fileInfo refCount:%d",[fileInfo retainCount]);
     fileInfo.fileType = [[request responseHeaders] objectForKey:@"Content-Type"];
     

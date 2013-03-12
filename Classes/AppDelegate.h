@@ -37,9 +37,6 @@
 
 @property(nonatomic,retain)NSMutableArray *downinglist;//正在下载的文件列表(ASIHttpRequest对象)
 
--(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow;
--(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown;
-
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) NSMutableArray* data;
@@ -50,6 +47,12 @@
 @property(nonatomic,retain) ASIHTTPRequest *asiRequest;
 @property(nonatomic,assign) BOOL isWhiteColor;
 
+
+
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow;
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown;
+
+-(void)beginPostRequest:(NSString*)url withDictionary:(NSDictionary*)postData;
 //current ads wall 
 -(NSString*)currentAdsWall;
 -(BOOL)shouldShowAdsWall;

@@ -15,12 +15,14 @@
 	UIImageView *imageView;
 	UIBarButtonItem *insertImgBtn;
 	BOOL isSending;
+    UIActivityIndicatorView* activityIndicator;
 	
 	GetImage *getImage;
 }
 @property (nonatomic,retain)IBOutlet UITextView *textView;
 @property (nonatomic,retain)IBOutlet UIImageView *imageView;
 @property (nonatomic,retain)IBOutlet UIBarButtonItem *insertImgBtn;
+@property (nonatomic,retain)IBOutlet UIActivityIndicatorView* activityIndicator;
 
 - (IBAction)insertImage:(id)sender;
 
