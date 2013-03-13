@@ -20,6 +20,15 @@
 @synthesize downCount,upCount;
 @synthesize author;
 
+-(id)initWithTitleAndContent:(NSString*)title content:(NSString*)c
+{
+    if(self = [super init])
+    {
+        self.content = c;
+    }
+    return self;
+}
+
 -(id)initWithWordPressDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {

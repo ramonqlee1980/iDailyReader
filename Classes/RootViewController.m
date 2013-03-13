@@ -62,7 +62,6 @@
 
 @implementation RootViewController
 @synthesize data;
-@synthesize tableView;
 @synthesize recmdView = _recmdView;
 @synthesize page,selectedSegmentIndex;
 
@@ -81,7 +80,7 @@
 -(void)loadNeededView
 {
     //add tip view
-    CGRect rc = [[UIScreen mainScreen]applicationFrame];
+    /*CGRect rc = [[UIScreen mainScreen]applicationFrame];
     rc.size.height = 0;
     
     CGRect frame = [[UIScreen mainScreen]applicationFrame];
@@ -92,6 +91,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
+    */
 }
 -(void)loadYoumiWall:(BOOL)credit
 {
@@ -160,6 +160,8 @@
     page = kInitPage;
     self.m_contentViewController.delegate = self;
     [self loadSegmentBar];
+    //TODO::load data
+    [self.m_contentViewController launchRefreshing];
     
     [self loadNeededView];
     
@@ -207,7 +209,7 @@
 
 -(void)updateTableView:(id)sender
 {
-    [tableView reloadData];
+//    [tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -244,80 +246,6 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
-
-#pragma mark -
-#pragma mark Table view methods
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 110.0;
-}
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tView numberOfRowsInSection:(NSInteger)section
-{    
-    NSInteger count = [data count]/kItemPerSection;//+[openApps count];
-    NSLog(@"contentCount:%d",count);
-    return count;//one for title,one for content
-}
-- (UITableViewCell *)tableView:(UITableView *)tView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static  NSString* cellIdentifier = @"kContentCell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell==nil) {
-        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier]autorelease];
-        //Add layout code here
-        
-    }
-    
-    //    if(indexPath.row<[SharedDelegate newContentCount] && [SharedDelegate showNewContent])
-    
-    NSUInteger index = indexPath.row-[openApps count];
-    cell.accessoryView = nil;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [SharedDelegate getTitle:index];
-    cell.detailTextLabel.text = [SharedDelegate getContent:index];
-    
-    
-    
-    cell.textLabel.textColor = [UIColor purpleColor];
-    //NSLog(@"fontSize:%f",cell.textLabel.font.pointSize);
-    
-    cell.detailTextLabel.numberOfLines = 3;
-    cell.detailTextLabel.textColor = [UIColor blueColor];
-   
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"didSelectRowAtIndexPath:%d",indexPath.row);
-    
-    
-    NSUInteger row = indexPath.row-[openApps count];
-    AppDelegate* delegate = SharedDelegate;
-    NSString* title = [delegate getTitle:row];
-    NSString* content = [delegate getContent:row];
-    
-    //flurry
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObject:NSStringFromCGPoint(CGPointMake(0, row)) forKey:title];
-    [Flurry logEvent:kFlurryDidReviewContentFromMainList withParameters:dict];
-    
-    TextViewController *detail = (TextViewController*)[[TextViewController alloc] init];
-    detail.title = title;
-    detail.content = content;
-    detail.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:detail animated:YES];
-    [detail release];   
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-}
-
 #pragma mark -
 #pragma mark Memory management
 
@@ -326,7 +254,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
     wall.delegate = nil;
     [wall release];
-    [tableView release];
     [data release];
     [openApps release];
     self.recmdView = nil;
@@ -421,7 +348,6 @@
             }
             [openApps addObjectsFromArray:apps];
             
-            [self.tableView reloadData];
         }
     }
 }
@@ -613,12 +539,11 @@
 
 
 #pragma  PullingRefreshDelegate
--(void)refreshData:(FileModel*)fileModel
+-(BOOL)refreshData:(FileModel*)fileModel
 {
     NSString* url = [self getUrl:kInitPage];
     if (!url || url.length==0) {
-        [super hideContentView:YES];
-        return;
+        return NO;
     }
     fileModel.fileURL = url;//for the latest page
     
@@ -626,13 +551,13 @@
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kRefreshFileName,selectedSegmentIndex];
     
     [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+    return YES;
 }
--(void)loadMoreData:(FileModel*)fileModel
+-(BOOL)loadMoreData:(FileModel*)fileModel
 {
     NSString* url = [self getUrl:++self.page];
     if (!url || url.length==0) {
-        [super hideContentView:YES];
-        return;
+        return NO;
     }
     fileModel.fileURL = url;//for the latest page
     
@@ -640,11 +565,15 @@
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kLoadMoreFileName,selectedSegmentIndex];
     
     [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+    return YES;
 }
 
 -(NSArray*)parseData:(NSData*)stream
 {
-    //TODO::parse data
+    //TODO::loca data
+    if (selectedSegmentIndex==kLocalContent) {
+        return [self provideLocalData];
+    }
     NSMutableArray* dataArray = [[NSMutableArray alloc]initWithCapacity:0];
     if (stream) {
         NSDictionary *dictionary = [[CJSONDeserializer deserializer] deserializeAsDictionary:stream error:nil];
@@ -705,19 +634,7 @@
     }
     
     selectedSegmentIndex = btn.selectedSegmentIndex;
-    BOOL hide = (selectedSegmentIndex!=kLocalContent);
-    
-    [UIView animateWithDuration:1 animations:^{
-        [self.tableView setHidden:hide];
-                
-        [super hideContentView:!hide];
-        if(hide)
-        {
-            [self.m_contentViewController launchRefreshing];
-        }
-    } completion:^(BOOL bl){
-
-    }];    
+    [self.m_contentViewController launchRefreshing];
 }
 
 #define kTag @"场面话"
@@ -728,6 +645,18 @@
     int count = 30;
     
     return (selectedSegmentIndex==kOnlineContent)?OnlineContentURLString(count,currentPage):@"";
+}
+
+-(NSArray*)provideLocalData
+{
+    NSInteger count = [data count]/kItemPerSection;
+    NSMutableArray* dataArray = [NSMutableArray arrayWithCapacity:0];
+    for (NSInteger i = 0; i<count; ++i) {
+        ContentCellModel *model = [[[ContentCellModel alloc]initWithTitleAndContent:[SharedDelegate getTitle:i] content:[SharedDelegate getContent:i]]autorelease];
+        [dataArray addObject:model];
+    }
+    
+    return dataArray;
 }
 
 @end

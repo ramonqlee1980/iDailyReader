@@ -4,8 +4,8 @@
 
 @protocol PullingRefreshDelegate <NSObject>
 
--(void)refreshData:(FileModel*)fileModel;
--(void)loadMoreData:(FileModel*)fileModel;
+-(BOOL)refreshData:(FileModel*)fileModel;
+-(BOOL)loadMoreData:(FileModel*)fileModel;
 -(NSArray*)parseData:(NSData*)data;
 @end
 

@@ -70,7 +70,7 @@ UITableViewDelegate
     
     [self launchRefreshing];
     
-//    [Flurry logEvent:kQiushiReviewed];
+    //    [Flurry logEvent:kQiushiReviewed];
 }
 -(void)launchRefreshing
 {
@@ -83,15 +83,26 @@ UITableViewDelegate
     if (delegate) {
         if (fileModel) {
             fileModel.notificationName = kTimelineJsonRefreshChanged;
-        }       
+        }
         
-        [delegate refreshData:fileModel];
         //load local cache
         if(delegate)
         {
             NSString* fileName = [self cacheFile];
-            [self.list addObjectsFromArray:[delegate parseData:[NSData dataWithContentsOfFile:fileName]]];
-            [self.tableView reloadData];
+            NSArray* d = [delegate parseData:[NSData dataWithContentsOfFile:fileName]];
+            if(d && [d count]>0)
+            {
+                [self.list removeAllObjects];
+                [self.list addObjectsFromArray:d];
+                
+                [self.tableView reloadData];
+            }
+        }
+        
+        if(![delegate refreshData:fileModel])
+        {
+            [self stopRefresh];
+            return;
         }
     }
 }
@@ -101,18 +112,30 @@ UITableViewDelegate
         if (fileModel) {
             fileModel.notificationName = kTimelineJsonLoadMoreChanged;
         }
-        [delegate loadMoreData:fileModel];
+        if(![delegate loadMoreData:fileModel])
+        {
+            [self stopRefresh];
+        }
     }
+}
+-(void)stopRefresh
+{
+    if (self.refreshing) {
+        self.refreshing = NO;
+    }
+    
+    [self.tableView tableViewDidFinishedLoading];
+    self.tableView.reachedTheEnd  = NO;
+    [self.tableView reloadData];
 }
 
 -(void)didGetMoreOnMainThread:(NSNotification*)notification
 {
     //    [Flurry logEvent:@"RequestQiushiSuccess"];
     
-    if (self.refreshing) {
-        //        self.page = 1;
-        self.refreshing = NO;
-    }
+    //    if (self.refreshing) {
+    //        self.refreshing = NO;
+    //    }
     
     if(delegate)
     {
@@ -120,21 +143,14 @@ UITableViewDelegate
         
         //clear and refresh or keep current data
         NSArray* array = [delegate parseData:[NSData dataWithContentsOfFile:fileName]];
-        if (array && [array count]) {            
+        if (array && [array count]) {
             [self.list addObjectsFromArray:array];
         }
     }
-    
-    //    if (self.page >=20) {
-    //        [self.tableView tableViewDidFinishedLoadingWithMessage:@"下面没有了.."];
-    //        self.tableView.reachedTheEnd  = YES;
-    //    }
-    //    else
-    {
-        [self.tableView tableViewDidFinishedLoading];
-        self.tableView.reachedTheEnd  = NO;
-        [self.tableView reloadData];
-    }
+    [self stopRefresh];
+    //    [self.tableView tableViewDidFinishedLoading];
+    //    self.tableView.reachedTheEnd  = NO;
+    //    [self.tableView reloadData];
     //    [Flurry logEvent:kQiushiRefreshed];
     
 }
@@ -142,11 +158,6 @@ UITableViewDelegate
 -(void)didGetTimeLineOnMainThread:(NSNotification*)notification
 {
     //    [Flurry logEvent:@"RequestQiushiSuccess"];
-    
-    if (self.refreshing) {
-        //        self.page = 1;
-        self.refreshing = NO;
-    }
     
     if(delegate)
     {
@@ -157,19 +168,15 @@ UITableViewDelegate
         if (array && [array count]) {
             [self.list removeAllObjects];
             [self.list addObjectsFromArray:array];
-        }        
+        }
     }
     
-    //    if (self.page >=20) {
-    //        [self.tableView tableViewDidFinishedLoadingWithMessage:@"下面没有了.."];
-    //        self.tableView.reachedTheEnd  = YES;
-    //    }
-    //    else
-    {
-        [self.tableView tableViewDidFinishedLoading];
-        self.tableView.reachedTheEnd  = NO;
-        [self.tableView reloadData];
-    }
+    
+    [self.tableView tableViewDidFinishedLoading];
+    self.tableView.reachedTheEnd  = NO;
+    [self.tableView reloadData];
+    
+    [self stopRefresh];
     //    [Flurry logEvent:kQiushiRefreshed];
     
 }
@@ -181,7 +188,7 @@ UITableViewDelegate
     if (self.refreshing) {
         self.refreshing = NO;
     }
-    [self.tableView tableViewDidFinishedLoading];    
+    [self.tableView tableViewDidFinishedLoading];
 }
 -(void)didGetTimeLine:(NSNotification*)notification
 {
@@ -323,7 +330,7 @@ UITableViewDelegate
         detail.title = data.author;
         detail.content = data.content;
         detail.hidesBottomBarWhenPushed = YES;
-        controller = detail;        
+        controller = detail;
     }
     else
     {

@@ -11,7 +11,7 @@
 #import "ETMobAdWall.h"
 #endif
 
-@interface RootViewController : PullRefreshBaseController<PullingRefreshDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate
+@interface RootViewController : PullRefreshBaseController<PullingRefreshDelegate,UIAlertViewDelegate,YouMiWallDelegate,UIAlertViewDelegate,MobiSageRecommendDelegate,immobViewDelegate
 #ifdef kETMobOn
 ,ETMobAdWallDelegate
 #endif
@@ -19,7 +19,6 @@
 {
 	//ApplicationCell *tmpCell;
     NSMutableArray *data;
-    UITableView* tableView;
 	YouMiWall *wall;
     UIView* mImmobWall;//
 	NSMutableArray *openApps;
@@ -27,7 +26,6 @@
 }
 @property(nonatomic, retain) MobiSageRecommendView *recmdView;
 
-@property (nonatomic, retain) UITableView* tableView;
 @property (nonatomic, retain) NSMutableArray *data;
 
 -(void)updateTableView:(id)sender;

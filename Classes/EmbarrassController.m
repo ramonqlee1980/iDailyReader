@@ -46,7 +46,7 @@
 }
 
 #pragma  PullingRefreshDelegate
--(void)refreshData:(FileModel*)fileModel
+-(BOOL)refreshData:(FileModel*)fileModel
 {
     NSString* url = [self getUrl];
     fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
@@ -55,8 +55,9 @@
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kRefreshFileName,selectedSegmentIndex];
         
     [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+    return YES;
 }
--(void)loadMoreData:(FileModel*)fileModel
+-(BOOL)loadMoreData:(FileModel*)fileModel
 {
     NSString* url = [self getUrl];
     fileModel.fileURL = [NSString stringWithFormat:url,++self.page];//for the latest page
@@ -65,6 +66,7 @@
     fileModel.fileName = [NSString stringWithFormat:@"%@%d",kLoadMoreFileName,selectedSegmentIndex];
     
     [SharedDelegate beginRequest:fileModel isBeginDown:YES setAllowResumeForFileDownloads:NO];
+    return YES;
 }
 
 -(NSArray*)parseData:(NSData*)data

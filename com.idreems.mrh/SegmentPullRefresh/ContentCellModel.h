@@ -45,6 +45,7 @@
 @property (nonatomic,assign) int upCount;
 @property (nonatomic,copy) NSString *author;
 
+-(id)initWithTitleAndContent:(NSString*)title content:(NSString*)content;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithWordPressDictionary:(NSDictionary *)dictionary;
 
