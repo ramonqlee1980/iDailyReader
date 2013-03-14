@@ -9,6 +9,8 @@
 #import "FlipViewController.h"
 #import "UIView+Screenshot.h"
 #include "Constants.h"
+#import "ThemeManager.h"
+
 #define kNote @"收藏"
 
 @implementation FlipViewController
@@ -26,10 +28,12 @@
 
         subNav = [[UINavigationController alloc]initWithRootViewController:flipDetailViewController];
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithTitle:@"新建" style:UIBarButtonItemStyleBordered target:self action:@selector(addANote:)];
+        addButton.tintColor = TintColor;
         self.navigationItem.rightBarButtonItem = addButton;
         [addButton release];
         
-        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style: UIBarButtonItemStyleBordered target: nil action: nil];  
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style: UIBarButtonItemStyleBordered target: nil action: nil];
+        newBackButton.tintColor = TintColor;
         [[self navigationItem] setBackBarButtonItem: newBackButton];  
         [newBackButton release]; 
         

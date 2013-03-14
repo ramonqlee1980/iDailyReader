@@ -11,10 +11,10 @@
 #import "FlipDetailViewController.h"
 #import "InScrollViewLayer.h"
 #import "AddNewNoteViewController.h"
+#import "BaseViewController.h"
 
 
-
-@interface FlipViewController : UIViewController<FlipScrollViewDelegate,FlipDetailViewControllerDelegate>
+@interface FlipViewController : BaseViewController<FlipScrollViewDelegate,FlipDetailViewControllerDelegate>
 @property (nonatomic,strong) FlipScrollView *backScrollView;
 @property (nonatomic,strong) FlipDetailViewController *flipDetailViewController;
 @property (nonatomic,strong) InScrollViewLayer *inScrollViewLayer;

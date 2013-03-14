@@ -28,9 +28,6 @@
 
 @property (nonatomic, retain) NSMutableArray *data;
 
--(void)updateTableView:(id)sender;
-//@property (nonatomic, retain) UINib *cellNib;
-
 @end
 
 

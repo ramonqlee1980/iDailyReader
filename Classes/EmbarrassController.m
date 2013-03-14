@@ -12,6 +12,8 @@
 #import "ContentCellModel.h"
 #import "FileModel.h"
 #import "AppDelegate.h"
+#import "MCSegmentedControl.h"
+#import "ThemeManager.h"
 
 #define FTop      0
 #define FRecent   1
@@ -115,11 +117,14 @@
                                    NSLocalizedString(@"最新", @""),
                                    NSLocalizedString(@"真相", @""),
 								   nil];
-	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+	MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:segmentTextContent];
     selectedSegmentIndex = FRecent;
 	segmentedControl.selectedSegmentIndex = FRecent;//the middle one
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    segmentedControl.tintColor = TintColor;
+    segmentedControl.selectedItemColor = [UIColor purpleColor];
+    segmentedControl.unselectedItemColor = [UIColor grayColor];
 	segmentedControl.frame = CGRectMake(0, 0, 400, segmentedControlHeight);
 	[segmentedControl addTarget:self action:@selector(BtnClicked:) forControlEvents:UIControlEventValueChanged];
     
@@ -139,6 +144,7 @@
     
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    backButton.tintColor = TintColor;
     self.navigationItem.rightBarButtonItem = backButton;
     [backButton release];
     

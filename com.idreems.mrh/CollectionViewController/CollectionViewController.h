@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PSCollectionView.h"
 #import "PullPsCollectionView.h"
+#import "BaseViewController.h"
 
-
-@interface CollectionViewController : UIViewController<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate>
+@interface CollectionViewController : BaseViewController<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate>
 @property(nonatomic,retain) PullPsCollectionView *collectionView;
 @property(nonatomic,retain)NSMutableArray *items;
 

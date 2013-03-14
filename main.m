@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
     [[MobiSageManager getInstance] setPublisherID:kMobiSageID_iPhone];
     //NSLog(@"MobisagePulisherID: %@",[MobiSageManager getInstance]->m_publisherID);
     //disable youmi wall gps
-    [YouMiWall setShouldGetLocation:NO];
-    [YouMiWall setShouldCacheImage:YES];
+    //[YouMiWall setShouldGetLocation:NO];
+    //[YouMiWall setShouldCacheImage:YES];
     
     
     //注意:这里必须填写您的App_ID. 您可以从www.waps.cn注册后获取,pid为渠道编号,比如@"appstore",@"91"

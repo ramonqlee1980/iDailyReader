@@ -16,6 +16,8 @@
 #import "CJSONDeserializer.h"
 #import "ContentCellModel.h"
 #import "ComposeViewController.h"
+#import "ThemeManager.h"
+#import "MCSegmentedControl.h"
 
 #define kTextLabeFontSize 25
 #define kDetailTextLableFontSize 20
@@ -79,19 +81,6 @@
 }
 -(void)loadNeededView
 {
-    //add tip view
-    /*CGRect rc = [[UIScreen mainScreen]applicationFrame];
-    rc.size.height = 0;
-    
-    CGRect frame = [[UIScreen mainScreen]applicationFrame];
-    frame.origin.y = 0;
-    frame.size.height -= self.navigationController.navigationBar.frame.size.height;
-    frame.size.height -= self.tabBarController.tabBar.frame.size.height;
-    tableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self.view addSubview:tableView];
-    */
 }
 -(void)loadYoumiWall:(BOOL)credit
 {
@@ -154,6 +143,7 @@
     mYoumiFeaturedWallShouldShow = YES;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -172,7 +162,10 @@
     UIBarButtonItem *rightButton = [[[UIBarButtonItem alloc] initWithCustomView:writebtn]autorelease];
     [[self navigationItem] setRightBarButtonItem:rightButton];
     
+    
+    
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];
+    newBackButton.tintColor = TintColor;
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     [newBackButton release];
     
@@ -182,8 +175,6 @@
     mYoumiFeaturedWallShown = NO;
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closeAds:) name:kAdsUpdateDidFinishLoading object:nil];
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateTableView:) name:kUpdateTableView object:nil];
     
 	self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
 	
@@ -207,10 +198,6 @@
     //[Flurry logEvent:kEnterMainViewList];
 }
 
--(void)updateTableView:(id)sender
-{
-//    [tableView reloadData];
-}
 
 - (void)viewDidUnload
 {
@@ -599,17 +586,21 @@
 {
     const CGFloat kNavigationBarInnerViewMargin = 7;
     const CGFloat segmentedControlHeight = self.navigationController.navigationBar.frame.size.height-kNavigationBarInnerViewMargin*2;
-    const CGFloat kItemWidth = 40;
+    const CGFloat kItemWidth = 70;
     // segmented control as the custom title view
 	NSArray *segmentTextContent = [NSArray arrayWithObjects:
                                    NSLocalizedString(@"kLocalContent", @""),
                                    NSLocalizedString(@"kOnlineContent", @""),
 								   nil];
-	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
+	MCSegmentedControl *segmentedControl = [[MCSegmentedControl alloc] initWithItems:segmentTextContent];
     selectedSegmentIndex = kLocalContent;
 	segmentedControl.selectedSegmentIndex = kLocalContent;
 	segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+	segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;
+    segmentedControl.tintColor = TintColor;
+    segmentedControl.selectedItemColor = [UIColor purpleColor];
+    segmentedControl.unselectedItemColor = [UIColor grayColor];
+    
 	segmentedControl.frame = CGRectMake(0, 0, segmentTextContent.count*kItemWidth, segmentedControlHeight);
 	[segmentedControl addTarget:self action:@selector(SegmentBtnClicked:) forControlEvents:UIControlEventValueChanged];
     

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @class GetImage;
-@interface ComposeViewController : UIViewController {
+@interface ComposeViewController : BaseViewController {
 	
 	UITextView *textView;
 	UIImageView *imageView;

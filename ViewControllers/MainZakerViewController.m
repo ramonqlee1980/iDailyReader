@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "Flurry.h"
+#import "ThemeManager.h"
 
 #define kInitialItemCount 5
 #define kFun @"kFun"
@@ -44,6 +45,12 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    backButton.tintColor = TintColor;
+    self.navigationItem.rightBarButtonItem = backButton;
+    [backButton release];
+
+    
 //    iAdsCheck* adsCheck = [iAdsCheck sharedInstance];
 //    adsCheck.viewController = self;
 //    [adsCheck start:APPDELEGATE];
@@ -89,6 +96,7 @@
 #pragma zaker delegate
 - (void) gridItemDidClicked:(BJGridItem *) gridItem
 {
+    
     //
     GridItemProperty* p = [zakerItem objectAtIndex:gridItem.index];
     UIViewController* ctrl = nil;

@@ -13,6 +13,7 @@
 #import "CommonHelper.h"
 #import "AppDelegate.h"
 #import "ZJTStatusBarAlertWindow.h"
+#import "ThemeManager.h"
 
 //url and related file name on local machine
 //url is pulled from server and others are derived from this url
@@ -225,6 +226,7 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Back", @"Back") style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    backButton.tintColor = TintColor;
     self.navigationItem.rightBarButtonItem = backButton;
     [backButton release];
     

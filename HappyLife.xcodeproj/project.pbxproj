@@ -286,6 +286,10 @@
 		0496472216374F4B00D7E7CE /* MSTencentPicWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496468C16374F4B00D7E7CE /* MSTencentPicWeibo.m */; };
 		0496472316374F4B00D7E7CE /* MSTencentWeiboAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496468E16374F4B00D7E7CE /* MSTencentWeiboAdd.m */; };
 		04983DE21630B065005694D2 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 309EE5D714070653000578C7 /* icon-114.png */; };
+		049AF84416F20E0600360D13 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF84316F20E0600360D13 /* ThemeManager.m */; };
+		049AF8B516F281DE00360D13 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = 049AF8B416F281DE00360D13 /* resource */; };
+		049AF8B916F2852B00360D13 /* MCSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF8B816F2852B00360D13 /* MCSegmentedControl.m */; };
+		049AF8BC16F28F6400360D13 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049AF8BB16F28F6400360D13 /* BaseViewController.m */; };
 		049B7805164DE35700602BE1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095913814408F54000FBE98 /* Default@2x.png */; };
 		049B7806164DE3C200602BE1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3095913414408F35000FBE98 /* Default.png */; };
 		049B7808164DE3F800602BE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049B7807164DE3F800602BE1 /* Default-568h@2x.png */; };
@@ -463,11 +467,6 @@
 		30946AE214B51489009F9284 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30946AE114B51489009F9284 /* EventKit.framework */; };
 		30946AE414B514C0009F9284 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30946AE314B514C0009F9284 /* AVFoundation.framework */; };
 		3095E9F01453B2E100607C94 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095E9EF1453B2E100607C94 /* MessageUI.framework */; };
-		3095EA181453C60E00607C94 /* CDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3095EA0D1453C60E00607C94 /* CDetailViewController.xib */; };
-		3095EA191453C60E00607C94 /* IndividualSubviewsBasedApplicationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3095EA0E1453C60E00607C94 /* IndividualSubviewsBasedApplicationCell.xib */; };
-		3095EA1A1453C60E00607C94 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3095EA101453C60E00607C94 /* MainWindow-iPad.xib */; };
-		3095EA1B1453C60E00607C94 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3095EA121453C60E00607C94 /* RootViewController.xib */; };
-		3095EA1C1453C60E00607C94 /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3095EA141453C60E00607C94 /* ModalViewController.xib */; };
 		3095EBC1149105C700BE7492 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095EBC0149105C700BE7492 /* QuartzCore.framework */; };
 		3095EBC5149105E300BE7492 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095EBC4149105E300BE7492 /* CFNetwork.framework */; };
 		3095EBC7149105F000BE7492 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3095EBC6149105F000BE7492 /* MapKit.framework */; };
@@ -988,6 +987,13 @@
 		0496468C16374F4B00D7E7CE /* MSTencentPicWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTencentPicWeibo.m; sourceTree = "<group>"; };
 		0496468D16374F4B00D7E7CE /* MSTencentWeiboAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTencentWeiboAdd.h; sourceTree = "<group>"; };
 		0496468E16374F4B00D7E7CE /* MSTencentWeiboAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTencentWeiboAdd.m; sourceTree = "<group>"; };
+		049AF84216F20E0600360D13 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		049AF84316F20E0600360D13 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		049AF8B416F281DE00360D13 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
+		049AF8B716F2852B00360D13 /* MCSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSegmentedControl.h; sourceTree = "<group>"; };
+		049AF8B816F2852B00360D13 /* MCSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSegmentedControl.m; sourceTree = "<group>"; };
+		049AF8BA16F28F6400360D13 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		049AF8BB16F28F6400360D13 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		049B7807164DE3F800602BE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		049B7811164FBC7700602BE1 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		049B7812164FBC7700602BE1 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
@@ -1272,14 +1278,6 @@
 		3095913414408F35000FBE98 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3095913814408F54000FBE98 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3095E9EF1453B2E100607C94 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		3095EA0D1453C60E00607C94 /* CDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDetailViewController.xib; sourceTree = "<group>"; };
-		3095EA0F1453C60E00607C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IndividualSubviewsBasedApplicationCell.xib; sourceTree = "<group>"; };
-		3095EA111453C60E00607C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		3095EA131453C60E00607C94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
-		3095EA141453C60E00607C94 /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
-		3095EA151453C60E00607C94 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/IndividualSubviewsBasedApplicationCell.xib"; sourceTree = "<group>"; };
-		3095EA161453C60E00607C94 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
-		3095EA171453C60E00607C94 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RootViewController.xib"; sourceTree = "<group>"; };
 		3095EBC0149105C700BE7492 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3095EBC2149105D700BE7492 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3095EBC4149105E300BE7492 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -1575,6 +1573,8 @@
 		0481290916E0163300B1CDF6 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				049AF8B616F2852B00360D13 /* MCSegmentedControl */,
+				049AF84116F20E0600360D13 /* ThemeManager */,
 				048E759B16EEA5D5006CD7C1 /* BrowaseGallery */,
 				040DB35B16EE23520049A68C /* NSString-HTML */,
 				04AF6A8A16ECA6570043B136 /* SegmentPullRefresh */,
@@ -2450,6 +2450,27 @@
 			path = Push;
 			sourceTree = "<group>";
 		};
+		049AF84116F20E0600360D13 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				049AF8BA16F28F6400360D13 /* BaseViewController.h */,
+				049AF8BB16F28F6400360D13 /* BaseViewController.m */,
+				049AF8B416F281DE00360D13 /* resource */,
+				049AF84216F20E0600360D13 /* ThemeManager.h */,
+				049AF84316F20E0600360D13 /* ThemeManager.m */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		049AF8B616F2852B00360D13 /* MCSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				049AF8B716F2852B00360D13 /* MCSegmentedControl.h */,
+				049AF8B816F2852B00360D13 /* MCSegmentedControl.m */,
+			);
+			path = MCSegmentedControl;
+			sourceTree = "<group>";
+		};
 		04AF69EC16EC844A0043B136 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -2931,7 +2952,6 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				3095EA0C1453C60E00607C94 /* Resources-iPad */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -3032,18 +3052,6 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3095EA0C1453C60E00607C94 /* Resources-iPad */ = {
-			isa = PBXGroup;
-			children = (
-				3095EA0D1453C60E00607C94 /* CDetailViewController.xib */,
-				3095EA0E1453C60E00607C94 /* IndividualSubviewsBasedApplicationCell.xib */,
-				3095EA101453C60E00607C94 /* MainWindow-iPad.xib */,
-				3095EA121453C60E00607C94 /* RootViewController.xib */,
-				3095EA141453C60E00607C94 /* ModalViewController.xib */,
-			);
-			path = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		30998CC1155E7472008EAEAC /* adsConfig */ = {
@@ -3430,11 +3438,6 @@
 				309EE15814069C85000578C7 /* icon-72.png in Resources */,
 				3099BD98140AFC5B004A2E6B /* InfoPlist.strings in Resources */,
 				309C72751445E6E400C3FFB8 /* TextView.xib in Resources */,
-				3095EA181453C60E00607C94 /* CDetailViewController.xib in Resources */,
-				3095EA191453C60E00607C94 /* IndividualSubviewsBasedApplicationCell.xib in Resources */,
-				3095EA1A1453C60E00607C94 /* MainWindow-iPad.xib in Resources */,
-				3095EA1B1453C60E00607C94 /* RootViewController.xib in Resources */,
-				3095EA1C1453C60E00607C94 /* ModalViewController.xib in Resources */,
 				30F08AF714E7F33D0074F0F1 /* lyrics.xml in Resources */,
 				30998CC6155E7FEE008EAEAC /* defaultAds.xml in Resources */,
 				30A6B8D01563152200D39722 /* DoMobBundle.bundle in Resources */,
@@ -3672,6 +3675,7 @@
 				048E759216EE9E3A006CD7C1 /* icon_share.png in Resources */,
 				048E759716EEA4C4006CD7C1 /* ComposeViewController.xib in Resources */,
 				048E75A016EEA66D006CD7C1 /* blue.png in Resources */,
+				049AF8B516F281DE00360D13 /* resource in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3945,6 +3949,9 @@
 				040DB36116EE23520049A68C /* NSString+HTML.m in Sources */,
 				048E759616EEA4C4006CD7C1 /* ComposeViewController.m in Sources */,
 				048E759E16EEA615006CD7C1 /* GetImage.m in Sources */,
+				049AF84416F20E0600360D13 /* ThemeManager.m in Sources */,
+				049AF8B916F2852B00360D13 /* MCSegmentedControl.m in Sources */,
+				049AF8BC16F28F6400360D13 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3966,33 +3973,6 @@
 				3093A98414053943003787F6 /* zh-Hans */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		3095EA0E1453C60E00607C94 /* IndividualSubviewsBasedApplicationCell.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3095EA0F1453C60E00607C94 /* en */,
-				3095EA151453C60E00607C94 /* zh-Hans */,
-			);
-			name = IndividualSubviewsBasedApplicationCell.xib;
-			sourceTree = "<group>";
-		};
-		3095EA101453C60E00607C94 /* MainWindow-iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3095EA111453C60E00607C94 /* en */,
-				3095EA161453C60E00607C94 /* zh-Hans */,
-			);
-			name = "MainWindow-iPad.xib";
-			sourceTree = "<group>";
-		};
-		3095EA121453C60E00607C94 /* RootViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3095EA131453C60E00607C94 /* en */,
-				3095EA171453C60E00607C94 /* zh-Hans */,
-			);
-			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
 		3099BD9B140AFC5B004A2E6B /* InfoPlist.strings */ = {

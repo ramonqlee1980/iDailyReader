@@ -1,8 +1,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ContentViewController.h"
+#import "BaseViewController.h"
 
-@interface PullRefreshBaseController : UIViewController
+@interface PullRefreshBaseController : BaseViewController
 {
     ContentViewController *m_contentViewController;  //内容页面    
 }
