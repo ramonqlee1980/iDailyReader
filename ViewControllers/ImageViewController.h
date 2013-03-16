@@ -24,9 +24,9 @@
 
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-
-@interface ImageViewController : UIViewController
+@interface ImageViewController : BaseViewController
 
 @property (nonatomic,retain)NSString* text;
 @property (nonatomic,retain)NSString* imageUrl;

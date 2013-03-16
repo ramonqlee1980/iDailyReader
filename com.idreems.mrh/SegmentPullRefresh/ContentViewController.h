@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-
+#import "BaseViewController.h"
 @class FileModel;
 
 @protocol PullingRefreshDelegate <NSObject>
@@ -9,7 +9,7 @@
 -(NSArray*)parseData:(NSData*)data;
 @end
 
-@interface ContentViewController : UIViewController
+@interface ContentViewController : BaseViewController
 
 @property(nonatomic,retain) UINavigationController *customNavigationController;
 @property(nonatomic,assign)FileModel* fileModel;

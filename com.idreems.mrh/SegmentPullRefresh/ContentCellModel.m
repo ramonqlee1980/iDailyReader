@@ -32,6 +32,12 @@
 -(id)initWithWordPressDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init]) {
+        self.author = [dictionary objectForKey:@"title"];
+        if([self.author respondsToSelector:@selector(stringByConvertingHTMLToPlainText)])
+        {
+            self.author = [self.author stringByConvertingHTMLToPlainText];
+        }
+        
         self.content = [dictionary objectForKey:@"content"];
         if([self.content respondsToSelector:@selector(stringByConvertingHTMLToPlainText)])
         {

@@ -84,7 +84,7 @@
 					</object>
 					<object class="IBUIToolbar" id="106435786">
 						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">-2147483382</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 156}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -203,9 +203,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="420534478"/>
-							<reference ref="156219935"/>
-							<reference ref="132760859"/>
 							<reference ref="106435786"/>
+							<reference ref="132760859"/>
+							<reference ref="156219935"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

@@ -11,6 +11,7 @@
 #import "ContentCell.h"
 #import "tools.h"
 #import "TextViewController.h"
+#import "ThemeManager.h"
 
 #define kTimelineJsonRefreshChanged @"kEMTimelineJsonRefreshChanged"
 #define kTimelineJsonLoadMoreChanged @"kEMTimelineJsonLoadMoreChanged"
@@ -50,6 +51,11 @@ UITableViewDelegate
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: nil action: nil];
+    newBackButton.tintColor = TintColor;
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+    [newBackButton release];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     [self.view setBackgroundColor:[UIColor clearColor]];
     _list = [[NSMutableArray alloc] init ];

@@ -15,7 +15,7 @@
 #import "FileModel.h"
 #import "CJSONDeserializer.h"
 #import "ContentCellModel.h"
-#import "ComposeViewController.h"
+#import "ComposeBlogController.h"
 #import "ThemeManager.h"
 #import "MCSegmentedControl.h"
 
@@ -609,7 +609,7 @@
 }
 -(void)WriteBtnClicked:(id)sender
 {
-    ComposeViewController *composeViewController = [[ComposeViewController alloc] init];
+    ComposeBlogController *composeViewController = [[ComposeBlogController alloc] initWithNibName:@"ComposeBlogController" bundle:nil];
 	[self.navigationController pushViewController:composeViewController animated:YES];
 	[composeViewController release];
 }

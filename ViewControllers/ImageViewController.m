@@ -1,31 +1,7 @@
-//  ImageViewController.m
-//
-//  Copyright (c) 2012 modocache
-//
-//  Permission is hereby granted, free of charge, to any person obtaining
-//  a copy of this software and associated documentation files (the
-//  "Software"), to deal in the Software without restriction, including
-//  without limitation the rights to use, copy, modify, merge, publish,
-//  distribute, sublicense, and/or sell copies of the Software, and to
-//  permit persons to whom the Software is furnished to do so, subject to
-//  the following conditions:
-//
-//  The above copyright notice and this permission notice shall be
-//  included in all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-//  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-//  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-//  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-//  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
-
-
 #import "ImageViewController.h"
 #import "MDCParallaxView.h"
 #import "SDWebImageManager.h"
+#import "ThemeManager.h"
 
 #define kPlaceholderImage @"placeholder.png"
 #define kTextFontSize 18.0f
@@ -67,9 +43,18 @@
 {
     //self.tabBarController.tabBar.hidden = NO;
 }
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: self action: @selector(back)];
+    newBackButton.tintColor = TintColor;
+    [[self navigationItem] setLeftBarButtonItem:newBackButton];
+    [newBackButton release];
     
     UIImageView *backgroundImageView = nil;
     if(self.imageUrl && self.imageUrl.length>0)

@@ -80,7 +80,8 @@
 	[textView release];
 	[insertImgBtn release];
     self.activityIndicator = nil;
-	
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 	getImage.parentViewController = nil;
 	[getImage release];
 	

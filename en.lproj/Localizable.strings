@@ -41,3 +41,5 @@
 "RemoveAdsTitle"="Remove ads free";
 "RemoveAdsTemp"="Ads is removed temporarily";
 "RemoveAdsContent"="Remove ads by downloading and entering downloaded application.";
+"kDefaultBlogBody"="分享我的真实经历\n您投递的文章在审核通过后发表。审核标准：真实，不包含政治，色情；不包含邮件，电话，地址等私密信息；转载请注明出处。内容版权归IDreems所有。";
+"kDefaultBlogTitle"="在此写个独具特色的标题";

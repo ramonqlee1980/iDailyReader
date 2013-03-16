@@ -1193,6 +1193,7 @@
     }
     NSString* tempUrl = ([url rangeOfString:@"%"].length==0)?[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:url;
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:tempUrl]];
+    [request setStringEncoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)];
     for (NSString* key in postData) {
         [request setPostValue:[postData objectForKey:key] forKey:key];
     }

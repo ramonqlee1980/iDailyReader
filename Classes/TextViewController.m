@@ -18,6 +18,7 @@
 #import "MBProgressHUD.h"
 #import "ReachabilityAs.h"
 #import <ShareSDK/ShareSDK.h>
+#import "ThemeManager.h"
 
 const CGFloat kMinFontSize = 20;//[UIFont systemFontSize];
 
@@ -617,10 +618,19 @@ enum ShareOption
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-
-- (void)viewDidLoad
+-(void)back
 {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"Back",@"") style: UIBarButtonItemStyleBordered target: self action: @selector(back)];
+    newBackButton.tintColor = TintColor;
+    [[self navigationItem] setLeftBarButtonItem:newBackButton];
+    [newBackButton release];
+
     _tempCloseRequest = YES;
     //[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(closeAdsTemp) name:kAdsUpdateDidFinishLoading object:nil];
     mWeibo = FALSE;
