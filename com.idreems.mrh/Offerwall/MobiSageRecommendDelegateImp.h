@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MobiSageRecommendSDK.h"
+#import "MobiSageSDK.h"
 
 @interface MobiSageRecommendDelegateImp : NSObject<MobiSageRecommendDelegate>
 {

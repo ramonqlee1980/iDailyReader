@@ -229,7 +229,7 @@
 - (void)OAuthSharerDidBeginVerification:(id<SHSOAuthSharerProtocol>)oauthSharer
 {
     if(!_loadView)
-        _loadView=[[LoadingView alloc] initWithFrame:CGRectMake(0, 100, 130, 100) LoadingViewStyle:LoadingViewStyleStandard];
+        _loadView=[[LoadingViewA alloc] initWithFrame:CGRectMake(0, 100, 130, 100) LoadingViewStyle:LoadingViewStyleStandard];
     _loadView.titleLabel.font=[UIFont boldSystemFontOfSize:13];
     _loadView.title=@"加载中";
     
@@ -258,7 +258,7 @@
     [self loadViewDidDismissed];
     
     if(!_loadView)
-        _loadView=[[LoadingView alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleTilte];
+        _loadView=[[LoadingViewA alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleTilte];
     _loadView.titleLabel.font=[UIFont boldSystemFontOfSize:15];
     _loadView.title=@"用户授权失败";
     
@@ -276,7 +276,7 @@
 - (void)OAuthSharerDidBeginShare:(id<SHSOAuthSharerProtocol>)oauthSharer
 {
     if(!_loadView)
-        _loadView=[[LoadingView alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleTilte];
+        _loadView=[[LoadingViewA alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleTilte];
     _loadView.titleLabel.font=[UIFont boldSystemFontOfSize:15];
     _loadView.title=@"分享中";
     

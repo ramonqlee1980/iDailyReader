@@ -10,10 +10,11 @@
 #import "SoftRcmList.h"
 #import "SoftInfo.h"
 #import "Flurry.h"
-#import "YouMiWall.h"
-#import "YouMiWallDelegateProtocol.h"
 #import "AdsConfig.h"
 #import "AppDelegate.h"
+#import "AdsViewManager.h"
+#import "RMIndexedArray.h"
+#import "AdsConfiguration.h"
 
 #define kRecommendList @"kRecommendList"
 #define TOOLBARTAG		200
@@ -24,20 +25,13 @@
 #define END_FLAG @"]"
 
 @interface SoftRcmListViewController ()
+@property(nonatomic,assign)UIView* fullscreenView;
 - (UIView *)bubbleView:(NSString *)text icon:(NSString*)icon from:(BOOL)fromSelf;
 @end
 
 @implementation SoftRcmListViewController
-@synthesize recmdView = _recmdView;
--(void)loadAdsageRecommendView
-{
-    [[MobiSageManager getInstance]setPublisherID:kMobiSageID_iPhone];
-    if (self.recmdView == nil)
-    {
-        _recmdView = [[MobiSageRecommendView alloc]initWithDelegate:self];
-        self.recmdView.frame = CGRectZero;
-    }
-}
+@synthesize fullscreenView;
+
 #pragma mark AdSageRecommendDelegate
 - (UIViewController *)viewControllerForPresentingModalView
 {
@@ -55,24 +49,6 @@
         NSString *xmlPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"SoftList.xml"];
         [_softRcmList loadData:xmlPath];
         
-#if 0
-        [self loadAdsageRecommendView];
-#ifndef k91Appstore
-        //AdsConfig* config = [AdsConfig sharedAdsConfig];
-        //show close ads 
-        //if([config wallShouldShow])
-        {
-            //load youmi wall
-            wall = [[YouMiWall alloc] init];
-            wall.appID = kDefaultAppID_iOS;
-            wall.appSecret = kDefaultAppSecret_iOS;
-            
-            // 添加应用列表开放源观察者
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestOffersOpenDataSuccess:) name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
-            [wall requestOffersAppData:YES pageCount:15];
-        }
-#endif
-#endif
     }
     return self;
 }
@@ -80,19 +56,43 @@
 {
     [super viewWillAppear:animated];
     
-    AdsConfig* config = [AdsConfig sharedAdsConfig];    
-    if([config wallShouldShow])
+    //[self addFullscreenView];
+}
+-(void)addFullscreenView
+{
+    if(self.fullscreenView)
     {
-        [self.recmdView OpenAdSageRecmdModalView];
+        return;
+    }
+    AdsViewManager* adViewManager = [AdsViewManager sharedInstance];
+    RMIndexedArray* list = (RMIndexedArray*)[adViewManager.configDict objectForKey:kFullScreenAd];
+    if (list && [list count]) {
+        
+        list.taggedIndex = (list.taggedIndex>=0&&list.taggedIndex<[list count])?list.taggedIndex:0;
+        NSLog(@"list.taggedIndex:%d",list.taggedIndex);
+        //get index
+        NSDictionary* item = [list objectAtIndex:list.taggedIndex++];
+        
+        fullscreenView = [adViewManager getFullscreenView:item inViewController:self];
+        if (fullscreenView) {
+            [self.view addSubview:fullscreenView];
+
+            CGRect rc = self.tableView.frame;
+            rc.origin.y += fullscreenView.frame.size.height;
+            self.tableView.frame=rc;
+        }
+    }
+}
+-(void)willAnimateRotationToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if([fullscreenView respondsToSelector:@selector(rotateToOrientation:)])
+    {
+        [fullscreenView performSelector:@selector(rotateToOrientation:) withObject:toInterfaceOrientation];
     }
 }
 -(void) dealloc
 {
     [_softRcmList release];
-    [openApps release];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
-    [wall release];
-    self.recmdView = nil;
     [super dealloc];
 }
 
@@ -171,23 +171,6 @@
     
     return cell;
 }
-
-
-#pragma mark - Table view delegate
--(YouMiWallAppModel *)youmiApp:(NSString*)appName andUrl:(NSString*)linkUrl
-{
-    if(openApps == nil || [openApps count] == 0 || appName == nil || linkUrl == nil)
-    {
-        return nil;
-    }
-    for (YouMiWallAppModel* m in openApps) {
-        if([appName isEqualToString:m.name] && [linkUrl isEqualToString:m.linkURL])
-        {
-            return m;
-        }
-    }
-    return nil;
-}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [indexPath row];
@@ -195,21 +178,11 @@
     if (info) 
     {
         //youmi apps?
-        YouMiWallAppModel *model  = [self youmiApp:info.name andUrl:info.url];
-        if(model)
-        {
-            [wall userInstallOffersApp:model];            
-            NSDictionary *dict = [NSDictionary dictionaryWithObject:model.price forKey:model.name];
-            [Flurry logEvent:kFlurryDidSelectAppFromRecommend withParameters:dict];
-            
-        }
-        else
-        {
+        
             NSURL *url = [[NSURL alloc] initWithString:info.url];
             UIApplication *myApp = [UIApplication sharedApplication];
             [myApp openURL:url];
             [url release];
-        }
     }
     
     [Flurry logEvent:[NSString stringWithFormat:@"didSelectRowAtIndexPath:%@",info.icon]];
@@ -373,44 +346,5 @@
 	return [cellView autorelease];
     
 }
-#pragma mark - YouMiWall delegate
 
-- (void)requestOffersOpenDataSuccess:(NSNotification *)note {
-    NSLog(@"--*-1--[Rewarded]requestOffersOpenDataSuccess:-*--");
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:YOUMI_OFFERS_APP_DATA_RESPONSE_NOTIFICATION object:nil];
-    
-    AppDelegate* delegate= (AppDelegate*)[UIApplication sharedApplication].delegate;
-    NSDictionary *info = [note userInfo];
-    NSArray *apps = [info valueForKey:YOUMI_WALL_NOTIFICATION_USER_INFO_OFFERS_APP_KEY];
-    NSString* docDir= [delegate applicationDocumentsDirectory];
-    if(openApps==nil)
-    {
-        openApps = [[NSMutableArray alloc] init];
-        [openApps addObjectsFromArray:apps];
-    }
-    
-    for (NSUInteger i = 0; i<[apps count]; ++i) {
-        SoftInfo* t = [[SoftInfo alloc]init];
-        YouMiWallAppModel *model = [apps objectAtIndex:i];
-        //NSLog(@"model:%@",model) ;
-        t.name = model.name;
-        t.url = model.linkURL;
-        t.detail = model.desc;
-        
-        NSString* smallIconUrl = model.smallIconURL;
-        
-        NSString* smallIconFileName = [NSString stringWithFormat:@"%@%@",model.name,model.storeID];
-        NSString* localIconFileName = [NSString stringWithFormat:@"%@%@%@",docDir,@"/",smallIconFileName];
-        NSData* localData = [NSData dataWithContentsOfFile:localIconFileName];
-        if (localData==nil || localData.length==0) {
-            localData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", smallIconUrl]]];
-            [localData writeToFile:localIconFileName atomically:YES];        
-        } 
-        t.icon = localIconFileName;
-        
-        
-        [_softRcmList.softList insertObject:t atIndex:0];
-    }
-    [self.tableView reloadData];
-}
 @end

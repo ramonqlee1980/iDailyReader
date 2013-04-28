@@ -7,10 +7,11 @@
 //
 
 #import "CommonHelper.h"
-#import "ZipArchive.h"
+//#import "ZipArchive.h"
 #import "Unrar4iOSEx.h"
 #import "AppDelegate.h"
 #import "AdsConfig.h"
+#import "AdsConfiguration.h"
 
 @implementation CommonHelper
 
@@ -161,25 +162,26 @@
 }
 +(BOOL)unzipFile:(NSString*)zipFile toFile:(NSString*)unzipFile
 {
-    if (!zipFile || !unzipFile ) {
-        return NO;
-    }
-    if(![[NSFileManager defaultManager]fileExistsAtPath:zipFile])
-    {
-        return NO;
-    }
-    
-    BOOL ret = NO;
-    ZipArchive* zip = [[ZipArchive alloc] init];
-    if( [zip UnzipOpenFile:zipFile] ){
-        ret = [zip UnzipFileTo:unzipFile overWrite:YES];
-        if( NO==ret ){
-            //添加代码
-        }
-        [zip UnzipCloseFile];
-    }
-    [zip release];
-    return ret;
+    return NO;
+//    if (!zipFile || !unzipFile ) {
+//        return NO;
+//    }
+//    if(![[NSFileManager defaultManager]fileExistsAtPath:zipFile])
+//    {
+//        return NO;
+//    }
+//    
+//    BOOL ret = NO;
+//    ZipArchive* zip = [[ZipArchive alloc] init];
+//    if( [zip UnzipOpenFile:zipFile] ){
+//        ret = [zip UnzipFileTo:unzipFile overWrite:YES];
+//        if( NO==ret ){
+//            //添加代码
+//        }
+//        [zip UnzipCloseFile];
+//    }
+//    [zip release];
+//    return ret;
 }
 +(BOOL)unrarFile:(NSString*)rarFile toFile:(NSString*)unrarFile
 {
@@ -333,5 +335,38 @@
     NSString *appStoreURL = [NSString stringWithFormat:@"itms-apps://itunes.com/app/%@",[appName stringByReplacingOccurrencesOfString:@" " withString:@""]];
     
     return appStoreURL;
+}
++(NSString*)xor_string:(NSString*)stream key:(int)key
+{
+    NSMutableString* temp =[[[NSMutableString alloc]initWithCapacity:0]autorelease];
+    for (int i = 0; i<temp.length; ++i) {
+        [temp appendString:[stream characterAtIndex:i]^key];
+    }
+    return temp;
+}
+
++(NSDictionary*)getAdPostReqParams
+{
+#define kBundleid @"bundleid"
+#define kAppVersion @"appversion"
+#define kOSVersion @"os"
+#define kModel @"model"
+#define kChannle @"channel"
+    
+    BOOL isIPad2 = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad &&
+                    [UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]);
+    NSString*    model = [[UIDevice currentDevice] model];
+    if (isIPad2)
+        model = @"iPad2";
+    
+    NSString* iOSVersion = [[UIDevice currentDevice] systemVersion];
+    
+    NSString *localVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
+    NSString* bundleIdentifier = [[[NSBundle mainBundle]infoDictionary]objectForKey:(NSString*)kCFBundleIdentifierKey];
+    NSLog(@"bundleIdentifier:%@",bundleIdentifier);
+       
+    //new method to get ads
+    return [NSDictionary dictionaryWithObjectsAndKeys:bundleIdentifier,kBundleid,localVersion,kAppVersion,iOSVersion,kOSVersion,model,kModel,kAppChannel,kChannle,nil];
 }
 @end

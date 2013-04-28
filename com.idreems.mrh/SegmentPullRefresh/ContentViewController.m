@@ -13,6 +13,8 @@
 #import "TextViewController.h"
 #import "ThemeManager.h"
 
+#define kNumberOfLines  100
+
 #define kTimelineJsonRefreshChanged @"kEMTimelineJsonRefreshChanged"
 #define kTimelineJsonLoadMoreChanged @"kEMTimelineJsonLoadMoreChanged"
 
@@ -105,8 +107,8 @@ UITableViewDelegate
             }
         }
         
-        if(![delegate refreshData:fileModel])
-        {
+        if(![delegate refreshData:fileModel])//load local data
+        {            
             [self stopRefresh];
             return;
         }
@@ -275,7 +277,7 @@ UITableViewDelegate
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
-        [cell.txtContent setNumberOfLines:12];
+        [cell.txtContent setNumberOfLines:kNumberOfLines];
     }
     
     ContentCellModel *qs = [self.list objectAtIndex:[indexPath row]];
@@ -352,8 +354,7 @@ UITableViewDelegate
     {
         [self.customNavigationController pushViewController:controller animated:YES];
     }
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];    
 }
 #pragma mark - PullingRefreshTableViewDelegate
 - (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{

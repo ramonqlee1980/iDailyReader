@@ -35,9 +35,7 @@
         //wall = [[YouMiWall alloc] initWithAppID:kDefaultAppID_iOS withAppSecret:kDefaultAppSecret_iOS];
         // or
         wall = [[YouMiWall alloc] init];
-        wall.appID = kDefaultAppID_iOS;
-        wall.appSecret = kDefaultAppSecret_iOS;
-        
+               
         // set delegate
         //        wall.delegate = self;
         
@@ -82,21 +80,21 @@
     
     if(mAdsClosedSupport)
     {
-        UIFont* font = [UIFont boldSystemFontOfSize:12];
-        AdsConfig* config = [AdsConfig sharedAdsConfig];  
-        CGSize labelSize=[[config wallShowString] sizeWithFont:font
-                          constrainedToSize:CGSizeMake(kDeviceWidth,KDeviceHeight)
-                              lineBreakMode:UILineBreakModeWordWrap];
-        //
-        UITextView* tipView = [[UITextView alloc]initWithFrame:rc];        
-        tipView.contentSize = labelSize;
-        rc.size.height = labelSize.height*1.5;
-              
-        tipView.text = [config wallShowString];
-        tipView.textColor = [UIColor redColor];
-        tipView.font = font;
-        [self.view addSubview:tipView];
-        [tipView release];
+//        UIFont* font = [UIFont boldSystemFontOfSize:12];
+//        AdsConfig* config = [AdsConfig sharedAdsConfig];  
+//        CGSize labelSize=[[config wallShowString] sizeWithFont:font
+//                          constrainedToSize:CGSizeMake(kDeviceWidth,KDeviceHeight)
+//                              lineBreakMode:UILineBreakModeWordWrap];
+//        //
+//        UITextView* tipView = [[UITextView alloc]initWithFrame:rc];        
+//        tipView.contentSize = labelSize;
+//        rc.size.height = labelSize.height*1.5;
+//              
+//        tipView.text = [config wallShowString];
+//        tipView.textColor = [UIColor redColor];
+//        tipView.font = font;
+//        [self.view addSubview:tipView];
+//        [tipView release];
     }
     else
     {
@@ -300,34 +298,34 @@
 }
 
 - (void)requestPointSuccess:(NSNotification *)note {
-    NSLog(@"--*-6--[Rewarded]requestPointSuccess:-*--");
-    
-    if ([AdsConfig isAdsOff]) {
-        return;
-    }
-    
-    NSDictionary *info = [note userInfo];
-    NSArray *records = [info valueForKey:YOUMI_WALL_NOTIFICATION_USER_INFO_EARNED_POINTS_KEY];    
-    for (NSDictionary *oneRecord in records) {
-        [AdsConfig setAdsOn:NO type:kPermanent];
-        //NSString *userID = (NSString *)[oneRecord objectForKey:kOneAccountRecordUserIDOpenKey];
-        NSString *name = (NSString *)[oneRecord objectForKey:kOneAccountRecordNameOpenKey];
-        NSInteger earnedPoint = [(NSNumber *)[oneRecord objectForKey:kOneAccountRecordPoinstsOpenKey] integerValue];
-        
-        point += earnedPoint;
-        
-        if(mAdsClosedSupport)
-        {
-            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"新增积分:%d", earnedPoint] message:[NSString stringWithFormat:@"来源于安装了应用[%@]。\n恭喜广告将被关闭。", name] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil]autorelease];
-            [alert show];
-            
-            [Flurry logEvent:kFlurryRemoveAdsSuccessfully];
-        }
-    }
-    
-    
-    if(point>0)
-        self.title = [NSString stringWithFormat:@"积分:%d分", point];
+//    NSLog(@"--*-6--[Rewarded]requestPointSuccess:-*--");
+//    
+//    if ([AdsConfig isAdsOff]) {
+//        return;
+//    }
+//    
+//    NSDictionary *info = [note userInfo];
+//    NSArray *records = [info valueForKey:YOUMI_WALL_NOTIFICATION_USER_INFO_EARNED_POINTS_KEY];    
+//    for (NSDictionary *oneRecord in records) {
+//        [AdsConfig setAdsOn:NO type:kPermanent];
+//        //NSString *userID = (NSString *)[oneRecord objectForKey:kOneAccountRecordUserIDOpenKey];
+//        NSString *name = (NSString *)[oneRecord objectForKey:kOneAccountRecordNameOpenKey];
+//        NSInteger earnedPoint = [(NSNumber *)[oneRecord objectForKey:kOneAccountRecordPoinstsOpenKey] integerValue];
+//        
+//        point += earnedPoint;
+//        
+//        if(mAdsClosedSupport)
+//        {
+//            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"新增积分:%d", earnedPoint] message:[NSString stringWithFormat:@"来源于安装了应用[%@]。\n恭喜广告将被关闭。", name] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil]autorelease];
+//            [alert show];
+//            
+//            [Flurry logEvent:kFlurryRemoveAdsSuccessfully];
+//        }
+//    }
+//    
+//    
+//    if(point>0)
+//        self.title = [NSString stringWithFormat:@"积分:%d分", point];
     
 }
 

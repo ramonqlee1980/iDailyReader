@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AutoHideMenuView.h"
 
-@interface BaseViewController : UIViewController
-
+@interface BaseViewController : UIViewController<MenuDelegate>
+{
+    //AutoHideMenuView *youkuMenuView;
+}
+//@property (nonatomic, retain) AutoHideMenuView *youkuMenuView;
 - (void)initViews;
 - (void)configureViews;
 

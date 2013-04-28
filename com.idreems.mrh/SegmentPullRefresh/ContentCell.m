@@ -70,7 +70,7 @@
         [headPhoto setImage:[UIImage imageNamed:@"thumb_avatar.png"]];
         [self addSubview:headPhoto];
         
-        txtAnchor = [[UILabel alloc]initWithFrame:CGRectMake(45,5, deviceWidth-120/*200*/, 30)];
+        txtAnchor = [[UILabel alloc]initWithFrame:CGRectMake(45,5, deviceWidth-60/*200*/, 30)];
         [txtAnchor setText:@"匿名"];
         [txtAnchor setFont:[UIFont fontWithName:@"Arial" size:14]];
         [txtAnchor setBackgroundColor:[UIColor clearColor]];

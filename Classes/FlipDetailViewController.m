@@ -9,7 +9,8 @@
 #import "FlipDetailViewController.h"
 #import "AdsConfig.h"
 #import "Flurry.h"
-
+#import "ThemeManager.h"
+#import "AdsConfiguration.h"
 
 @implementation FlipDetailViewController
 @synthesize delegate;
@@ -39,10 +40,12 @@
     [Flurry logEvent:kOpenExistFavorite];
     // Do any additional setup after loading the view from its nib.
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStyleBordered target:self action:@selector(close:)];
+    item.tintColor = TintColor;
 	self.navigationItem.leftBarButtonItem = item;
 	[item release];
     
     UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc]initWithTitle:@"删除" style:UIBarButtonItemStyleBordered target:self action:@selector(deleteItem:)];
+    deleteButton.tintColor = TintColor;
     self.navigationItem.rightBarButtonItem = deleteButton;
     [deleteButton release];
     
@@ -102,7 +105,7 @@
 {
     NSMutableArray *dataMutableArray = [[NSUserDefaults standardUserDefaults]mutableArrayValueForKey:kAppIdOnAppstore];
     textView.text = [[dataMutableArray objectAtIndex:indexNumber] objectForKey:@"text"];
-//    dateLabel.text = [[dataMutableArray objectAtIndex:indexNumber]objectForKey:@"date"];
+    self.title = [[dataMutableArray objectAtIndex:indexNumber]objectForKey:@"date"];
 
 }
 -(void)hideKeyboard:(UITapGestureRecognizer *)recognizer{

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+
 @class FlipDetailViewController;
 @protocol FlipDetailViewControllerDelegate <NSObject>
 //这里是关闭的代理，貌似也可以用通知来实现代理方法
@@ -16,7 +18,7 @@
 @end
 #define kRefreshFlipViewAfterDelete @"kRefreshFlipViewAfterDelete"
 
-@interface FlipDetailViewController : UIViewController<UITextViewDelegate,UIGestureRecognizerDelegate>
+@interface FlipDetailViewController :BaseViewController <UITextViewDelegate,UIGestureRecognizerDelegate>
 {
     UITextView *textView;
     UILabel *dateLabel;

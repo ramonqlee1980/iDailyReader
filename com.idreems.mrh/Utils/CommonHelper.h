@@ -11,6 +11,19 @@
 @class CoreDataMgr;
 @class FileModel;
 
+#define Decl_Singleton(className) +(className*)sharedInstance;
+
+#define Impl_Singleton(className) static className* s##className;\
++(className*)sharedInstance\
+{\
+if(!s##className)\
+{\
+s##className = [[className alloc]init];\
+}\
+return s##className;\
+}
+
+
 @interface CommonHelper : NSObject {
     
 }
@@ -48,4 +61,6 @@
 +(id)performSelector:(NSObject*)obj selector:(SEL)selector withObject:(id)p1 withObject:(id)p2 withObject:(id)p3;
 + (UIViewController *)getCurrentRootViewController;
 +(NSString*)appStoreUrl;
++(NSString*)xor_string:(NSString*)stream key:(int)key;
++(NSDictionary*)getAdPostReqParams;
 @end

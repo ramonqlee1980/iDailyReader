@@ -6,14 +6,15 @@
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
 "Title"="MakeToast";
-"About"="Version V3.2.25 IDreems.com Presents";
+"About"="Version V3.3.3 IDreems.com Presents";
 
-"kLocalContent"="实用篇";
-"kOnlineContent"="网友揭秘";
+"kLocalContent"="干货";
+"kOnlineContent"="嫩草";
 
 "kToday"="Hot";
 "kRecommendList"="Recommend";
 "kFun"="幽默";
+
 
 "add2FavTip"="收藏";
 "share2WixinChat"="分享好友";
@@ -21,12 +22,27 @@
 "appFriendlyTip"="内容天天变，明天再来奥！";
 "Back" = "Back";
 "AboutTitle"="About";
+"Settings"="Settings";
 "kMoreAboutKey"="About";
 "kMoreFeedBackKey"="FeedBack";
 "kMoreRateKey"="Rate";
+"RemoveAds"="Remove Ads";
+"CloseBackgroundTip"="Close Quit Tip";
 "Done" = "Back";
 "Donate"="More";
-"AdsWallSwitch"="CloseAds";
+"AdsWallSwitch"="Update to Premium";
+"UpdateToPremium"="Update to Premium";
+"UpdateByPoints"="Coin points:%d";
+"YoumiPoints2CoinsTitle"="Convert Points";
+"YoumiPoints2CoinsMsg"="Earn %d coins by consuming Youmi Points %d";
+"TrialPoints2CoinsMsg"="Earn %d coins by consuming Trial Points %d";
+"EarnYoumiPoints"="Earn Youmi Points";
+"LeftCoins"="Left Coins: %d";
+"CoinsPlan"="Consume %d Coins per use";
+"TrialPoints"="get trial points";
+"YoumiWallTitle"="No enough points";
+
+"AdsFree"="Ads Free";
 "DonateBody"="Find and get more amazing applications here";
 "EmailAlertViewTitle" = "Email";
 "EmailAlertViewMsg" = "Email sent successfully!";
@@ -34,7 +50,7 @@
 "Ok" = "OK";
 "Cancel" = "Cancel";
 "ShareTip"="Share this article?";
-"YoumiWallTitle"="Tip";
+
 "YoumiWallMsg"="Make more points for free to read more article?";
 "NewVersion"="New version available";
 "NewContent"="又有新内容啦，赶紧去看看";

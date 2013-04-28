@@ -33,6 +33,6 @@
 @property(nonatomic,retain)NSMutableData *fileReceivedData;//接受的数据
 @property(nonatomic)BOOL isDownloading;//是否正在下载
 @property(nonatomic)BOOL isP2P;//是否是p2p下载
-
+@property(nonatomic)BOOL encrypt;//是否encrypt
 
 @end

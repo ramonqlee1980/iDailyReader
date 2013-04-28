@@ -28,6 +28,7 @@
 @synthesize author;
 @synthesize icon;
 @synthesize notificationName;
+@synthesize encrypt;
 
 -(void)dealloc
 {

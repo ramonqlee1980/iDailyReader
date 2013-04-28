@@ -9,7 +9,7 @@
 #import "AddNewNoteViewController.h"
 #import "AdsConfig.h"
 #import "Flurry.h"
-
+#import "AdsConfiguration.h"
 @implementation AddNewNoteViewController
 //@synthesize delegateForAdd;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -134,7 +134,7 @@
     }
 }
 -(void)saveNote{
-    NSMutableArray *dataMutableArray = [[NSUserDefaults standardUserDefaults]mutableArrayValueForKey:kAppIdOnAppstore];
+    NSMutableArray *dataMutableArray = [[NSUserDefaults standardUserDefaults]mutableArrayValueForKey:[[AdsConfiguration sharedInstance]appleId]];
     [dataMutableArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:textView.text,@"text",dateString,@"date", nil]];
     //UIAlertView *alert = [[[UIAlertView alloc]initWithTitle:nil message:@"保存成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil]autorelease];
     //[alert show];

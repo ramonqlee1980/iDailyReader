@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SHSCore.h"
-#import "LoadingView.h"
+#import "LoadingViewA.h"
 #import "ShareKitView.h"
 
 @interface SHSShareViewController : UIViewController<SHSOAuthDelegate,ShareKitViewDelegate,UIActionSheetDelegate>
@@ -16,7 +16,7 @@
     NSMutableArray *_menuItems;
     NSMutableArray *_redirectServices;
     NSMutableArray *_moreActions;
-    LoadingView *_loadView;
+    LoadingViewA *_loadView;
     UIViewController *_rootViewController;
 }
 @property (nonatomic) ShareType shareType;

@@ -41,7 +41,7 @@ NSString * const ThemeDidChangeNotification = @"me.ilvu.theme.change";
 
 - (UIImage *)imageWithImageName:(NSString *)imageName
 {
-    NSString *directory = [NSString stringWithFormat:@"%@/%@", @"resource", [self theme]];
+    NSString *directory = [NSString stringWithFormat:@"%@/%@", @"ThemeImage", [self theme]];
     
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName
                                                           ofType:@"png"
@@ -54,7 +54,7 @@ NSString * const ThemeDidChangeNotification = @"me.ilvu.theme.change";
 {   
     if ( _theme == nil )
     {
-        return @"red";
+        return kThemeRed;
     }
     return _theme;
 }

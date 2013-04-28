@@ -18,9 +18,9 @@
 extern NSString * const ThemeDidChangeNotification;
 #endif
 
-#define kThemeRed       @"red"
-#define kThemeBlue      @"blue"
-#define kThemeBlack     @"black"
+#define kThemeRed       @"Red"
+#define kThemeBlue      @"Blue"
+#define kThemeBlack     @"Black"
 
 #define IMAGE(imagePath) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(imagePath) ofType:@"png"]]
 

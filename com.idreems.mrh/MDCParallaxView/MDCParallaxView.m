@@ -202,7 +202,7 @@ static CGFloat const kMDCParallaxViewDefaultHeight = 150.0f;
                                                  self.frame.size.height);
     self.backgroundScrollView.contentSize = CGSizeMake(self.frame.size.width,
                                                        self.frame.size.height);
-    self.backgroundScrollView.contentOffset	= CGPointMake(0, 0.0f);
+    self.backgroundScrollView.contentOffset	= CGPointMake(0.0f, 0.0f);
     
     /*self.backgroundView.frame =
     CGRectMake(0.0f,

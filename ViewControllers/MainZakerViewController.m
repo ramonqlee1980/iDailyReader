@@ -13,6 +13,10 @@
 #import "Constants.h"
 #import "Flurry.h"
 #import "ThemeManager.h"
+#import "WQAdView.h"
+#import "AdsConfig.h"
+#import "AdsConfiguration.h"
+
 
 #define kInitialItemCount 5
 #define kFun @"kFun"
@@ -35,7 +39,7 @@
         // Custom initialization
         self.title = NSLocalizedString(kFun, "");
         self.tabBarItem.image = [UIImage imageNamed:kIconFun];
-//        self.navigationItem.title = NSLocalizedString(kTitle, "");
+        //        self.navigationItem.title = NSLocalizedString(kTitle, "");
         
     }
     return self;
@@ -49,12 +53,8 @@
     backButton.tintColor = TintColor;
     self.navigationItem.rightBarButtonItem = backButton;
     [backButton release];
-
     
-//    iAdsCheck* adsCheck = [iAdsCheck sharedInstance];
-//    adsCheck.viewController = self;
-//    [adsCheck start:APPDELEGATE];
-    
+        
     // Do any additional setup after loading the view.
     //TODO::load archived objects
     //parameters:classname--url in ascending order
@@ -64,7 +64,7 @@
     
     NSString* fileName =[self getSerializeFileName];
     [zakerItem addObjectsFromArray:[self unserialize:fileName]];
-        
+    
     CGRect rc = [[UIScreen mainScreen]applicationFrame];
     rc.origin.y = 0;
     
@@ -76,11 +76,10 @@
             continue;
         }
         [zaker addItem:[NSString stringWithFormat:@"%@",p.itemDisplayName] withImageName:nil editable:YES];
-    }         
+    }
     
     [self.view addSubview:zaker];
     [zaker release];
-	
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,13 +145,13 @@
 -(NSArray*)getDefaultZakerItems
 {
     NSMutableArray*r = [[[NSMutableArray alloc]initWithCapacity:0]autorelease];
-    for (int i = 0; i<6; ++i) {
+    for (int i = 0; i<1; ++i) {
         GridItemProperty* p = [[GridItemProperty alloc]init];
         
         switch (i) {
             case 0:
             {
-                p.itemDisplayName = @"糗事大全";                
+                p.itemDisplayName = @"糗事大全";
                 p.url = @"nil";
                 p.className = @"EmbarrassController";
                 p.xibName = p.className;

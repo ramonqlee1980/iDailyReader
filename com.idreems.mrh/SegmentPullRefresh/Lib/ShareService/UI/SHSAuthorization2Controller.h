@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SHSCommon.h"
-#import "LoadingView.h"
+#import "LoadingViewA.h"
 
 //为OAuth2.0提供用户授权
 @interface SHSAuthorization2Controller : UIViewController<UIWebViewDelegate>
@@ -16,7 +16,7 @@
     id<AuthorizationDelegate> _authorizationDelegate;
     UIWebView *_webView;
     NSString *_authorizationURL;
-    LoadingView *_loadView;
+    LoadingViewA *_loadView;
 }
 
 @property (nonatomic,assign) id<AuthorizationDelegate> authorizationDelegate;

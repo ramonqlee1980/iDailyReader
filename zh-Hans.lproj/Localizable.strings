@@ -6,10 +6,10 @@
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
 "Title"="场面话之祝酒词";
-"About"="版本V3.2.25  iDreems.com荣誉出品";
+"About"="版本V3.3.3  iDreems.com荣誉出品";
 
-"kLocalContent"="实用篇";
-"kOnlineContent"="网友揭秘";
+"kLocalContent"="干货";
+"kOnlineContent"="嫩草";
 
 "kToday"="今日美文";
 "kRecommendList"="推荐";
@@ -22,11 +22,26 @@
 "Back" = "返回";
 "AboutTitle"="关于";
 "kMoreAboutKey"="关于";
-"kMoreFeedBackKey"="提个建议吧";
-"kMoreRateKey"="评个5分";
+"Settings"="设置";
+"kMoreFeedBackKey"="反馈";
+"kMoreRateKey"="评分";
+"Premium"="去除广告";
+"UpdateToPremium"="去除广告";
+"AdsFree"="永久去除广告";
+"MoreChannels"="激活会员特权功能";
+"UpdateByPoints"="积分换金币(积分:%d)";
 "Done" = "返回";
 "Donate"="推荐";
 "AdsWallSwitch"="去除广告";
+"YoumiPoints2CoinsTitle"="积分换金币";
+"YoumiPoints2CoinsMsg"="成功兑换 %d 金币，消费有米积分 %d";
+"TrialPoints2CoinsMsg"="成功兑换 %d 金币，消费体验积分 %d";
+"EarnYoumiPoints"="赚有米积分";
+"LeftCoins"="剩余金币: %d";
+"CoinsPlan"="金币计划：\n金币用于去除广告\n每次使用本软件，消费%d金币。";
+"TrialPoints"="获取体验金币";
+
+"CloseBackgroundTip"="退出时的状态栏提示";
 "DonateBody"="给您推荐更多精彩应用。";
 "EmailAlertViewTitle" = "电子邮件";
 "EmailAlertViewMsg" = "已成功送达收件人!";

@@ -10,6 +10,7 @@
 #import "MobiSageRecommendDelegateImp.h"
 #import "AdsConfig.h"
 #import "CommonHelper.h"
+#import "AdsConfiguration.h"
 
 
 #define kLoadMobisageRecommendViewDelayTime 10//10s
@@ -56,7 +57,8 @@
 
 -(UIViewController*)viewController
 {
-    return _viewController;
+    //return _viewController;
+    return [[[[UIApplication sharedApplication]delegate]window]rootViewController];
 }
 
 -(void)open
@@ -75,7 +77,7 @@
         if(!_delegate)
         {
             _delegate = [[MobiSageRecommendDelegateImp alloc]init];
-            _delegate.viewControllerForPresentingModalView = _viewController;
+            _delegate.viewControllerForPresentingModalView = [self viewController];//_viewController;
         }
         _recmdView = [[MobiSageRecommendView alloc]initWithDelegate:_delegate andImg:nil];
         self.recmdView.frame = CGRectMake(kDeviceWidth-2*size, size/2, size, size);

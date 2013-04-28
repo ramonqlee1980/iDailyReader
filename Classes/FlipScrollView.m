@@ -10,6 +10,7 @@
 #import "InScrollViewLayer.h"
 #import "UIView+Screenshot.h"
 #import "AdsConfig.h"
+#import "AdsConfiguration.h"
 
 @implementation FlipScrollView
 @synthesize delegateForFlip;

@@ -91,7 +91,7 @@
 {
     self.view.userInteractionEnabled=NO;
     if(!_loadView)
-        _loadView=[[LoadingView alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleStandard];
+        _loadView=[[LoadingViewA alloc] initWithFrame:CGRectMake(0, 0, 130, 100) LoadingViewStyle:LoadingViewStyleStandard];
     _loadView.titleLabel.font=[UIFont boldSystemFontOfSize:13];
     _loadView.title=@"加载中";
     [_loadView showInView:self.view];

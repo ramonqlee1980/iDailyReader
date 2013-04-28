@@ -19,3 +19,5 @@
 #define kIconSetting @"ICN_setting"
 
 #define kPostNotification @"kPostNotification"//notification for post
+#define kPostResponseData @"kPostResponseData"
+

@@ -10,13 +10,16 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "ThemeManager.h"
+#import "AdsConfig.h"
+#import "AdsConfiguration.h"
 
 #define kMaxTitleLength 50
 #define kMaxBodyLength 1000
-#define kWordPressPostUrl @"http://www.idreems.com/wordpressTest/demo.php"
+#define kWordPressPostUrl @"http://www.idreems.com/openapi/post.php"
 
 #define kTitle @"Title"
 #define kBody @"Body"
+#define kTag @"Tag"
 
 #define kDefaultBlogBody @"kDefaultBlogBody"
 #define kDefaultBlogTitle @"kDefaultBlogTitle"
@@ -94,8 +97,11 @@
     [activityIndicator setHidden:NO];
     //title & content
     //send to server
-    
-    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:titleTextView.text,kTitle,bodyTextView.text,kBody,nil];
+#ifdef kAdminVersion
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:titleTextView.text,kTitle,bodyTextView.text,kBody,kAppOnlineTag,kTag,@"1",@"Draft",nil];
+#else
+    NSDictionary* data = [NSDictionary dictionaryWithObjectsAndKeys:titleTextView.text,kTitle,bodyTextView.text,kBody,kAppOnlineTag,kTag,nil];
+#endif
     [SharedDelegate beginPostRequest:kWordPressPostUrl withDictionary:data];
 }
 
@@ -103,7 +109,7 @@
 -(void)getResult:(NSNotification*)notification
 {
     if (notification) {
-        BOOL success = (notification.object==nil);
+        BOOL success = (![notification.object isKindOfClass:[NSError class]]);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:success?@"恭喜你，发表成功！":@"发表失败，请重试！" message:success?nil:notification.object delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         [alertView release];

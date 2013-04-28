@@ -7,16 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MobiSageRecommendSDK.h"
 
 @class SoftRcmList;
-@class YouMiWall;
-@interface SoftRcmListViewController : UITableViewController<MobiSageRecommendDelegate>
-{
+@interface SoftRcmListViewController : UITableViewController{
     SoftRcmList *_softRcmList;
-    YouMiWall *wall;
     NSMutableArray *openApps;
-    MobiSageRecommendView *_recmdView;
 }
-@property(nonatomic, retain) MobiSageRecommendView *recmdView;
 @end

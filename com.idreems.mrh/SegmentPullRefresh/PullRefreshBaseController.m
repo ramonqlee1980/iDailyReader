@@ -3,6 +3,10 @@
 @implementation PullRefreshBaseController
 @synthesize m_contentViewController;
 
+-(void)dealloc
+{
+    [super dealloc];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +33,8 @@
         self.m_contentViewController.customNavigationController = self.navigationController;
     }
     [self.view addSubview:m_contentViewController.view];
+    
+    
 }
 
 

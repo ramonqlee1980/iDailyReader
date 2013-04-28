@@ -1,11 +1,4 @@
 <softlist>
-   
-    <soft>
-        <name>读吧</name>
-        <detail>一款免费的阅读软件，整合了书籍，娱乐等信息，让你尽情体验阅读给你带来的快感。</detail>
-        <url>https://itunes.apple.com/us/app/du-ba/id586030218?ls=1</url>
-        <icon>Bookworm.png</icon>
-    </soft>
     
     <soft>
         <name>中医小窍门</name>
@@ -73,6 +66,14 @@
         <url>http://itunes.apple.com/us/app/fu-qi-mi-yu/id472818080?ls=1</url>
         <icon>SpouseTalks.png</icon>
     </soft>
+    
+    <soft>
+        <name>读吧</name>
+        <detail>一款免费的阅读软件，整合了书籍，娱乐等信息，让你尽情体验阅读给你带来的快感。</detail>
+        <url>https://itunes.apple.com/us/app/du-ba/id586030218?ls=1</url>
+        <icon>Bookworm.png</icon>
+    </soft>
+
     
 </softlist>
     

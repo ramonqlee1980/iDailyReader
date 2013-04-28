@@ -24,6 +24,7 @@
 {
     if(self = [super init])
     {
+        self.author = title;
         self.content = c;
     }
     return self;

@@ -17,7 +17,7 @@
  */
 - (UIViewController *)viewControllerForPresentingModalView
 {
-    return _viewControllerForPresentingModalView;
+    return _viewControllerForPresentingModalView?_viewControllerForPresentingModalView:[[[UIApplication sharedApplication]keyWindow] rootViewController];
 }
 
 

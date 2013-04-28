@@ -31,11 +31,8 @@
     UIView *rView;//图片的UIView
     NSUInteger mDialogType;
     BOOL isWhiteColor;
-    NSOperationQueue* mOperationQueue;
 }
-@property(nonatomic,retain)NSMutableArray *finishedlist;//已下载完成的文件列表（文件对象）
 
-@property(nonatomic,retain)NSMutableArray *downinglist;//正在下载的文件列表(ASIHttpRequest对象)
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
@@ -47,12 +44,7 @@
 @property(nonatomic,retain) ASIHTTPRequest *asiRequest;
 @property(nonatomic,assign) BOOL isWhiteColor;
 
-
-
--(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow;
--(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown;
-
--(void)beginPostRequest:(NSString*)url withDictionary:(NSDictionary*)postData;
+-(UIViewController*)rootViewController;
 //current ads wall 
 -(NSString*)currentAdsWall;
 -(BOOL)shouldShowAdsWall;
@@ -88,5 +80,11 @@
 - (void) shareByShareKit:(NSString*)title description:(NSString*)description image:(UIImage*)image;
 
 +(BOOL)isPurchased;
+-(BOOL)isQuitTipOff;
+-(void)setQuitTipOff:(BOOL)off;
+
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown setAllowResumeForFileDownloads:(BOOL)allow;
+-(void)beginRequest:(FileModel *)fileInfo isBeginDown:(BOOL)isBeginDown;
+-(void)beginPostRequest:(NSString*)url withDictionary:(NSDictionary*)postData;
 @end
 
